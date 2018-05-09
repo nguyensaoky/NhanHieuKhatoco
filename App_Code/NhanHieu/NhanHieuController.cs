@@ -52,12 +52,12 @@ namespace DotNetNuke.Modules.NhanHieu
             return result;
         }
 
-        public void NhanHieu_Insert(String TenNhanHieu, Int32 NuocDangKy, String SoDon, DateTime? NgayNopDon, DateTime? NgayUuTien, String SoChungNhan, DateTime? NgayChungNhan, DateTime? NgayCongBo, String SoQuyetDinh, DateTime? NgayQuyetDinh, DateTime CreatedDate, Int32 CreatedUser, String CreatedUnit, DateTime ModifiedDate, Int32 ModifiedUser, String ModifiedUnit, String Note, Int32 NhanHieuGoc, out Int32 ID)
+        public void NhanHieu_Insert(String TenNhanHieu, Int32 NuocDangKy, String SoDon, DateTime? NgayNopDon, DateTime? NgayUuTien, String SoChungNhan, DateTime? NgayChungNhan, DateTime? NgayCongBo, String SoQuyetDinh, DateTime? NgayQuyetDinh, DateTime CreatedDate, Int32 CreatedUser, String CreatedUnit, DateTime ModifiedDate, Int32 ModifiedUser, String ModifiedUnit, String Note, Int32 NhanHieuGoc, string DonVi, out Int32 ID)
         {
             try
             {
                 ID = -1;
-                SqlParameter[] param = new SqlParameter[19];
+                SqlParameter[] param = new SqlParameter[20];
                 param[0] = new SqlParameter("@TenNhanHieu", TenNhanHieu);
                 param[1] = new SqlParameter("@NuocDangKy", NuocDangKy);
                 param[2] = new SqlParameter("@SoDon", SoDon);
@@ -76,10 +76,11 @@ namespace DotNetNuke.Modules.NhanHieu
                 param[15] = new SqlParameter("@ModifiedUnit", ModifiedUnit);
                 param[16] = new SqlParameter("@Note", Note);
                 param[17] = new SqlParameter("@NhanHieuGoc", NhanHieuGoc);
-                param[18] = new SqlParameter("@ID", ID);
-                param[18].Direction = ParameterDirection.Output;
+                param[18] = new SqlParameter("@DonVi", DonVi);
+                param[19] = new SqlParameter("@ID", ID);
+                param[19].Direction = ParameterDirection.Output;
                 DataProvider.ExecuteSP("NhanHieu_NhanHieu_Insert", param);
-                ID = Convert.ToInt32(param[18].Value);
+                ID = Convert.ToInt32(param[19].Value);
             }
             catch (Exception ex) { throw ex; }
         }

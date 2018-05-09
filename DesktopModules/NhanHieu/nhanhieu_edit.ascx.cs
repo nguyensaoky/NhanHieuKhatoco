@@ -24,12 +24,14 @@ namespace DotNetNuke.Modules.NhanHieu
         int ID = 0;
         System.Globalization.CultureInfo ci = new System.Globalization.CultureInfo("vi-VN");
         NhanHieuController cont = new NhanHieuController();
+        string website = "";
         protected void Page_Load(object sender, EventArgs e)
         {
             try
             {
 				if (!Page.IsPostBack)
                 {
+                    if (UserInfo.Profile.Website != null) website = UserInfo.Profile.Website;
                     LoadEditControl();
                     if (Request.QueryString["ID"] != null)
                     {
@@ -76,6 +78,7 @@ namespace DotNetNuke.Modules.NhanHieu
             ddlNhanHieuGoc.DataTextField = "TenNhanHieu";
             ddlNhanHieuGoc.DataValueField = "ID";
             ddlNhanHieuGoc.DataBind();
+            ddlNhanHieuGoc.Items.Insert(0, new ListItem("", "0"));
         }
 
         private void SetButton(bool b1, bool b2, bool b3, bool b4, bool b5, bool b6, bool b7, bool b8)
@@ -96,7 +99,7 @@ namespace DotNetNuke.Modules.NhanHieu
             {
                 if (hdIsReferenced.Value == "0")
                 {
-                    if (UserInfo.Profile.Website != hdUnit.Value)
+                    if (website != hdUnit.Value)
                     {
                         SetButton(true, false, false, false, false, false, false, false);
                     }
@@ -137,7 +140,7 @@ namespace DotNetNuke.Modules.NhanHieu
             {
                 if (hdIsReferenced.Value == "0")
                 {
-                    if (UserInfo.Profile.Website != hdUnit.Value)
+                    if (website != hdUnit.Value)
                     {
                         if (hdNhanHieuID.Value == "0")
                         {
@@ -189,7 +192,7 @@ namespace DotNetNuke.Modules.NhanHieu
             hdNhanHieuID.Value = s;
             if (s != "0") btnSaveNoiDung.Enabled = true;
             else btnSaveNoiDung.Enabled = false;
-            udpNoiDung.Update();
+            //udpNoiDung.Update();
         }
 
         private void LoadData()
@@ -205,7 +208,7 @@ namespace DotNetNuke.Modules.NhanHieu
                     trCurrentFile.Visible = true;
                     lblCurrentFileName.Text = cont.GetFileNameByFileID(Convert.ToInt32(r["Image"]), PortalId);
                     hdImage.Value = r["Image"].ToString();
-                    lblChooseFile.Text = "Muốn đổi hình? Xin mời chọn hình mới";
+                    lblChooseFile.Text = "Muốn đổi hình? Mời bạn chọn hình mới";
                 }
                 else
                 {
@@ -312,13 +315,21 @@ namespace DotNetNuke.Modules.NhanHieu
                 DateTime dt = DateTime.Now;
                 if (hdNhanHieuID.Value == "0")
                 {
-                    cont.NhanHieu_Insert(txtTenNhanHieu.Text, int.Parse(ddlNuocDangKy.SelectedValue), txtSoDon.Text, dtNopDon, dtUuTien, txtSoChungNhan.Text, dtChungNhan, dtCongBo, txtSoQuyetDinh.Text, dtQuyetDinh, dt, UserId, UserInfo.Profile.Website, dt, UserId, UserInfo.Profile.Website, txtNote.Text, int.Parse(ddlNhanHieuGoc.SelectedValue), out ID);
+                    if (UserInfo.IsSuperUser || UserInfo.IsInRole("Administrators") || cont.HasRole(UserInfo.Roles, "QuanLy"))
+                    {
+                        cont.NhanHieu_Insert(txtTenNhanHieu.Text, int.Parse(ddlNuocDangKy.SelectedValue), txtSoDon.Text, dtNopDon, dtUuTien, txtSoChungNhan.Text, dtChungNhan, dtCongBo, txtSoQuyetDinh.Text, dtQuyetDinh, dt, UserId, website, dt, UserId, website, txtNote.Text, int.Parse(ddlNhanHieuGoc.SelectedValue), "", out ID);
+                    }
+                    else
+                    {
+                        cont.NhanHieu_Insert(txtTenNhanHieu.Text, int.Parse(ddlNuocDangKy.SelectedValue), txtSoDon.Text, dtNopDon, dtUuTien, txtSoChungNhan.Text, dtChungNhan, dtCongBo, txtSoQuyetDinh.Text, dtQuyetDinh, dt, UserId, website, dt, UserId, website, txtNote.Text, int.Parse(ddlNhanHieuGoc.SelectedValue), website, out ID);
+                    }
                     if (ID == -1) ID = 0;
                     SetNhanHieuID(ID.ToString());
+                    hdUnit.Value = website;
                 }
                 else
                 {
-                    cont.NhanHieu_Update(int.Parse(hdNhanHieuID.Value), txtTenNhanHieu.Text, int.Parse(ddlNuocDangKy.SelectedValue), txtSoDon.Text, dtNopDon, dtUuTien, txtSoChungNhan.Text, dtChungNhan, dtCongBo, txtSoQuyetDinh.Text, dtQuyetDinh, dt, UserId, UserInfo.Profile.Website, txtNote.Text, int.Parse(ddlNhanHieuGoc.SelectedValue));
+                    cont.NhanHieu_Update(int.Parse(hdNhanHieuID.Value), txtTenNhanHieu.Text, int.Parse(ddlNuocDangKy.SelectedValue), txtSoDon.Text, dtNopDon, dtUuTien, txtSoChungNhan.Text, dtChungNhan, dtCongBo, txtSoQuyetDinh.Text, dtQuyetDinh, dt, UserId, website, txtNote.Text, int.Parse(ddlNhanHieuGoc.SelectedValue));
                     SetNhanHieuID(ID.ToString());
                 }
                 SetButtonStatus();
@@ -360,28 +371,28 @@ namespace DotNetNuke.Modules.NhanHieu
                 int BienDongID = 0;
                 if (hdIsReferenced.Value == "1")
                 {
-                    cont.NhanHieu_BienDong_Insert(int.Parse(hdNhanHieuID.Value), int.Parse(hdImage.Value), txtMoTa.Text, txtMauSac.Text, int.Parse(ddlLoaiNhanHieu.SelectedValue), lv, txtGhiChuThayDoi.Text, false, dt, UserId, UserInfo.Profile.Website, dt, UserId, UserInfo.Profile.Website, true, out BienDongID);
+                    cont.NhanHieu_BienDong_Insert(int.Parse(hdNhanHieuID.Value), int.Parse(hdImage.Value), txtMoTa.Text, txtMauSac.Text, int.Parse(ddlLoaiNhanHieu.SelectedValue), lv, txtGhiChuThayDoi.Text, false, dt, UserId, website, dt, UserId, website, true, out BienDongID);
                     if (BienDongID == -1) BienDongID = 0;
                     hdBienDongID.Value = BienDongID.ToString();
                     hdIsReferenced.Value = "0";
-                    hdUnit.Value = UserInfo.Profile.Website;
+                    hdUnit.Value = website;
                 }
                 else
                 {
                     if (hdBienDongID.Value != "0")
                     {
-                        cont.NhanHieu_BienDong_Update(int.Parse(hdBienDongID.Value), int.Parse(hdNhanHieuID.Value), int.Parse(hdImage.Value), txtMoTa.Text, txtMauSac.Text, int.Parse(ddlLoaiNhanHieu.SelectedValue), lv, txtGhiChuThayDoi.Text, false, dt, UserId, UserInfo.Profile.Website, true);
+                        cont.NhanHieu_BienDong_Update(int.Parse(hdBienDongID.Value), int.Parse(hdNhanHieuID.Value), int.Parse(hdImage.Value), txtMoTa.Text, txtMauSac.Text, int.Parse(ddlLoaiNhanHieu.SelectedValue), lv, txtGhiChuThayDoi.Text, false, dt, UserId, website, true);
                         hdBienDongID.Value = BienDongID.ToString();
                         hdIsReferenced.Value = "0";
-                        hdUnit.Value = UserInfo.Profile.Website;
+                        hdUnit.Value = website;
                     }
                     else
                     {
-                        cont.NhanHieu_BienDong_Insert(int.Parse(hdNhanHieuID.Value), int.Parse(hdImage.Value), txtMoTa.Text, txtMauSac.Text, int.Parse(ddlLoaiNhanHieu.SelectedValue), lv, txtGhiChuThayDoi.Text, false, dt, UserId, UserInfo.Profile.Website, dt, UserId, UserInfo.Profile.Website, true, out BienDongID);
+                        cont.NhanHieu_BienDong_Insert(int.Parse(hdNhanHieuID.Value), int.Parse(hdImage.Value), txtMoTa.Text, txtMauSac.Text, int.Parse(ddlLoaiNhanHieu.SelectedValue), lv, txtGhiChuThayDoi.Text, false, dt, UserId, website, dt, UserId, website, true, out BienDongID);
                         if (BienDongID == -1) BienDongID = 0;
                         hdBienDongID.Value = BienDongID.ToString();
                         hdIsReferenced.Value = "0";
-                        hdUnit.Value = UserInfo.Profile.Website;
+                        hdUnit.Value = website;
                     }
                 }
                 SetButtonStatus();
