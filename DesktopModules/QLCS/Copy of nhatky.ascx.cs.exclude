@@ -1,0 +1,634 @@
+﻿using System;
+using System.Data;
+using System.Configuration;
+using System.Collections;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+using DotNetNuke.Services.Localization;
+using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Text;
+
+namespace DotNetNuke.Modules.QLCS
+{
+    public partial class nhatky : DotNetNuke.Entities.Modules.PortalModuleBase
+    {
+        private CaSauController csCont = new CaSauController();
+        System.Globalization.CultureInfo ci = System.Globalization.CultureInfo.CreateSpecificCulture("vi-VN");
+        private void BindControls()
+        {
+            System.Globalization.CultureInfo ci = System.Globalization.CultureInfo.CreateSpecificCulture("vi-VN");
+
+            DataTable tblChuong = new DataTable();
+            tblChuong = csCont.LoadChuong(1);
+            ddlChuong.DataSource = tblChuong;
+            ddlChuong.DataTextField = "Chuong";
+            ddlChuong.DataValueField = "IDChuong";
+            ddlChuong.DataBind();
+            ddlChuong1.DataSource = tblChuong;
+            ddlChuong1.DataTextField = "Chuong";
+            ddlChuong1.DataValueField = "IDChuong";
+            ddlChuong1.DataBind();
+
+            DataTable tblLoaiCa = csCont.LoadLoaiCa(1);
+            ddlLoaiCa.DataSource = tblLoaiCa;
+            ddlLoaiCa.DataTextField = "TenLoaiCa";
+            ddlLoaiCa.DataValueField = "IDLoaiCa";
+            ddlLoaiCa.DataBind();
+
+            txtNgay.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            txtNgay1.Text = DateTime.Now.ToString("dd/MM/yyyy");
+
+            txtTuNgay.Text = "01/" + DateTime.Now.Month.ToString() + "/" + DateTime.Now.Year.ToString();
+            txtDenNgay.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            txtTuNgay1.Text = txtTuNgay.Text;
+            txtDenNgay1.Text = txtDenNgay.Text;
+        }
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            ci = System.Globalization.CultureInfo.CreateSpecificCulture(UserInfo.Profile.PreferredLocale);
+            try
+            {
+                if (!Page.IsPostBack)
+                {
+                    BindControls();
+                }
+            }
+            catch (Exception ex)
+            {
+                Response.Write(ex.Message);
+            }
+        }
+
+        protected void btnExcelNgay_TANhieuDong_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                System.Globalization.CultureInfo ci = System.Globalization.CultureInfo.CreateSpecificCulture("vi-VN");
+                string filename = "NKN";
+                string tieude = "";
+                string strSQL = "QLCS_BCTK_NhatKy_Ngay";
+                SqlParameter[] param = new SqlParameter[2];
+                if (txtNgay.Text == "")
+                {
+                    txtNgay.Text = DateTime.Now.ToString("dd/MM/yyyy");
+                }
+                param[0] = new SqlParameter("@Ngay", DateTime.Parse(txtNgay.Text, ci));
+                param[1] = new SqlParameter("@KhuChuong", ddlKhuChuong.SelectedValue);
+                filename += txtNgay.Text + "___" + ddlKhuChuong.SelectedValue + ".xls";
+                filename = filename.Replace("/", "_");
+                tieude += "<b>NHẬT KÝ CHĂN NUÔI NGÀY " + txtNgay.Text + " - KHU " + ddlKhuChuong.SelectedItem.Text + "</b>";
+                DataTable dt = DotNetNuke.NewsProvider.DataProvider.SelectSP(strSQL, param);
+
+                Response.ClearContent();
+                Response.ClearHeaders();
+                Response.AppendHeader("Content-Disposition", "attachment; filename=" + filename);
+                Response.ContentType = "application/vnd.ms-excel";
+                string s = "<html><head><meta http-equiv='Content-Type' content='text/html; charset=utf-8'/></head><body width='100%' style='text-align:center;font-family:Times New Roman;'><br/><center style='font-weight:bold;font-size:15pt;'>" + tieude + "</center><br/>";
+                s += "<table border='1'>";
+                s += @"<tr><th rowspan=2>Chuồng</th><th rowspan=2>Số cá</th><th colspan='2'>Thức ăn</th><th rowspan=2>Thuốc</th><th colspan='5'>Biến động đàn</th></tr>
+                        <tr><th>Chủng loại</th><th>Số lượng</th>
+                        <th>Nhập mới</th><th>Chuyển chuồng</th><th>Chết</th><th>Giết mổ</th><th>Bán</th></tr>";
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    DataRow r = dt.Rows[i];
+                    //string BST = "";
+                    //if (r["BST"].ToString() == "1") BST = "Có";
+                    s += "<tr><td>" + r["So"].ToString() + "</td><td>" + r["SoCa"].ToString() + "</td><td>" + r["ThucAn"].ToString() + "</td><td>" + Config.ToXVal1(r["KhoiLuong"]) + "</td><td>" + r["BST"].ToString() + "</td><td>" + r["ChuyenDen"].ToString() + "</td><td>" + r["ChuyenDi"].ToString() + "</td><td>" + r["Chet"].ToString() + "</td><td>" + r["GietMo"].ToString() + "</td><td>" + r["Ban"].ToString() + "</td></tr>";
+                }
+                s += "</table></body></html>";
+                Response.Write(s);
+            }
+
+            catch (Exception ex)
+            {
+                Response.Write(ex.Message);
+            }
+        }
+
+        protected void btnExcelNgay_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                System.Globalization.CultureInfo ci = System.Globalization.CultureInfo.CreateSpecificCulture("vi-VN");
+                string filename = "NKN";
+                string tieude = "";
+                string strSQL = "QLCS_BCTK_NhatKy_Ngay";
+                SqlParameter[] param = new SqlParameter[2];
+                if (txtNgay.Text == "")
+                {
+                    txtNgay.Text = DateTime.Now.ToString("dd/MM/yyyy");
+                }
+                param[0] = new SqlParameter("@Ngay", DateTime.Parse(txtNgay.Text, ci));
+                param[1] = new SqlParameter("@KhuChuong", ddlKhuChuong.SelectedValue);
+                filename += txtNgay.Text + "___" + ddlKhuChuong.SelectedValue + ".xls";
+                filename = filename.Replace("/", "_");
+                tieude += "<b>NHẬT KÝ CHĂN NUÔI NGÀY " + txtNgay.Text + " - KHU " + ddlKhuChuong.SelectedItem.Text + "</b>";
+                DataTable dt = DotNetNuke.NewsProvider.DataProvider.SelectSP(strSQL, param);
+                Response.ClearContent();
+                Response.ClearHeaders();
+                Response.AppendHeader("Content-Disposition", "attachment; filename=" + filename);
+                Response.ContentType = "application/vnd.ms-excel";
+                StringBuilder sb = new StringBuilder();
+                sb.Append("<html><head><meta http-equiv='Content-Type' content='text/html; charset=utf-8'/></head><body width='100%' style='text-align:center;font-family:Times New Roman;'><br/><center style='font-weight:bold;font-size:15pt;'>" + tieude + "</center><br/>");
+                sb.Append("<table border='1'>");
+                sb.Append(@"<tr><th rowspan=2>Chuồng</th><th rowspan=2>Số cá</th><th rowspan='2'>Thức ăn</th><th rowspan=2>Thuốc</th><th colspan='5'>Biến động đàn</th><th rowspan=2>Ghi chú</th></tr>
+                        <tr><th>Nhập mới</th><th>Chuyển chuồng</th><th>Chết</th><th>Giết mổ</th><th>Bán</th></tr>");
+                int TongSoCa = 0; decimal TongThucAn = 0; decimal TongBST = 0; int TongChuyenDen = 0; int TongChuyenDi = 0; int TongChet = 0; int TongGietMo = 0; int TongBan = 0;
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    DataRow r = dt.Rows[i];
+                    sb.Append("<tr><td align='right'>" + r["So"].ToString() + "</td><td align='right'>" + r["SoCa"].ToString() + "</td><td align='left'>" + r["ThucAn"].ToString() + "</td><td align='left'>" + r["BST"].ToString() + "</td><td align='right'>" + r["ChuyenDen"].ToString() + "</td><td align='right'>" + r["ChuyenDi"].ToString() + "</td><td align='right'>" + r["Chet"].ToString() + "</td><td align='right'>" + r["GietMo"].ToString() + "</td><td align='right'>" + r["Ban"].ToString() + "</td><td align='left'>" + r["Note"].ToString());
+                    if (r["LyDoChet"].ToString() != "") sb.Append(" (Chết: " + r["LyDoChet"].ToString() + ")");
+                    sb.Append("</td></tr>");
+                    TongSoCa += r["SoCa"] != DBNull.Value? Convert.ToInt32(r["SoCa"]):0;
+                    TongThucAn += r["TongThucAn"] != DBNull.Value?Convert.ToDecimal(r["TongThucAn"]):0;
+                    TongBST += r["TongBST"] != DBNull.Value? Convert.ToDecimal(r["TongBST"]):0;
+                    TongChuyenDen += r["ChuyenDen"] != DBNull.Value? Convert.ToInt32(r["ChuyenDen"]):0;
+                    TongChuyenDi += r["ChuyenDi"] != DBNull.Value ? Convert.ToInt32(r["ChuyenDi"]) : 0;
+                    TongChet += r["Chet"] != DBNull.Value ? Convert.ToInt32(r["Chet"]) : 0;
+                    TongGietMo += r["GietMo"] != DBNull.Value ? Convert.ToInt32(r["GietMo"]) : 0;
+                    TongBan += r["Ban"] != DBNull.Value ? Convert.ToInt32(r["Ban"]) : 0;
+                }
+                sb.Append("<tr><td align='left'>Tổng cộng</td><td align='right'>" + Config.ToXVal2(TongSoCa, 0) + "</td><td align='right'>" + Config.ToXVal2(TongThucAn, 1) + "</td><td align='right'>" + Config.ToXVal2(TongBST, 1) + "</td><td align='right'>" + Config.ToXVal2(TongChuyenDen, 0) + "</td><td align='right'>" + Config.ToXVal2(TongChuyenDi, 0) + "</td><td align='right'>" + Config.ToXVal2(TongChet, 0) + "</td><td align='right'>" + Config.ToXVal2(TongGietMo, 0) + "</td><td align='right'>" + Config.ToXVal2(TongBan, 0) + "</td><td align='left'></td></tr>");
+                sb.Append("</table></body></html>");
+                Response.Write(sb.ToString());
+            }
+
+            catch (Exception ex)
+            {
+                Response.Write(ex.Message);
+            }
+        }
+
+        protected void btnViewNgay_TANhieuDong_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                System.Globalization.CultureInfo ci = System.Globalization.CultureInfo.CreateSpecificCulture("vi-VN");
+                string tieude = "";
+                string strSQL = "QLCS_BCTK_NhatKy_Ngay";
+                SqlParameter[] param = new SqlParameter[2];
+                if (txtNgay.Text == "")
+                {
+                    txtNgay.Text = DateTime.Now.ToString("dd/MM/yyyy");
+                }
+                param[0] = new SqlParameter("@Ngay", DateTime.Parse(txtNgay.Text, ci));
+                param[1] = new SqlParameter("@KhuChuong", ddlKhuChuong.SelectedValue);
+                tieude += "<b>NHẬT KÝ CHĂN NUÔI NGÀY " + txtNgay.Text + " - KHU " + ddlKhuChuong.SelectedItem.Text + "</b>";
+                DataTable dt = DotNetNuke.NewsProvider.DataProvider.SelectSP(strSQL, param);
+
+                string s = "<center style='font-weight:bold;font-size:15pt;'>" + tieude + "</center><br/>";
+                s += "<table id='thongke' class='stripe row-border order-column cell-border' cellspacing='0' width='100%'><thead>";
+                s += @"<tr><th rowspan=2>Chuồng</th><th rowspan=2>Số cá</th><th colspan='2'>Thức ăn</th><th rowspan=2>Thuốc</th><th colspan='5'>Biến động đàn</th></tr>
+                        <tr><th>Chủng loại</th><th>Số lượng</th>
+                        <th>Nhập mới</th><th>Chuyển chuồng</th><th>Chết</th><th>Giết mổ</th><th>Bán</th></tr></thead><tbody>";
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    DataRow r = dt.Rows[i];
+                    //string BST = "";
+                    //if (r["BST"].ToString() == "1") BST = "Có";
+                    s += "<tr><td>" + r["So"].ToString() + "</td><td>" + r["SoCa"].ToString() + "</td><td>" + r["ThucAn"].ToString() + "</td><td>" + Config.ToXVal1(r["KhoiLuong"]) + "</td><td>" + r["BST"].ToString() + "</td><td>" + r["ChuyenDen"].ToString() + "</td><td>" + r["ChuyenDi"].ToString() + "</td><td>" + r["Chet"].ToString() + "</td><td>" + r["GietMo"].ToString() + "</td><td>" + r["Ban"].ToString() + "</td></tr>";
+                }
+                s += "</tbody></table>";
+                ltNgay.Text = s;
+                ltChuong.Text = "";
+                ltChuyenChuong.Text = "";
+            }
+
+            catch (Exception ex)
+            {
+                Response.Write(ex.Message);
+            }
+        }
+
+        protected void btnViewNgay_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                System.Globalization.CultureInfo ci = System.Globalization.CultureInfo.CreateSpecificCulture("vi-VN");
+                string tieude = "";
+                string strSQL = "QLCS_BCTK_NhatKy_Ngay";
+                SqlParameter[] param = new SqlParameter[2];
+                if (txtNgay.Text == "")
+                {
+                    txtNgay.Text = DateTime.Now.ToString("dd/MM/yyyy");
+                }
+                param[0] = new SqlParameter("@Ngay", DateTime.Parse(txtNgay.Text, ci));
+                param[1] = new SqlParameter("@KhuChuong", ddlKhuChuong.SelectedValue);
+                tieude += "<b>NHẬT KÝ CHĂN NUÔI NGÀY " + txtNgay.Text + " - KHU " + ddlKhuChuong.SelectedItem.Text + "</b>";
+                DataTable dt = DotNetNuke.NewsProvider.DataProvider.SelectSP(strSQL, param);
+                StringBuilder sb = new StringBuilder();
+                sb.Append("<center style='font-weight:bold;font-size:15pt;'>" + tieude + "</center><br/>");
+                sb.Append("<table id='thongke' class='stripe row-border order-column cell-border' cellspacing='0' width='100%'><thead>");
+                sb.Append(@"<tr><th rowspan=2 align='center'>Chuồng</th><th rowspan=2 align='center'>Số cá</th><th rowspan='2' align='center'>Thức ăn</th><th rowspan=2 align='center'>Thuốc</th><th colspan='5' align='center'>Biến động đàn</th><th rowspan=2 align='center'>Ghi chú</th></tr>
+                        <tr><th align='center'>Nhập mới</th><th align='center'>Chuyển chuồng</th><th align='center'>Chết</th><th align='center'>Giết mổ</th><th align='center'>Bán</th></tr></thead><tbody>");
+                int TongSoCa = 0; decimal TongThucAn = 0; decimal TongBST = 0; int TongChuyenDen = 0; int TongChuyenDi = 0; int TongChet = 0; int TongGietMo = 0; int TongBan = 0;
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    DataRow r = dt.Rows[i];
+                    sb.Append("<tr><td align='right'>" + r["So"].ToString() + "</td><td align='right'>" + r["SoCa"].ToString() + "</td><td align=left'>" + r["ThucAn"].ToString() + "</td><td align='left'>" + r["BST"].ToString() + "</td><td align='right'>" + r["ChuyenDen"].ToString() + "</td><td align='right'>" + r["ChuyenDi"].ToString() + "</td><td align='right'>" + r["Chet"].ToString() + "</td><td align='right'>" + r["GietMo"].ToString() + "</td><td align='right'>" + r["Ban"].ToString() + "</td><td align='left'>" + r["Note"].ToString());
+                    if (r["LyDoChet"].ToString() != "") sb.Append(" (Chết: " + r["LyDoChet"].ToString() + ")");
+                    sb.Append("</td></tr>");
+                    TongSoCa += r["SoCa"] != DBNull.Value? Convert.ToInt32(r["SoCa"]):0;
+                    TongThucAn += r["TongThucAn"] != DBNull.Value?Convert.ToDecimal(r["TongThucAn"]):0;
+                    TongBST += r["TongBST"] != DBNull.Value? Convert.ToDecimal(r["TongBST"]):0;
+                    TongChuyenDen += r["ChuyenDen"] != DBNull.Value? Convert.ToInt32(r["ChuyenDen"]):0;
+                    TongChuyenDi += r["ChuyenDi"] != DBNull.Value ? Convert.ToInt32(r["ChuyenDi"]) : 0;
+                    TongChet += r["Chet"] != DBNull.Value ? Convert.ToInt32(r["Chet"]) : 0;
+                    TongGietMo += r["GietMo"] != DBNull.Value ? Convert.ToInt32(r["GietMo"]) : 0;
+                    TongBan += r["Ban"] != DBNull.Value ? Convert.ToInt32(r["Ban"]) : 0;
+                }
+                sb.Append("<tr><td align='left'>Tổng cộng</td><td align='right'>" + Config.ToXVal2(TongSoCa, 0) + "</td><td align='right'>" + Config.ToXVal2(TongThucAn, 1) + "</td><td align='right'>" + Config.ToXVal2(TongBST, 1) + "</td><td align='right'>" + Config.ToXVal2(TongChuyenDen, 0) + "</td><td align='right'>" + Config.ToXVal2(TongChuyenDi, 0) + "</td><td align='right'>" + Config.ToXVal2(TongChet, 0) + "</td><td align='right'>" + Config.ToXVal2(TongGietMo, 0) + "</td><td align='right'>" + Config.ToXVal2(TongBan, 0) + "</td><td align='left'></td></tr>");
+                sb.Append("</tbody></table>");
+                ltNgay.Text = sb.ToString();
+                ltLoaiCa.Text = "";
+                ltChuong.Text = "";
+                ltChuyenChuong.Text = "";
+            }
+
+            catch (Exception ex)
+            {
+                Response.Write(ex.Message);
+            }
+        }
+
+        protected void btnExcelDan_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                System.Globalization.CultureInfo ci = System.Globalization.CultureInfo.CreateSpecificCulture("vi-VN");
+                string filename = "NKĐ";
+                string tieude = "";
+                string strSQL = "QLCS_BCTK_NhatKy_LoaiCa";
+                SqlParameter[] param = new SqlParameter[2];
+                if (txtNgay.Text == "")
+                {
+                    txtNgay.Text = DateTime.Now.ToString("dd/MM/yyyy");
+                }
+                param[0] = new SqlParameter("@Ngay", DateTime.Parse(txtNgay.Text, ci));
+                param[1] = new SqlParameter("@LoaiCa", int.Parse(ddlLoaiCa.SelectedValue));
+                filename += txtNgay.Text + "___" + ddlLoaiCa.SelectedValue + ".xls";
+                filename = filename.Replace("/", "_");
+                tieude += "<b>NHẬT KÝ CHĂN NUÔI NGÀY " + txtNgay.Text + " - LOẠI CÁ " + ddlLoaiCa.SelectedItem.Text + "</b>";
+                DataTable dt = DotNetNuke.NewsProvider.DataProvider.SelectSP(strSQL, param);
+                Response.ClearContent();
+                Response.ClearHeaders();
+                Response.AppendHeader("Content-Disposition", "attachment; filename=" + filename);
+                Response.ContentType = "application/vnd.ms-excel";
+                StringBuilder sb = new StringBuilder();
+                sb.Append("<html><head><meta http-equiv='Content-Type' content='text/html; charset=utf-8'/></head><body width='100%' style='text-align:center;font-family:Times New Roman;'><br/><center style='font-weight:bold;font-size:15pt;'>" + tieude + "</center><br/>");
+                sb.Append("<table border='1'>");
+                sb.Append(@"<tr><th rowspan=2>Chuồng</th><th rowspan=2>Số cá</th><th rowspan='2'>Thức ăn</th><th rowspan=2>Thuốc</th><th colspan='5'>Biến động đàn</th><th rowspan=2>Ghi chú</th></tr>
+                        <tr><th>Nhập mới</th><th>Chuyển chuồng</th><th>Chết</th><th>Giết mổ</th><th>Bán</th></tr>");
+                int TongSoCa = 0; decimal TongThucAn = 0; decimal TongBST = 0; int TongChuyenDen = 0; int TongChuyenDi = 0; int TongChet = 0; int TongGietMo = 0; int TongBan = 0;
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    DataRow r = dt.Rows[i];
+                    sb.Append("<tr><td align='right'>" + r["So"].ToString() + "</td><td align='right'>" + r["SoCa"].ToString() + "</td><td align=left'>" + r["ThucAn"].ToString() + "</td><td align='left'>" + r["BST"].ToString() + "</td><td align='right'>" + r["ChuyenDen"].ToString() + "</td><td align='right'>" + r["ChuyenDi"].ToString() + "</td><td align='right'>" + r["Chet"].ToString() + "</td><td align='right'>" + r["GietMo"].ToString() + "</td><td align='right'>" + r["Ban"].ToString() + "</td><td align='left'>" + r["Note"].ToString());
+                    if (r["LyDoChet"].ToString() != "") sb.Append(" (Chết: " + r["LyDoChet"].ToString() + ")");
+                    sb.Append("</td></tr>");
+                    TongSoCa += r["SoCa"] != DBNull.Value? Convert.ToInt32(r["SoCa"]):0;
+                    TongThucAn += r["TongThucAn"] != DBNull.Value?Convert.ToDecimal(r["TongThucAn"]):0;
+                    TongBST += r["TongBST"] != DBNull.Value? Convert.ToDecimal(r["TongBST"]):0;
+                    TongChuyenDen += r["ChuyenDen"] != DBNull.Value? Convert.ToInt32(r["ChuyenDen"]):0;
+                    TongChuyenDi += r["ChuyenDi"] != DBNull.Value ? Convert.ToInt32(r["ChuyenDi"]) : 0;
+                    TongChet += r["Chet"] != DBNull.Value ? Convert.ToInt32(r["Chet"]) : 0;
+                    TongGietMo += r["GietMo"] != DBNull.Value ? Convert.ToInt32(r["GietMo"]) : 0;
+                    TongBan += r["Ban"] != DBNull.Value ? Convert.ToInt32(r["Ban"]) : 0;
+                }
+                sb.Append("<tr><td align='left'>Tổng cộng</td><td align='right'>" + Config.ToXVal2(TongSoCa, 0) + "</td><td align='right'>" + Config.ToXVal2(TongThucAn, 1) + "</td><td align='right'>" + Config.ToXVal2(TongBST, 1) + "</td><td align='right'>" + Config.ToXVal2(TongChuyenDen, 0) + "</td><td align='right'>" + Config.ToXVal2(TongChuyenDi, 0) + "</td><td align='right'>" + Config.ToXVal2(TongChet, 0) + "</td><td align='right'>" + Config.ToXVal2(TongGietMo, 0) + "</td><td align='right'>" + Config.ToXVal2(TongBan, 0) + "</td><td align='left'></td></tr>");
+                sb.Append("</table></body></html>");
+                Response.Write(sb.ToString());
+            }
+
+            catch (Exception ex)
+            {
+                Response.Write(ex.Message);
+            }
+        }
+
+        protected void btnViewDan_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                System.Globalization.CultureInfo ci = System.Globalization.CultureInfo.CreateSpecificCulture("vi-VN");
+                string tieude = "";
+                string strSQL = "QLCS_BCTK_NhatKy_LoaiCa";
+                SqlParameter[] param = new SqlParameter[2];
+                if (txtNgay1.Text == "")
+                {
+                    txtNgay1.Text = DateTime.Now.ToString("dd/MM/yyyy");
+                }
+                param[0] = new SqlParameter("@Ngay", DateTime.Parse(txtNgay1.Text, ci));
+                param[1] = new SqlParameter("@LoaiCa", int.Parse(ddlLoaiCa.SelectedValue));
+                tieude += "<b>NHẬT KÝ CHĂN NUÔI NGÀY " + txtNgay1.Text + " - LOẠI CÁ " + ddlLoaiCa.SelectedItem.Text + "</b>";
+                DataTable dt = DotNetNuke.NewsProvider.DataProvider.SelectSP(strSQL, param);
+                StringBuilder sb = new StringBuilder();
+                sb.Append("<center style='font-weight:bold;font-size:15pt;'>" + tieude + "</center><br/>");
+                sb.Append("<table id='thongke' class='stripe row-border order-column cell-border' cellspacing='0' width='100%'><thead>");
+                sb.Append(@"<tr><th rowspan=2 align='center'>Chuồng</th><th rowspan=2 align='center'>Số cá</th><th rowspan='2' align='center'>Thức ăn</th><th rowspan=2 align='center'>Thuốc</th><th colspan='5' align='center'>Biến động đàn</th><th rowspan=2 align='center'>Ghi chú</th></tr>
+                        <tr><th align='center'>Nhập mới</th><th align='center'>Chuyển chuồng</th><th align='center'>Chết</th><th align='center'>Giết mổ</th><th align='center'>Bán</th></tr></thead><tbody>");
+                int TongSoCa = 0; decimal TongThucAn = 0; decimal TongBST = 0; int TongChuyenDen = 0; int TongChuyenDi = 0; int TongChet = 0; int TongGietMo = 0; int TongBan = 0;
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    DataRow r = dt.Rows[i];
+                    sb.Append("<tr><td align='right'>" + r["Chuong"].ToString() + "</td><td align='right'>" + r["SoCa"].ToString() + "</td><td align=left'>" + r["ThucAn"].ToString() + "</td><td align='left'>" + r["BST"].ToString() + "</td><td align='right'>" + r["ChuyenDen"].ToString() + "</td><td align='right'>" + r["ChuyenDi"].ToString() + "</td><td align='right'>" + r["Chet"].ToString() + "</td><td align='right'>" + r["GietMo"].ToString() + "</td><td align='right'>" + r["Ban"].ToString() + "</td><td align='left'>" + r["Note"].ToString());
+                    if(r["LyDoChet"].ToString() != "") sb.Append(" (Chết: " + r["LyDoChet"].ToString() + ")");
+                    sb.Append("</td></tr>");
+                    TongSoCa += r["SoCa"] != DBNull.Value? Convert.ToInt32(r["SoCa"]):0;
+                    TongThucAn += r["TongThucAn"] != DBNull.Value?Convert.ToDecimal(r["TongThucAn"]):0;
+                    TongBST += r["TongBST"] != DBNull.Value? Convert.ToDecimal(r["TongBST"]):0;
+                    TongChuyenDen += r["ChuyenDen"] != DBNull.Value? Convert.ToInt32(r["ChuyenDen"]):0;
+                    TongChuyenDi += r["ChuyenDi"] != DBNull.Value ? Convert.ToInt32(r["ChuyenDi"]) : 0;
+                    TongChet += r["Chet"] != DBNull.Value ? Convert.ToInt32(r["Chet"]) : 0;
+                    TongGietMo += r["GietMo"] != DBNull.Value ? Convert.ToInt32(r["GietMo"]) : 0;
+                    TongBan += r["Ban"] != DBNull.Value ? Convert.ToInt32(r["Ban"]) : 0;
+                }
+                sb.Append("<tr><td align='left'>Tổng cộng</td><td align='right'>" + Config.ToXVal2(TongSoCa, 0) + "</td><td align='right'>" + Config.ToXVal2(TongThucAn, 1) + "</td><td align='right'>" + Config.ToXVal2(TongBST, 1) + "</td><td align='right'>" + Config.ToXVal2(TongChuyenDen, 0) + "</td><td align='right'>" + Config.ToXVal2(TongChuyenDi, 0) + "</td><td align='right'>" + Config.ToXVal2(TongChet, 0) + "</td><td align='right'>" + Config.ToXVal2(TongGietMo, 0) + "</td><td align='right'>" + Config.ToXVal2(TongBan, 0) + "</td><td align='left'></td></tr>");
+                sb.Append("</tbody></table>");
+                ltLoaiCa.Text = sb.ToString();
+                ltNgay.Text = "";
+                ltChuong.Text = "";
+                ltChuyenChuong.Text = "";
+            }
+
+            catch (Exception ex)
+            {
+                Response.Write(ex.Message);
+            }
+        }
+
+        protected void btnExcelChuong_TANhieuDong_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                System.Globalization.CultureInfo ci = System.Globalization.CultureInfo.CreateSpecificCulture("vi-VN");
+                string filename = "NKC";
+                string tieude = "";
+                string strSQL = "QLCS_BCTK_NhatKy_Chuong";
+                SqlParameter[] param = new SqlParameter[3];
+                if (txtTuNgay.Text == "")
+                {
+                    txtTuNgay.Text = DateTime.Now.ToString("dd/MM/yyyy");
+                }
+                if (txtDenNgay.Text == "")
+                {
+                    txtDenNgay.Text = DateTime.Now.ToString("dd/MM/yyyy");
+                }
+                param[0] = new SqlParameter("@Chuong", int.Parse(ddlChuong.SelectedValue));
+                param[1] = new SqlParameter("@TuNgay", DateTime.Parse(txtTuNgay.Text, ci));
+                param[2] = new SqlParameter("@DenNgay", DateTime.Parse(txtDenNgay.Text, ci));
+                filename += txtTuNgay.Text + "__" + txtDenNgay.Text + "__" + ddlChuong.SelectedItem.Text + ".xls";
+                filename = filename.Replace("/", "_").Replace(" ","");
+                tieude += "<b>NHẬT KÝ CHĂN NUÔI CHUỒNG " + ddlChuong.SelectedItem.Text + " - TỪ NGÀY " + txtTuNgay.Text + "  ĐẾN NGÀY " + txtDenNgay.Text + "</b>";
+                DataTable dt = DotNetNuke.NewsProvider.DataProvider.SelectSP(strSQL, param);
+
+                Response.ClearContent();
+                Response.ClearHeaders();
+                Response.AppendHeader("Content-Disposition", "attachment; filename=" + filename);
+                Response.ContentType = "application/vnd.ms-excel";
+                string s = "<html><head><meta http-equiv='Content-Type' content='text/html; charset=utf-8'/></head><body width='100%' style='text-align:center;font-family:Times New Roman;'><br/><center style='font-weight:bold;font-size:15pt;'>" + tieude + "</center><br/>";
+                s += "<table border='1'>";
+                s += @"<tr><th rowspan=2>Ngày</th><th rowspan=2>Số cá đầu kỳ</th><th colspan='2'>Thức ăn</th><th rowspan=2>Thuốc</th><th colspan='5'>Biến động đàn</th></tr>
+                        <tr><th>Chủng loại</th><th>Số lượng</th>
+                        <th>Nhập mới</th><th>Chuyển chuồng</th><th>Chết</th><th>Giết mổ</th><th>Bán</th></tr>";
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    DataRow r = dt.Rows[i];
+                    //string BST = "";
+                    //if (r["BST"].ToString() == "1") BST = "Có";
+                    s += "<tr><td>" + Convert.ToDateTime(r["ThoiDiem"]).ToString("dd/MM/yyyy") + "</td><td>" + r["SoCa"].ToString() + "</td><td>" + r["ThucAn"].ToString() + "</td><td>" + Config.ToXVal1(r["KhoiLuong"]) + "</td><td>" + r["BST"].ToString() + "</td><td>" + r["ChuyenDen"].ToString() + "</td><td>" + r["ChuyenDi"].ToString() + "</td><td>" + r["Chet"].ToString() + "</td><td>" + r["GietMo"].ToString() + "</td><td>" + r["Ban"].ToString() + "</td></tr>";
+                }
+                s += "</table></body></html>";
+                Response.Write(s);
+            }
+            catch (Exception ex)
+            {
+                Response.Write(ex.Message);
+            }
+        }
+
+        protected void btnExcelChuong_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                System.Globalization.CultureInfo ci = System.Globalization.CultureInfo.CreateSpecificCulture("vi-VN");
+                string filename = "NKC";
+                string tieude = "";
+                string strSQL = "QLCS_BCTK_NhatKy_Chuong";
+                SqlParameter[] param = new SqlParameter[3];
+                if (txtTuNgay.Text == "")
+                {
+                    txtTuNgay.Text = DateTime.Now.ToString("dd/MM/yyyy");
+                }
+                if (txtDenNgay.Text == "")
+                {
+                    txtDenNgay.Text = DateTime.Now.ToString("dd/MM/yyyy");
+                }
+                param[0] = new SqlParameter("@Chuong", int.Parse(ddlChuong.SelectedValue));
+                param[1] = new SqlParameter("@TuNgay", DateTime.Parse(txtTuNgay.Text, ci));
+                param[2] = new SqlParameter("@DenNgay", DateTime.Parse(txtDenNgay.Text, ci));
+                filename += txtTuNgay.Text + "__" + txtDenNgay.Text + "__" + ddlChuong.SelectedItem.Text + ".xls";
+                filename = filename.Replace("/", "_").Replace(" ", "");
+                tieude += "<b>NHẬT KÝ CHĂN NUÔI CHUỒNG " + ddlChuong.SelectedItem.Text + " - TỪ NGÀY " + txtTuNgay.Text + "  ĐẾN NGÀY " + txtDenNgay.Text + "</b>";
+                DataTable dt = DotNetNuke.NewsProvider.DataProvider.SelectSP(strSQL, param);
+
+                Response.ClearContent();
+                Response.ClearHeaders();
+                Response.AppendHeader("Content-Disposition", "attachment; filename=" + filename);
+                Response.ContentType = "application/vnd.ms-excel";
+                StringBuilder sb = new StringBuilder();
+                sb.Append("<html><head><meta http-equiv='Content-Type' content='text/html; charset=utf-8'/></head><body width='100%' style='text-align:center;font-family:Times New Roman;'><br/><center style='font-weight:bold;font-size:15pt;'>" + tieude + "</center><br/>");
+                sb.Append("<table border='1'>");
+                sb.Append(@"<tr><th rowspan=2>Ngày</th><th rowspan=2>Số cá đầu kỳ</th><th rowspan='2'>Thức ăn</th><th rowspan=2>Thuốc</th><th colspan='5'>Biến động đàn</th><th rowspan=2>Ghi chú</th></tr>
+                        <tr><th>Nhập mới</th><th>Chuyển chuồng</th><th>Chết</th><th>Giết mổ</th><th>Bán</th></tr>");
+                decimal TongThucAn = 0; decimal TongBST = 0; int TongChuyenDen = 0; int TongChuyenDi = 0; int TongChet = 0; int TongGietMo = 0; int TongBan = 0;
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    DataRow r = dt.Rows[i];
+                    sb.Append("<tr><td align='center'>" + Convert.ToDateTime(r["ThoiDiem"]).ToString("dd/MM/yyyy") + "</td><td align='right'>" + r["SoCa"].ToString() + "</td><td align='left'>" + r["ThucAn"].ToString() + "</td><td align='left'>" + r["BST"].ToString() + "</td><td align='right'>" + r["ChuyenDen"].ToString() + "</td><td align='right'>" + r["ChuyenDi"].ToString() + "</td><td align='right'>" + r["Chet"].ToString() + "</td><td align='right'>" + r["GietMo"].ToString() + "</td><td align='right'>" + r["Ban"].ToString() + "</td><td align='left'>" + r["Note"].ToString());
+                    if (r["LyDoChet"].ToString() != "") sb.Append(" (Chết: " + r["LyDoChet"].ToString() + ")");
+                    sb.Append("</td></tr>");
+                    TongThucAn += r["TongThucAn"] != DBNull.Value?Convert.ToDecimal(r["TongThucAn"]):0;
+                    TongBST += r["TongBST"] != DBNull.Value? Convert.ToDecimal(r["TongBST"]):0;
+                    TongChuyenDen += r["ChuyenDen"] != DBNull.Value? Convert.ToInt32(r["ChuyenDen"]):0;
+                    TongChuyenDi += r["ChuyenDi"] != DBNull.Value ? Convert.ToInt32(r["ChuyenDi"]) : 0;
+                    TongChet += r["Chet"] != DBNull.Value ? Convert.ToInt32(r["Chet"]) : 0;
+                    TongGietMo += r["GietMo"] != DBNull.Value ? Convert.ToInt32(r["GietMo"]) : 0;
+                    TongBan += r["Ban"] != DBNull.Value ? Convert.ToInt32(r["Ban"]) : 0;
+                }
+                sb.Append("<tr><td align='left'></td><td align='left'>Tổng cộng</td><td align='right'>" + Config.ToXVal2(TongThucAn, 1) + "</td><td align='right'>" + Config.ToXVal2(TongBST, 1) + "</td><td align='right'>" + Config.ToXVal2(TongChuyenDen, 0) + "</td><td align='right'>" + Config.ToXVal2(TongChuyenDi, 0) + "</td><td align='right'>" + Config.ToXVal2(TongChet, 0) + "</td><td align='right'>" + Config.ToXVal2(TongGietMo, 0) + "</td><td align='right'>" + Config.ToXVal2(TongBan, 0) + "</td><td align='left'></td></tr>");
+                sb.Append("</table></body></html>");
+                Response.Write(sb.ToString());
+            }
+            catch (Exception ex)
+            {
+                Response.Write(ex.Message);
+            }
+        }
+
+        protected void btnViewChuong_TANhieuDong_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                System.Globalization.CultureInfo ci = System.Globalization.CultureInfo.CreateSpecificCulture("vi-VN");
+                string tieude = "";
+                string strSQL = "QLCS_BCTK_NhatKy_Chuong";
+                SqlParameter[] param = new SqlParameter[3];
+                if (txtTuNgay.Text == "")
+                {
+                    txtTuNgay.Text = DateTime.Now.ToString("dd/MM/yyyy");
+                }
+                if (txtDenNgay.Text == "")
+                {
+                    txtDenNgay.Text = DateTime.Now.ToString("dd/MM/yyyy");
+                }
+                param[0] = new SqlParameter("@Chuong", int.Parse(ddlChuong.SelectedValue));
+                param[1] = new SqlParameter("@TuNgay", DateTime.Parse(txtTuNgay.Text, ci));
+                param[2] = new SqlParameter("@DenNgay", DateTime.Parse(txtDenNgay.Text, ci));
+                tieude += "<b>NHẬT KÝ CHĂN NUÔI CHUỒNG " + ddlChuong.SelectedItem.Text + " - TỪ NGÀY " + txtTuNgay.Text + "  ĐẾN NGÀY " + txtDenNgay.Text + "</b>";
+                DataTable dt = DotNetNuke.NewsProvider.DataProvider.SelectSP(strSQL, param);
+
+                string s = "<center style='font-weight:bold;font-size:15pt;'>" + tieude + "</center><br/>";
+                s += "<table id='thongke' class='stripe row-border order-column cell-border' cellspacing='0' width='100%'><thead>";
+                s += @"<tr><th rowspan=2>Ngày</th><th rowspan=2>Số cá đầu kỳ</th><th colspan='2'>Thức ăn</th><th rowspan=2>Thuốc</th><th colspan='5'>Biến động đàn</th></tr>
+                        <tr><th>Chủng loại</th><th>Số lượng</th>
+                        <th>Nhập mới</th><th>Chuyển chuồng</th><th>Chết</th><th>Giết mổ</th><th>Bán</th></tr></thead><tbody>";
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    DataRow r = dt.Rows[i];
+                    //string BST = "";
+                    //if (r["BST"].ToString() == "1") BST = "Có";
+                    s += "<tr><td>" + Convert.ToDateTime(r["ThoiDiem"]).ToString("dd/MM/yyyy") + "</td><td>" + r["SoCa"].ToString() + "</td><td>" + r["ThucAn"].ToString() + "</td><td>" + Config.ToXVal1(r["KhoiLuong"]) + "</td><td>" + r["BST"].ToString() + "</td><td>" + r["ChuyenDen"].ToString() + "</td><td>" + r["ChuyenDi"].ToString() + "</td><td>" + r["Chet"].ToString() + "</td><td>" + r["GietMo"].ToString() + "</td><td>" + r["Ban"].ToString() + "</td></tr>";
+                }
+                s += "</tbody></table>";
+                ltChuong.Text = s;
+                ltNgay.Text = "";
+                ltChuyenChuong.Text = "";
+            }
+            catch (Exception ex)
+            {
+                Response.Write(ex.Message);
+            }
+        }
+
+        protected void btnViewChuong_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                System.Globalization.CultureInfo ci = System.Globalization.CultureInfo.CreateSpecificCulture("vi-VN");
+                string tieude = "";
+                string strSQL = "QLCS_BCTK_NhatKy_Chuong";
+                SqlParameter[] param = new SqlParameter[3];
+                if (txtTuNgay.Text == "")
+                {
+                    txtTuNgay.Text = DateTime.Now.ToString("dd/MM/yyyy");
+                }
+                if (txtDenNgay.Text == "")
+                {
+                    txtDenNgay.Text = DateTime.Now.ToString("dd/MM/yyyy");
+                }
+                param[0] = new SqlParameter("@Chuong", int.Parse(ddlChuong.SelectedValue));
+                param[1] = new SqlParameter("@TuNgay", DateTime.Parse(txtTuNgay.Text, ci));
+                param[2] = new SqlParameter("@DenNgay", DateTime.Parse(txtDenNgay.Text, ci));
+                tieude += "<b>NHẬT KÝ CHĂN NUÔI CHUỒNG " + ddlChuong.SelectedItem.Text + " - TỪ NGÀY " + txtTuNgay.Text + "  ĐẾN NGÀY " + txtDenNgay.Text + "</b>";
+                DataTable dt = DotNetNuke.NewsProvider.DataProvider.SelectSP(strSQL, param);
+                StringBuilder sb = new StringBuilder();
+                sb.Append("<center style='font-weight:bold;font-size:15pt;'>" + tieude + "</center><br/>");
+                sb.Append("<table id='thongke' class='stripe row-border order-column cell-border' cellspacing='0' width='100%'><thead>");
+                sb.Append(@"<tr><th rowspan=2 align='center'>Ngày</th><th rowspan=2 align='center'>Số cá đầu kỳ</th><th rowspan='2' align='center'>Thức ăn</th><th rowspan=2 align='center'>Thuốc</th><th colspan='5' align='center'>Biến động đàn</th><th rowspan=2 align='center'>Ghi chú</th></tr>
+                        <tr><th align='center'>Nhập mới</th><th align='center'>Chuyển chuồng</th><th align='center'>Chết</th><th align='center'>Giết mổ</th><th align='center'>Bán</th></tr></thead><tbody>");
+                decimal TongThucAn = 0; decimal TongBST = 0; int TongChuyenDen = 0; int TongChuyenDi = 0; int TongChet = 0; int TongGietMo = 0; int TongBan = 0;
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    DataRow r = dt.Rows[i];
+                    sb.Append("<tr><td align='center'>" + Convert.ToDateTime(r["ThoiDiem"]).ToString("dd/MM/yyyy") + "</td><td align='right'>" + r["SoCa"].ToString() + "</td><td align='left'>" + r["ThucAn"].ToString() + "</td><td align='left'>" + r["BST"].ToString() + "</td><td align='right'>" + r["ChuyenDen"].ToString() + "</td><td align='right'>" + r["ChuyenDi"].ToString() + "</td><td align='right'>" + r["Chet"].ToString() + "</td><td align='right'>" + r["GietMo"].ToString() + "</td><td align='right'>" + r["Ban"].ToString() + "</td><td align='left'>" + r["Note"].ToString());
+                    if (r["LyDoChet"].ToString() != "") sb.Append(" (Chết: " + r["LyDoChet"].ToString() + ")");
+                    sb.Append("</td></tr>");
+                    TongThucAn += r["TongThucAn"] != DBNull.Value?Convert.ToDecimal(r["TongThucAn"]):0;
+                    TongBST += r["TongBST"] != DBNull.Value? Convert.ToDecimal(r["TongBST"]):0;
+                    TongChuyenDen += r["ChuyenDen"] != DBNull.Value? Convert.ToInt32(r["ChuyenDen"]):0;
+                    TongChuyenDi += r["ChuyenDi"] != DBNull.Value ? Convert.ToInt32(r["ChuyenDi"]) : 0;
+                    TongChet += r["Chet"] != DBNull.Value ? Convert.ToInt32(r["Chet"]) : 0;
+                    TongGietMo += r["GietMo"] != DBNull.Value ? Convert.ToInt32(r["GietMo"]) : 0;
+                    TongBan += r["Ban"] != DBNull.Value ? Convert.ToInt32(r["Ban"]) : 0;
+                }
+                sb.Append("<tr><td align='left'></td><td align='left'>Tổng cộng</td><td align='right'>" + Config.ToXVal2(TongThucAn, 1) + "</td><td align='right'>" + Config.ToXVal2(TongBST, 1) + "</td><td align='right'>" + Config.ToXVal2(TongChuyenDen, 0) + "</td><td align='right'>" + Config.ToXVal2(TongChuyenDi, 0) + "</td><td align='right'>" + Config.ToXVal2(TongChet, 0) + "</td><td align='right'>" + Config.ToXVal2(TongGietMo, 0) + "</td><td align='right'>" + Config.ToXVal2(TongBan, 0) + "</td><td align='left'></td></tr>");
+                sb.Append("</tbody></table>");
+                ltChuong.Text = sb.ToString();
+                ltLoaiCa.Text = "";
+                ltNgay.Text = "";
+                ltChuyenChuong.Text = "";
+            }
+            catch (Exception ex)
+            {
+                Response.Write(ex.Message);
+            }
+        }
+
+        protected void btnViewChuyenChuong_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                System.Globalization.CultureInfo ci = System.Globalization.CultureInfo.CreateSpecificCulture("vi-VN");
+                string tieude = "";
+                string strSQL = "QLCS_BCTK_NhatKy_Chuong_ChuyenChuong";
+                SqlParameter[] param = new SqlParameter[3];
+                if (txtTuNgay1.Text == "")
+                {
+                    txtTuNgay1.Text = DateTime.Now.ToString("dd/MM/yyyy");
+                }
+                if (txtDenNgay1.Text == "")
+                {
+                    txtDenNgay1.Text = DateTime.Now.ToString("dd/MM/yyyy");
+                }
+                param[0] = new SqlParameter("@Chuong", int.Parse(ddlChuong1.SelectedValue));
+                param[1] = new SqlParameter("@TuNgay", DateTime.Parse(txtTuNgay1.Text, ci));
+                param[2] = new SqlParameter("@DenNgay", DateTime.Parse(txtDenNgay1.Text, ci));
+                tieude += "<b>NHẬT KÝ CHUYỂN CHUỒNG " + ddlChuong1.SelectedItem.Text + " - TỪ NGÀY " + txtTuNgay1.Text + "  ĐẾN NGÀY " + txtDenNgay1.Text + "</b>";
+                DataTable dt = DotNetNuke.NewsProvider.DataProvider.SelectSP(strSQL, param);
+                StringBuilder sb = new StringBuilder();
+                sb.Append("<center style='font-weight:bold;font-size:15pt;'>" + tieude + "</center><br/>");
+                sb.Append("<table id='thongke' class='stripe row-border order-column cell-border' cellspacing='0' width='100%'><thead>");
+                sb.Append(@"<tr><th align='center'>Ngày</th><th align='center'>Đầu kỳ</th><th align='center'>Chuyển đến</th><th align='center'>Chuyển đi</th><th align='center'>Chết</th><th align='center'>Giết mổ</th><th align='center'>Bán</th><th align='center'>Cuối kỳ</th></tr></thead><tbody>");
+                int TongChuyenDen = 0; int TongChuyenDi = 0; int TongChet = 0; int TongGietMo = 0; int TongBan = 0;
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    DataRow r = dt.Rows[i];
+                    int dk = r["SoCa"] != DBNull.Value? Convert.ToInt32(r["SoCa"]):0;
+                    int cde = r["ChuyenDen"] != DBNull.Value? Convert.ToInt32(r["ChuyenDen"]):0;
+                    int cdi = r["ChuyenDi"] != DBNull.Value ? Convert.ToInt32(r["ChuyenDi"]) : 0;
+                    int ch = r["Chet"] != DBNull.Value ? Convert.ToInt32(r["Chet"]) : 0;
+                    int gm = r["GietMo"] != DBNull.Value ? Convert.ToInt32(r["GietMo"]) : 0;
+                    int bn = r["Ban"] != DBNull.Value ? Convert.ToInt32(r["Ban"]) : 0;
+                    if (cde + cdi + ch + gm + bn > 0)
+                    {
+                        int ck = dk + cde - cdi - ch - gm - bn;
+                        sb.Append("<tr><td align='center'>" + Convert.ToDateTime(r["ThoiDiem"]).ToString("dd/MM/yyyy") + "</td><td align='right'>" + r["SoCa"].ToString() + "</td><td align='left'>" + r["ChuyenDen"].ToString() + HttpUtility.HtmlDecode(r["ChuyenDenChiTiet"].ToString()) + "</td><td align='left'>" + r["ChuyenDi"].ToString() + "<br/>" + HttpUtility.HtmlDecode(r["ChuyenDiChiTiet"].ToString()) + "</td><td align='right'>" + r["Chet"].ToString() + "</td><td align='right'>" + r["GietMo"].ToString() + "</td><td align='right'>" + r["Ban"].ToString() + "</td><td align='right'>" + ck.ToString() + "</td></tr>");
+                        TongChuyenDen += cde;
+                        TongChuyenDi += cdi;
+                        TongChet += ch;
+                        TongGietMo += gm;
+                        TongBan += bn;
+                    }
+                }
+                sb.Append("<tr><td align='left'></td><td align='left'>Tổng cộng</td><td align='right'>" + Config.ToXVal2(TongChuyenDen, 0) + "</td><td align='right'>" + Config.ToXVal2(TongChuyenDi, 0) + "</td><td align='right'>" + Config.ToXVal2(TongChet, 0) + "</td><td align='right'>" + Config.ToXVal2(TongGietMo, 0) + "</td><td align='right'>" + Config.ToXVal2(TongBan, 0) + "</td><td align='left'></td></tr>");
+                sb.Append("</tbody></table>");
+                ltChuong.Text = "";
+                ltLoaiCa.Text = "";
+                ltNgay.Text = "";
+                ltChuyenChuong.Text = sb.ToString();
+            }
+            catch (Exception ex)
+            {
+                Response.Write(ex.Message);
+            }
+        }
+    }
+}

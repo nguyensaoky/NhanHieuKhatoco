@@ -1,0 +1,1 @@
+<%@ Control Language="C#" AutoEventWireup="true" CodeFile="comment_delete.ascx.cs" Inherits="DotNetNuke.News.comment_delete" %>

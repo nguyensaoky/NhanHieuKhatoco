@@ -1,0 +1,33 @@
+<dotnetnuke version="3.0" type="Module">
+  <folders>
+    <folder>
+      <name>CS_QLKhayAp</name>
+      <friendlyname>CS_QLKhayAp</friendlyname>
+      <foldername>QLCS</foldername>
+      <modulename>CS_QLKhayAp</modulename>
+      <description>CS_QLKhayAp</description>
+      <version>01.00.00</version>
+      <businesscontrollerclass>
+      </businesscontrollerclass>
+      <modules>
+        <module>
+          <friendlyname>CS_QLKhayAp</friendlyname>
+          <cachetime>0</cachetime>
+          <controls>
+            <control>
+              <title>KhayAp Admin</title>
+              <src>DesktopModules/QLCS/khayap_admin.ascx</src>
+              <type>Edit</type>
+            </control>
+            <control>
+              <key>khayap_edit</key>
+              <title>KhayAp Edit</title>
+              <src>DesktopModules/QLCS/khayap_edit.ascx</src>
+              <type>Edit</type>
+            </control>
+          </controls>
+        </module>
+      </modules>
+    </folder>
+  </folders>
+</dotnetnuke>

@@ -1,0 +1,37 @@
+<%@ Control language="C#" Inherits="DotNetNuke.HTML.EditHtml" CodeFile="EditHtml.ascx.cs" AutoEventWireup="true"%>
+
+<%@ Register TagPrefix="dnn" TagName="TextEditor" Src="~/controls/TextEditor.ascx" %>
+<%@ Register TagPrefix="dnn" TagName="Label" Src="~/controls/LabelControl.ascx" %>
+
+<table cellspacing="2" cellpadding="2" summary="Edit HTML Design Table" border="0">
+    <tr valign="top">
+        <td>
+            <asp:Label ID="lblLanguage" runat="server" resourcekey="lblLanguage"></asp:Label>
+        </td>
+        <td align="left">
+            <asp:DropDownList ID="ddlLocale" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddlLocale_SelectedIndexChanged">
+            </asp:DropDownList></td>
+    </tr>
+    <tr valign="top">
+        <td colspan="2"><dnn:TextEditor id="teContent" runat="server" height="400" width="660"></dnn:texteditor></td>
+    </tr>
+    <tr height="10"><td></td></tr>
+    <tr>
+        <td class="SubHead" colspan="2"><dnn:Label id="plDesktopSummary" runat="server" controlname="txtDesktopSummary" suffix=":"></dnn:label></td>
+    </tr>
+    <tr>
+        <td colspan="2"><asp:textbox id="txtDesktopSummary" runat="server" textmode="multiline" rows="10" width="600px" columns="75" cssclass="NormalTextBox"></asp:textbox></td>
+    </tr>
+</table>
+<p>
+    <asp:linkbutton CssClass="CommandButton" id="cmdUpdateAndClose" OnClick="cmdUpdateAndClose_Click" resourcekey="cmdUpdateAndClose" runat="server" borderstyle="none" text="Update and close"></asp:linkbutton>&nbsp;
+    <asp:LinkButton ID="cmdUpdate" OnClick="cmdUpdate_Click" runat="server" BorderStyle="none" CssClass="CommandButton" resourcekey="cmdUpdate" Text="Update"></asp:LinkButton>&nbsp;
+    <asp:linkbutton CssClass="CommandButton" id="cmdCancel" OnClick="cmdCancel_Click" resourcekey="cmdCancel" runat="server" borderstyle="none" text="Cancel" causesvalidation="False"></asp:linkbutton>&nbsp;
+    <asp:linkbutton CssClass="CommandButton" id="cmdPreview" OnClick="cmdPreview_Click" resourcekey="cmdPreview" runat="server" borderstyle="none" text="Preview" causesvalidation="False"></asp:linkbutton>&nbsp;
+</p>
+<table cellspacing="0" cellpadding="0" width="600">
+    <tr valign="top">
+        <td><asp:Literal ID="lblPreview" runat="server"></asp:Literal></td>
+    </tr>
+</table>
+

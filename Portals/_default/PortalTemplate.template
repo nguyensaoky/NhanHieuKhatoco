@@ -1,0 +1,1452 @@
+<portal version="3.0">
+  <description>Portal Template</description>
+  <settings>
+    <banneradvertising>0</banneradvertising>
+    <defaultlanguage>vi-VN</defaultlanguage>
+    <footertext>Copyright 2009 by My Website</footertext>
+    <logofile />
+    <timezoneoffset>420</timezoneoffset>
+    <userregistration>2</userregistration>
+    <skinsrc>[G]Skins/DNN-Blue/Horizontal Menu - Full Width.ascx</skinsrc>
+    <skinsrcadmin>[G]Skins/DNN-Blue/Horizontal Menu - Full Width.ascx</skinsrcadmin>
+    <containersrc>[G]Containers/DNN-Blue/Text Header - White Background.ascx</containersrc>
+    <containersrcadmin>[G]Containers/DNN-Blue/Text Header - White Background.ascx</containersrcadmin>
+  </settings>
+  <profiledefinitions>
+    <profiledefinition>
+      <length>50</length>
+      <propertycategory>Name</propertycategory>
+      <propertyname>Prefix</propertyname>
+      <datatype>Text</datatype>
+    </profiledefinition>
+    <profiledefinition>
+      <length>50</length>
+      <propertycategory>Name</propertycategory>
+      <propertyname>FirstName</propertyname>
+      <datatype>Text</datatype>
+    </profiledefinition>
+    <profiledefinition>
+      <length>50</length>
+      <propertycategory>Name</propertycategory>
+      <propertyname>MiddleName</propertyname>
+      <datatype>Text</datatype>
+    </profiledefinition>
+    <profiledefinition>
+      <length>50</length>
+      <propertycategory>Name</propertycategory>
+      <propertyname>LastName</propertyname>
+      <datatype>Text</datatype>
+    </profiledefinition>
+    <profiledefinition>
+      <length>50</length>
+      <propertycategory>Name</propertycategory>
+      <propertyname>Suffix</propertyname>
+      <datatype>Text</datatype>
+    </profiledefinition>
+    <profiledefinition>
+      <length>50</length>
+      <propertycategory>Address</propertycategory>
+      <propertyname>Unit</propertyname>
+      <datatype>Text</datatype>
+    </profiledefinition>
+    <profiledefinition>
+      <length>50</length>
+      <propertycategory>Address</propertycategory>
+      <propertyname>Street</propertyname>
+      <datatype>Text</datatype>
+    </profiledefinition>
+    <profiledefinition>
+      <length>50</length>
+      <propertycategory>Address</propertycategory>
+      <propertyname>City</propertyname>
+      <datatype>Text</datatype>
+    </profiledefinition>
+    <profiledefinition>
+      <length>0</length>
+      <propertycategory>Address</propertycategory>
+      <propertyname>Region</propertyname>
+      <datatype>Region</datatype>
+    </profiledefinition>
+    <profiledefinition>
+      <length>0</length>
+      <propertycategory>Address</propertycategory>
+      <propertyname>Country</propertyname>
+      <datatype>Country</datatype>
+    </profiledefinition>
+    <profiledefinition>
+      <length>50</length>
+      <propertycategory>Address</propertycategory>
+      <propertyname>PostalCode</propertyname>
+      <datatype>Text</datatype>
+    </profiledefinition>
+    <profiledefinition>
+      <length>50</length>
+      <propertycategory>Contact Info</propertycategory>
+      <propertyname>Telephone</propertyname>
+      <datatype>Text</datatype>
+    </profiledefinition>
+    <profiledefinition>
+      <length>50</length>
+      <propertycategory>Contact Info</propertycategory>
+      <propertyname>Cell</propertyname>
+      <datatype>Text</datatype>
+    </profiledefinition>
+    <profiledefinition>
+      <length>50</length>
+      <propertycategory>Contact Info</propertycategory>
+      <propertyname>Fax</propertyname>
+      <datatype>Text</datatype>
+    </profiledefinition>
+    <profiledefinition>
+      <length>50</length>
+      <propertycategory>Contact Info</propertycategory>
+      <propertyname>Website</propertyname>
+      <datatype>Text</datatype>
+    </profiledefinition>
+    <profiledefinition>
+      <length>50</length>
+      <propertycategory>Contact Info</propertycategory>
+      <propertyname>IM</propertyname>
+      <datatype>Text</datatype>
+    </profiledefinition>
+    <profiledefinition>
+      <length>0</length>
+      <propertycategory>Preferences</propertycategory>
+      <propertyname>Biography</propertyname>
+      <datatype>RichText</datatype>
+    </profiledefinition>
+    <profiledefinition>
+      <length>0</length>
+      <propertycategory>Preferences</propertycategory>
+      <propertyname>TimeZone</propertyname>
+      <datatype>TimeZone</datatype>
+    </profiledefinition>
+    <profiledefinition>
+      <length>0</length>
+      <propertycategory>Preferences</propertycategory>
+      <propertyname>PreferredLocale</propertyname>
+      <datatype>Locale</datatype>
+    </profiledefinition>
+  </profiledefinitions>
+  <roles>
+    <role>
+      <rolename>Administrators</rolename>
+      <description>Portal Administration</description>
+      <billingfrequency />
+      <servicefee>-3.40282347E+38</servicefee>
+      <trialfrequency />
+      <trialperiod>-1</trialperiod>
+      <billingperiod>-1</billingperiod>
+      <trialfee>-3.40282347E+38</trialfee>
+      <ispublic>false</ispublic>
+      <autoassignment>false</autoassignment>
+      <rsvpcode />
+      <iconfile />
+      <roletype>adminrole</roletype>
+    </role>
+    <role>
+      <rolename>Registered Users</rolename>
+      <description>Registered Users</description>
+      <billingfrequency />
+      <servicefee>-3.40282347E+38</servicefee>
+      <trialfrequency />
+      <trialperiod>-1</trialperiod>
+      <billingperiod>-1</billingperiod>
+      <trialfee>-3.40282347E+38</trialfee>
+      <ispublic>false</ispublic>
+      <autoassignment>true</autoassignment>
+      <rsvpcode />
+      <iconfile />
+      <roletype>registeredrole</roletype>
+    </role>
+    <role>
+      <rolename>Subscribers</rolename>
+      <description>A public role for portal subscriptions</description>
+      <billingfrequency />
+      <servicefee>-3.40282347E+38</servicefee>
+      <trialfrequency />
+      <trialperiod>-1</trialperiod>
+      <billingperiod>-1</billingperiod>
+      <trialfee>-3.40282347E+38</trialfee>
+      <ispublic>true</ispublic>
+      <autoassignment>true</autoassignment>
+      <rsvpcode />
+      <iconfile />
+      <roletype>subscriberrole</roletype>
+    </role>
+  </roles>
+  <tabs>
+    <tab>
+      <name>TrangChu</name>
+      <visible>true</visible>
+      <iconfile />
+      <disabled>false</disabled>
+      <title>Trang chủ</title>
+      <description />
+      <keywords />
+      <url />
+      <skinsrc />
+      <containersrc />
+      <startdate>0001-01-01T00:00:00</startdate>
+      <enddate>0001-01-01T00:00:00</enddate>
+      <tabpermissions>
+        <permission>
+          <permissioncode>SYSTEM_TAB</permissioncode>
+          <permissionkey>VIEW</permissionkey>
+          <allowaccess>true</allowaccess>
+          <rolename>All Users</rolename>
+        </permission>
+        <permission>
+          <permissioncode>SYSTEM_TAB</permissioncode>
+          <permissionkey>VIEW</permissionkey>
+          <allowaccess>true</allowaccess>
+          <rolename>Administrators</rolename>
+        </permission>
+        <permission>
+          <permissioncode>SYSTEM_TAB</permissioncode>
+          <permissionkey>EDIT</permissionkey>
+          <allowaccess>true</allowaccess>
+          <rolename>Administrators</rolename>
+        </permission>
+      </tabpermissions>
+      <refreshinterval>-1</refreshinterval>
+      <pageheadtext />
+      <panes />
+    </tab>
+    <tab>
+      <name>KetQuaTimKiem</name>
+      <visible>false</visible>
+      <iconfile />
+      <disabled>false</disabled>
+      <title>Kết Quả Tìm Kiếm</title>
+      <description />
+      <keywords />
+      <url />
+      <skinsrc />
+      <containersrc />
+      <startdate>0001-01-01T00:00:00</startdate>
+      <enddate>0001-01-01T00:00:00</enddate>
+      <tabpermissions>
+        <permission>
+          <permissioncode>SYSTEM_TAB</permissioncode>
+          <permissionkey>VIEW</permissionkey>
+          <allowaccess>true</allowaccess>
+          <rolename>All Users</rolename>
+        </permission>
+        <permission>
+          <permissioncode>SYSTEM_TAB</permissioncode>
+          <permissionkey>VIEW</permissionkey>
+          <allowaccess>true</allowaccess>
+          <rolename>Administrators</rolename>
+        </permission>
+        <permission>
+          <permissioncode>SYSTEM_TAB</permissioncode>
+          <permissionkey>EDIT</permissionkey>
+          <allowaccess>true</allowaccess>
+          <rolename>Administrators</rolename>
+        </permission>
+      </tabpermissions>
+      <refreshinterval>-1</refreshinterval>
+      <pageheadtext />
+      <panes>
+        <pane>
+          <name>ContentPane</name>
+          <modules>
+            <module>
+              <moduleID>1386</moduleID>
+              <title>Search Results</title>
+              <cachetime>0</cachetime>
+              <alignment />
+              <color />
+              <border />
+              <iconfile />
+              <alltabs>false</alltabs>
+              <visibility>Maximized</visibility>
+              <header />
+              <footer />
+              <startdate>0001-01-01T00:00:00</startdate>
+              <enddate>0001-01-01T00:00:00</enddate>
+              <containersrc />
+              <displaytitle>true</displaytitle>
+              <displayprint>true</displayprint>
+              <displaysyndicate>false</displaysyndicate>
+              <inheritviewpermissions>true</inheritviewpermissions>
+              <modulepermissions />
+              <definition>Search Results</definition>
+              <moduledefinition>Search Results</moduledefinition>
+            </module>
+          </modules>
+        </pane>
+      </panes>
+    </tab>
+    <tab>
+      <name>DSTin</name>
+      <visible>false</visible>
+      <iconfile />
+      <disabled>false</disabled>
+      <title>Danh sách tin</title>
+      <description />
+      <keywords />
+      <url />
+      <skinsrc />
+      <containersrc />
+      <startdate>0001-01-01T00:00:00</startdate>
+      <enddate>0001-01-01T00:00:00</enddate>
+      <tabpermissions>
+        <permission>
+          <permissioncode>SYSTEM_TAB</permissioncode>
+          <permissionkey>VIEW</permissionkey>
+          <allowaccess>true</allowaccess>
+          <rolename>Administrators</rolename>
+        </permission>
+        <permission>
+          <permissioncode>SYSTEM_TAB</permissioncode>
+          <permissionkey>EDIT</permissionkey>
+          <allowaccess>true</allowaccess>
+          <rolename>Administrators</rolename>
+        </permission>
+        <permission>
+          <permissioncode>SYSTEM_TAB</permissioncode>
+          <permissionkey>VIEW</permissionkey>
+          <allowaccess>true</allowaccess>
+          <rolename>All Users</rolename>
+        </permission>
+      </tabpermissions>
+      <refreshinterval>-1</refreshinterval>
+      <pageheadtext />
+      <panes>
+        <pane>
+          <name>ContentPane</name>
+          <modules>
+            <module>
+              <moduleID>1387</moduleID>
+              <title>Danh sách tin</title>
+              <cachetime>0</cachetime>
+              <alignment>left</alignment>
+              <color />
+              <border />
+              <iconfile />
+              <alltabs>false</alltabs>
+              <visibility>Maximized</visibility>
+              <header />
+              <footer />
+              <startdate>0001-01-01T00:00:00</startdate>
+              <enddate>0001-01-01T00:00:00</enddate>
+              <containersrc />
+              <displaytitle>true</displaytitle>
+              <displayprint>true</displayprint>
+              <displaysyndicate>false</displaysyndicate>
+              <inheritviewpermissions>true</inheritviewpermissions>
+              <modulepermissions>
+                <permission>
+                  <permissioncode>SYSTEM_MODULE_DEFINITION</permissioncode>
+                  <permissionkey>VIEW</permissionkey>
+                  <allowaccess>true</allowaccess>
+                  <rolename>Administrators</rolename>
+                </permission>
+                <permission>
+                  <permissioncode>SYSTEM_MODULE_DEFINITION</permissioncode>
+                  <permissionkey>EDIT</permissionkey>
+                  <allowaccess>true</allowaccess>
+                  <rolename>Administrators</rolename>
+                </permission>
+              </modulepermissions>
+              <definition>CenIT-News News List</definition>
+              <moduledefinition>CenIT-News News List</moduledefinition>
+            </module>
+          </modules>
+        </pane>
+      </panes>
+    </tab>
+    <tab>
+      <name>CTTin</name>
+      <visible>false</visible>
+      <iconfile />
+      <disabled>false</disabled>
+      <title>Chi tiết tin</title>
+      <description />
+      <keywords />
+      <url />
+      <skinsrc />
+      <containersrc />
+      <startdate>0001-01-01T00:00:00</startdate>
+      <enddate>0001-01-01T00:00:00</enddate>
+      <tabpermissions>
+        <permission>
+          <permissioncode>SYSTEM_TAB</permissioncode>
+          <permissionkey>VIEW</permissionkey>
+          <allowaccess>true</allowaccess>
+          <rolename>Administrators</rolename>
+        </permission>
+        <permission>
+          <permissioncode>SYSTEM_TAB</permissioncode>
+          <permissionkey>EDIT</permissionkey>
+          <allowaccess>true</allowaccess>
+          <rolename>Administrators</rolename>
+        </permission>
+        <permission>
+          <permissioncode>SYSTEM_TAB</permissioncode>
+          <permissionkey>VIEW</permissionkey>
+          <allowaccess>true</allowaccess>
+          <rolename>All Users</rolename>
+        </permission>
+      </tabpermissions>
+      <refreshinterval>-1</refreshinterval>
+      <pageheadtext />
+      <panes>
+        <pane>
+          <name>ContentPane</name>
+          <modules>
+            <module>
+              <moduleID>1388</moduleID>
+              <title>Chi tiết tin</title>
+              <cachetime>0</cachetime>
+              <alignment>left</alignment>
+              <color />
+              <border />
+              <iconfile />
+              <alltabs>false</alltabs>
+              <visibility>Maximized</visibility>
+              <header />
+              <footer />
+              <startdate>0001-01-01T00:00:00</startdate>
+              <enddate>0001-01-01T00:00:00</enddate>
+              <containersrc />
+              <displaytitle>true</displaytitle>
+              <displayprint>true</displayprint>
+              <displaysyndicate>false</displaysyndicate>
+              <inheritviewpermissions>true</inheritviewpermissions>
+              <modulepermissions>
+                <permission>
+                  <permissioncode>SYSTEM_MODULE_DEFINITION</permissioncode>
+                  <permissionkey>VIEW</permissionkey>
+                  <allowaccess>true</allowaccess>
+                  <rolename>Administrators</rolename>
+                </permission>
+                <permission>
+                  <permissioncode>SYSTEM_MODULE_DEFINITION</permissioncode>
+                  <permissionkey>EDIT</permissionkey>
+                  <allowaccess>true</allowaccess>
+                  <rolename>Administrators</rolename>
+                </permission>
+              </modulepermissions>
+              <definition>CenIT-News Content</definition>
+              <moduledefinition>CenIT-News Content</moduledefinition>
+            </module>
+            <module>
+              <moduleID>1389</moduleID>
+              <title>Tin liên quan</title>
+              <cachetime>0</cachetime>
+              <alignment>left</alignment>
+              <color />
+              <border />
+              <iconfile />
+              <alltabs>false</alltabs>
+              <visibility>Maximized</visibility>
+              <header />
+              <footer />
+              <startdate>0001-01-01T00:00:00</startdate>
+              <enddate>0001-01-01T00:00:00</enddate>
+              <containersrc />
+              <displaytitle>true</displaytitle>
+              <displayprint>true</displayprint>
+              <displaysyndicate>false</displaysyndicate>
+              <inheritviewpermissions>true</inheritviewpermissions>
+              <modulepermissions>
+                <permission>
+                  <permissioncode>SYSTEM_MODULE_DEFINITION</permissioncode>
+                  <permissionkey>VIEW</permissionkey>
+                  <allowaccess>true</allowaccess>
+                  <rolename>Administrators</rolename>
+                </permission>
+                <permission>
+                  <permissioncode>SYSTEM_MODULE_DEFINITION</permissioncode>
+                  <permissionkey>EDIT</permissionkey>
+                  <allowaccess>true</allowaccess>
+                  <rolename>Administrators</rolename>
+                </permission>
+              </modulepermissions>
+              <definition>CenIT-News RelativeNews</definition>
+              <moduledefinition>CenIT-News RelativeNews</moduledefinition>
+            </module>
+          </modules>
+        </pane>
+      </panes>
+    </tab>
+    <tab>
+      <name>QLNoiDung</name>
+      <visible>true</visible>
+      <iconfile />
+      <disabled>false</disabled>
+      <title>QL nội dung</title>
+      <description />
+      <keywords />
+      <url />
+      <skinsrc />
+      <containersrc />
+      <startdate>0001-01-01T00:00:00</startdate>
+      <enddate>0001-01-01T00:00:00</enddate>
+      <tabpermissions>
+        <permission>
+          <permissioncode>SYSTEM_TAB</permissioncode>
+          <permissionkey>VIEW</permissionkey>
+          <allowaccess>true</allowaccess>
+          <rolename>Administrators</rolename>
+        </permission>
+        <permission>
+          <permissioncode>SYSTEM_TAB</permissioncode>
+          <permissionkey>EDIT</permissionkey>
+          <allowaccess>true</allowaccess>
+          <rolename>Administrators</rolename>
+        </permission>
+      </tabpermissions>
+      <refreshinterval>-1</refreshinterval>
+      <pageheadtext />
+      <panes />
+    </tab>
+    <tab>
+      <name>QLTinBai</name>
+      <visible>true</visible>
+      <iconfile />
+      <disabled>false</disabled>
+      <title>QL Tin bài</title>
+      <description />
+      <keywords />
+      <url />
+      <skinsrc />
+      <containersrc />
+      <startdate>0001-01-01T00:00:00</startdate>
+      <enddate>0001-01-01T00:00:00</enddate>
+      <tabpermissions>
+        <permission>
+          <permissioncode>SYSTEM_TAB</permissioncode>
+          <permissionkey>VIEW</permissionkey>
+          <allowaccess>true</allowaccess>
+          <rolename>Administrators</rolename>
+        </permission>
+        <permission>
+          <permissioncode>SYSTEM_TAB</permissioncode>
+          <permissionkey>EDIT</permissionkey>
+          <allowaccess>true</allowaccess>
+          <rolename>Administrators</rolename>
+        </permission>
+      </tabpermissions>
+      <refreshinterval>-1</refreshinterval>
+      <pageheadtext />
+      <parent>QLNoiDung</parent>
+      <panes>
+        <pane>
+          <name>ContentPane</name>
+          <modules>
+            <module>
+              <moduleID>1390</moduleID>
+              <title>Quản lý tin bài</title>
+              <cachetime>0</cachetime>
+              <alignment>left</alignment>
+              <color />
+              <border />
+              <iconfile />
+              <alltabs>false</alltabs>
+              <visibility>Maximized</visibility>
+              <header />
+              <footer />
+              <startdate>0001-01-01T00:00:00</startdate>
+              <enddate>0001-01-01T00:00:00</enddate>
+              <containersrc />
+              <displaytitle>true</displaytitle>
+              <displayprint>true</displayprint>
+              <displaysyndicate>false</displaysyndicate>
+              <inheritviewpermissions>true</inheritviewpermissions>
+              <modulepermissions>
+                <permission>
+                  <permissioncode>SYSTEM_MODULE_DEFINITION</permissioncode>
+                  <permissionkey>VIEW</permissionkey>
+                  <allowaccess>true</allowaccess>
+                  <rolename>Administrators</rolename>
+                </permission>
+                <permission>
+                  <permissioncode>SYSTEM_MODULE_DEFINITION</permissioncode>
+                  <permissionkey>EDIT</permissionkey>
+                  <allowaccess>true</allowaccess>
+                  <rolename>Administrators</rolename>
+                </permission>
+              </modulepermissions>
+              <definition>CenIT-News Admin</definition>
+              <moduledefinition>CenIT-News Admin</moduledefinition>
+            </module>
+          </modules>
+        </pane>
+      </panes>
+    </tab>
+    <tab>
+      <name>QLDNN</name>
+      <visible>true</visible>
+      <iconfile />
+      <disabled>false</disabled>
+      <title>QL Đa ngôn ngữ</title>
+      <description />
+      <keywords />
+      <url />
+      <skinsrc />
+      <containersrc />
+      <startdate>0001-01-01T00:00:00</startdate>
+      <enddate>0001-01-01T00:00:00</enddate>
+      <tabpermissions>
+        <permission>
+          <permissioncode>SYSTEM_TAB</permissioncode>
+          <permissionkey>VIEW</permissionkey>
+          <allowaccess>true</allowaccess>
+          <rolename>Administrators</rolename>
+        </permission>
+        <permission>
+          <permissioncode>SYSTEM_TAB</permissioncode>
+          <permissionkey>EDIT</permissionkey>
+          <allowaccess>true</allowaccess>
+          <rolename>Administrators</rolename>
+        </permission>
+      </tabpermissions>
+      <refreshinterval>-1</refreshinterval>
+      <pageheadtext />
+      <parent>QLNoiDung</parent>
+      <panes />
+    </tab>
+    <tab>
+      <name>QLTrangDNN</name>
+      <visible>true</visible>
+      <iconfile />
+      <disabled>false</disabled>
+      <title>Quản lý Trang Đa ngôn ngữ</title>
+      <description />
+      <keywords />
+      <url />
+      <skinsrc />
+      <containersrc />
+      <startdate>0001-01-01T00:00:00</startdate>
+      <enddate>0001-01-01T00:00:00</enddate>
+      <tabpermissions>
+        <permission>
+          <permissioncode>SYSTEM_TAB</permissioncode>
+          <permissionkey>VIEW</permissionkey>
+          <allowaccess>true</allowaccess>
+          <rolename>Administrators</rolename>
+        </permission>
+        <permission>
+          <permissioncode>SYSTEM_TAB</permissioncode>
+          <permissionkey>EDIT</permissionkey>
+          <allowaccess>true</allowaccess>
+          <rolename>Administrators</rolename>
+        </permission>
+      </tabpermissions>
+      <refreshinterval>-1</refreshinterval>
+      <pageheadtext />
+      <parent>QLNoiDung/QLDNN</parent>
+      <panes>
+        <pane>
+          <name>ContentPane</name>
+          <modules>
+            <module>
+              <moduleID>1391</moduleID>
+              <title>Quản lý trang đa ngôn ngữ</title>
+              <cachetime>0</cachetime>
+              <alignment>left</alignment>
+              <color />
+              <border />
+              <iconfile />
+              <alltabs>false</alltabs>
+              <visibility>Maximized</visibility>
+              <header />
+              <footer />
+              <startdate>0001-01-01T00:00:00</startdate>
+              <enddate>0001-01-01T00:00:00</enddate>
+              <containersrc />
+              <displaytitle>true</displaytitle>
+              <displayprint>true</displayprint>
+              <displaysyndicate>false</displaysyndicate>
+              <inheritviewpermissions>true</inheritviewpermissions>
+              <modulepermissions>
+                <permission>
+                  <permissioncode>SYSTEM_MODULE_DEFINITION</permissioncode>
+                  <permissionkey>VIEW</permissionkey>
+                  <allowaccess>true</allowaccess>
+                  <rolename>Administrators</rolename>
+                </permission>
+                <permission>
+                  <permissioncode>SYSTEM_MODULE_DEFINITION</permissioncode>
+                  <permissionkey>EDIT</permissionkey>
+                  <allowaccess>true</allowaccess>
+                  <rolename>Administrators</rolename>
+                </permission>
+              </modulepermissions>
+              <definition>CenIT-MLTab</definition>
+              <moduledefinition>CenIT-MLTab</moduledefinition>
+            </module>
+          </modules>
+        </pane>
+      </panes>
+    </tab>
+    <tab>
+      <name>QLTieuDeDNN</name>
+      <visible>true</visible>
+      <iconfile />
+      <disabled>false</disabled>
+      <title>QL Tiêu đề đa ngôn ngữ</title>
+      <description />
+      <keywords />
+      <url />
+      <skinsrc />
+      <containersrc />
+      <startdate>0001-01-01T00:00:00</startdate>
+      <enddate>0001-01-01T00:00:00</enddate>
+      <tabpermissions>
+        <permission>
+          <permissioncode>SYSTEM_TAB</permissioncode>
+          <permissionkey>VIEW</permissionkey>
+          <allowaccess>true</allowaccess>
+          <rolename>Administrators</rolename>
+        </permission>
+        <permission>
+          <permissioncode>SYSTEM_TAB</permissioncode>
+          <permissionkey>EDIT</permissionkey>
+          <allowaccess>true</allowaccess>
+          <rolename>Administrators</rolename>
+        </permission>
+      </tabpermissions>
+      <refreshinterval>-1</refreshinterval>
+      <pageheadtext />
+      <parent>QLNoiDung/QLDNN</parent>
+      <panes>
+        <pane>
+          <name>ContentPane</name>
+          <modules>
+            <module>
+              <moduleID>1392</moduleID>
+              <title>Quản lý tiêu đề đa ngôn ngữ</title>
+              <cachetime>0</cachetime>
+              <alignment>left</alignment>
+              <color />
+              <border />
+              <iconfile />
+              <alltabs>false</alltabs>
+              <visibility>Maximized</visibility>
+              <header />
+              <footer />
+              <startdate>0001-01-01T00:00:00</startdate>
+              <enddate>0001-01-01T00:00:00</enddate>
+              <containersrc />
+              <displaytitle>true</displaytitle>
+              <displayprint>true</displayprint>
+              <displaysyndicate>false</displaysyndicate>
+              <inheritviewpermissions>true</inheritviewpermissions>
+              <modulepermissions>
+                <permission>
+                  <permissioncode>SYSTEM_MODULE_DEFINITION</permissioncode>
+                  <permissionkey>VIEW</permissionkey>
+                  <allowaccess>true</allowaccess>
+                  <rolename>Administrators</rolename>
+                </permission>
+                <permission>
+                  <permissioncode>SYSTEM_MODULE_DEFINITION</permissioncode>
+                  <permissionkey>EDIT</permissionkey>
+                  <allowaccess>true</allowaccess>
+                  <rolename>Administrators</rolename>
+                </permission>
+              </modulepermissions>
+              <definition>CenIT-MLModuleTitle</definition>
+              <moduledefinition>CenIT-MLModuleTitle</moduledefinition>
+            </module>
+          </modules>
+        </pane>
+      </panes>
+    </tab>
+    <tab>
+      <name>QLTinBaiDNN</name>
+      <visible>true</visible>
+      <iconfile />
+      <disabled>false</disabled>
+      <title>QL Tin bài đa ngôn ngữ</title>
+      <description />
+      <keywords />
+      <url />
+      <skinsrc />
+      <containersrc />
+      <startdate>0001-01-01T00:00:00</startdate>
+      <enddate>0001-01-01T00:00:00</enddate>
+      <tabpermissions>
+        <permission>
+          <permissioncode>SYSTEM_TAB</permissioncode>
+          <permissionkey>VIEW</permissionkey>
+          <allowaccess>true</allowaccess>
+          <rolename>Administrators</rolename>
+        </permission>
+        <permission>
+          <permissioncode>SYSTEM_TAB</permissioncode>
+          <permissionkey>EDIT</permissionkey>
+          <allowaccess>true</allowaccess>
+          <rolename>Administrators</rolename>
+        </permission>
+      </tabpermissions>
+      <refreshinterval>-1</refreshinterval>
+      <pageheadtext />
+      <parent>QLNoiDung/QLDNN</parent>
+      <panes>
+        <pane>
+          <name>ContentPane</name>
+          <modules>
+            <module>
+              <moduleID>1393</moduleID>
+              <title>Quản lý tin bài đa ngôn ngữ</title>
+              <cachetime>0</cachetime>
+              <alignment>left</alignment>
+              <color />
+              <border />
+              <iconfile />
+              <alltabs>false</alltabs>
+              <visibility>Maximized</visibility>
+              <header />
+              <footer />
+              <startdate>0001-01-01T00:00:00</startdate>
+              <enddate>0001-01-01T00:00:00</enddate>
+              <containersrc />
+              <displaytitle>true</displaytitle>
+              <displayprint>true</displayprint>
+              <displaysyndicate>false</displaysyndicate>
+              <inheritviewpermissions>true</inheritviewpermissions>
+              <modulepermissions>
+                <permission>
+                  <permissioncode>SYSTEM_MODULE_DEFINITION</permissioncode>
+                  <permissionkey>VIEW</permissionkey>
+                  <allowaccess>true</allowaccess>
+                  <rolename>Administrators</rolename>
+                </permission>
+                <permission>
+                  <permissioncode>SYSTEM_MODULE_DEFINITION</permissioncode>
+                  <permissionkey>EDIT</permissionkey>
+                  <allowaccess>true</allowaccess>
+                  <rolename>Administrators</rolename>
+                </permission>
+              </modulepermissions>
+              <definition>CenIT-News MLNews</definition>
+              <moduledefinition>CenIT-News MLNews</moduledefinition>
+            </module>
+          </modules>
+        </pane>
+      </panes>
+    </tab>
+    <tab>
+      <name>QLChuyenMucDNN</name>
+      <visible>true</visible>
+      <iconfile />
+      <disabled>false</disabled>
+      <title>QL Chuyên mục đa ngôn ngữ</title>
+      <description />
+      <keywords />
+      <url />
+      <skinsrc />
+      <containersrc />
+      <startdate>0001-01-01T00:00:00</startdate>
+      <enddate>0001-01-01T00:00:00</enddate>
+      <tabpermissions>
+        <permission>
+          <permissioncode>SYSTEM_TAB</permissioncode>
+          <permissionkey>VIEW</permissionkey>
+          <allowaccess>true</allowaccess>
+          <rolename>Administrators</rolename>
+        </permission>
+        <permission>
+          <permissioncode>SYSTEM_TAB</permissioncode>
+          <permissionkey>EDIT</permissionkey>
+          <allowaccess>true</allowaccess>
+          <rolename>Administrators</rolename>
+        </permission>
+      </tabpermissions>
+      <refreshinterval>-1</refreshinterval>
+      <pageheadtext />
+      <parent>QLNoiDung/QLDNN</parent>
+      <panes>
+        <pane>
+          <name>ContentPane</name>
+          <modules>
+            <module>
+              <moduleID>1394</moduleID>
+              <title>Quản lý chuyên mục đa ngôn ngữ</title>
+              <cachetime>0</cachetime>
+              <alignment>left</alignment>
+              <color />
+              <border />
+              <iconfile />
+              <alltabs>false</alltabs>
+              <visibility>Maximized</visibility>
+              <header />
+              <footer />
+              <startdate>0001-01-01T00:00:00</startdate>
+              <enddate>0001-01-01T00:00:00</enddate>
+              <containersrc />
+              <displaytitle>true</displaytitle>
+              <displayprint>true</displayprint>
+              <displaysyndicate>false</displaysyndicate>
+              <inheritviewpermissions>true</inheritviewpermissions>
+              <modulepermissions>
+                <permission>
+                  <permissioncode>SYSTEM_MODULE_DEFINITION</permissioncode>
+                  <permissionkey>VIEW</permissionkey>
+                  <allowaccess>true</allowaccess>
+                  <rolename>Administrators</rolename>
+                </permission>
+                <permission>
+                  <permissioncode>SYSTEM_MODULE_DEFINITION</permissioncode>
+                  <permissionkey>EDIT</permissionkey>
+                  <allowaccess>true</allowaccess>
+                  <rolename>Administrators</rolename>
+                </permission>
+              </modulepermissions>
+              <definition>CenIT-News MLCat</definition>
+              <moduledefinition>CenIT-News MLCat</moduledefinition>
+            </module>
+          </modules>
+        </pane>
+      </panes>
+    </tab>
+    <tab>
+      <name>QLNhomTinDNN</name>
+      <visible>true</visible>
+      <iconfile />
+      <disabled>false</disabled>
+      <title>QL Nhóm tin đa ngôn ngữ</title>
+      <description />
+      <keywords />
+      <url />
+      <skinsrc />
+      <containersrc />
+      <startdate>0001-01-01T00:00:00</startdate>
+      <enddate>0001-01-01T00:00:00</enddate>
+      <tabpermissions>
+        <permission>
+          <permissioncode>SYSTEM_TAB</permissioncode>
+          <permissionkey>VIEW</permissionkey>
+          <allowaccess>true</allowaccess>
+          <rolename>Administrators</rolename>
+        </permission>
+        <permission>
+          <permissioncode>SYSTEM_TAB</permissioncode>
+          <permissionkey>EDIT</permissionkey>
+          <allowaccess>true</allowaccess>
+          <rolename>Administrators</rolename>
+        </permission>
+      </tabpermissions>
+      <refreshinterval>-1</refreshinterval>
+      <pageheadtext />
+      <parent>QLNoiDung/QLDNN</parent>
+      <panes>
+        <pane>
+          <name>ContentPane</name>
+          <modules>
+            <module>
+              <moduleID>1395</moduleID>
+              <title>Quản lý nhóm tin đa ngôn ngữ</title>
+              <cachetime>0</cachetime>
+              <alignment>left</alignment>
+              <color />
+              <border />
+              <iconfile />
+              <alltabs>false</alltabs>
+              <visibility>Maximized</visibility>
+              <header />
+              <footer />
+              <startdate>0001-01-01T00:00:00</startdate>
+              <enddate>0001-01-01T00:00:00</enddate>
+              <containersrc />
+              <displaytitle>true</displaytitle>
+              <displayprint>true</displayprint>
+              <displaysyndicate>false</displaysyndicate>
+              <inheritviewpermissions>true</inheritviewpermissions>
+              <modulepermissions>
+                <permission>
+                  <permissioncode>SYSTEM_MODULE_DEFINITION</permissioncode>
+                  <permissionkey>VIEW</permissionkey>
+                  <allowaccess>true</allowaccess>
+                  <rolename>Administrators</rolename>
+                </permission>
+                <permission>
+                  <permissioncode>SYSTEM_MODULE_DEFINITION</permissioncode>
+                  <permissionkey>EDIT</permissionkey>
+                  <allowaccess>true</allowaccess>
+                  <rolename>Administrators</rolename>
+                </permission>
+              </modulepermissions>
+              <definition>CenIT-News MLGroup</definition>
+              <moduledefinition>CenIT-News MLGroup</moduledefinition>
+            </module>
+          </modules>
+        </pane>
+      </panes>
+    </tab>
+    <tab>
+      <name>DangNhap</name>
+      <visible>false</visible>
+      <iconfile />
+      <disabled>false</disabled>
+      <title>Đăng nhập</title>
+      <description />
+      <keywords />
+      <url />
+      <skinsrc />
+      <containersrc />
+      <startdate>0001-01-01T00:00:00</startdate>
+      <enddate>0001-01-01T00:00:00</enddate>
+      <tabpermissions>
+        <permission>
+          <permissioncode>SYSTEM_TAB</permissioncode>
+          <permissionkey>VIEW</permissionkey>
+          <allowaccess>true</allowaccess>
+          <rolename>Administrators</rolename>
+        </permission>
+        <permission>
+          <permissioncode>SYSTEM_TAB</permissioncode>
+          <permissionkey>EDIT</permissionkey>
+          <allowaccess>true</allowaccess>
+          <rolename>Administrators</rolename>
+        </permission>
+        <permission>
+          <permissioncode>SYSTEM_TAB</permissioncode>
+          <permissionkey>VIEW</permissionkey>
+          <allowaccess>true</allowaccess>
+          <rolename>All Users</rolename>
+        </permission>
+      </tabpermissions>
+      <refreshinterval>-1</refreshinterval>
+      <pageheadtext />
+      <tabtype>logintab</tabtype>
+      <panes>
+        <pane>
+          <name>ContentPane</name>
+          <modules>
+            <module>
+              <moduleID>1411</moduleID>
+              <title>Đăng nhập</title>
+              <cachetime>0</cachetime>
+              <alignment>center</alignment>
+              <color />
+              <border />
+              <iconfile />
+              <alltabs>false</alltabs>
+              <visibility>Maximized</visibility>
+              <header />
+              <footer />
+              <startdate>0001-01-01T00:00:00</startdate>
+              <enddate>0001-01-01T00:00:00</enddate>
+              <containersrc />
+              <displaytitle>true</displaytitle>
+              <displayprint>true</displayprint>
+              <displaysyndicate>false</displaysyndicate>
+              <inheritviewpermissions>true</inheritviewpermissions>
+              <modulepermissions>
+                <permission>
+                  <permissioncode>SYSTEM_MODULE_DEFINITION</permissioncode>
+                  <permissionkey>VIEW</permissionkey>
+                  <allowaccess>true</allowaccess>
+                  <rolename>Administrators</rolename>
+                </permission>
+                <permission>
+                  <permissioncode>SYSTEM_MODULE_DEFINITION</permissioncode>
+                  <permissionkey>EDIT</permissionkey>
+                  <allowaccess>true</allowaccess>
+                  <rolename>Administrators</rolename>
+                </permission>
+              </modulepermissions>
+              <definition>Account Login</definition>
+              <moduledefinition>Account Login</moduledefinition>
+            </module>
+          </modules>
+        </pane>
+      </panes>
+    </tab>
+  </tabs>
+  <folders>
+    <folder>
+      <folderpath />
+      <storagelocation>0</storagelocation>
+      <folderpermissions>
+        <permission>
+          <permissioncode>SYSTEM_FOLDER</permissioncode>
+          <permissionkey>READ</permissionkey>
+          <rolename>Administrators</rolename>
+          <allowaccess>true</allowaccess>
+        </permission>
+        <permission>
+          <permissioncode>SYSTEM_FOLDER</permissioncode>
+          <permissionkey>WRITE</permissionkey>
+          <rolename>Administrators</rolename>
+          <allowaccess>true</allowaccess>
+        </permission>
+        <permission>
+          <permissioncode>SYSTEM_FOLDER</permissioncode>
+          <permissionkey>READ</permissionkey>
+          <rolename>All Users</rolename>
+          <allowaccess>true</allowaccess>
+        </permission>
+      </folderpermissions>
+      <files>
+        <file>
+          <contenttype>application/octet-stream</contenttype>
+          <extension>css</extension>
+          <filename>portal.css</filename>
+          <height>0</height>
+          <size>2832</size>
+          <width>0</width>
+        </file>
+        <file>
+          <contenttype>application/octet-stream</contenttype>
+          <extension>db</extension>
+          <filename>Thumbs.db</filename>
+          <height>-1</height>
+          <size>91648</size>
+          <width>-1</width>
+        </file>
+      </files>
+    </folder>
+    <folder>
+      <folderpath>CounterImage/</folderpath>
+      <storagelocation>0</storagelocation>
+      <folderpermissions>
+        <permission>
+          <permissioncode>SYSTEM_FOLDER</permissioncode>
+          <permissionkey>READ</permissionkey>
+          <rolename>Administrators</rolename>
+          <allowaccess>true</allowaccess>
+        </permission>
+        <permission>
+          <permissioncode>SYSTEM_FOLDER</permissioncode>
+          <permissionkey>WRITE</permissionkey>
+          <rolename>Administrators</rolename>
+          <allowaccess>true</allowaccess>
+        </permission>
+        <permission>
+          <permissioncode>SYSTEM_FOLDER</permissioncode>
+          <permissionkey>READ</permissionkey>
+          <rolename>All Users</rolename>
+          <allowaccess>true</allowaccess>
+        </permission>
+      </folderpermissions>
+      <files>
+        <file>
+          <contenttype>image/gif</contenttype>
+          <extension>gif</extension>
+          <filename>57chevy.gif</filename>
+          <height>-1</height>
+          <size>2648</size>
+          <width>-1</width>
+        </file>
+        <file>
+          <contenttype>image/gif</contenttype>
+          <extension>gif</extension>
+          <filename>aliasw.gif</filename>
+          <height>-1</height>
+          <size>1075</size>
+          <width>-1</width>
+        </file>
+        <file>
+          <contenttype>image/gif</contenttype>
+          <extension>gif</extension>
+          <filename>mgold.gif</filename>
+          <height>-1</height>
+          <size>3542</size>
+          <width>-1</width>
+        </file>
+        <file>
+          <contenttype>image/gif</contenttype>
+          <extension>gif</extension>
+          <filename>mgreen.gif</filename>
+          <height>-1</height>
+          <size>806</size>
+          <width>-1</width>
+        </file>
+        <file>
+          <contenttype>image/gif</contenttype>
+          <extension>gif</extension>
+          <filename>modocr.gif</filename>
+          <height>-1</height>
+          <size>748</size>
+          <width>-1</width>
+        </file>
+        <file>
+          <contenttype>image/gif</contenttype>
+          <extension>gif</extension>
+          <filename>neuland.gif</filename>
+          <height>-1</height>
+          <size>942</size>
+          <width>-1</width>
+        </file>
+        <file>
+          <contenttype>image/gif</contenttype>
+          <extension>gif</extension>
+          <filename>nextgen.gif</filename>
+          <height>-1</height>
+          <size>778</size>
+          <width>-1</width>
+        </file>
+        <file>
+          <contenttype>image/gif</contenttype>
+          <extension>gif</extension>
+          <filename>o.gif</filename>
+          <height>-1</height>
+          <size>997</size>
+          <width>-1</width>
+        </file>
+        <file>
+          <contenttype>image/gif</contenttype>
+          <extension>gif</extension>
+          <filename>ocr.gif</filename>
+          <height>-1</height>
+          <size>629</size>
+          <width>-1</width>
+        </file>
+        <file>
+          <contenttype>image/gif</contenttype>
+          <extension>gif</extension>
+          <filename>pdy.gif</filename>
+          <height>-1</height>
+          <size>390</size>
+          <width>-1</width>
+        </file>
+        <file>
+          <contenttype>image/gif</contenttype>
+          <extension>gif</extension>
+          <filename>sgrey.gif</filename>
+          <height>-1</height>
+          <size>1695</size>
+          <width>-1</width>
+        </file>
+        <file>
+          <contenttype>application/octet-stream</contenttype>
+          <extension>db</extension>
+          <filename>Thumbs.db</filename>
+          <height>-1</height>
+          <size>6144</size>
+          <width>-1</width>
+        </file>
+      </files>
+    </folder>
+    <folder>
+      <folderpath>Images/</folderpath>
+      <storagelocation>0</storagelocation>
+      <folderpermissions>
+        <permission>
+          <permissioncode>SYSTEM_FOLDER</permissioncode>
+          <permissionkey>READ</permissionkey>
+          <rolename>Administrators</rolename>
+          <allowaccess>true</allowaccess>
+        </permission>
+        <permission>
+          <permissioncode>SYSTEM_FOLDER</permissioncode>
+          <permissionkey>WRITE</permissionkey>
+          <rolename>Administrators</rolename>
+          <allowaccess>true</allowaccess>
+        </permission>
+        <permission>
+          <permissioncode>SYSTEM_FOLDER</permissioncode>
+          <permissionkey>READ</permissionkey>
+          <rolename>All Users</rolename>
+          <allowaccess>true</allowaccess>
+        </permission>
+      </folderpermissions>
+      <files>
+        <file>
+          <contenttype>image/gif</contenttype>
+          <extension>gif</extension>
+          <filename>booking_en-US.gif</filename>
+          <height>-1</height>
+          <size>263</size>
+          <width>-1</width>
+        </file>
+        <file>
+          <contenttype>image/gif</contenttype>
+          <extension>gif</extension>
+          <filename>booking_vi-VN.gif</filename>
+          <height>-1</height>
+          <size>286</size>
+          <width>-1</width>
+        </file>
+        <file>
+          <contenttype>image/gif</contenttype>
+          <extension>gif</extension>
+          <filename>bullet.gif</filename>
+          <height>-1</height>
+          <size>57</size>
+          <width>-1</width>
+        </file>
+        <file>
+          <contenttype>image/gif</contenttype>
+          <extension>GIF</extension>
+          <filename>readmore_en-US.GIF</filename>
+          <height>-1</height>
+          <size>888</size>
+          <width>-1</width>
+        </file>
+        <file>
+          <contenttype>image/gif</contenttype>
+          <extension>GIF</extension>
+          <filename>readmore_vi-VN.GIF</filename>
+          <height>-1</height>
+          <size>888</size>
+          <width>-1</width>
+        </file>
+        <file>
+          <contenttype>image/gif</contenttype>
+          <extension>gif</extension>
+          <filename>search_ico.gif</filename>
+          <height>-1</height>
+          <size>1403</size>
+          <width>-1</width>
+        </file>
+        <file>
+          <contenttype>application/octet-stream</contenttype>
+          <extension>db</extension>
+          <filename>Thumbs.db</filename>
+          <height>-1</height>
+          <size>7680</size>
+          <width>-1</width>
+        </file>
+      </files>
+    </folder>
+    <folder>
+      <folderpath>MapIcon/</folderpath>
+      <storagelocation>0</storagelocation>
+      <folderpermissions>
+        <permission>
+          <permissioncode>SYSTEM_FOLDER</permissioncode>
+          <permissionkey>READ</permissionkey>
+          <rolename>Administrators</rolename>
+          <allowaccess>true</allowaccess>
+        </permission>
+        <permission>
+          <permissioncode>SYSTEM_FOLDER</permissioncode>
+          <permissionkey>WRITE</permissionkey>
+          <rolename>Administrators</rolename>
+          <allowaccess>true</allowaccess>
+        </permission>
+        <permission>
+          <permissioncode>SYSTEM_FOLDER</permissioncode>
+          <permissionkey>READ</permissionkey>
+          <rolename>All Users</rolename>
+          <allowaccess>true</allowaccess>
+        </permission>
+      </folderpermissions>
+      <files>
+        <file>
+          <contenttype>image/gif</contenttype>
+          <extension>gif</extension>
+          <filename>dnnanim.gif</filename>
+          <height>-1</height>
+          <size>3212</size>
+          <width>-1</width>
+        </file>
+        <file>
+          <contenttype>image/gif</contenttype>
+          <extension>gif</extension>
+          <filename>ratingzero.gif</filename>
+          <height>-1</height>
+          <size>368</size>
+          <width>-1</width>
+        </file>
+        <file>
+          <contenttype>application/octet-stream</contenttype>
+          <extension>db</extension>
+          <filename>Thumbs.db</filename>
+          <height>-1</height>
+          <size>7168</size>
+          <width>-1</width>
+        </file>
+      </files>
+    </folder>
+    <folder>
+      <folderpath>Xsl/</folderpath>
+      <storagelocation>0</storagelocation>
+      <folderpermissions>
+        <permission>
+          <permissioncode>SYSTEM_FOLDER</permissioncode>
+          <permissionkey>READ</permissionkey>
+          <rolename>Administrators</rolename>
+          <allowaccess>true</allowaccess>
+        </permission>
+        <permission>
+          <permissioncode>SYSTEM_FOLDER</permissioncode>
+          <permissionkey>WRITE</permissionkey>
+          <rolename>Administrators</rolename>
+          <allowaccess>true</allowaccess>
+        </permission>
+        <permission>
+          <permissioncode>SYSTEM_FOLDER</permissioncode>
+          <permissionkey>READ</permissionkey>
+          <rolename>All Users</rolename>
+          <allowaccess>true</allowaccess>
+        </permission>
+      </folderpermissions>
+      <files>
+        <file>
+          <contenttype>application/octet-stream</contenttype>
+          <extension>xsl</extension>
+          <filename>comment_list.xsl</filename>
+          <height>-1</height>
+          <size>1035</size>
+          <width>-1</width>
+        </file>
+        <file>
+          <contenttype>application/octet-stream</contenttype>
+          <extension>xsl</extension>
+          <filename>news_list_default.xsl</filename>
+          <height>-1</height>
+          <size>2001</size>
+          <width>-1</width>
+        </file>
+        <file>
+          <contenttype>application/octet-stream</contenttype>
+          <extension>xsl</extension>
+          <filename>news_list_firstshort.xsl</filename>
+          <height>-1</height>
+          <size>2486</size>
+          <width>-1</width>
+        </file>
+        <file>
+          <contenttype>application/octet-stream</contenttype>
+          <extension>xsl</extension>
+          <filename>news_list_floatleft.xsl</filename>
+          <height>-1</height>
+          <size>1859</size>
+          <width>-1</width>
+        </file>
+        <file>
+          <contenttype>application/octet-stream</contenttype>
+          <extension>xsl</extension>
+          <filename>news_list_horizontal.xsl</filename>
+          <height>-1</height>
+          <size>2620</size>
+          <width>-1</width>
+        </file>
+        <file>
+          <contenttype>application/octet-stream</contenttype>
+          <extension>xsl</extension>
+          <filename>news_list_onlyoneshort.xsl</filename>
+          <height>-1</height>
+          <size>1701</size>
+          <width>-1</width>
+        </file>
+        <file>
+          <contenttype>application/octet-stream</contenttype>
+          <extension>xsl</extension>
+          <filename>news_list_title.xsl</filename>
+          <height>-1</height>
+          <size>1092</size>
+          <width>-1</width>
+        </file>
+        <file>
+          <contenttype>application/octet-stream</contenttype>
+          <extension>xsl</extension>
+          <filename>news_relative.xsl</filename>
+          <height>-1</height>
+          <size>878</size>
+          <width>-1</width>
+        </file>
+      </files>
+    </folder>
+  </folders>
+</portal>

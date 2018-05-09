@@ -1,0 +1,27 @@
+<dotnetnuke version="3.0" type="Module">
+  <folders>
+    <folder>
+      <name>CS_RevertCaCon</name>
+      <friendlyname>CS_RevertCaCon</friendlyname>
+      <foldername>QLCS</foldername>
+      <modulename>CS_RevertCaCon</modulename>
+      <description>CS_RevertCaCon</description>
+      <version>01.00.00</version>
+      <businesscontrollerclass>
+      </businesscontrollerclass>
+      <modules>
+        <module>
+          <friendlyname>CS_RevertCaCon</friendlyname>
+          <cachetime>0</cachetime>
+          <controls>
+            <control>
+              <title>RevertCaCon</title>
+              <src>DesktopModules/QLCS/casau_revertcacon.ascx</src>
+              <type>Edit</type>
+            </control>
+          </controls>
+        </module>
+      </modules>
+    </folder>
+  </folders>
+</dotnetnuke>

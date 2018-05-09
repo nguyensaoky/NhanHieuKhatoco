@@ -1,0 +1,264 @@
+﻿using System;
+using System.Data;
+using System.Configuration;
+using System.Collections;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+using System.Xml;
+using System.Data.SqlClient;
+using System.Collections.Generic;
+
+namespace DotNetNuke.News
+{
+    public partial class news_admin : DotNetNuke.Entities.Modules.PortalModuleBase
+    {
+        string cat = "";
+        private int CountPage(int pagesize, string CatID, DateTime? fromDate, DateTime? toDate, string Search)
+        {
+            string strSQL = "News_countNewsByCatByDate_Admin";
+            SqlParameter[] para = new SqlParameter[5];
+            para[0] = new SqlParameter("@CatID", CatID);
+            //para[1] = new SqlParameter("@FromDate", fromDate == null ? (DateTime?)DBNull.Value : fromDate);
+            //para[2] = new SqlParameter("@ToDate", toDate == null ? (DateTime?)DBNull.Value : toDate);
+            if (fromDate == null)
+            {
+                para[1] = new SqlParameter("@FromDate", DBNull.Value);
+            }
+            else
+            {
+                para[1] = new SqlParameter("@FromDate", fromDate);
+            }
+            if (toDate == null)
+            {
+                para[2] = new SqlParameter("@ToDate", DBNull.Value);
+            }
+            else
+            {
+                para[2] = new SqlParameter("@ToDate", toDate);
+            }
+            para[3] = new SqlParameter("@PortalID", PortalId);
+            para[4] = new SqlParameter("@Search", Search);
+            object o = DotNetNuke.NewsProvider.DataProvider.ExecuteScalarSP(strSQL, para);
+            if (o != null)
+            {
+                int countrecord = Convert.ToInt32(o);
+                int pg = countrecord / pagesize;
+                if (pagesize * pg < countrecord) pg++;
+                return pg;
+            }
+            return 0;
+        }
+
+        private void BindCatDDL()
+        {
+            CategoryController catdb = new CategoryController();
+            DataTable dt;
+            if (DotNetNuke.Security.PortalSecurity.IsInRole("Administrators"))
+            {
+                dt = catdb.LoadTree(false, PortalId, "");
+            }
+            else
+            {
+                dt = catdb.LoadTree(false, UserId, PortalId, "");
+            }
+            DataRow catRow = dt.NewRow();
+            catRow["CatName"] = "";
+            catRow["CatID"] = "0";
+            dt.Rows.InsertAt(catRow, 0);
+            ddlCat.DataSource = dt;
+            ddlCat.DataTextField = "CatName";
+            ddlCat.DataValueField = "CatID";
+            ddlCat.DataBind();
+        }
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                lnkFromDate.NavigateUrl = DotNetNuke.Common.Utilities.Calendar.InvokePopupCal(txtFromDate);
+                lnkToDate.NavigateUrl = DotNetNuke.Common.Utilities.Calendar.InvokePopupCal(txtToDate);
+                if (!Page.IsPostBack)
+                {
+                    lnkBack.NavigateUrl = DotNetNuke.Common.Globals.NavigateURL(PortalSettings.ActiveTab.TabID, "", "mid/" + this.ModuleId.ToString());
+                    BindCatDDL();
+                    cat = "";
+                    if (Request.QueryString["cat"] != null)
+                        cat = Request.QueryString["cat"];
+                    if (Request.QueryString["fromdate"] != null)
+                        txtFromDate.Text = Request.QueryString["fromdate"].Replace("-","/").Remove(0,1);
+                    if (Request.QueryString["todate"] != null)
+                        txtToDate.Text = Request.QueryString["todate"].Replace("-", "/").Remove(0, 1);
+                    if (ddlCat.Items.Count > 0)
+                    {
+                        if (cat == "")
+                        {
+                            ddlCat.Items[0].Selected = true;
+                            cat = ddlCat.SelectedValue;
+                        }
+                        else
+                        {
+                            ddlCat.Text = cat;
+                        }
+                        if (Request.QueryString["pg"] != null)
+                        {
+                            LoadData();
+                        }
+                    }
+                    lnkAdd.NavigateUrl = DotNetNuke.Common.Globals.NavigateURL(PortalSettings.ActiveTab.TabID, "edit_news", "mid/" + this.ModuleId.ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                Response.Write(ex.Message);
+            }
+        }
+
+        private void LoadData()
+        {
+            int pg = 0;
+            if (ddlCat.SelectedValue == cat)
+            {
+                if (Request.QueryString["pg"] != null)
+                    pg = Convert.ToInt32(Request.QueryString["pg"]) - 1;
+            }
+            int pagesize;
+            try
+            {
+                pagesize = int.Parse(Settings["pageSizeAdmin"].ToString());
+            }
+            catch (System.Exception ex)
+            {
+                pagesize = 10;
+            }
+            int pages = CountPage(pagesize, ddlCat.SelectedValue, txtFromDate.Text == "" ? null : (DateTime?)(DateTime.Parse(txtFromDate.Text.Trim())), txtToDate.Text == "" ? null : (DateTime?)(DateTime.Parse(txtToDate.Text.Trim())), txtSearch.Text.Trim());
+            if (pages > 1)
+            {
+                string format = DotNetNuke.Common.Globals.NavigateURL(PortalSettings.ActiveTab.TabID, "admin_news", "mid/" + this.ModuleId.ToString(), "cat/" + ddlCat.SelectedValue, "pg/@@page", "fromdate/-" + txtFromDate.Text.Trim().Replace("/", "-"), "todate/-" + txtToDate.Text.Trim().Replace("/", "-"));
+                paging.Visible = true;
+                paging.showing(pages, pg, format);
+            }
+            else
+            {
+                paging.Visible = false;
+            }
+            NewsController engine = new NewsController();
+            string editFormatUrl = DotNetNuke.Common.Globals.NavigateURL(PortalSettings.ActiveTab.TabID, "edit_news", "mid/" + this.ModuleId.ToString(), "id/@@id", "cat/" + ddlCat.SelectedValue);
+            XmlDocument doc = engine.LoadAdminXMLByCatByDate(editFormatUrl, pg, pagesize, ddlCat.SelectedValue, PortalId, txtFromDate.Text == "" ? null : (DateTime?)(DateTime.Parse(txtFromDate.Text.Trim())), txtToDate.Text == "" ? null : (DateTime?)(DateTime.Parse(txtToDate.Text.Trim())), txtSearch.Text.Trim());
+            string template = "DesktopModules/MLNews/Xsl/news_admin.xsl";
+            DotNetNuke.NewsProvider.Utils.XMLTransform(xmlTransformer, template, doc);
+        }
+
+        protected void btnLoad_Click(object sender, EventArgs e)
+        {
+            LoadData();
+        }
+        protected void lnkExcel_Click(object sender, EventArgs e)
+        {
+            int b = 150000;
+            int c = 100000;
+            int anh = 30000;
+            int bcount = 0;
+            int ccount = 0;
+            int anhcount = 0;
+            string filename = "DSBaiViet";
+            string tieude = "";
+            string strSQL = "News_getShortNewsFullByCatByDate_ForExcel";
+            SqlParameter[] param = new SqlParameter[4];
+            param[0] = new SqlParameter("@CatID", ddlCat.SelectedValue);
+            if (txtFromDate.Text.Trim() == "")
+            {
+                param[1] = new SqlParameter("@FromDate", DBNull.Value);
+            }
+            else
+            {
+                param[1] = new SqlParameter("@FromDate", DateTime.Parse(txtFromDate.Text.Trim()));
+                filename += "_from" + DateTime.Parse(txtFromDate.Text.Trim()).ToString("dd_MM_yyyy");
+                tieude += " từ ngày " + DateTime.Parse(txtFromDate.Text.Trim()).ToString("dd/MM/yyyy");
+            }
+            if (txtToDate.Text.Trim() == "")
+            {
+                param[2] = new SqlParameter("@ToDate", DBNull.Value);
+            }
+            else
+            {
+                param[2] = new SqlParameter("@ToDate", DateTime.Parse(txtToDate.Text.Trim()));
+                filename += "_to" + DateTime.Parse(txtToDate.Text.Trim()).ToString("dd_MM_yyyy");
+                tieude += " đến ngày " + DateTime.Parse(txtToDate.Text.Trim()).ToString("dd/MM/yyyy");
+            }
+            filename += ".xls";
+            param[3] = new SqlParameter("@PortalID", PortalId);
+            DataTable dt = DotNetNuke.NewsProvider.DataProvider.SelectSP(strSQL, param);
+
+            Response.ClearContent();
+            Response.ClearHeaders();
+            Response.AppendHeader("Content-Disposition", "attachment; filename=" + filename);
+            Response.ContentType = "application/vnd.ms-excel";
+            string s = "<html><head><meta http-equiv='Content-Type' content='text/html; charset=utf-8'/></head><body style='text-align:center;font-family:Times New Roman;'>";
+            s += "<table border=0 cellpadding=0 cellspacing=0 style='border-collapse:collapse;'>";
+            s += "<tr><td colspan='10'><br/></td></tr>";
+            s += "<tr><td colspan='10' align='center'><b>Danh sách bài viết đăng trên website" + tieude + "</b></td></tr>";
+            s += @"<tr style='font-weight:bold; vertical-align:middle;text-align:center;'>
+                        <td style='border:solid 0.5pt #000;'>STT</td>
+                        <td style='border:solid 0.5pt #000;'>Bài viết</td>
+                        <td style='border:solid 0.5pt #000;'>Người viết</td>
+                        <td style='border:solid 0.5pt #000;'>Đơn vị</td>
+                        <td style='border:solid 0.5pt #000;'>Ngày</td>
+                        <td style='border:solid 0.5pt #000;'>B</td>
+                        <td style='border:solid 0.5pt #000;'>C</td>
+                        <td style='border:solid 0.5pt #000;'>Ảnh</td>
+                        <td style='border:solid 0.5pt #000;'>T.tiền</td>
+                        <td style='border:solid 0.5pt #000;'>Ký nhận</td></tr>";
+            //foreach (DataRow r in dt.Rows)
+            //{
+            //    s += "<tr><td align='left'>" + r["Headline"].ToString() + "</td><td align='right'>" + DateTime.Parse(r["CreatedDate"].ToString()).ToString("dd/MM/yyyy") + "</td></tr>";
+            //}
+            for (int i = 1; i <= dt.Rows.Count; i++)
+            {
+                DataRow r = dt.Rows[i - 1];
+                s += "<tr style='vertical-align:middle;text-align:center;'>";
+                s += "<td style='border:solid 0.5pt #000;border-top:none;'>" + i.ToString() + "</td>";
+                s += "<td style='border:solid 0.5pt #000;border-top:none;text-align:justify;width:500px;'>" + r["Headline"].ToString() + "</td>";
+                s += "<td style='border:solid 0.5pt #000;border-top:none;'>" + r["Writer"].ToString() + "</td>";
+                s += "<td style='border:solid 0.5pt #000;border-top:none;'>" + r["DonVi"].ToString() + "</td>";
+                s += "<td style='border:solid 0.5pt #000;border-top:none;'>" + DateTime.Parse(r["CreatedDate"].ToString()).ToString("dd/MM/yyyy") + "</td>";
+                bool fromOuter = false;
+                if (r["FromOuter"] != DBNull.Value) fromOuter = Convert.ToBoolean(r["FromOuter"]);
+                if (fromOuter)
+                {
+                    s += "<td style='border:solid 0.5pt #000;border-top:none;'></td><td style='border:solid 0.5pt #000;border-top:none;'>x</td><td style='border:solid 0.5pt #000;border-top:none;'></td><td style='border:solid 0.5pt #000;border-top:none;'>100000</td><td style='border:solid 0.5pt #000;border-top:none;'></td></tr>";
+                    ccount++;
+                }
+                else
+                {
+                    s += "<td style='border:solid 0.5pt #000;border-top:none;'>x</td><td style='border:solid 0.5pt #000;border-top:none;'></td>";
+                    bcount++;
+                    if (r["ImageUrl"].ToString() == "") s += "<td style='border:solid 0.5pt #000;border-top:none;'></td><td style='border:solid 0.5pt #000;border-top:none;'>150000</td><td style='border:solid 0.5pt #000;border-top:none;'></td></tr>";
+                    else
+                    {
+                        s += "<td style='border:solid 0.5pt #000;border-top:none;'>x</td><td style='border:solid 0.5pt #000;border-top:none;'>180000</td><td style='border:solid 0.5pt #000;border-top:none;'></td></tr>";
+                        anhcount++;
+                    }
+                }
+            }
+            int btong = b * bcount;
+            int ctong = c * ccount;
+            int anhtong = anh * anhcount;
+            int tong = btong + ctong + anhtong;
+            s += "<tr style='vertical-align:middle;text-align:center;'><td style='border:solid 0.5pt #000;border-top:none;'></td><td style='border:solid 0.5pt #000;border-top:none;'></td><td style='border:solid 0.5pt #000;border-top:none;'></td><td style='border:solid 0.5pt #000;border-top:none;'>Số lượng</td><td style='border:solid 0.5pt #000;border-top:none;'></td><td style='border:solid 0.5pt #000;border-top:none;'>" + bcount.ToString() + "</td><td style='border:solid 0.5pt #000;border-top:none;'>" + ccount.ToString() + "</td><td style='border:solid 0.5pt #000;border-top:none;'>" + anhcount.ToString() + "</td><td style='border:solid 0.5pt #000;border-top:none;'></td><td style='border:solid 0.5pt #000;border-top:none;'></td></tr>";
+            s += "<tr style='vertical-align:middle;text-align:center;'><td style='border:solid 0.5pt #000;border-top:none;'></td><td style='border:solid 0.5pt #000;border-top:none;'></td><td style='border:solid 0.5pt #000;border-top:none;'></td><td style='border:solid 0.5pt #000;border-top:none;'>Đơn giá</td><td style='border:solid 0.5pt #000;border-top:none;'></td><td style='border:solid 0.5pt #000;border-top:none;'>" + b.ToString() + "</td><td style='border:solid 0.5pt #000;border-top:none;'>" + c.ToString() + "</td><td style='border:solid 0.5pt #000;border-top:none;'>" + anh.ToString() + "</td><td style='border:solid 0.5pt #000;border-top:none;'></td><td style='border:solid 0.5pt #000;border-top:none;'></td></tr>";
+            s += "<tr style='vertical-align:middle;text-align:center;'><td style='border:solid 0.5pt #000;border-top:none;'></td><td style='border:solid 0.5pt #000;border-top:none;'></td><td style='border:solid 0.5pt #000;border-top:none;'></td><td style='border:solid 0.5pt #000;border-top:none;'>Thành tiền</td><td style='border:solid 0.5pt #000;border-top:none;'></td><td style='border:solid 0.5pt #000;border-top:none;'>" + btong.ToString() + "</td><td style='border:solid 0.5pt #000;border-top:none;'>" + ctong.ToString() + "</td><td style='border:solid 0.5pt #000;border-top:none;'>" + anhtong.ToString() + "</td><td style='border:solid 0.5pt #000;border-top:none;'>" + tong.ToString() + "</td><td style='border:solid 0.5pt #000;border-top:none;'></td></tr>";
+            s += "<tr><td colspan='10'><br/></td></tr>";
+            s += "<tr style='font-weight:bold;vertical-align:middle;text-align:center;'><td colspan='6'>Phó ban biên tập</td><td colspan='4'>Người lập bảng</td></tr>";
+            s += "<tr><td colspan='10'><br/></td></tr>";
+            s += "<tr><td colspan='10'><br/></td></tr>";
+            s += "<tr><td colspan='10'><br/></td></tr>";
+            s += "<tr style='font-weight:bold;vertical-align:middle;text-align:center;'><td colspan='6'>Trương Quang Minh</td><td colspan='4'>Nguyễn Sao Kỳ</td></tr>";
+            s += "</table></body></html>";
+            Response.Write(s);
+        }
+    }
+}

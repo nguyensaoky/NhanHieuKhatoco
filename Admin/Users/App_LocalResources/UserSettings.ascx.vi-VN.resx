@@ -1,0 +1,354 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ControlTitle_usersettings.Text" xml:space="preserve">
+    <value>Thiết Lập Thành Viên</value>
+  </data>
+  <data name="MembershipProviderConfig_PasswordFormat.Text" xml:space="preserve">
+    <value>Định Dạng Password:</value>
+  </data>
+  <data name="MembershipProviderConfig_RequiresQuestionAndAnswer.Text" xml:space="preserve">
+    <value>Bắt Buộc Hỏi Và Trả Lời:</value>
+  </data>
+  <data name="MembershipProviderConfig_MinPasswordLength.Text" xml:space="preserve">
+    <value>Số Ký Tự Tối Thiểu:</value>
+  </data>
+  <data name="MembershipProviderConfig_MinNonAlphanumericCharacters.Text" xml:space="preserve">
+    <value>Số Ký Tự Không Phải Là Số Tối Thiểu:</value>
+  </data>
+  <data name="MembershipProviderConfig_PasswordStrengthRegularExpression.Text" xml:space="preserve">
+    <value>Chuỗi Kiểm Tra Password:</value>
+  </data>
+  <data name="MembershipProviderConfig_PasswordFormat.Help" xml:space="preserve">
+    <value>Định dạng password</value>
+  </data>
+  <data name="MembershipProviderConfig_RequiresQuestionAndAnswer.Help" xml:space="preserve">
+    <value>Thành viên có phải cung cấp Câu Hỏi và Câu Trả Lời cần thiết để thay đổi hoặc lấy lại password</value>
+  </data>
+  <data name="MembershipProviderConfig_MinPasswordLength.Help" xml:space="preserve">
+    <value>Số ký tự nhỏ nhất cần thiết cho một chuỗi password.</value>
+  </data>
+  <data name="MembershipProviderConfig_MinNonAlphanumericCharacters.Help" xml:space="preserve">
+    <value>Số ký tự không phải là số nhỏ nhất cần thiết cho một chuỗi password.</value>
+  </data>
+  <data name="MembershipProviderConfig_PasswordStrengthRegularExpression.Help" xml:space="preserve">
+    <value>Chuỗi kiểm tra để xác nhận password.</value>
+  </data>
+  <data name="ProviderSettings.Text" xml:space="preserve">
+    <value>Thiết Lập Đăng Ký Thành Viên</value>
+  </data>
+  <data name="UserAccounts.Text" xml:space="preserve">
+    <value>Thiết Lập Tài Khoản Người Dùng</value>
+  </data>
+  <data name="Column_Address.Text" xml:space="preserve">
+    <value>Hiện Cột Địa Chỉ:</value>
+  </data>
+  <data name="Column_Address.Help" xml:space="preserve">
+    <value>Hiện Cột Địa Chỉ</value>
+  </data>
+  <data name="Column_Authorized.Text" xml:space="preserve">
+    <value>Hiện Cột Chấp Nhận:</value>
+  </data>
+  <data name="Column_Authorized.Help" xml:space="preserve">
+    <value>Hiện Cột Chấp Nhận</value>
+  </data>
+  <data name="Column_CreatedDate.Text" xml:space="preserve">
+    <value>Hiện Cột Ngày Tạo:</value>
+  </data>
+  <data name="Column_CreatedDate.Help" xml:space="preserve">
+    <value>Hiện Cột Ngày Tạo</value>
+  </data>
+  <data name="Column_DisplayName.Text" xml:space="preserve">
+    <value>Hiện Cột Tên:</value>
+  </data>
+  <data name="Column_DisplayName.Help" xml:space="preserve">
+    <value>Hiện Cột Tên</value>
+  </data>
+  <data name="Column_Email.Text" xml:space="preserve">
+    <value>Hiện Cột Email:</value>
+  </data>
+  <data name="Column_Email.Help" xml:space="preserve">
+    <value>Hiện Cột Email</value>
+  </data>
+  <data name="Column_FirstName.Text" xml:space="preserve">
+    <value>Hiện Cột Họ:</value>
+  </data>
+  <data name="Column_FirstName.Help" xml:space="preserve">
+    <value>Hiện Cột Họ</value>
+  </data>
+  <data name="Column_LastLogin.Text" xml:space="preserve">
+    <value>Hiện Cột Đăng Nhập Gần Nhất:</value>
+  </data>
+  <data name="Column_LastLogin.Help" xml:space="preserve">
+    <value>Hiện Cột Đăng Nhập Gần Nhất</value>
+  </data>
+  <data name="Column_LastName.Text" xml:space="preserve">
+    <value>Hiện Cột Tên:</value>
+  </data>
+  <data name="Column_LastName.Help" xml:space="preserve">
+    <value>Hiện Cột Tên</value>
+  </data>
+  <data name="Column_Telephone.Text" xml:space="preserve">
+    <value>Hiện Cột Số Điện Thoại:</value>
+  </data>
+  <data name="Column_Telephone.Help" xml:space="preserve">
+    <value>Hiện Cột Số Điện Thoại</value>
+  </data>
+  <data name="Records_PerPage.Text" xml:space="preserve">
+    <value>Thành Viên Trên Trang:</value>
+  </data>
+  <data name="Records_PerPage.Help" xml:space="preserve">
+    <value>Nhập số thành viên được hiển thị trong một trang</value>
+  </data>
+  <data name="MembershipProviderConfig_MaxInvalidPasswordAttempts.Text" xml:space="preserve">
+    <value>Số Đăng Nhập Thất Bại Tối Đa:</value>
+  </data>
+  <data name="MembershipProviderConfig_MaxInvalidPasswordAttempts.Help" xml:space="preserve">
+    <value>Số lần đăng nhập thất bại tối đa cho phép trong một khoảng thời gian</value>
+  </data>
+  <data name="MembershipProviderConfig_PasswordAttemptWindow.Text" xml:space="preserve">
+    <value>Khoảng Thời Gian Đăng Nhập (theo phút):</value>
+  </data>
+  <data name="MembershipProviderConfig_PasswordAttemptWindow.Help" xml:space="preserve">
+    <value>Khoảng thời gian (theo phút) cho số lần đăng nhập tối đa.</value>
+  </data>
+  <data name="MembershipProviderConfig_PasswordResetEnabled.Text" xml:space="preserve">
+    <value>Cho Phép Đặt Lại Password:</value>
+  </data>
+  <data name="MembershipProviderConfig_PasswordResetEnabled.Help" xml:space="preserve">
+    <value>Quản trị có thể đặt lại password của người dùng hay không.</value>
+  </data>
+  <data name="MembershipProviderConfig_PasswordRetrievalEnabled.Text" xml:space="preserve">
+    <value>Cho Phép Lấy Lại Password:</value>
+  </data>
+  <data name="MembershipProviderConfig_PasswordRetrievalEnabled.Help" xml:space="preserve">
+    <value>Password của thành viên có thể lấy lại được hay không.</value>
+  </data>
+  <data name="PasswordConfig_PasswordExpiry.Text" xml:space="preserve">
+    <value>Password Hết Hạn(theo ngày):</value>
+  </data>
+  <data name="PasswordConfig_PasswordExpiry.Help" xml:space="preserve">
+    <value>Số ngày mà một thành viên phải thay đổi password của họ (0 có nghĩa là password không bao giờ hết hạn)</value>
+  </data>
+  <data name="ProviderSettingsHelp.Text" xml:space="preserve">
+    <value>Ở mục này bạn có thể xem lại các thiết lập đăng ký thành viên. Một số provider có thể cho phép bạn thay đổi thiết lập này. Provider mặc định dựa vào ASP.NET MemberRole đòi hỏi bạn phải sửa đổi web.config, để các thiết lập không thể được cập nhật ở đây.</value>
+  </data>
+  <data name="PasswordSettings.Text" xml:space="preserve">
+    <value>Thiết Lập Password hết hạn</value>
+  </data>
+  <data name="PasswordSettingsHelp.Text" xml:space="preserve">
+    <value>Bạn có thể đặt các thiết lập về password hết hạn ở mục này.</value>
+  </data>
+  <data name="PasswordConfig_PasswordExpiryReminder.Text" xml:space="preserve">
+    <value>Nhắc Nhở Password Hết Hạn(theo ngày):</value>
+  </data>
+  <data name="PasswordConfig_PasswordExpiryReminder.Help" xml:space="preserve">
+    <value>Số ngày thông báo cho thành viên là password của anh ta sắp hết hạn.</value>
+  </data>
+  <data name="Display_Mode.Text" xml:space="preserve">
+    <value>Chế Độ Hiển Thị Mặc Định</value>
+  </data>
+  <data name="Display_Mode.Help" xml:space="preserve">
+    <value>Chọn chế độ hiển thị mặc định cho Bảng Người Dùng</value>
+  </data>
+  <data name="Security_CaptchaLogin.Text" xml:space="preserve">
+    <value>Sử Dụng CAPTCHA Cho Đăng Nhập:</value>
+  </data>
+  <data name="Security_CaptchaLogin.Help" xml:space="preserve">
+    <value>Chỉ ra xem là trang web này có sử dụng CAPTCHA cho đăng nhập hay không</value>
+  </data>
+  <data name="Security_CaptchaRegister.Text" xml:space="preserve">
+    <value>Sử Dụng CAPTCHA Cho Đăng Ký:</value>
+  </data>
+  <data name="Security_CaptchaRegister.Help" xml:space="preserve">
+    <value>Chỉ ra xem là trang web này có sử dụng CAPTCHA cho đăng ký hay không.</value>
+  </data>
+  <data name="Redirect_AfterLogin.Text" xml:space="preserve">
+    <value>Chuyển Tới Sau Khi Đăng Nhập:</value>
+  </data>
+  <data name="Redirect_AfterLogin.Help" xml:space="preserve">
+    <value>Bạn có thể chọn một trang để được chuyển tới sau khi đăng nhập thành công</value>
+  </data>
+  <data name="Redirect_AfterLogout.Text" xml:space="preserve">
+    <value>Chuyển Tới Sau Khi Thoát:</value>
+  </data>
+  <data name="Redirect_AfterLogout.Help" xml:space="preserve">
+    <value>Bạn có thể chọn một trang để chuyển người dùng tới sau khi thoát ra.</value>
+  </data>
+  <data name="Security_UsersControl.Text" xml:space="preserve">
+    <value>Chế độ hiển thị Thành viên trong Quản Lý Nhóm</value>
+  </data>
+  <data name="Security_UsersControl.Help" xml:space="preserve">
+    <value>Chọn Điều Khiển Người Dùng được sử dụng trong module điều khiển Quản Lý Nhóm</value>
+  </data>
+  <data name="Combo.Text" xml:space="preserve">
+    <value>Hộp Danh Sách</value>
+  </data>
+  <data name="FirstLetter.Text" xml:space="preserve">
+    <value>Chữ Cái Đầu</value>
+  </data>
+  <data name="TextBox.Text" xml:space="preserve">
+    <value>Hộp Chữ</value>
+  </data>
+  <data name="Redirect_AfterRegistration.Help" xml:space="preserve">
+    <value>Bạn có thể chọn một trang để chuyển thành viên tới sau khi đăng ký thành công.</value>
+  </data>
+  <data name="Redirect_AfterRegistration.Text" xml:space="preserve">
+    <value>Chuyển Tới Sau Khi Đăng Ký:</value>
+  </data>
+  <data name="Security_RequireValidProfile.Help" xml:space="preserve">
+    <value>Bạn có thể chọn bắt buộc thành viên phải nhập một hồ sơ hợp lệ trong đăng nhập hay không.</value>
+  </data>
+  <data name="Security_RequireValidProfile.Text" xml:space="preserve">
+    <value>Bắt Buộc Hồ Sơ Đăng Ký Hợp Lệ:</value>
+  </data>
+  <data name="Display_SuppressPager.Help">
+    <value>Chọn để giấu chỉ mục trang nếu chỉ có một trang.</value>
+  </data>
+  <data name="Display_SuppressPager.Text">
+    <value>Giấu Chỉ Mục Trang?</value>
+  </data>
+  <data name="MembersOnly.Text">
+    <value>Giành riêng cho thành viên</value>
+  </data>
+  <data name="Profile_DefaultVisibility.Help">
+    <value>Chọn chế độ hiển thị hồ sơ mặc định cho các hồ sơ của người dùng</value>
+  </data>
+  <data name="Profile_DefaultVisibility.Text">
+    <value>Chế Độ Hiển Thị Hồ Sơ Mặc Định</value>
+  </data>
+  <data name="Profile_DisplayVisibility.Help">
+    <value>Chọn để hiển thị điều khiển quản lý sự hiển thị của hồ sơ trên trang của thành viên</value>
+  </data>
+  <data name="Profile_DisplayVisibility.Text">
+    <value>Hiển Thị Điều Khiển Tính Hiển Thị Hồ Sơ</value>
+  </data>
+  <data name="Profile_ManageServices.Help">
+    <value>Chọn để hiển thị mục Quản Lý Dịch Vụ trên trang hồ sơ</value>
+  </data>
+  <data name="Profile_ManageServices.Text">
+    <value>Hiển thị Quản Lý Dịch Vụ</value>
+  </data>
+  <data name="Security_RequireValidProfileAtLogin.Help">
+    <value>Bạn có thể tùy chọn đòi hỏi một thành viên cập nhật hồ sơ của anh ta trước khi đăng nhập, nếu hồ sơ của anh ta không hợp lệ.</value>
+  </data>
+  <data name="Security_RequireValidProfileAtLogin.Text">
+    <value>Đòi Hỏi Hồ Sơ Hợp Lệ Cho Login:</value>
+  </data>
+</root>

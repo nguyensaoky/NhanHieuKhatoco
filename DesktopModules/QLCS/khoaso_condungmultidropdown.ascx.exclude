@@ -1,0 +1,49 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="khoaso_condungmultidropdown.ascx.cs" Inherits="DotNetNuke.Modules.QLCS.khoaso" %>
+<%@ Register Assembly="System.Web.Extensions" Namespace="System.Web.UI" TagPrefix="asp" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+<%@ Register TagPrefix="DDMS" TagName="MultiSelectDropDown" Src="MultiSelectDropDown.ascx" %>
+<link href="<%= ModulePath + "style.css" %>" rel="stylesheet" type="text/css" />
+<link href="<%= ModulePath + "style_main.css" %>" type="text/css" rel="stylesheet" />
+<script type="text/javascript" language="javascript" src="<%= ModulePath + "script_main.js"%>"></script>
+
+<link href="<%= ModulePath + "style.css" %>" rel="stylesheet" type="text/css" />
+<style type="text/css">
+    .TextButton
+    {
+        border: none;
+        cursor: pointer;
+        text-decoration: none;
+        font-weight: bold;
+        margin: 5px 0;
+    }
+</style>
+<table width="100%">
+    <tr>
+        <td>
+            Khóa dữ liệu trước thời điểm
+            <asp:TextBox ID="txtDate" runat="server" Width="120" TabIndex="6"/>
+            <cc1:calendarextender id="calDate" runat="server" format="dd/MM/yyyy 12:00:00" popupbuttonid="txtDate" targetcontrolid="txtDate"></cc1:calendarextender>
+            <asp:Button ID="btnKhoaSo" runat="server" Text="Khóa dữ liệu" OnClick="btnKhoaSo_Click" CssClass="button"/>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <br/>
+            Mở dữ liệu đã bị khóa
+            <asp:ListBox ID="lstLoaiDuLieu" runat="server">
+                <asp:ListItem Selected="True" Value="CaSau_BienDong">Biến động cá</asp:ListItem>
+                <asp:ListItem Selected="True" Value="CaSauDe">Cá đẻ</asp:ListItem>
+                <asp:ListItem Selected="True" Value="CaSauAn">Cá ăn</asp:ListItem>
+                <asp:ListItem Selected="True" Value="GietMoCa">Giết mổ cá</asp:ListItem>
+                <asp:ListItem Selected="True" Value="ThuHoiDa">Thu hồi da</asp:ListItem>
+                <asp:ListItem Selected="True" Value="VatTu_BienDong">Biến động vật tư</asp:ListItem>
+            </asp:ListBox>
+            <span style="POSITION: absolute; margin:1px 0 0 5px;z-index:1;">
+                <ddms:multiselectdropdown id="ddlLoaiDuLieu" runat="server" type="150" typev="150_150" AutoPostBack="true"></ddms:multiselectdropdown>
+            </span>   
+            <span style="margin:1px 0 0 165px;">         
+                <asp:Button ID="btnMoKhoa" runat="server" Text="Mở khóa" OnClick="btnMoKhoa_Click" CssClass="button"/>
+            </span>
+        </td>
+    </tr>
+</table>

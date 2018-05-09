@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="ResMimeType">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="Version">
+    <value>1.0.0.0</value>
+  </resheader>
+  <resheader name="Reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="Writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="plFriendlyName.Text">
+    <value>Tên Thân Thiện Module:</value>
+  </data>
+  <data name="valModuleName.ErrorMessage">
+    <value>&lt;br&gt;Bạn phải nhập một tên cho module</value>
+  </data>
+  <data name="plDescription.Text">
+    <value>Mô tả:</value>
+  </data>
+  <data name="plDescription.Help">
+    <value>Cung cấp một mô tả cho module.</value>
+  </data>
+  <data name="plPremium.Text">
+    <value>Premium? </value>
+  </data>
+  <data name="plPremium.Help">
+    <value>Các module Premium chỉ có ở các portal nhất định</value>
+  </data>
+  <data name="plVersion.Text">
+    <value>Phiên Bản:</value>
+  </data>
+  <data name="plVersion.Help">
+    <value>Nhập vào số phiên bản của module.</value>
+  </data>
+  <data name="plDefinitions.Text">
+    <value>Khai Báo:</value>
+  </data>
+  <data name="plDefinitions.Help">
+    <value>Bạn có thể chọn một Khai Báo Module và tuỳ chọn xoá chúng bằng cách sử dụng link "Xoá Khai Báo".</value>
+  </data>
+  <data name="cmdDeleteDefinition.Text">
+    <value>Xoá Khai Báo</value>
+  </data>
+  <data name="plDefinition.Text">
+    <value>Khai Báo Mới:</value>
+  </data>
+  <data name="plDefinition.Help">
+    <value>Bạn có thể tạo ra một Khai báo bằng cách nhập vào tên ở đây và click vào link "Thêm Khai Báo"</value>
+  </data>
+  <data name="cmdAddDefinition.Text">
+    <value>Thêm Khai Báo</value>
+  </data>
+  <data name="Control.Header">
+    <value>Điều Khiển</value>
+  </data>
+  <data name="Title.Header">
+    <value>Tiêu Đề</value>
+  </data>
+  <data name="Source.Header">
+    <value>Nguồn</value>
+  </data>
+  <data name="cmdAddControl.Text">
+    <value>Thêm Điều Khiển</value>
+  </data>
+  <data name="plFriendlyName.Help">
+    <value>Đây là Tên Thân Thiện của Module</value>
+  </data>
+  <data name="ControlTitle_edit.Text">
+    <value>Thay Đổi Khai Báo Module</value>
+  </data>
+  <data name="PrivateAssemblyCreate.Action">
+    <value>Tạo Private Assembly</value>
+  </data>
+  <data name="ModuleHelp.Text">
+    <value>&lt;h1&gt;Về Khai Báo Module&lt;/h1&gt;&lt;p&gt;Tài khoản Super User có thể quản lý các Desktop Module được cài đặt trên hệ thống.&lt;/p&gt;</value>
+  </data>
+  <data name="plFolderName.Text">
+    <value>Tên Thư Mục:</value>
+  </data>
+  <data name="plFolderName.Help">
+    <value>Nhập tên thư mục cho các file của module.</value>
+  </data>
+  <data name="valFolderName.ErrorMessage">
+    <value>&lt;br&gt;Bạn phải nhập một tên thư mục cho các file cần thiết cho module.</value>
+  </data>
+  <data name="plBusinessClass.Text">
+    <value>Lớp Điều Khiển:</value>
+  </data>
+  <data name="plBusinessClass.Help">
+    <value>Đây là Lớp Điều Khiển (Controller Class) cho module. Nếu module hỗ trợ các Interface tùy chọn, như  ISearchable và IPortable, đây là lớp thực hiện các interface này.</value>
+  </data>
+  <data name="plModuleName.Text">
+    <value>Tên Module:</value>
+  </data>
+  <data name="plModuleName.Help">
+    <value>Đây là tên của module - nó sẽ xác định module trên hệ thống.</value>
+  </data>
+  <data name="plCacheTime.Text">
+    <value>Thời Gian Cache Mặc Định:</value>
+  </data>
+  <data name="plCacheTime.Help">
+    <value>Đây là thời gian Cache mặc định cho Khai Báo Module này.</value>
+  </data>
+  <data name="cmdUpdateCacheTime.Text">
+    <value>Cập Nhật Thuộc Tính Cache</value>
+  </data>
+  <data name="AddModule.ErrorMessage">
+    <value>Đã có một module với tên này. Bạn không thể tạo một module mới trùng tên với module cũ.</value>
+  </data>
+  <data name="AddDefinition.ErrorMessage">
+    <value>Đã có một Khai Báo Module với tên này. Bạn không thể tạo Khai Báo Module mới với cùng tên.</value>
+  </data>
+  <data name="MissingDefinition.ErrorMessage">
+    <value>Bạn phải đưa ra một Tên cho Khai báo mới.</value>
+  </data>
+  <data name="UpdateCache.ErrorMessage">
+    <value>Thời gian cache phải là một giá trị nguyên.</value>
+  </data>
+  <data name="plPortable.Help">
+    <value>Nếu được chọn, module này có hỗ trợ việc nhập và xuất nội dung.</value>
+  </data>
+  <data name="plPortable.Text">
+    <value>Nhập/Xuất</value>
+  </data>
+  <data name="plSearchable.Help">
+    <value>Nếu được chọn, module này hỗ trợ việc chỉ mục và tìm kiếm trên nội dung.</value>
+  </data>
+  <data name="plSearchable.Text">
+    <value>Hỗ Trợ Tìm Kiếm</value>
+  </data>
+  <data name="plSupportedFeatures.Help">
+    <value>Các tùy chọn này được cập nhật tự động dựa vào module và các chức năng mà lập trình viên đã chọn để hỗ trợ.</value>
+  </data>
+  <data name="plSupportedFeatures.Text">
+    <value>Các Chức Nămg Được Hỗ Trợ </value>
+  </data>
+  <data name="plUpgradeable.Help">
+    <value>Nếu được chọn, module này sẽ chạy các đoạn mã đặc biệt trong quá trình upload để phục vụ cho nâng cập.</value>
+  </data>
+  <data name="plUpgradeable.Text">
+    <value>Hỗ Trợ Nâng Cấp</value>
+  </data>
+  <data name="cmdInstall.Text">
+    <value>Cài Đặt</value>
+  </data>
+  <data name="InstallManifest.ErrorMessage">
+    <value>Có Lỗi Xảy Ra Trong Khi Cài Đặt File Manifest Cho Module Đã Chọn</value>
+  </data>
+  <data name="plManifest.Help">
+    <value>Chọn một file manifest và chọn Cài đặt ( tùy chọn ).</value>
+  </data>
+  <data name="plManifest.Text">
+    <value>Module Manifest: </value>
+  </data>
+  <data name="cmdDelete.Text">
+    <value>Gỡ Bỏ</value>
+  </data>
+  <data name="chkDelete.Text">
+    <value>Xóa File?</value>
+  </data>
+  <data name="plCompatibleVersions.Help">
+    <value>(Tùy Chọn) Một regular expression mô tả sự tương thích của module đối với ứng dụng dựa trên phiên bản. Một Regular Expression ví dụ sẽ lạ̀ ^[0-9]{1}[0-9]{1}.[0-9]{1}[0-9]{1}.[0-9]{1}[0-9]{1}$ - Chỉ ra rằng module tương thích với tất cả các phiên bản từ 00.00.00 đến 99.99.99</value>
+  </data>
+  <data name="plCompatibleVersions.Text">
+    <value>Tương Thích:</value>
+  </data>
+  <data name="valFriendlyName.ErrorMessage">
+    <value>&lt;br&gt;Một module phải có một Tên Thân Thiện riêng</value>
+  </data>
+  <data name="valVersion.ErrorMessage">
+    <value>&lt;br&gt;Một Module phải có một chuỗi phiên bản có dạng ##.##.##</value>
+  </data>
+</root>

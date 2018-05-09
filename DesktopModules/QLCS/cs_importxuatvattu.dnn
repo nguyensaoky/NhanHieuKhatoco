@@ -1,0 +1,27 @@
+<dotnetnuke version="3.0" type="Module">
+  <folders>
+    <folder>
+      <name>CS_ImportXuatVatTu</name>
+      <friendlyname>CS_ImportXuatVatTu</friendlyname>
+      <foldername>QLCS</foldername>
+      <modulename>CS_ImportXuatVatTu</modulename>
+      <description>CS_ImportXuatVatTu</description>
+      <version>01.00.00</version>
+      <businesscontrollerclass>
+      </businesscontrollerclass>
+      <modules>
+        <module>
+          <friendlyname>CS_ImportXuatVatTu</friendlyname>
+          <cachetime>0</cachetime>
+          <controls>
+            <control>
+              <title>Import XuatVatTu</title>
+              <src>DesktopModules/QLCS/importxuatvattu.ascx</src>
+              <type>Edit</type>
+            </control>
+          </controls>
+        </module>
+      </modules>
+    </folder>
+  </folders>
+</dotnetnuke>

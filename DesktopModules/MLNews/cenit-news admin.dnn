@@ -1,0 +1,87 @@
+<dotnetnuke version="3.0" type="Module">
+  <folders>
+    <folder>
+      <name>CenIT-News Admin</name>
+      <friendlyname>CenIT-News Admin</friendlyname>
+      <foldername>MLNews</foldername>
+      <modulename>CenIT-News Admin</modulename>
+      <description>CenIT-News Admin</description>
+      <version>01.00.00</version>
+      <businesscontrollerclass>
+      </businesscontrollerclass>
+      <modules>
+        <module>
+          <friendlyname>CenIT-News Admin</friendlyname>
+          <cachetime>0</cachetime>
+          <controls>
+            <control>
+              <title>General Admin</title>
+              <src>DesktopModules/MLNews/general_admin.ascx</src>
+              <type>Edit</type>
+            </control>
+            <control>
+              <key>settings</key>
+              <title>General Settings</title>
+              <src>DesktopModules/MLNews/general_settings.ascx</src>
+              <type>Edit</type>
+            </control>
+            <control>
+              <key>admin_cat</key>
+              <title>Cat Admin</title>
+              <src>DesktopModules/MLNews/cat_admin.ascx</src>
+              <type>Edit</type>
+            </control>
+            <control>
+              <key>edit_cat</key>
+              <title>Cat Edit</title>
+              <src>DesktopModules/MLNews/cat_edit.ascx</src>
+              <type>Edit</type>
+            </control>
+            <control>
+              <key>admin_group</key>
+              <title>News Group Admin</title>
+              <src>DesktopModules/MLNews/group_admin.ascx</src>
+              <type>Edit</type>
+            </control>
+            <control>
+              <key>edit_group</key>
+              <title>News Group Edit</title>
+              <src>DesktopModules/MLNews/group_edit.ascx</src>
+              <type>Edit</type>
+            </control>
+            <control>
+              <key>admin_news</key>
+              <title>News Admin</title>
+              <src>DesktopModules/MLNews/news_admin.ascx</src>
+              <type>Edit</type>
+            </control>
+            <control>
+              <key>edit_news</key>
+              <title>News Edit</title>
+              <src>DesktopModules/MLNews/news_edit.ascx</src>
+              <type>Edit</type>
+            </control>
+            <control>
+              <key>admin_comment</key>
+              <title>Comment Admin</title>
+              <src>DesktopModules/MLNews/comment_admin.ascx</src>
+              <type>Edit</type>
+            </control>
+            <control>
+              <key>delete_comment</key>
+              <title>Comment Delete</title>
+              <src>DesktopModules/MLNews/comment_delete.ascx</src>
+              <type>Edit</type>
+            </control>
+            <control>
+              <key>cat_permission</key>
+              <title>Cat Permission</title>
+              <src>DesktopModules/MLNews/cat_permission.ascx</src>
+              <type>Edit</type>
+            </control>
+          </controls>
+        </module>
+      </modules>
+    </folder>
+  </folders>
+</dotnetnuke>

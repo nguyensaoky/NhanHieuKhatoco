@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="ResMimeType">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="Version">
+    <value>1.0.0.0</value>
+  </resheader>
+  <resheader name="Reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="Writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="lbLocales.Text">
+    <value>Những Ngôn Ngữ có sẵn</value>
+  </data>
+  <data name="Name.Header">
+    <value>Tên</value>
+  </data>
+  <data name="Offset.Header">
+    <value>UTC&lt;br&gt;OffSet &lt;br&gt;phút</value>
+  </data>
+  <data name="RequiredField.ErrorMessage">
+    <value>&lt;br&gt;Mục Cần Thiết</value>
+  </data>
+  <data name="lbLocales.Help">
+    <value>Chọn Ngôn ngữ</value>
+  </data>
+  <data name="DefaultValue.Header">
+    <value>Giá Trị Mặc Định</value>
+  </data>
+  <data name="DeleteItem.Text">
+    <value>Bạn Có Chắc Là Bạn Muốn Xoá File Ngôn Ngữ Này?</value>
+  </data>
+  <data name="Delete.ErrorMessage">
+    <value>Ngôn Ngữ Của Hệ Thống (en-US) Không Thể Bị Xoá</value>
+  </data>
+  <data name="lblMissing.Text">
+    <value>File tài nguyên hệ thống mặc định chứa một vài mục không tồn tại ở file ngôn ngữ hiện tại. Điều này có thể dẫn tới việc một vài mục không được dịch.</value>
+  </data>
+  <data name="cmdAddMissing.Text">
+    <value>Thêm Vào Mục Bị Mất</value>
+  </data>
+  <data name="Save.ErrorMessage">
+    <value>Thất Bại Trong Xử Lý File. Hãy Kiểm Tra Quyền Truy Cập File Tài Nguyên Để Các File Có Thể Được Thay Đổi.</value>
+  </data>
+  <data name="ControlTitle_timezone.Text">
+    <value>Thiết Lập Múi Giờ</value>
+  </data>
+  <data name="ModuleHelp.Text">
+    <value>&lt;h1&gt;Về Thiết Lập Múi Giờ&lt;/h1&gt;&lt;p&gt;Tài khoản Super User có thể quản lý múi giờ được hỗ trợ đã được cài trên hệ thống&lt;/p&gt;</value>
+  </data>
+</root>

@@ -1,0 +1,170 @@
+/* http://www.freedotnetnukeskins.com */ 
+
+/*Control panel ___________________________________________________________________________________*/
+.controlpanel{ background:#FFF; border:#B7B7B7 solid; border-width:0px 0px 2px; }
+.controlpanel IMG{ margin:15px 5px 0px; }
+.controlpanel TD TD TD TD IMG{ margin:0px; }
+.controlpanel TD TD TD{ width:auto; }
+.controlpanel DIV{ border:#B7B7B7 solid; border-width:0px 1px; width:3px; height:100px; }
+.controlpanel TD .SubHead{ background:#fff; font-size:12px; color:#333; font-weight:bold; }
+.controlpanel TD TD TD .SubHead{ background:transparent; border:0px; font-size:11px; color:#333; font-weight:normal; }
+.controlpanel TD TD TD input{ background:#EFEFEF; font-size:11px; color:#000; font-weight:bold; padding-left:4px; }
+.controlpanel TD TD TD select{ background:#EFEFEF; font-size:11px; color:#333; }
+.controlpanel A.CommandButton{ font-size:10px; text-decoration:none; }
+.controlpanel A.CommandButton:link{ color:#000; text-decoration:none; }
+.controlpanel A.CommandButton:visited{ color:#000; text-decoration:none; }
+.controlpanel A.CommandButton:hover{ color:#F00; text-decoration:underline;}
+.controlpanel A.CommandButton:active{ color:#000; text-decoration:none; }
+
+/*--------------------------------------------------------------------------------------*/
+body{margin:0px;padding:0px;height:100%; background-position: bottom center;}
+#wrapper{margin:0px;padding:0px;width:100%;height:100%;border-width:0px;border-collapse:collapse;vertical-align:top;}
+td,tr{margin:0px;padding:0px;border-collapse:collapse;border:0px solid black;}
+td.top{background: url('Media/banner_m.png') no-repeat;height:120px;width:1005px;background-position: center bottom;}
+table.mtable{background: url('Media/footer.png') repeat-x;width:1005px;height:100%;background-position: bottom center;}
+td.menu{background: url('Media/menu_1.png') no-repeat;height:50px;width:1005px;background-position: center center;}
+td.mtable_lr{width:20px}
+td.mtable_sp{height:20px}
+td.mtable_gt{background: url('Media/banner_gt.png') no-repeat;height:125px;width:400px;background-position: left center;}
+td.mtable_login{background: url('Media/banner_login.png') no-repeat;height:260px;width:400px;background-position: left center;}
+td.mtable_d{background: url('Media/d.png') no-repeat;height:110px;width:400px;background-position: 20px top;}
+td.mtable_p{background: url('Media/m_pic.png') no-repeat;background-position: 10px top;width:535px;}
+td.left_side{background: url('Media/left.png') repeat-y;background-position: right;}
+td.right_side{background: url('Media/right.png') repeat-y;background-position: left top;}
+td.copyright{background: url('Media/copyright.png') no-repeat;height:24px;background-position: bottom center;}
+
+
+table.mtable_2{background: url('Media/footer.png') repeat-x;width:100%;height:100%;background-position: bottom center;position:relative;}
+td.top_2{background: url('Media/banner_lop.png') repeat-x;height:145px;width:100%;background-position: bottom center;}
+div.banner_2{background: url('Media/banner_m_login.png') no-repeat;height:130px;width:100%;background-position: center 4px;}
+div.menu_2{margin:0px;padding:0px;width:100%;height:28px;position:absolute;left:0px;top:131px;}
+table.table_menu_2{width:100%;height:28px;}
+td.menu_2_left{background: url('Media/menu_left.png') no-repeat;height:28px;background-position: center right;}
+td.menu_2_right{background: url('Media/menu_right.png') no-repeat;height:28px;background-position: center left;}
+td.menu_2_center{height:28px;width:72%;background:#67B8DE;font-family:"Arial", sans-serif;color:white;text-align:center;}
+td.menu_2_center_1{height:28px;width:13%;background:#67B8DE;font-family:"Arial", sans-serif;color:white;text-align:right;}
+/*---------------------------------------------------------- */
+a.user {color: #fff;font-weight:bold;text-decoration:none;}
+.leftpane{ padding-left:10px; text-align:center; vertical-align:top;}
+.contentpane{ padding:0px 15px; text-align:center; vertical-align:top;}
+#udpWaiting {z-index:10000;}
+/*--------------------------------------------------------------------------------------*/
+
+
+/* Main Menu ______________________________________________________________________________________*/
+.MainMenu_MenuContainer{ width:98%; background:transparent;z-index:1000 !important; }
+/*.MainMenu_RootMenuArrow{ display:none; }
+.MainMenu_MenuIcon{ display:none; }
+.MainMenu_MenuArrow{ display:none; }
+.MainMenu_MenuBreak{ display:none; }
+*/
+.submenu{
+	z-index:1000 !important;
+	background:#63B1D8;  
+	border:1px #bbb solid; 
+	padding:2px;
+	margin-left:2px;
+	-moz-border-right-colors: ThreeDShadow ThreeDShadow transparent;
+	-moz-border-bottom-colors: ThreeDShadow ThreeDShadow transparent;
+	cursor: pointer;
+}
+.rootmenuitem TD{
+	color:#fff; 
+	font-size:16px; 
+	font-weight:bold;
+	border:0px;
+	padding:0px 4px 2px 2px;
+	height:20px;
+	cursor: pointer;
+	/*border-right: dotted 1px #FF0;*/
+	border-left: dotted 1px #FF0;
+	z-index:1000 !important;
+}
+.rootmenuitemselected TD{
+	color:#ff0; 
+	font-size:16px; 
+	font-weight:bold;
+	border:0px; 
+	padding:0px 4px 2px 2px;
+	height:20px;
+	cursor: pointer;
+	/*border-right: dotted 1px #FF0;*/
+	border-left: dotted 1px #FF0;
+	z-index:1000 !important;
+}
+.rootmenuitembreadcrumb TD{
+	color:#ff0; 
+	font-size:16px; 
+	font-weight:bold;
+	padding:0px 4px 2px 2px;
+	height:20px;
+	/*border-right: dotted 1px #FF0;*/
+	border-left: dotted 1px #FF0;
+	z-index:1000 !important;
+}
+.MainMenu_MenuItem{
+	color:#fff; 
+	font-size:16px; 
+	font-weight:bold;
+	padding:4px 0px 4px 0px;
+	margin-bottom:0px;
+	margin-top:0px;
+	z-index:1000 !important;
+}
+.submenuitembreadcrumb{
+	color:#FFF; 
+	font-size:16px; 
+	font-weight:bold;
+	border-width:0px;
+	background:#63B1D8;
+	padding:4px 10px 4px 2px;
+	margin-bottom:0px;
+	margin-top:0px;
+	z-index:1000 !important;
+}
+.submenuitemselected{
+	color:#ff0;
+	font-size:16px; 
+	font-weight:bold;
+	border-width:0px;
+	background:#63B1D8;
+	padding:4px 0px 4px 0px;
+	margin-bottom:0px;
+	margin-top:0px;	
+	z-index:1000 !important;
+}
+
+.MainMenu_MenuBar {
+	z-index:1000 !important;
+}
+.MainMenu_MenuItem {
+	z-index:1000 !important;
+}
+.MainMenu_MenuIcon {
+	z-index:1000 !important;
+}
+.MainMenu_SubMenu {
+	z-index: 1000; 
+}
+.MainMenu_MenuBreak {
+	z-index:1000 !important;
+}
+.MainMenu_MenuItemSel {
+	z-index:1000 !important;
+}
+.MainMenu_MenuArrow {
+	z-index:1000 !important;
+}
+.MainMenu_RootMenuArrow {
+	z-index:1000 !important;
+}
+
+
+.GrayRow
+{
+	background-color: #ccc;
+}
+.NormalRow
+{
+	background-color: transparent;
+}

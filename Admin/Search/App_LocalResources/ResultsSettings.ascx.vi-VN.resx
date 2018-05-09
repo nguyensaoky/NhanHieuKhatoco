@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <!-- 
+    Vietnamese Translation 2005 by Nguyen Viet Trung,  viechinguyen@gmail.com
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="ResMimeType">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="Version">
+    <value>1.0.0.0</value>
+  </resheader>
+  <resheader name="Reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="Writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="plResults.Text">
+    <value>Kết Quả Tìm Kiếm Tối Đa:</value>
+  </data>
+  <data name="plResults.Help">
+    <value>Nhập số kết qua tìm kiếm tối đa để hiển thị</value>
+  </data>
+  <data name="plTitle.Help">
+    <value>Nhập số ký tự tối đa để hiển thị cho tiêu đề (bỏ trống để không giới hạn)</value>
+  </data>
+  <data name="plDescription.Text">
+    <value>Độ Dài Mô Tả Tối Đa:</value>
+  </data>
+  <data name="plDescription.Help">
+    <value>Nhập số ký tự lớn nhất để hiển thị mô tả (bỏ trống để không đặt giới hạn)</value>
+  </data>
+  <data name="plShowDescription.Text">
+    <value>Hiển Thị Mô Tả?</value>
+  </data>
+  <data name="plShowDescription.Help">
+    <value>Kiểm tra nếu bạn muốn hiển thị Mô tả cho một Kết quả Tìm Kiếm</value>
+  </data>
+  <data name="plPage.Text">
+    <value>Kết Quả Trên Trang:</value>
+  </data>
+  <data name="plPage.Help">
+    <value>Nhập số kết quả hiển thị trên mỗi trang.</value>
+  </data>
+  <data name="ControlTitle_settings.Text">
+    <value>Thiết Lập Kết Quả Tìm Kiếm</value>
+  </data>
+  <data name="ModuleHelp.Text">
+    <value>		&lt;h1&gt;Về Module Thiết Lập Kết Quả Tìm Kiếm &lt;/h1&gt;
+		&lt;p&gt;Module Kết Quả Tìm Kiếm hiển thị kết quả của một tìm kiếm của người dùng. Có 5 thiết lập kết quả tìm kiếm điều khiển tính hiển thị và hoạt động của module. &lt;/p&gt;
+		&lt;ul&gt;
+				&lt;li&gt;
+						&lt;div align="left"&gt;
+								&lt;b&gt;Kết Quả Tìm Kiếm Tối Đa&lt;/b&gt; – Chọn để cho phép một hình ảnh hiển thị chữ SEARCH bên phải hộp NHẬP TÌM KIẾM. &lt;b&gt;&lt;/b&gt;&lt;/div&gt;
+				&lt;/li&gt;
+				&lt;li&gt;
+						&lt;div align="left"&gt;
+								&lt;b&gt;Kết Quả Trên Trang&lt;/b&gt; - Chọn tùy chọn này để hiển thị một hình ảnh ‘GO’ bên trái hộp NHẬP TÌM KIẾM. &lt;b&gt;&lt;/b&gt;&lt;/div&gt;
+				&lt;/li&gt;
+				&lt;li&gt;
+						&lt;div align="left"&gt;
+								&lt;b&gt;Chiều Dài Tiêu Đề Tối Đa&lt;/b&gt; - Nhập số ký tự của tiêu đề Module nơi mà chuỗi tìm kiếm phù hợp. Bỏ trống để đặt mặc định chiều dài tiêu đề module.&lt;b&gt;&lt;/b&gt;&lt;/div&gt;
+				&lt;/li&gt;
+				&lt;li&gt;
+						&lt;div align="left"&gt;
+								&lt;b&gt;Chiều Dài Mô Tả Tối Đa&lt;/b&gt; - Nhập số ký tự để hiển thị mô tả nơi chuỗi tìm kiếm phù hợp. Bỏ trống để chọn thiết lập mặc định. Chuỗi kết quả được hiển thị không phải là chuỗi tìm kiếm, mà là nơi bắt đầu của nơi chuỗi tìm kiếm được tìm thấy.&lt;b&gt;&lt;/b&gt;&lt;/div&gt;
+				&lt;/li&gt;
+				&lt;li&gt;
+						&lt;div align="left"&gt;
+								&lt;b&gt;Hiện Mô Tả&lt;/b&gt; - Chọn tùy chọn này để hiển thị chuỗi tìm kiếm. &lt;/div&gt;
+				&lt;/li&gt;
+		&lt;/ul&gt;
+</value>
+  </data>
+  <data name="plTitle.Text">
+    <value>Chiều Dài Tiêu Đề Tối Đa:</value>
+  </data>
+  <data name="Validation.ErrorMessage">
+    <value>&lt;br&gt;Phải là một số nguyên lớn hơn 0.</value>
+  </data>
+</root>

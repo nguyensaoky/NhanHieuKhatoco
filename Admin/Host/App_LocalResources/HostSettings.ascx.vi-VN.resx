@@ -1,0 +1,591 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="ResMimeType">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="Version">
+    <value>1.0.0.0</value>
+  </resheader>
+  <resheader name="Reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="Writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Configuration.Text">
+    <value>Cấu Hình Site </value>
+  </data>
+  <data name="plVersion.Text">
+    <value>Phiên Bản DotNetNuke:</value>
+  </data>
+  <data name="plDataProvider.Text">
+    <value>Data Provider: </value>
+  </data>
+  <data name="plFramework.Text">
+    <value>.NET Framework: </value>
+  </data>
+  <data name="plIdentity.Text">
+    <value>Định danh ASP.NET:</value>
+  </data>
+  <data name="plHostName.Text">
+    <value>Tên Host:</value>
+  </data>
+  <data name="plVersion.Help">
+    <value>Phiên bản ứng dụng DotNetNuke bạn đang sử dụng</value>
+  </data>
+  <data name="plDataProvider.Help">
+    <value>Tên nhà cung cấp được định danh như là nhà cung cấp dữ liệu mặc định trong file web.config</value>
+  </data>
+  <data name="plFramework.Help">
+    <value>Phiên Bản .NET Framework mà ứng dụng đang chạy - được xác định bởi IIS</value>
+  </data>
+  <data name="plIdentity.Help">
+    <value>Tài khoản người dùng Windows mà ứng dụng của bạn đang chạy. Tài khoản này cần được cấp quyền truy cập thư mục trên server</value>
+  </data>
+  <data name="plHostName.Help">
+    <value>Tên Host của site.</value>
+  </data>
+  <data name="plHostPortal.Text">
+    <value>Portal Host:</value>
+  </data>
+  <data name="plHostTitle.Text">
+    <value>Tiêu đề Host:</value>
+  </data>
+  <data name="plHostURL.Text">
+    <value>Host URL: </value>
+  </data>
+  <data name="plHostEmail.Text">
+    <value>Host Email: </value>
+  </data>
+  <data name="plHostSkin.Text">
+    <value>Skin của Host:</value>
+  </data>
+  <data name="plHostContainer.Text">
+    <value>Host Container: </value>
+  </data>
+  <data name="plAdminSkin.Text">
+    <value>Skin Quản Trị:</value>
+  </data>
+  <data name="plAdminContainer.Text">
+    <value>Container Quản Trị:</value>
+  </data>
+  <data name="plProcessor.Text">
+    <value>Xử lý Thanh toán:</value>
+  </data>
+  <data name="plUserId.Text">
+    <value>Processor UserId: </value>
+  </data>
+  <data name="plPassword.Text">
+    <value>Password Xử Lý Thanh Toán:</value>
+  </data>
+  <data name="plHostFee.Text">
+    <value>Chi phí Hosting:</value>
+  </data>
+  <data name="plHostCurrency.Text">
+    <value>Tiền Tệ:</value>
+  </data>
+  <data name="plHostSpace.Text">
+    <value>Chỗ trống Hosting (MB):</value>
+  </data>
+  <data name="plDemoPeriod.Text">
+    <value>Quá Trình Dùng Thử (Số Ngày):</value>
+  </data>
+  <data name="plDemoSignup.Text">
+    <value>Đăng Ký Dùng Thử Giấu Mặt?</value>
+  </data>
+  <data name="plSiteLogBuffer.Text">
+    <value>Đệm Nhật Ký của File (Các Mục):</value>
+  </data>
+  <data name="plSiteLogHistory.Text">
+    <value>Lịch Sử Nhật Ký Site (Số Ngày):</value>
+  </data>
+  <data name="plUsersOnline.Text">
+    <value>Tắt Chức Năng Người Dùng Online?</value>
+  </data>
+  <data name="plUsersOnlineTime.Text">
+    <value>Thời Gian Người Dùng Online (Phút):</value>
+  </data>
+  <data name="plProxyServer.Text">
+    <value>Proxy Server: </value>
+  </data>
+  <data name="plProxyPort.Text">
+    <value>Cổng Proxy:</value>
+  </data>
+  <data name="plProxyUsername.Text">
+    <value>Tên người sử dụng Proxy:</value>
+  </data>
+  <data name="plProxyPassword.Text">
+    <value>Password cho Proxy:</value>
+  </data>
+  <data name="plWebRequestTimeout.Text">
+    <value>Thời Gian Rỗi Cho Truy Vấn Web:</value>
+  </data>
+  <data name="plSMTPServer.Text">
+    <value>Server của SMTP:</value>
+  </data>
+  <data name="EmailTest.Text">
+    <value>Thử Nghiệm </value>
+  </data>
+  <data name="plSMTPAuthentication.Text">
+    <value>Xác Nhận SMTP:</value>
+  </data>
+  <data name="plSMTPUsername.Text">
+    <value>Tên Tài Khoản SMTP:</value>
+  </data>
+  <data name="plSMTPPassword.Text">
+    <value>Password SMTP:</value>
+  </data>
+  <data name="plFileExtensions.Text">
+    <value>Tên File Mở Rộng Tải Lên:</value>
+  </data>
+  <data name="plSkinUpload.Text">
+    <value>Cho Phép Tải Lên Skin:</value>
+  </data>
+  <data name="plCache.Text">
+    <value>Thời Gian Cache (giây):</value>
+  </data>
+  <data name="ClearCache.Text">
+    <value>Xoá Bộ Đệm </value>
+  </data>
+  <data name="plCopyright.Text">
+    <value>Hiện Bản Quyền?</value>
+  </data>
+  <data name="plUseCustomErrorMessages.Text">
+    <value>Sử Dụng Thông Điệp Lỗi Tự Lập?</value>
+  </data>
+  <data name="UpgradeLog.Text">
+    <value>Cập Nhật Nhật Ký Cho Phiên Bản</value>
+  </data>
+  <data name="EmailSentMessage.Text">
+    <value>Gửi Email Thành Công </value>
+  </data>
+  <data name="SpecifyHostEmailMessage.Text">
+    <value>Bạn Phải Đặt Địa Chỉ Email Của Host</value>
+  </data>
+  <data name="plSchedulerMode.Text">
+    <value>Kiểu Thời Khoá Biểu:</value>
+  </data>
+  <data name="plSchedulerMode.Help">
+    <value>Cách thức Đếm Thời Gian (Timer Method) duy trì một luồng riêng rẽ để thực hiện các tác vụ theo thời khoá biểu trong khi quá trình làm việc vẫn hoạt động. Như là một sự lựa chọn, Cách thức Truy Vấn(Request Method) thực hiện các tác vụ trong khi các Truy Vấn HTTP được thực hiện. Bạn cũng có thể vô hiệu hoá chức năng thời khoá biểu bằng cách chọn Vô Hiệu Hoá.</value>
+  </data>
+  <data name="Disabled.Text">
+    <value>Vô Hiệu Hoá </value>
+  </data>
+  <data name="TimerMethod.Text">
+    <value>Cách Thức Đếm Giờ</value>
+  </data>
+  <data name="RequestMethod.Text">
+    <value>Cách Thức Truy Vấn</value>
+  </data>
+  <data name="15Seconds.Text">
+    <value>15 giây</value>
+  </data>
+  <data name="30Seconds.Text">
+    <value>30 giây</value>
+  </data>
+  <data name="45Seconds.Text">
+    <value>45 giây</value>
+  </data>
+  <data name="60Seconds.Text">
+    <value>60 giây</value>
+  </data>
+  <data name="plPerformance.Text">
+    <value>Thiết Lập Hiệu Suất:</value>
+  </data>
+  <data name="HeavyCaching.Text">
+    <value>Cao</value>
+  </data>
+  <data name="ModerateCaching.Text">
+    <value>Trung Bình</value>
+  </data>
+  <data name="LightCaching.Text">
+    <value>Thấp</value>
+  </data>
+  <data name="NoCaching.Text">
+    <value>Không Dùng Bộ Đệm</value>
+  </data>
+  <data name="BasicSettingsHelp.Text">
+    <value>Nhập Vào Những Thiết Lập Cơ Bản Cho Tài Khoản Hosting Của Bạn </value>
+  </data>
+  <data name="BasicSettings.Text">
+    <value>Thiết Lập Cơ Bản </value>
+  </data>
+  <data name="HostDetails.Text">
+    <value>Chi Tiết Về Host</value>
+  </data>
+  <data name="plHostTitle.Help">
+    <value>Nhập tên tài khoản hosting của bạn</value>
+  </data>
+  <data name="plHostURL.Help">
+    <value>Nhập url của tài khoản hosting của bạn</value>
+  </data>
+  <data name="plHostEmail.Help">
+    <value>Nhập một địa chỉ email hỗ trợ cho tài khoản hosting của bạn</value>
+  </data>
+  <data name="plHostSkin.Help">
+    <value>Chọn skin mặc định sử dụng cho site của bạn</value>
+  </data>
+  <data name="plHostContainer.Help">
+    <value>Chọn container mặc định để sử dụng cho site của bạn. </value>
+  </data>
+  <data name="plAdminSkin.Help">
+    <value>Lựa chọn skin quản trị mặc định để sử dụng cho site của bạn. Skin này sẽ được sử dụng khi bạn truy cập đến những module quản trị</value>
+  </data>
+  <data name="plAdminContainer.Help">
+    <value>Chọn  container quản trị mặc định để sử dụng cho site của bạn. Container này sẽ được sử dụng khi bạn truy cập đến những module quản trị</value>
+  </data>
+  <data name="Appearance.Text">
+    <value>Giao Diện </value>
+  </data>
+  <data name="Payment.Text">
+    <value>Thiết Lập Chi Trả</value>
+  </data>
+  <data name="Proxy.Text">
+    <value>Thiết Lập Proxy</value>
+  </data>
+  <data name="SMTP.Text">
+    <value>Thiết Lập Server SMTP</value>
+  </data>
+  <data name="AdvancedSettings.Text">
+    <value>Thiết Lập Nâng Cao</value>
+  </data>
+  <data name="AdvancedSettingsHelp.Text">
+    <value>Nhập vào các thiết lập nâng cao cho Tài Khoản Hosting </value>
+  </data>
+  <data name="Other.Text">
+    <value>Các Thiết Lập Khác</value>
+  </data>
+  <data name="plCopyright.Help">
+    <value>Chọn mục này để hiển thị bản quyền của DotNetNuke</value>
+  </data>
+  <data name="plUseCustomErrorMessages.Help">
+    <value>Chọn mục này để chọn Thông Điệp Lỗi tự lập</value>
+  </data>
+  <data name="plProcessor.Help">
+    <value>Chọn một cách xử lý thanh toán để chấp nhận thanh toán từ các site khách hàng</value>
+  </data>
+  <data name="plUserId.Help">
+    <value>Nhập Định Danh Người Dùng (UserID) cho Xử Lý Thanh Toán</value>
+  </data>
+  <data name="plPassword.Help">
+    <value>Nhập Password cho Xử lý Thanh toán</value>
+  </data>
+  <data name="plHostFee.Help">
+    <value>Nhập vào chi phí cơ sở cho site hosting</value>
+  </data>
+  <data name="plHostCurrency.Help">
+    <value>Chọn loại tiền tệ cho thanh toán của bạn</value>
+  </data>
+  <data name="plDemoPeriod.Help">
+    <value>Nhập vào số ngày giành cho một tài khoản dùng thử dịch vụ</value>
+  </data>
+  <data name="plDemoSignup.Help">
+    <value>Chọn xem bạn có cho phép người dùng đăng ký dùng thử hay không</value>
+  </data>
+  <data name="plHostSpace.Help">
+    <value>Nhập chỗ trống cho phép của một account</value>
+  </data>
+  <data name="plSMTPServer.Help">
+    <value>Nhập Địa Chỉ Server SMTP:</value>
+  </data>
+  <data name="plSMTPAuthentication.Help">
+    <value>Nhập cách thức Xác Nhận Server SMTP ( mặc định = giấu tên )</value>
+  </data>
+  <data name="SMTPAnonymous.Text">
+    <value>Ẩn Danh</value>
+  </data>
+  <data name="SMTPBasic.Text">
+    <value>Cơ Sở</value>
+  </data>
+  <data name="SMTPNTLM.Text">
+    <value>NTLM </value>
+  </data>
+  <data name="plSMTPUsername.Help">
+    <value>Nhập Tên Người Sử Dụng cho Server SMTP</value>
+  </data>
+  <data name="plSMTPPassword.Help">
+    <value>Nhập Password cho Server SMTP</value>
+  </data>
+  <data name="plControlPanel.Text">
+    <value>Bảng Điều Khiển:</value>
+  </data>
+  <data name="plControlPanel.Help">
+    <value>Bạn có thể đặt một điều khiển phụ để sử dụng cho Quản Lý Trang</value>
+  </data>
+  <data name="plFileExtensions.Help">
+    <value>Nhập Vào tên mở rộng của file được chấp nhận (cách nhau bởi dấu phẩy)</value>
+  </data>
+  <data name="plSkinUpload.Help">
+    <value>Chọn xem việc tải lên các Skin chỉ được giới hạn trong các tài khoản "Host" hay có thể được thực hiện bởi các Quản Trị Site</value>
+  </data>
+  <data name="Host.Text">
+    <value>Host </value>
+  </data>
+  <data name="Portal.Text">
+    <value>Portal </value>
+  </data>
+  <data name="plCache.Help">
+    <value>Đặt độ dài của khoảng thời gian mà đối tượng được lưu ở trong bộ đệm</value>
+  </data>
+  <data name="plPerformance.Help">
+    <value>Chọn cách tối ưu hiệu suất.</value>
+  </data>
+  <data name="plUpgrade.Help">
+    <value>Bạn có thể xem nhật ký cập nhật cho một phiên bản đã chọn, bằng cách chọn phiên bản từ danh sách và Click vào nút Chuyển Đi.</value>
+  </data>
+  <data name="plProxyServer.Help">
+    <value>Nhập địa chỉ Proxy Server</value>
+  </data>
+  <data name="plProxyPort.Help">
+    <value>Nhập cổng Proxy Server</value>
+  </data>
+  <data name="plProxyUsername.Help">
+    <value>Nhập tên người sử dụng cho Proxy Server</value>
+  </data>
+  <data name="plProxyPassword.Help">
+    <value>Nhập password cho Proxy Server</value>
+  </data>
+  <data name="plWebRequestTimeout.Help">
+    <value>Nhập giá trị thời gian rỗi cho một Truy Vấn Web</value>
+  </data>
+  <data name="plSiteLogBuffer.Help">
+    <value>Nhập số mục trong Đệm Nhật Ký (Log Buffer) của Site </value>
+  </data>
+  <data name="plSiteLogHistory.Help">
+    <value>Nhập số ngày hoạt động được lưu giữ trong Nhật Ký Site</value>
+  </data>
+  <data name="plUsersOnline.Help">
+    <value>Bạn có thể tuỳ chọn vô hiệu hoá chức năng Những Người Dùng Đang Online</value>
+  </data>
+  <data name="plUsersOnlineTime.Help">
+    <value>Nhập độ dài của vùng nhớ đệm Những Người Dùng Đang Online</value>
+  </data>
+  <data name="plUseFriendlyUrls.Text">
+    <value>Chọn Địa Chỉ Thân Thiện?</value>
+  </data>
+  <data name="plUseFriendlyUrls.Help">
+    <value>Chọn để cho phép cơ chế tìm kiếm dựa trên các địa chỉ thân thiện.</value>
+  </data>
+  <data name="plHostPortal.Help">
+    <value>Chọn portal mặc định</value>
+  </data>
+  <data name="ControlTitle_.Text">
+    <value>Thiết Lập Host </value>
+  </data>
+  <data name="SkinUpload.Text">
+    <value>Tải Lên Skin</value>
+  </data>
+  <data name="ContainerUpload.Text">
+    <value>Tải Lên Container </value>
+  </data>
+  <data name="plSiteLogStorage.Text">
+    <value>Nơi Chứa Nhật Ký Site:</value>
+  </data>
+  <data name="plSiteLogStorage.Help">
+    <value>Chọn nơi chứa Nhật Ký Site</value>
+  </data>
+  <data name="Database.Text">
+    <value>Cơ Sở Dữ Liệu </value>
+  </data>
+  <data name="FileSystem.Text">
+    <value>File Hệ Thống </value>
+  </data>
+  <data name="ModuleHelp.Text">
+    <value>&lt;h1&gt;Về Các Thiết Lập Host&lt;/h1&gt;&lt;p&gt; Super User có thể quản lý các thiết lập cấu hình áp dụng cho phần còn lại của site&lt;/p&gt;</value>
+  </data>
+  <data name="plLogBuffer.Text">
+    <value>Cho phép Event Log Buffer?</value>
+  </data>
+  <data name="plLogBuffer.Help">
+    <value>Chọn mục này sẽ làm cho các mục nhật ký được lưu vào bộ nhớ và sau đó được thường xuyên đẩy sang lưu trữ dữ liệu. Không chọn nó sẽ làm nhật ký được ghi ngay lập tức.</value>
+  </data>
+  <data name="plAutoAccountUnlock.Text">
+    <value>Tự Động Mở Khoá Cho Tài Khoản Sau (phút):</value>
+  </data>
+  <data name="plAutoAccountUnlock.Help">
+    <value>Sau khi một tài khoản bị khoá vì những cố gắng đăng nhập không thành công,nó có thể được mở khoá tự động với một đăng nhập thành công sau một khoảng thời gian.  Nhập vào số phút để đợi đến khi tài khoản có thể tự mở khoá. Nhập "0" để vô hiệu hoá chức năng tự động mở khoá.</value>
+  </data>
+  <data name="plCacheMethod.Text">
+    <value>Cách thức Caching Module:</value>
+  </data>
+  <data name="plCacheMethod.Help">
+    <value>Memory Caching là cách thức lưu lại dữ liệu trong bộ nhớ để sử dụng lại. Memory Caching cung cấp một cách thức mềm dẻo nhất và cho hiệu năng cao nhất tuy nhiên nó cũng tiêu tốn nhiều tài nguyên hệ thống nhất. Disk caching là cách thức lưu lại dữ liệu trên đĩa cứng. Disk Caching ít tiêu tốn tài nguyên nhưng kém mềm dẻo.</value>
+  </data>
+  <data name="Memory.Text">
+    <value>Bộ Nhớ</value>
+  </data>
+  <data name="Disk.Text">
+    <value>Disk </value>
+  </data>
+  <data name="ProcessorWebSite.Text">
+    <value>Đến WebSite Xử Lý Thanh Toán</value>
+  </data>
+  <data name="plHelpUrl.Text">
+    <value>URL Trợ Giúp:</value>
+  </data>
+  <data name="plHelpUrl.Help">
+    <value>Nhập URL cho Trợ Giúp Trực Tuyến. Nếu bạn để trống mục này sẽ không có Trợ Giúp Trực Tuyến nào cho khu vực Admin/Host của DotNetNuke.</value>
+  </data>
+  <data name="plEnableHelp.Text">
+    <value>Cho Phép Trợ Giúp Trực Tuyến Module:</value>
+  </data>
+  <data name="plEnableHelp.Help">
+    <value>Bạn có thể cho phép hoặc không cho phép Menu Trợ giúp Trực tuyến cho module. Nếu cho phép, bạn sẽ cần phải đưa ra một URL Trợ Giúp cho module, ở phần Định Nghĩa Module, mặc dù có thể đã được tác giả của module cung cấp.</value>
+  </data>
+  <data name="NoCache.Text">
+    <value>Không Cache</value>
+  </data>
+  <data name="plCacheability.Help">
+    <value>Đặt các giá trị điều khiển chế độ cache HTTP header cho các thành viên đã đăng nhập.</value>
+  </data>
+  <data name="plCacheability.Text">
+    <value>Khả Năng Cache Đăng Nhập</value>
+  </data>
+  <data name="plUpgrade.Text">
+    <value>Tìm Bản Cập Nhật?</value>
+  </data>
+  <data name="Private.Text">
+    <value>Riêng Tư</value>
+  </data>
+  <data name="Public.Text">
+    <value>Công Khai</value>
+  </data>
+  <data name="Server.Text">
+    <value>Server </value>
+  </data>
+  <data name="ServerAndNoCache.Text">
+    <value>ServerVàKhôngCache</value>
+  </data>
+  <data name="ServerAndPrivate.Text">
+    <value>ServerVàRiêngTư</value>
+  </data>
+  <data name="FriendlyUrl.Text">
+    <value>Thiết Lập URL Thân Thiện</value>
+  </data>
+  <data name="cmdRestart.Text">
+    <value>Khởi Động Lại Ứng Dụng</value>
+  </data>
+  <data name="plAutoSync.Help">
+    <value>Chọn để tự động đồng bộ hóa file hệ thống.</value>
+  </data>
+  <data name="plAutoSync.Text">
+    <value>Tự Động Đồng Bộ File Hệ Thống?</value>
+  </data>
+  <data name="plAvailable.Help">
+    <value>Hiển thị một icon nếu có một phiên bản mới của ứng dụng.</value>
+  </data>
+  <data name="plAvailable.Text">
+    <value>Có Phiên Bản Mới?</value>
+  </data>
+  <data name="plLog.Help">
+    <value>Cho phép bạn xem nhật ký cập nhật cơ sở dữ liệu cho một phiên bản xác định</value>
+  </data>
+  <data name="plLog.Text">
+    <value>Xem Nhật Ký Cập Nhật Cho Phiên Bản:</value>
+  </data>
+  <data name="Compression.Text">
+    <value>Thiết Lập Nén </value>
+  </data>
+  <data name="Deflate.Text">
+    <value>Deflate</value>
+  </data>
+  <data name="GZip.Text">
+    <value>GZip</value>
+  </data>
+  <data name="NoCompression.Text">
+    <value>Không Nén</value>
+  </data>
+  <data name="Page.Text">
+    <value>Trên Trang</value>
+  </data>
+  <data name="Performance.Text">
+    <value>Thiết Lập Hiệu Năng</value>
+  </data>
+  <data name="plCompression.Help">
+    <value>Chọn cách thức nén Http.</value>
+  </data>
+  <data name="plCompression.Text">
+    <value>Thiết Lập Nén:</value>
+  </data>
+  <data name="plCompressionLevel.Help">
+    <value>Chọn mức độ nén được dùng cho Giải thuật Deflate (mục này sẽ bị bỏ qua nếu giải thuẩn GZip được chọn)</value>
+  </data>
+  <data name="plCompressionLevel.Text">
+    <value>Mức độ nén (Deflate):</value>
+  </data>
+  <data name="plExcludedMimeTypes.Help">
+    <value>Nhập danh sách các kiểu MIME bị loại bỏ.</value>
+  </data>
+  <data name="plExcludedMimeTypes.Text">
+    <value>Kiểu MIME Bị Loại Bỏ:</value>
+  </data>
+  <data name="plExcludedPaths.Help">
+    <value>Nhập danh sách các đường dẫn phải bị loại bỏ.</value>
+  </data>
+  <data name="plExcludedPaths.Text">
+    <value>Loại Bỏ Đường Dẫn:</value>
+  </data>
+  <data name="plPageQuota.Help">
+    <value>Bạn có thể chỉ ra số trang tối đa của một portal.</value>
+  </data>
+  <data name="plPageQuota.Text">
+    <value>Quota cho số trang:</value>
+  </data>
+  <data name="plPageState.Help">
+    <value>Chọn cách thức lưu giữ trạng thái của một trang. Đây có thể là một trường ẩn trên trang đó(Mặc định) hoặc trên bộ nhớ (Cache).</value>
+  </data>
+  <data name="plPageState.Text">
+    <value>Cách thức lưu giữ trạng thái trang:</value>
+  </data>
+  <data name="plSMTPEnableSSL.Help">
+    <value>Được dùng cho dịch vụ SMTP đòi hỏi kết nối an toàn, trong đó dữ liệu thường được mã hóa (thường là không cần)</value>
+  </data>
+  <data name="plSMTPEnableSSL.Text">
+    <value>SMTP Enable SSL: </value>
+  </data>
+  <data name="plUserQuota.Help">
+    <value>Bạn có thể xác định số thành viên tối đa của một portal.</value>
+  </data>
+  <data name="plUserQuota.Text">
+    <value>Quota cho số thành viên:</value>
+  </data>
+  <data name="plWhitespace.Help">
+    <value>Chọn tùy chọn này để loại bỏ ký tự trống thừa ra khỏi trang phản hồi cho client - điều này sẽ giảm bớt dữ liệu phản hồi  (10-15%) nhưng đôi khi có thể khiến trang html khó đọc hơn.</value>
+  </data>
+  <data name="plWhitespace.Text">
+    <value>Sử Dụng Bộ Lọc Ký Tự Trống:</value>
+  </data>
+  <data name="plWhitespaceFilter.Help">
+    <value>Nhập một chuỗi Regular Expression để lọc ô trống.</value>
+  </data>
+  <data name="plWhitespaceFilter.Text">
+    <value>Bộ lọc ô trống:</value>
+  </data>
+</root>

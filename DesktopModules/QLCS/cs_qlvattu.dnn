@@ -1,0 +1,51 @@
+<dotnetnuke version="3.0" type="Module">
+  <folders>
+    <folder>
+      <name>CS_QLVatTu</name>
+      <friendlyname>CS_QLVatTu</friendlyname>
+      <foldername>QLCS</foldername>
+      <modulename>CS_QLVatTu</modulename>
+      <description>CS_QLVatTu</description>
+      <version>01.00.00</version>
+      <businesscontrollerclass>
+      </businesscontrollerclass>
+      <modules>
+        <module>
+          <friendlyname>CS_QLVatTu</friendlyname>
+          <cachetime>0</cachetime>
+          <controls>
+            <control>
+              <title>VatTu Admin</title>
+              <src>DesktopModules/QLCS/vattu_admin.ascx</src>
+              <type>Edit</type>
+            </control>
+            <control>
+              <key>Settings</key>
+              <title>Settings</title>
+              <src>DesktopModules/QLCS/vattu_admin_settings.ascx</src>
+              <type>Edit</type>
+            </control>
+            <control>
+              <key>vattu_addnew</key>
+              <title>VatTu Add New</title>
+              <src>DesktopModules/QLCS/vattu_addnew.ascx</src>
+              <type>Edit</type>
+            </control>
+            <control>
+              <key>vattu_edit</key>
+              <title>VatTu Edit</title>
+              <src>DesktopModules/QLCS/vattu_edit.ascx</src>
+              <type>Edit</type>
+            </control>
+            <control>
+              <key>vattu_lichsubiendong</key>
+              <title>VatTu LichSuBienDong</title>
+              <src>DesktopModules/QLCS/vattu_lichsubiendong.ascx</src>
+              <type>Edit</type>
+            </control>
+          </controls>
+        </module>
+      </modules>
+    </folder>
+  </folders>
+</dotnetnuke>

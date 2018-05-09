@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="ResMimeType">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="Version">
+    <value>1.0.0.0</value>
+  </resheader>
+  <resheader name="Reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="Writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="plModule.Text">
+    <value>Module: </value>
+  </data>
+  <data name="plDefinition.Text">
+    <value>Khai Báo:</value>
+  </data>
+  <data name="plKey.Text">
+    <value>Khóa:</value>
+  </data>
+  <data name="plKey.Help">
+    <value>Nhập vào một tên để nhận diện điều khiển bên trong Module</value>
+  </data>
+  <data name="plTitle.Text">
+    <value>Đầu Đề:</value>
+  </data>
+  <data name="plTitle.Help">
+    <value>Nhập vào một đầu đề cho điều khiển. Nó sẽ được hiển thị trên đầu Module nếu được skin hỗ trợ.</value>
+  </data>
+  <data name="plSource.Text">
+    <value>Nguồn:</value>
+  </data>
+  <data name="plSource.Help">
+    <value>Chọn nguồn cho điều khiển.</value>
+  </data>
+  <data name="plType.Text">
+    <value>Kiểu:</value>
+  </data>
+  <data name="plType.Help">
+    <value>Chọn kiểu điều khiển từ danh sách.</value>
+  </data>
+  <data name="Skin.Text">
+    <value>Đối Tượng Skin</value>
+  </data>
+  <data name="Anonymous.Text">
+    <value>Ẩn Danh</value>
+  </data>
+  <data name="View.Text">
+    <value>Hiển Thị</value>
+  </data>
+  <data name="Edit.Text">
+    <value>Thay Đổi</value>
+  </data>
+  <data name="Admin.Text">
+    <value>Admin </value>
+  </data>
+  <data name="Host.Text">
+    <value>Host </value>
+  </data>
+  <data name="plViewOrder.Text">
+    <value>Thứ Tự Hiển Thị:</value>
+  </data>
+  <data name="plViewOrder.Help">
+    <value>Nhập vào thứ tự hiển thị cho điều khiển trong danh sách điều khiển cho khai báo này.</value>
+  </data>
+  <data name="plIcon.Text">
+    <value>Icon: </value>
+  </data>
+  <data name="plIcon.Help">
+    <value>Chọn một Icon cho điều khiển này. Nó sẽ được hiển thị ở đầu Module nếu được skin hỗ trợ.</value>
+  </data>
+  <data name="plHelpURL.Text">
+    <value>URL Trợ Giúp:</value>
+  </data>
+  <data name="plHelpURL.Help">
+    <value>Bạn có thể cung cấp một Url Trợ Giúp cho điều khiển này. Nó sẽ hiện ra ở menu Action.</value>
+  </data>
+  <data name="plModule.Help">
+    <value>Đây là Tên Thân Thiện của Module.</value>
+  </data>
+  <data name="plDefinition.Help">
+    <value>Đây là Tên của Khai Báo Module</value>
+  </data>
+  <data name="ControlTitle_control.Text">
+    <value>Thay Đổi Điều Khiển Module</value>
+  </data>
+  <data name="ModuleHelp.Text">
+    <value>&lt;h1&gt;Về Chức Năng Khai Báo Module&lt;/h1&gt;&lt;p&gt;Tài khoản Super User có thể quản lý các Desktop Module được cài đặt trên hệ thống.&lt;/p&gt;</value>
+  </data>
+  <data name="AddControl.ErrorMessage">
+    <value>Hiện đã có một điều khiển với cùng khóa và nguồn.</value>
+  </data>
+</root>

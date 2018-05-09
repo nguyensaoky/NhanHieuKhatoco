@@ -1,0 +1,862 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+DotNetNuke.FckHtmlEditorProvider
+</name>
+</assembly>
+<members>
+<member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fckinstanceoptions.tblEditorOptions">
+	<summary>
+tblEditorOptions control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fckinstanceoptions.lblModuleType">
+	<summary>
+lblModuleType control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fckinstanceoptions.txtModuleType">
+	<summary>
+txtModuleType control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fckinstanceoptions.txtUsername">
+	<summary>
+txtUsername control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fckinstanceoptions.lblModuleName">
+	<summary>
+lblModuleName control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fckinstanceoptions.txtModuleName">
+	<summary>
+txtModuleName control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fckinstanceoptions.lblModuleInstance">
+	<summary>
+lblModuleInstance control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fckinstanceoptions.txtModuleInstance">
+	<summary>
+txtModuleInstance control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fckinstanceoptions.lblProviderVersion">
+	<summary>
+lblProviderVersion control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fckinstanceoptions.txtProviderVersion">
+	<summary>
+txtProviderVersion control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fckinstanceoptions.plSettingsType">
+	<summary>
+plSettingsType control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fckinstanceoptions.rbSettingsType">
+	<summary>
+rbSettingsType control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fckinstanceoptions.dshThemes">
+	<summary>
+dshThemes control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fckinstanceoptions.tblThemes">
+	<summary>
+tblThemes control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fckinstanceoptions.plToolbarSkin">
+	<summary>
+plToolbarSkin control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fckinstanceoptions.ddlToolbarSkin">
+	<summary>
+ddlToolbarSkin control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fckinstanceoptions.plImageBrowserTheme">
+	<summary>
+plImageBrowserTheme control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fckinstanceoptions.ddlImageBrowserTheme">
+	<summary>
+ddlImageBrowserTheme control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fckinstanceoptions.plFlashBrowserTheme">
+	<summary>
+plFlashBrowserTheme control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fckinstanceoptions.ddlFlashBrowserTheme">
+	<summary>
+ddlFlashBrowserTheme control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fckinstanceoptions.plLinkBrowserTheme">
+	<summary>
+plLinkBrowserTheme control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fckinstanceoptions.ddlLinkBrowserTheme">
+	<summary>
+ddlLinkBrowserTheme control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fckinstanceoptions.dshAvailableStyles">
+	<summary>
+dshAvailableStyles control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fckinstanceoptions.tblAvailableStyles">
+	<summary>
+tblAvailableStyles control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fckinstanceoptions.plStyleMode">
+	<summary>
+plStyleMode control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fckinstanceoptions.rbStyleMode">
+	<summary>
+rbStyleMode control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fckinstanceoptions.plStyleFilter">
+	<summary>
+plStyleFilter control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fckinstanceoptions.txtStyleFilter">
+	<summary>
+txtStyleFilter control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fckinstanceoptions.cmdCopyFilter">
+	<summary>
+cmdCopyFilter control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fckinstanceoptions.plPortalStyle">
+	<summary>
+plPortalStyle control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fckinstanceoptions.ctlURL">
+	<summary>
+ctlURL control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fckinstanceoptions.dshEditorAreaCss">
+	<summary>
+dshEditorAreaCss control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fckinstanceoptions.tblEditorAreaCss">
+	<summary>
+tblEditorAreaCss control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fckinstanceoptions.plCssMode">
+	<summary>
+plCssMode control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fckinstanceoptions.rbCssMode">
+	<summary>
+rbCssMode control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fckinstanceoptions.plPortalCss">
+	<summary>
+plPortalCss control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fckinstanceoptions.ctlUrlCss">
+	<summary>
+ctlUrlCss control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fckinstanceoptions.dshOther">
+	<summary>
+dshOther control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fckinstanceoptions.tblOther">
+	<summary>
+tblOther control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fckinstanceoptions.plToolbarNotExpanded">
+	<summary>
+plToolbarNotExpanded control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fckinstanceoptions.chkToolbarNotExpanded">
+	<summary>
+chkToolbarNotExpanded control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fckinstanceoptions.plHtmlEncodeOutput">
+	<summary>
+plHtmlEncodeOutput control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fckinstanceoptions.rbHtmlEncodeOutput">
+	<summary>
+rbHtmlEncodeOutput control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fckinstanceoptions.plRevertsHtmlEncodeOutput">
+	<summary>
+plRevertsHtmlEncodeOutput control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fckinstanceoptions.rbRevertsHtmlEncodeOutput">
+	<summary>
+rbRevertsHtmlEncodeOutput control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fckinstanceoptions.plEnhancedSecurity">
+	<summary>
+plEnhancedSecurity control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fckinstanceoptions.chkEnhancedSecurity">
+	<summary>
+chkEnhancedSecurity control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fckinstanceoptions.plFullImagePath">
+	<summary>
+plFullImagePath control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fckinstanceoptions.chkFullImagePath">
+	<summary>
+chkFullImagePath control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fckinstanceoptions.plForceWidth">
+	<summary>
+plForceWidth control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fckinstanceoptions.txtForceWidth">
+	<summary>
+txtForceWidth control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fckinstanceoptions.plForceHeight">
+	<summary>
+plForceHeight control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fckinstanceoptions.txtForceHeight">
+	<summary>
+txtForceHeight control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fckinstanceoptions.plImageFolder">
+	<summary>
+plImageFolder control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fckinstanceoptions.ddlImageFolder">
+	<summary>
+ddlImageFolder control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fckinstanceoptions.plFontColors">
+	<summary>
+plFontColors control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fckinstanceoptions.txtFontColors">
+	<summary>
+txtFontColors control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fckinstanceoptions.plFontNames">
+	<summary>
+plFontNames control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fckinstanceoptions.txtFontNames">
+	<summary>
+txtFontNames control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fckinstanceoptions.plFontSizes">
+	<summary>
+plFontSizes control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fckinstanceoptions.txtFontSizes">
+	<summary>
+txtFontSizes control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fckinstanceoptions.plFontFormats">
+	<summary>
+plFontFormats control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fckinstanceoptions.txtFontFormats">
+	<summary>
+txtFontFormats control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fckinstanceoptions.dshToolbarRoles">
+	<summary>
+dshToolbarRoles control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fckinstanceoptions.tblToolbarset">
+	<summary>
+tblToolbarset control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fckinstanceoptions.plToolbarSet">
+	<summary>
+plToolbarSet control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fckinstanceoptions.grdToolbars">
+	<summary>
+grdToolbars control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fckinstanceoptions.cmdMakeAllUsers">
+	<summary>
+cmdMakeAllUsers control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fckinstanceoptions.plApplyTo">
+	<summary>
+plApplyTo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fckinstanceoptions.ddlSettingsType">
+	<summary>
+ddlSettingsType control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fckinstanceoptions.cmdUpdate">
+	<summary>
+cmdUpdate control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fckinstanceoptions.cmdClear">
+	<summary>
+cmdClear control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fckinstanceoptions.hypClose">
+	<summary>
+hypClose control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fckinstanceoptions.lblResult">
+	<summary>
+lblResult control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="T:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fckinstanceoptions">
+	<summary>
+fckinstanceoptions class.
+</summary>
+	<remarks>
+Auto-generated class.
+</remarks>
+</member><member name="T:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fckStyles">
+	<summary>
+fckStyles class.
+</summary>
+	<remarks>
+Auto-generated class.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fcklinkgallery.Head">
+	<summary>
+Head control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fcklinkgallery.StylePlaceholder">
+	<summary>
+StylePlaceholder control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fcklinkgallery.CSS">
+	<summary>
+CSS control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fcklinkgallery.Body">
+	<summary>
+Body control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fcklinkgallery.ScrollTop">
+	<summary>
+ScrollTop control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fcklinkgallery.__dnnVariable">
+	<summary>
+__dnnVariable control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fcklinkgallery.lblTitle">
+	<summary>
+lblTitle control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fcklinkgallery.plURL">
+	<summary>
+plURL control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fcklinkgallery.ctlURL">
+	<summary>
+ctlURL control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fcklinkgallery.cmdSelect">
+	<summary>
+cmdSelect control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="T:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fcklinkgallery">
+	<summary>
+fcklinkgallery class.
+</summary>
+	<remarks>
+Auto-generated class.
+</remarks>
+</member><member name="T:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fckCSS">
+	<summary>
+fckCSS class.
+</summary>
+	<remarks>
+Auto-generated class.
+</remarks>
+</member><member name="M:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.Fckeditor.IsCompatibleBrowser">
+	<summary>
+ Checks if the current HTTP request comes from a browser compatible
+ with FCKeditor.
+ </summary>
+	<returns>"true" if the browser is compatible.</returns>
+</member><member name="M:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.Fckeditor.IsCompatibleBrowser(System.Web.HttpRequest)">
+	<summary>
+ Checks if the provided HttpRequest object comes from a browser
+ compatible with FCKeditor.
+ </summary>
+	<returns>"true" if the browser is compatible.</returns>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.FckHtmlEditorOptions.Head">
+	<summary>
+Head control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.FckHtmlEditorOptions.StylePlaceholder">
+	<summary>
+StylePlaceholder control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.FckHtmlEditorOptions.CSS">
+	<summary>
+CSS control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.FckHtmlEditorOptions.Body">
+	<summary>
+Body control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.FckHtmlEditorOptions.phControls">
+	<summary>
+phControls control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.FckHtmlEditorOptions.ScrollTop">
+	<summary>
+ScrollTop control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.FckHtmlEditorOptions.__dnnVariable">
+	<summary>
+__dnnVariable control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="T:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.FckHtmlEditorOptions">
+	<summary>
+FckHtmlEditorOptions class.
+</summary>
+	<remarks>
+Auto-generated class.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fckimagegallery.Head">
+	<summary>
+Head control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fckimagegallery.StylePlaceholder">
+	<summary>
+StylePlaceholder control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fckimagegallery.CSS">
+	<summary>
+CSS control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fckimagegallery.Body">
+	<summary>
+Body control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fckimagegallery.phContent">
+	<summary>
+phContent control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fckimagegallery.ScrollTop">
+	<summary>
+ScrollTop control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fckimagegallery.__dnnVariable">
+	<summary>
+__dnnVariable control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="T:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.fckimagegallery">
+	<summary>
+fckimagegallery class.
+</summary>
+	<remarks>
+Auto-generated class.
+</remarks>
+</member><member name="P:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:DotNetNuke.HtmlEditor.FckHtmlEditorProvider.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+</members>
+</doc>

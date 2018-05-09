@@ -1,0 +1,27 @@
+<dotnetnuke version="3.0" type="Module">
+  <folders>
+    <folder>
+      <name>CS_ImportCaChet</name>
+      <friendlyname>CS_ImportCaChet</friendlyname>
+      <foldername>QLCS</foldername>
+      <modulename>CS_ImportCaChet</modulename>
+      <description>CS_ImportCaChet</description>
+      <version>01.00.00</version>
+      <businesscontrollerclass>
+      </businesscontrollerclass>
+      <modules>
+        <module>
+          <friendlyname>CS_ImportCaChet</friendlyname>
+          <cachetime>0</cachetime>
+          <controls>
+            <control>
+              <title>Import CaChet</title>
+              <src>DesktopModules/QLCS/importcachet.ascx</src>
+              <type>Edit</type>
+            </control>
+          </controls>
+        </module>
+      </modules>
+    </folder>
+  </folders>
+</dotnetnuke>

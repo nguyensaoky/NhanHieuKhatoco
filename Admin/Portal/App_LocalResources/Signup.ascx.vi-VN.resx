@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="ResMimeType">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="Version">
+    <value>1.0.0.0</value>
+  </resheader>
+  <resheader name="Reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="Writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ModuleHelp.Text">
+    <value>Có hai loại Portal có thể được tạo sử dụng ứng dụng này:&lt;br&gt;&lt;br&gt;&lt;li&gt;&lt;b&gt;Các Portal mẹ&lt;/b&gt; là các site có URL riêng ( vd. www.domain.com ) gắn liền với chúng. Điều này thông thường liên quan đến việc mua một Tên Miền từ một Nhà Đăng Ký Internet, thiết lập các mục Primary/Secondary DNS chỉ vào máy chủ DNS của Nhà Cung Cấp Hosting, và được Nhà Cung Cấp Hosting của bạn định địa chỉ của Tên Miền của bạn vào một địa chỉ IP của tài khoản của bạn. Một ví dụ về một Tên Portal Mẹ hợp lệ là &lt;b&gt;www.mydomain.com&lt;/b&gt;. Bạn có thể sử dụng địa chỉ IP của site của bạn mà không có Tên Miền(vd. &lt;b&gt;65.174.86.217&lt;/b&gt; ). Nếu bạn cần có nhiều Tên Miền cùng chỉ đến một portal thì bạn cần ngăn cách chúng bằng các dấu phẩy( vd. &lt;b&gt;www.domain1.com,www.domain2.com&lt;/b&gt; ). Đừng tạo một Portal Mẹ đến khi mọi việc định vị địa chỉ  DNS đã hoàn tất nếu không bạn sẽ không thể truy cập được vào portal của bạn.&lt;br&gt;&lt;br&gt;&lt;li&gt;&lt;b&gt;Các Portal Con&lt;/b&gt; là các host cấp dưới của tài khoản Hosting Provider của bạn. Về cơ bản điều này có nghĩa là một thư mục được tạo trên máy chủ cho phép site được truy cập thông qua một địa chỉ URL được bao gồm một Tên Miền Mẹ cũng như tên thư mục( vd. www.domain.com/directory ). Một Portal Con có thể được chuyển đổi thành Portal mẹ vào bất cứ lúc nào chỉ đơn giản bằng cách đổi mục Portal Alias .&lt;br&gt;&lt;br&gt;*Hãy chú ý: Các Portal sẽ được tạo với các thuộc tính mặc định được định nghĩa ở module Thiết Lập Host ( Chi Phí Host, Chỗ Trống Host, Quá Trình Dùng Thử ) hoặc ở một file template được chọn. Một khi portal được tạo, những thiết lập này có thể được thay đổi ở tab Admin  Thiết Lập Site Module.&lt;br&gt;&lt;br&gt;</value>
+  </data>
+  <data name="plType.Text">
+    <value>Kiểu Portal:</value>
+  </data>
+  <data name="plType.Help">
+    <value>Có 2 kiểu portal có thể được tạo bởi ứng dụng này ( xem Module Trợ giúp có sẵn ở Menu Action để biết thêm chi tiết).</value>
+  </data>
+  <data name="DemoMessage.Text">
+    <value>Đăng Ký Demo Portal cho phép bạn tạo một Portal Website của riêng bạn và thí nghiệm những chức năng cao cấp của nó {0}. Vào bất cứ lúc nào trong hoặc sau quá trình thử nghiệm, bạn có thể chuyển  Demo Portal của bạn sang một Portal Đã Được Đăng Ký bằng cách đăng nhập với tài khoản Quản Trịvà chọn link Đăng Ký Hồi Phục/Mở Rộng Portal trên tab Admin. Các Portal đã được đăng ký có những lợi ích thêm vào về việc sử dụng tên miền của chính chúng ( vd. www.yourdomain.com ) như là địa chỉ web của chúng.&lt;br&gt;&lt;br&gt;&lt;b&gt;*Chú Ý:&lt;/b&gt; Tên Portal phải là một tên đơn giản cho site của bạn và không thể chứa ký tự trống hoặc các ký tự dấu câu. URL cho portal của bạn sẽ lấy định dạng &lt;b&gt; {1}/tênportal&lt;/b&gt;&lt;br&gt;&lt;br&gt;</value>
+  </data>
+  <data name="AdminMissing.Text">
+    <value>File admin.template bị mất và cần phải được tải lên Site.&lt;br&gt;</value>
+  </data>
+  <data name="PortalMissing.Text">
+    <value>File portal.template Bị Mất Và Phải Được Tải Lên Site.&lt;br&gt;</value>
+  </data>
+  <data name="plPortalName.Text">
+    <value>Tên Portal:</value>
+  </data>
+  <data name="plPortalName.Help">
+    <value>Nhập vào tên của Portal/Site</value>
+  </data>
+  <data name="valPortalName.ErrorMessage">
+    <value>&lt;br&gt;Cần Phải Nhập Tên Portal.</value>
+  </data>
+  <data name="plTitle.Text">
+    <value>Tiêu Đề:</value>
+  </data>
+  <data name="plTitle.Help">
+    <value>Đặt tiêu đề cho site của bạn.</value>
+  </data>
+  <data name="plDescription.Text">
+    <value>Mô tả:</value>
+  </data>
+  <data name="plDescription.Help">
+    <value>Nhập vào một mô tả cho site của bạn.</value>
+  </data>
+  <data name="plKeyWords.Text">
+    <value>Từ Khoá:</value>
+  </data>
+  <data name="plKeyWords.Help">
+    <value>Nhập vào một vài từ khoá cách nhau bởi dấu phẩy. Những từ khoá này sẽ được thêm vào trang Html dưới dạnh MetaData và giúp Công cụ Tìm kiếm chỉ mục đến site của bạn.</value>
+  </data>
+  <data name="plTemplate.Text">
+    <value>Mẫu:</value>
+  </data>
+  <data name="plTemplate.Help">
+    <value>Chọn một trang mẫu cho Portal mẫu.</value>
+  </data>
+  <data name="plFirstName.Text">
+    <value>Họ:</value>
+  </data>
+  <data name="plFirstName.Help">
+    <value>Nhập họ của bạn.</value>
+  </data>
+  <data name="plLastName.Text">
+    <value>Tên:</value>
+  </data>
+  <data name="plLastName.Help">
+    <value>Nhập vào tên của bạn.</value>
+  </data>
+  <data name="valFirstName.ErrorMessage">
+    <value>&lt;br&gt;Cần Phải Nhập Vào Họ.</value>
+  </data>
+  <data name="valLastName.ErrorMessage">
+    <value>&lt;br&gt;Cần Phải Nhập Vào Tên.</value>
+  </data>
+  <data name="plUsername.Text">
+    <value>Tên Người Dùng:</value>
+  </data>
+  <data name="plUsername.Help">
+    <value>Nhập một tên người sử dụng cho Tài khoản Quản trị của site.</value>
+  </data>
+  <data name="plPassword.Text">
+    <value>Password: </value>
+  </data>
+  <data name="plPassword.Help">
+    <value>Nhập vào password cho Tài khoản Quản trị của site.</value>
+  </data>
+  <data name="plConfirm.Text">
+    <value>Xác nhận:</value>
+  </data>
+  <data name="plConfirm.Help">
+    <value>Nhập lại password để xác nhận nó đã được đánh chính xác.</value>
+  </data>
+  <data name="valUsername.ErrorMessage">
+    <value>&lt;br&gt;Cần Phải Nhập Vào Tên Tài Khoản.</value>
+  </data>
+  <data name="valPassword.ErrorMessage">
+    <value>&lt;br&gt;Cần Phải Nhập Password.</value>
+  </data>
+  <data name="valConfirm.ErrorMessage">
+    <value>&lt;br&gt;Xác Nhận Password Là Cần Thiết.</value>
+  </data>
+  <data name="plEmail.Text">
+    <value>Email: </value>
+  </data>
+  <data name="plEmail.Help">
+    <value>Nhập một địa chỉ email cho Tài khoản Quản trị của site.</value>
+  </data>
+  <data name="valEmail.ErrorMessage">
+    <value>&lt;br&gt;Email Là Cần Thiết.</value>
+  </data>
+  <data name="cmdUpdate.Text">
+    <value>Tạo Portal</value>
+  </data>
+  <data name="Note.Text">
+    <value>&lt;b&gt;*Chú ý:&lt;/b&gt; Một khi portal của bạn được tạo, bạn sẽ cần phải đăng nhập bằng những thông tin Quản trị ở trên.</value>
+  </data>
+  <data name="InvalidTemplate.Text">
+    <value>{0} không phải là một file Template Portal hợp lệ.</value>
+  </data>
+  <data name="InvalidName.Text">
+    <value>Tên Portal Không Được Chứa Ký Tự Trống Hoặc Các Dấu Câu.</value>
+  </data>
+  <data name="InvalidPassword.Text">
+    <value>Giá Trị Password Vừa Nhập Không Đúng.</value>
+  </data>
+  <data name="ChildExists.Text">
+    <value>Tên Portal Con Bạn Vừa Chọn Đã Có. Hãy Chọn Một Tên Portal Con Khác.</value>
+  </data>
+  <data name="CreateError.Text">
+    <value>Gặp Lỗi Trong Khi Tạo Portal Của Bạn. Lỗi Này Có Thể Được Gây Ra Bởi Việc Chọn Một Password Không Hợp Lệ Cho Một Tài Khoản Người Dùng Sẵn Có. Hãy Kiểm Tra Lại Chi Tiết Trước Khi Thử Lại.</value>
+  </data>
+  <data name="PortalSetup.Text">
+    <value>Cài Đặt Portal</value>
+  </data>
+  <data name="SecuritySettings.Text">
+    <value>Thiết Lập An Ninh</value>
+  </data>
+  <data name="plPortalAlias.Text">
+    <value>Portal Alias: </value>
+  </data>
+  <data name="plPortalAlias.Help">
+    <value>Nhập Alias cho Portal</value>
+  </data>
+  <data name="plHomeDirectory.Text">
+    <value>Thư Mục Gốc:</value>
+  </data>
+  <data name="plHomeDirectory.Help">
+    <value>Nhập vào Thư mục gốc cho portal này</value>
+  </data>
+  <data name="Customize.Text">
+    <value>Tuỳ Biến</value>
+  </data>
+  <data name="valTemplate.ErrorMessage">
+    <value>&lt;br&gt;Hãy chọn một file template</value>
+  </data>
+  <data name="Parent.Text">
+    <value>Mẹ</value>
+  </data>
+  <data name="Child.Text">
+    <value>Con</value>
+  </data>
+  <data name="AutoGenerate.Text">
+    <value>Tự Động tạo mã</value>
+  </data>
+  <data name="ControlTitle_signup.Text">
+    <value>Đăng Ký</value>
+  </data>
+  <data name="SendMail.Error">
+    <value>Có lỗi xảy ra trong quá trình gửi email. Tuy nhiên, website vẫn được tạo. &lt;a href='{0}'&gt;Click Vào Đây để truy cập đến trang web mới&lt;/a&gt;</value>
+  </data>
+</root>

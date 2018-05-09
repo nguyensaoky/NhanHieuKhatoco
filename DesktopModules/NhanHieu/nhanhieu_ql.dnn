@@ -1,0 +1,27 @@
+<dotnetnuke version="3.0" type="Module">
+  <folders>
+    <folder>
+      <name>QLNhanHieu</name>
+      <friendlyname>QLNhanHieu</friendlyname>
+      <foldername>NhanHieu</foldername>
+      <modulename>QLNhanHieu</modulename>
+      <description>QLNhanHieu</description>
+      <version>01.00.00</version>
+      <businesscontrollerclass>
+      </businesscontrollerclass>
+      <modules>
+        <module>
+          <friendlyname>QLNhanHieu</friendlyname>
+          <cachetime>0</cachetime>
+          <controls>
+            <control>
+              <title></title>
+              <src>DesktopModules/NhanHieu/nhanhieu_edit.ascx</src>
+              <type>View</type>
+            </control>
+          </controls>
+        </module>
+      </modules>
+    </folder>
+  </folders>
+</dotnetnuke>

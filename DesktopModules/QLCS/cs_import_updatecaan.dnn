@@ -1,0 +1,27 @@
+<dotnetnuke version="3.0" type="Module">
+  <folders>
+    <folder>
+      <name>CS_Import_UpdateCaAn</name>
+      <friendlyname>CS_Import_UpdateCaAn</friendlyname>
+      <folAnrname>QLCS</folAnrname>
+      <modulename>CS_Import_UpdateCaAn</modulename>
+      <description>CS_Import_UpdateCaAn</description>
+      <version>01.00.00</version>
+      <businesscontrollerclass>
+      </businesscontrollerclass>
+      <modules>
+        <module>
+          <friendlyname>CS_Import_UpdateCaAn</friendlyname>
+          <cachetime>0</cachetime>
+          <controls>
+            <control>
+              <title>Import CaAn</title>
+              <src>DesktopModules/QLCS/import_updatecaan.ascx</src>
+              <type>Edit</type>
+            </control>
+          </controls>
+        </module>
+      </modules>
+    </folder>
+  </folders>
+</dotnetnuke>

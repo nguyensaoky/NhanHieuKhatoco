@@ -1,0 +1,27 @@
+<dotnetnuke version="3.0" type="Module">
+  <folders>
+    <folder>
+      <name>CS_CaDeLichSu</name>
+      <friendlyname>CS_CaDeLichSu</friendlyname>
+      <foldername>QLCS</foldername>
+      <modulename>CS_CaDeLichSu</modulename>
+      <description>CS_CaDeLichSu</description>
+      <version>01.00.00</version>
+      <businesscontrollerclass>
+      </businesscontrollerclass>
+      <modules>
+        <module>
+          <friendlyname>CS_CaDeLichSu</friendlyname>
+          <cachetime>0</cachetime>
+          <controls>
+            <control>
+              <title>CaSau De LichSu</title>
+              <src>DesktopModules/QLCS/casaude_lichsu.ascx</src>
+              <type>Edit</type>
+            </control>
+          </controls>
+        </module>
+      </modules>
+    </folder>
+  </folders>
+</dotnetnuke>

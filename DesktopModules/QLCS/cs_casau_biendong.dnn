@@ -1,0 +1,27 @@
+<dotnetnuke version="3.0" type="Module">
+  <folders>
+    <folder>
+      <name>CS_BienDong</name>
+      <friendlyname>CS_BienDong</friendlyname>
+      <foldername>QLCS</foldername>
+      <modulename>CS_BienDong</modulename>
+      <description>CS_BienDong</description>
+      <version>01.00.00</version>
+      <businesscontrollerclass>
+      </businesscontrollerclass>
+      <modules>
+        <module>
+          <friendlyname>CS_BienDong</friendlyname>
+          <cachetime>0</cachetime>
+          <controls>
+            <control>
+              <title>BienDong</title>
+              <src>DesktopModules/QLCS/casau_biendong.ascx</src>
+              <type>Edit</type>
+            </control>
+          </controls>
+        </module>
+      </modules>
+    </folder>
+  </folders>
+</dotnetnuke>

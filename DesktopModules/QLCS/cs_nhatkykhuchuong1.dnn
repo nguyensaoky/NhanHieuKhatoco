@@ -1,0 +1,27 @@
+<dotnetnuke version="3.0" type="Module">
+  <folders>
+    <folder>
+      <name>CS_NhatKyKhuChuong1</name>
+      <friendlyname>CS_NhatKyKhuChuong1</friendlyname>
+      <foldername>QLCS</foldername>
+      <modulename>CS_NhatKyKhuChuong1</modulename>
+      <description>CS_NhatKyKhuChuong1</description>
+      <version>01.00.00</version>
+      <businesscontrollerclass>
+      </businesscontrollerclass>
+      <modules>
+        <module>
+          <friendlyname>CS_NhatKyKhuChuong1</friendlyname>
+          <cachetime>0</cachetime>
+          <controls>
+            <control>
+              <title>NhatKyKhuChuong1</title>
+              <src>DesktopModules/QLCS/nhatkytheokhuchuong1.ascx</src>
+              <type>Edit</type>
+            </control>
+          </controls>
+        </module>
+      </modules>
+    </folder>
+  </folders>
+</dotnetnuke>

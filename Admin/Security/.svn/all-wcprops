@@ -1,0 +1,167 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/37/trunk/CS_Website/Admin/Security
+END
+WindowsSignin.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/24/trunk/CS_Website/Admin/Security/WindowsSignin.aspx.cs
+END
+Roles.ascx
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/17/trunk/CS_Website/Admin/Security/Roles.ascx
+END
+Register.ascx
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/17/trunk/CS_Website/Admin/Security/Register.ascx
+END
+EditGroups.ascx
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/17/trunk/CS_Website/Admin/Security/EditGroups.ascx
+END
+Signin.ascx
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/21/trunk/CS_Website/Admin/Security/Signin.ascx
+END
+Register.ascx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/24/trunk/CS_Website/Admin/Security/Register.ascx.cs
+END
+Roles.ascx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/28/trunk/CS_Website/Admin/Security/Roles.ascx.cs
+END
+Logoff.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/17/trunk/CS_Website/Admin/Security/Logoff.aspx
+END
+EditGroups.ascx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/24/trunk/CS_Website/Admin/Security/EditGroups.ascx.cs
+END
+EditRoles.ascx
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/17/trunk/CS_Website/Admin/Security/EditRoles.ascx
+END
+Signin.ascx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/37/trunk/CS_Website/Admin/Security/Signin.ascx.cs
+END
+icon_users_32px.gif
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/14/trunk/CS_Website/Admin/Security/icon_users_32px.gif
+END
+Logoff.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/24/trunk/CS_Website/Admin/Security/Logoff.aspx.cs
+END
+EditRoles.ascx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/37/trunk/CS_Website/Admin/Security/EditRoles.ascx.cs
+END
+AuthenticationSettings.ascx
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/17/trunk/CS_Website/Admin/Security/AuthenticationSettings.ascx
+END
+AuthenticationSettings.ascx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/28/trunk/CS_Website/Admin/Security/AuthenticationSettings.ascx.cs
+END
+ResetPassword.ascx
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/37/trunk/CS_Website/Admin/Security/ResetPassword.ascx
+END
+icon_securityroles_32px.gif
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/14/trunk/CS_Website/Admin/Security/icon_securityroles_32px.gif
+END
+ResetPassword.ascx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/37/trunk/CS_Website/Admin/Security/ResetPassword.ascx.cs
+END
+icon_authentication_32px.gif
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/14/trunk/CS_Website/Admin/Security/icon_authentication_32px.gif
+END
+AccessDenied.ascx
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/17/trunk/CS_Website/Admin/Security/AccessDenied.ascx
+END
+SecurityRoles.ascx
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/24/trunk/CS_Website/Admin/Security/SecurityRoles.ascx
+END
+SendPassword.ascx
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/37/trunk/CS_Website/Admin/Security/SendPassword.ascx
+END
+AccessDenied.ascx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/28/trunk/CS_Website/Admin/Security/AccessDenied.ascx.cs
+END
+WindowsSignin.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/14/trunk/CS_Website/Admin/Security/WindowsSignin.aspx
+END
+SendPassword.ascx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/24/trunk/CS_Website/Admin/Security/SendPassword.ascx.cs
+END
+SecurityRoles.ascx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/37/trunk/CS_Website/Admin/Security/SecurityRoles.ascx.cs
+END

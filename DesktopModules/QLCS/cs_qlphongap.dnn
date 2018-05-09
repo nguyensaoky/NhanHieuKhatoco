@@ -1,0 +1,33 @@
+<dotnetnuke version="3.0" type="Module">
+  <folders>
+    <folder>
+      <name>CS_QLPhongAp</name>
+      <friendlyname>CS_QLPhongAp</friendlyname>
+      <foldername>QLCS</foldername>
+      <modulename>CS_QLPhongAp</modulename>
+      <description>CS_QLPhongAp</description>
+      <version>01.00.00</version>
+      <businesscontrollerclass>
+      </businesscontrollerclass>
+      <modules>
+        <module>
+          <friendlyname>CS_QLPhongAp</friendlyname>
+          <cachetime>0</cachetime>
+          <controls>
+            <control>
+              <title>PhongAp Admin</title>
+              <src>DesktopModules/QLCS/phongap_admin.ascx</src>
+              <type>Edit</type>
+            </control>
+            <control>
+              <key>phongap_edit</key>
+              <title>PhongAp Edit</title>
+              <src>DesktopModules/QLCS/phongap_edit.ascx</src>
+              <type>Edit</type>
+            </control>
+          </controls>
+        </module>
+      </modules>
+    </folder>
+  </folders>
+</dotnetnuke>

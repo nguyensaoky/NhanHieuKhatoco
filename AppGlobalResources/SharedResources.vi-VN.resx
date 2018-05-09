@@ -1,0 +1,933 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="DeleteItem.Text" xml:space="preserve">
+    <value>Bạn Có Chắc Là Bạn Muốn Xoá? </value>
+  </data>
+  <data name="Calendar.Text" xml:space="preserve">
+    <value>Lịch </value>
+  </data>
+  <data name="Yes.Text" xml:space="preserve">
+    <value>Có </value>
+  </data>
+  <data name="No.Text" xml:space="preserve">
+    <value>Tiếp</value>
+  </data>
+  <data name="Not_Specified.Text" xml:space="preserve">
+    <value>Chưa Được Xác Định</value>
+  </data>
+  <data name="None_Specified.Text" xml:space="preserve">
+    <value>Chưa Được Xác Định</value>
+  </data>
+  <data name="cmdCancel.Text" xml:space="preserve">
+    <value>Huỷ Bỏ</value>
+  </data>
+  <data name="cmdDelete.Text" xml:space="preserve">
+    <value>Xoá</value>
+  </data>
+  <data name="cmdDisplay.Text" xml:space="preserve">
+    <value>Hiển Thị</value>
+  </data>
+  <data name="cmdGo.Text" xml:space="preserve">
+    <value>Chuyển Đi</value>
+  </data>
+  <data name="cmdUpdate.Text" xml:space="preserve">
+    <value>Cập Nhật</value>
+  </data>
+  <data name="cmdUpload.Text" xml:space="preserve">
+    <value>Tải Lên File Mới</value>
+  </data>
+  <data name="Select.Text" xml:space="preserve">
+    <value>Chọn </value>
+  </data>
+  <data name="Upload.Text" xml:space="preserve">
+    <value>Tải lên</value>
+  </data>
+  <data name="Add.Text" xml:space="preserve">
+    <value>Thêm</value>
+  </data>
+  <data name="All.Text" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="Unauthorized.Text" xml:space="preserve">
+    <value>Unauthorized</value>
+  </data>
+  <data name="Today.Text" xml:space="preserve">
+    <value>Kiểm tra xong. Đợi {0} mili giây. </value>
+  </data>
+  <data name="Close.Text" xml:space="preserve">
+    <value>Đóng </value>
+  </data>
+  <data name="cmdReturn.Text" xml:space="preserve">
+    <value>Quay Về</value>
+  </data>
+  <data name="cmdDownLoad.Text" xml:space="preserve">
+    <value>Tải Về</value>
+  </data>
+  <data name="Seconds.Text" xml:space="preserve">
+    <value> Giây </value>
+  </data>
+  <data name="Second.Text" xml:space="preserve">
+    <value> Giây </value>
+  </data>
+  <data name="Minutes.Text" xml:space="preserve">
+    <value> Phút </value>
+  </data>
+  <data name="Minute.Text" xml:space="preserve">
+    <value> Phút </value>
+  </data>
+  <data name="Hours.Text" xml:space="preserve">
+    <value>Giờ </value>
+  </data>
+  <data name="Hour.Text" xml:space="preserve">
+    <value>Giờ </value>
+  </data>
+  <data name="Days.Text" xml:space="preserve">
+    <value>Ngày</value>
+  </data>
+  <data name="Day.Text" xml:space="preserve">
+    <value>Ngày</value>
+  </data>
+  <data name="DeleteItems.Text" xml:space="preserve">
+    <value>Bạn Có Chắc Là Bạn Muốn Xoá? </value>
+  </data>
+  <data name="cmdEdit.Text" xml:space="preserve">
+    <value>Cấu Hình</value>
+  </data>
+  <data name="Edit.Text" xml:space="preserve">
+    <value>Cấu Hình </value>
+  </data>
+  <data name="Unknown.Text" xml:space="preserve">
+    <value>Chưa Biết</value>
+  </data>
+  <data name="Weeks.Text" xml:space="preserve">
+    <value>Tuần</value>
+  </data>
+  <data name="Week.Text" xml:space="preserve">
+    <value>Tuần</value>
+  </data>
+  <data name="Months.Text" xml:space="preserve">
+    <value>Tháng</value>
+  </data>
+  <data name="Month.Text" xml:space="preserve">
+    <value>Tháng</value>
+  </data>
+  <data name="Years.Text" xml:space="preserve">
+    <value> Năm </value>
+  </data>
+  <data name="Year.Text" xml:space="preserve">
+    <value> Năm </value>
+  </data>
+  <data name="New.Text" xml:space="preserve">
+    <value>Mới</value>
+  </data>
+  <data name="DeleteModule.Confirm" xml:space="preserve">
+    <value>Bạn Có Chắc Là Bạn Muốn Xoá Module Này?</value>
+  </data>
+  <data name="EXCEPTION.Log" xml:space="preserve">
+    <value>Lỗi: {0}</value>
+  </data>
+  <data name="PURGE.Log" xml:space="preserve">
+    <value>Dọn dẹp nhật ký Site thành công</value>
+  </data>
+  <data name="SkinObjects.Text" xml:space="preserve">
+    <value>[Đối Tượng Skin]</value>
+  </data>
+  <data name="SkinObjectsDescription.Text" xml:space="preserve">
+    <value>Các Đối tượng Skin là các điều khiển người dùng có thể được sử dụng để cung cấp những chức năng đặc biệt cho các file Skin của bạn. </value>
+  </data>
+  <data name="ReadError.Text" xml:space="preserve">
+    <value>Không thể đọc tất cả dữ liệu: {0}/{1}</value>
+  </data>
+  <data name="Help.Text" xml:space="preserve">
+    <value>Trợ Giúp</value>
+  </data>
+  <data name="PURGEUSERS.Log" xml:space="preserve">
+    <value>Dọn dẹp Người dùng Online thành công</value>
+  </data>
+  <data name="ErrorOccurred.Text" xml:space="preserve">
+    <value>Có lỗi xảy ra.</value>
+  </data>
+  <data name="ModuleUnavailable.Text" xml:space="preserve">
+    <value>Lỗi: {0} hiện chưa có.</value>
+  </data>
+  <data name="PURGEDSCHEDULE.Log" xml:space="preserve">
+    <value>Dọn dẹp các Mục khóa biểu cũ</value>
+  </data>
+  <data name="TESTCOMPLETE.Log" xml:space="preserve">
+    <value>Kết thúc kiểm tra.  Đợi {0} mili giây. </value>
+  </data>
+  <data name="UserEmailExists.Text" xml:space="preserve">
+    <value>Một người dùng đã được xác định cho địa chỉ email đưa ra. Hãy đăng nhập với tài khoản đã được đăng ký của địa chỉ email đó.</value>
+  </data>
+  <data name="InvalidAnswer.Text" xml:space="preserve">
+    <value>Câu trả lời sai. Hãy đưa ra một câu trả lời đúng cho câu hỏi. </value>
+  </data>
+  <data name="InvalidEmail.Text" xml:space="preserve">
+    <value>Địa chỉ email đưa ra không đúng. Hãy đưa ra một địa chỉ email đúng. </value>
+  </data>
+  <data name="InvalidPassword.Text" xml:space="preserve">
+    <value>Password đưa ra sai.  Hãy nhập password đúng. Password phải chứa ít nhất [PasswordLength] ký tự và ít nhất [NoneAlphabet] ký tự không phải là chữ hoặc số</value>
+  </data>
+  <data name="InvalidQuestion.Text" xml:space="preserve">
+    <value>Câu hỏi đưa ra sai. Hãy nhập câu hỏi đúng. </value>
+  </data>
+  <data name="InvalidUserName.Text" xml:space="preserve">
+    <value>Tên người dùng đưa ra sai. Hãy nhập vào tên người dùng đúng. </value>
+  </data>
+  <data name="UserRejected.Text" xml:space="preserve">
+    <value>Việc đăng ký đối với người dùng này đã bị từ chối. Hãy liên hệ một quản trị viên để biết thêm thông tin.</value>
+  </data>
+  <data name="UserNameExists.Text" xml:space="preserve">
+    <value>Username Đã Được Đăng Ký. Hãy Đăng Ký Lại Với Username.</value>
+  </data>
+  <data name="RegError.Text" xml:space="preserve">
+    <value>Một lỗi chưa được biết đã xuất hiện trong quá trình đăng ký. Hãy liên hệ người quản lý portal để biết thêm thông tin chi tiết. </value>
+  </data>
+  <data name="PaneNotFound.Error" xml:space="preserve">
+    <value>Không tìm thấy ContentPane của skin</value>
+  </data>
+  <data name="ContractExpired.Error" xml:space="preserve">
+    <value>Hợp đồng hosting cho {0} hết hạn vào {1}. Hãy liên hệ &lt;a href="mailto:{2}"&gt;{2}&lt;/a&gt; để biết thêm chi tiết.</value>
+  </data>
+  <data name="TabAccess.Error" xml:space="preserve">
+    <value>Bạn không có quyền truy cập để xem nhãn này bên trong portal. </value>
+  </data>
+  <data name="ModuleAccess.Error" xml:space="preserve">
+    <value>Bạn không có quyền xem module này bên trong portal. </value>
+  </data>
+  <data name="CriticalError.Error" xml:space="preserve">
+    <value>Có lỗi nghiêm trọng xảy ra. </value>
+  </data>
+  <data name="ModuleLoad.Error" xml:space="preserve">
+    <value>Lỗi không thể luận giải được khi nạp module. </value>
+  </data>
+  <data name="ModuleAdd.Error" xml:space="preserve">
+    <value>Lỗi không luận giải được khi thêm module vào {0} </value>
+  </data>
+  <data name="ContainerLoad.Error" xml:space="preserve">
+    <value>Không Thể Nạp Container: {0}</value>
+  </data>
+  <data name="BeginZip.Text" xml:space="preserve">
+    <value>Bắt đầu xử lý file ZIP </value>
+  </data>
+  <data name="CreateDir.Text" xml:space="preserve">
+    <value>Tạo thư mục</value>
+  </data>
+  <data name="WriteFile.Text" xml:space="preserve">
+    <value>Ghi file</value>
+  </data>
+  <data name="FileError.Text" xml:space="preserve">
+    <value>Lỗi xử lý file </value>
+  </data>
+  <data name="EndZip.Text" xml:space="preserve">
+    <value>Kết thúc xử lý file zip </value>
+  </data>
+  <data name="FileRestricted.Text" xml:space="preserve">
+    <value>{0} là một kiểu file bị cấm. Kiểu file được chấp nhận bao gồm ( *.{1}). Hãy liên hệ superuser của bạn nếu bạn cần tải lên một kiểu file không được hỗ trợ. </value>
+  </data>
+  <data name="Skins.Text" xml:space="preserve">
+    <value>Skins </value>
+  </data>
+  <data name="Containers.Text" xml:space="preserve">
+    <value>Container</value>
+  </data>
+  <data name="StartProcessor.Text" xml:space="preserve">
+    <value>Kích hoạt xử lý cho các file skin/container </value>
+  </data>
+  <data name="PackageLoad.Text" xml:space="preserve">
+    <value>Đã nạp gói thuộc tính</value>
+  </data>
+  <data name="PackageLoad.Error" xml:space="preserve">
+    <value>Lỗi khi nạp gói thuộc tính: ({0}) </value>
+  </data>
+  <data name="DuplicateSkinObject.Error" xml:space="preserve">
+    <value>Loại bỏ đối tượng skin cho token {0} </value>
+  </data>
+  <data name="DuplicateSkinObject.Detail" xml:space="preserve">
+    <value>Bất cứ skin nào tham chiếu token này sẽ sử dụng điều khiển skin được đăng ký đầu tiên {0} thay cho cái được xác định bởi sự trùng lặp ({1}).  Skin có thể được biểu hiện không chính xác. </value>
+  </data>
+  <data name="LoadingSkinToken.Text" xml:space="preserve">
+    <value>Nạp đối tượng skin cho token {0} </value>
+  </data>
+  <data name="BeginSkinFile.Text" xml:space="preserve">
+    <value>Bắt đầu xử lý file </value>
+  </data>
+  <data name="EndSkinFile.Text" xml:space="preserve">
+    <value>Kết thúc xử lý file </value>
+  </data>
+  <data name="EndSkinFiles.Text" xml:space="preserve">
+    <value>Kết thúc xử lý file  skin/container   </value>
+  </data>
+  <data name="FileFormat.Error" xml:space="preserve">
+    <value>Lỗi định dạng file </value>
+  </data>
+  <data name="FileFormat.Detail" xml:space="preserve">
+    <value>{0} không chứa ô nội dung. </value>
+  </data>
+  <data name="SkinFileLoad.Text" xml:space="preserve">
+    <value>Đang nạp file thuộc tính </value>
+  </data>
+  <data name="SkinFileLoad.Error" xml:space="preserve">
+    <value>Lỗi xảy ra khi nạp file thuộc tính </value>
+  </data>
+  <data name="FileWrite.Text" xml:space="preserve">
+    <value>Ghi file </value>
+  </data>
+  <data name="ControlDirective.Text" xml:space="preserve">
+    <value>Chỉ dẫn định dạng điều khiển </value>
+  </data>
+  <data name="ControlRegister.Text" xml:space="preserve">
+    <value>Chỉ dẫn định dạng đăng ký  </value>
+  </data>
+  <data name="Substituting.Text" xml:space="preserve">
+    <value>Thay thế </value>
+  </data>
+  <data name="Substituting.Detail" xml:space="preserve">
+    <value>{0}&lt;br&gt;với: {1} </value>
+  </data>
+  <data name="ProcessToken.Text" xml:space="preserve">
+    <value>Xử lý dấu hiệu</value>
+  </data>
+  <data name="SkinToken.Text" xml:space="preserve">
+    <value>Token là đối tượng skin </value>
+  </data>
+  <data name="PaneToken.Text" xml:space="preserve">
+    <value>Dấu hiệu là ContentPane</value>
+  </data>
+  <data name="TokenFound.Text" xml:space="preserve">
+    <value>Token được tìm thấy trong file thuộc tính </value>
+  </data>
+  <data name="TokenFormat.Text" xml:space="preserve">
+    <value>Định dạng token thuộc tính </value>
+  </data>
+  <data name="TokenNotFoundInFile.Text" xml:space="preserve">
+    <value>Token KHÔNG được tìm thấy trong file thuộc tính </value>
+  </data>
+  <data name="ControlFormat.Text" xml:space="preserve">
+    <value>Định dạng lệnh điều khiển </value>
+  </data>
+  <data name="TokenNotFound.Text" xml:space="preserve">
+    <value>Token không được tìm thấy </value>
+  </data>
+  <data name="cmdNext.Text" xml:space="preserve">
+    <value>Tiếp Theo</value>
+  </data>
+  <data name="cmdBack.Text" xml:space="preserve">
+    <value>Quay Về</value>
+  </data>
+  <data name="cmdFinish.Text" xml:space="preserve">
+    <value>Kết Thúc</value>
+  </data>
+  <data name="cmdBack.Help" xml:space="preserve">
+    <value>Click để di chuyển về trang trước</value>
+  </data>
+  <data name="cmdNext.Help" xml:space="preserve">
+    <value>Click để di chuyển đến trang tiếp theo</value>
+  </data>
+  <data name="Left.Text" xml:space="preserve">
+    <value>Trái </value>
+  </data>
+  <data name="Right.Text" xml:space="preserve">
+    <value>Phải</value>
+  </data>
+  <data name="Center.Text" xml:space="preserve">
+    <value>Giữa </value>
+  </data>
+  <data name="Maximized.Text" xml:space="preserve">
+    <value>Mở </value>
+  </data>
+  <data name="Minimized.Text" xml:space="preserve">
+    <value>Đóng </value>
+  </data>
+  <data name="None.Text" xml:space="preserve">
+    <value>Không</value>
+  </data>
+  <data name="Pages.Text" xml:space="preserve">
+    <value>Trang {0} trong {1}</value>
+  </data>
+  <data name="cmdHelp.Text" xml:space="preserve">
+    <value>Trợ Giúp</value>
+  </data>
+  <data name="cmdHelp.Help" xml:space="preserve">
+    <value>Click để hiển thị Trợ Giúp cho trang này</value>
+  </data>
+  <data name="DNN_Reading.Text" xml:space="preserve">
+    <value>Đọc file DNN </value>
+  </data>
+  <data name="DNN_Success.Text" xml:space="preserve">
+    <value>Dnn nạp thành công </value>
+  </data>
+  <data name="DNN_Valid.Text" xml:space="preserve">
+    <value>File DNN không đúng định dạng {0}.</value>
+  </data>
+  <data name="DNN_ValidSkinObject.Text" xml:space="preserve">
+    <value>File DNN thuộc định dạng đối tượng Skin 2.0. </value>
+  </data>
+  <data name="EXCEPTION.Text" xml:space="preserve">
+    <value>Lỗi</value>
+  </data>
+  <data name="EXCEPTION_DesktopSrc.Text" xml:space="preserve">
+    <value>Một module điều khiển phải có một giá trị Desktopsrc, huỷ bỏ... </value>
+  </data>
+  <data name="EXCEPTION_FileLoad.Text" xml:space="preserve">
+    <value>Thất bại trong nạp file, huỷ bỏ </value>
+  </data>
+  <data name="EXCEPTION_FileName.Text" xml:space="preserve">
+    <value>Một file phải có một giá trị tên, huỷ bỏ </value>
+  </data>
+  <data name="EXCEPTION_FileRead.Text" xml:space="preserve">
+    <value>Không thể đọc hết dữ liệu: </value>
+  </data>
+  <data name="EXCEPTION_FolderDesc.Text" xml:space="preserve">
+    <value>Một thư mục phải có mô tả, huỷ bỏ </value>
+  </data>
+  <data name="EXCEPTION_FolderName.Text" xml:space="preserve">
+    <value>Một thư mục phải có một giá trị tên, huỷ bỏ </value>
+  </data>
+  <data name="EXCEPTION_FolderProvider.Text" xml:space="preserve">
+    <value>Một thư mục phải có một kiểu provider, huỷ bỏ </value>
+  </data>
+  <data name="EXCEPTION_FolderVersion.Text" xml:space="preserve">
+    <value>Một thư mục phải có một giá trị phiên bản, huỷ bỏ </value>
+  </data>
+  <data name="EXCEPTION_Format.Text" xml:space="preserve">
+    <value>Định dạng Dnn sai, huỷ bỏ </value>
+  </data>
+  <data name="EXCEPTION_LoadFailed.Text" xml:space="preserve">
+    <value>Nạp Dnn thất bại, huỷ bỏ </value>
+  </data>
+  <data name="EXCEPTION_MissingDnn.Text" xml:space="preserve">
+    <value>Không tìm thấy file .dnn nào??? </value>
+  </data>
+  <data name="EXCEPTION_MissingResource.Text" xml:space="preserve">
+    <value>File Tài Nguyên được xác định trong dnn không tìm thấy trong file zip: </value>
+  </data>
+  <data name="EXCEPTION_MultipleDnn.Text" xml:space="preserve">
+    <value>Tìm thấy nhiều file .dnn trong file zip: </value>
+  </data>
+  <data name="EXCEPTION_Src.Text" xml:space="preserve">
+    <value>Một điều khiển module phải có một giá trị src, huỷ bỏ </value>
+  </data>
+  <data name="EXCEPTION_Type.Text" xml:space="preserve">
+    <value>Một điều khiển module phải có một giá trị kiểu, huỷ bỏ </value>
+  </data>
+  <data name="FILE_Created.Text" xml:space="preserve">
+    <value>đã được tạo thành công </value>
+  </data>
+  <data name="FILE_Found.Text" xml:space="preserve">
+    <value>Tìm thấy đường dẫn ({0}) cho {1}. </value>
+  </data>
+  <data name="FILE_Loading.Text" xml:space="preserve">
+    <value>Đang nạp </value>
+  </data>
+  <data name="FILE_NotFound.Text" xml:space="preserve">
+    <value>File được mô tả trong dnn không tìm thấy trong file zip: </value>
+  </data>
+  <data name="FILE_ReadSuccess.Text" xml:space="preserve">
+    <value>File {0} được đọc thành công </value>
+  </data>
+  <data name="FILES_Created.Text" xml:space="preserve">
+    <value>File đã được tạo </value>
+  </data>
+  <data name="FILES_CreatedResources.Text" xml:space="preserve">
+    <value>Các File Tài Nguyên đã được tạo </value>
+  </data>
+  <data name="FILES_Creating.Text" xml:space="preserve">
+    <value>Đang tạo file </value>
+  </data>
+  <data name="FILES_Expanding.Text" xml:space="preserve">
+    <value>Mở rộng file Tài Nguyên </value>
+  </data>
+  <data name="FILES_Loading.Text" xml:space="preserve">
+    <value>Nạp các file thông tin </value>
+  </data>
+  <data name="FILES_Reading.Text" xml:space="preserve">
+    <value>Đọc file </value>
+  </data>
+  <data name="FILES_ReadingEnd.Text" xml:space="preserve">
+    <value>Hoàn thành đọc file. </value>
+  </data>
+  <data name="INSTALL_Start.Text" xml:space="preserve">
+    <value>Bắt đầu Cài đặt </value>
+  </data>
+  <data name="INSTALL_Success.Text" xml:space="preserve">
+    <value>Cài đặt thành công. </value>
+  </data>
+  <data name="MODULES_ControlInfo.Text" xml:space="preserve">
+    <value>Nạp thông tin điều khiển cho module '{0}' </value>
+  </data>
+  <data name="MODULES_Loading.Text" xml:space="preserve">
+    <value>Nạp thông tin của các module</value>
+  </data>
+  <data name="REGISTER_Controls.Text" xml:space="preserve">
+    <value>Đăng Ký Điều Khiển  </value>
+  </data>
+  <data name="REGISTER_Definition.Text" xml:space="preserve">
+    <value>Đang Đăng Ký Định Nghĩa  </value>
+  </data>
+  <data name="REGISTER_End.Text" xml:space="preserve">
+    <value>Đăng Ký Thành Công </value>
+  </data>
+  <data name="REGISTER_Module.Text" xml:space="preserve">
+    <value>Đăng Ký DesktopModule </value>
+  </data>
+  <data name="SQL_Begin.Text" xml:space="preserve">
+    <value>Bắt đầu thi hành SQL </value>
+  </data>
+  <data name="SQL_BeginFile.Text" xml:space="preserve">
+    <value>Bắt đầu thi hành SQL: {0} file </value>
+  </data>
+  <data name="SQL_End.Text" xml:space="preserve">
+    <value>Kết thúc thi hành SQL </value>
+  </data>
+  <data name="SQL_EndFile.Text" xml:space="preserve">
+    <value>Kết thúc thi hành SQL: {0} file </value>
+  </data>
+  <data name="SQL_Exceptions.Text" xml:space="preserve">
+    <value>Thi hành SQL cho kết quả là những lỗi sau: {0}{1} </value>
+  </data>
+  <data name="SQL_Executing.Text" xml:space="preserve">
+    <value>Đang thi hành </value>
+  </data>
+  <data name="SQL_UnknownFile.Text" xml:space="preserve">
+    <value>Định dạng dữ liệu của {0} chưa được biết, huỷ bỏ </value>
+  </data>
+  <data name="Folders.Text" xml:space="preserve">
+    <value>Thư Mục: </value>
+  </data>
+  <data name="Files.Text" xml:space="preserve">
+    <value>File: </value>
+  </data>
+  <data name="Page.Text" xml:space="preserve">
+    <value>Trang:</value>
+  </data>
+  <data name="URL.Text" xml:space="preserve">
+    <value>URL: </value>
+  </data>
+  <data name="Home.Text" xml:space="preserve">
+    <value>Home </value>
+  </data>
+  <data name="Maximize.Text" xml:space="preserve">
+    <value>Mở </value>
+  </data>
+  <data name="Minimize.Text" xml:space="preserve">
+    <value>Đóng </value>
+  </data>
+  <data name="EXCEPTION_DirectoryExists.Text" xml:space="preserve">
+    <value>Thư Mục Đã Có </value>
+  </data>
+  <data name="EXCEPTION.DuplicateLocale.Text" xml:space="preserve">
+    <value>Ngôn ngữ Này Đã Được Định Nghĩa </value>
+  </data>
+  <data name="EXCEPTION.SaveLocale.Text" xml:space="preserve">
+    <value>Một Thao Tác File Thất Bại . Hãy Kiểm Tra Quyền Truy Cập Đối Với File Tài Nguyên Để File Có Thể Được Thay Đổi. </value>
+  </data>
+  <data name="LOG.LangPack.LoadFiles" xml:space="preserve">
+    <value>Nạp {0} file tài nguyên. </value>
+  </data>
+  <data name="LOG.LangPack.Global" xml:space="preserve">
+    <value>global </value>
+  </data>
+  <data name="LOG.LangPack.Control" xml:space="preserve">
+    <value>điều khiển </value>
+  </data>
+  <data name="LOG.LangPack.Module" xml:space="preserve">
+    <value>module </value>
+  </data>
+  <data name="LOG.LangPack.Admin" xml:space="preserve">
+    <value>admin </value>
+  </data>
+  <data name="LOG.LangPack.ArchiveFiles" xml:space="preserve">
+    <value>Tạo gói file tài nguyên nén. </value>
+  </data>
+  <data name="LOG.LangPack.LoadFromFolder" xml:space="preserve">
+    <value>Đang nạp file tài nguyên từ thư mục: {0} </value>
+  </data>
+  <data name="LOG.LangPack.LoadFileName" xml:space="preserve">
+    <value>Nạp file tài nguyên: {0} </value>
+  </data>
+  <data name="LOG.LangPack.SerializeManifest" xml:space="preserve">
+    <value>File kê khai được tạo thành công. </value>
+  </data>
+  <data name="LOG.LangPack.SavedFile" xml:space="preserve">
+    <value>File Tài Nguyên {0} được lưu vào gói tài nguyên. </value>
+  </data>
+  <data name="LOG.LangPack.CreateArchive" xml:space="preserve">
+    <value>Thêm file vào gói tài nguyên: {0} </value>
+  </data>
+  <data name="LOG.LangPack.ERROR.SavingFile" xml:space="preserve">
+    <value>Lỗi xảy ra trong khi lưu file vào gói tài nguyên: {0} </value>
+  </data>
+  <data name="LOG.LangPack.ERROR.CreatingFile" xml:space="preserve">
+    <value>Có lỗi xảy ra trong quá trình tạo gói tài nguyên: {0} </value>
+  </data>
+  <data name="LOG.LangPack.ERROR.ManifestFile" xml:space="preserve">
+    <value>Lỗi xảy ra trong quá trình tạo file kê khai: {0} </value>
+  </data>
+  <data name="EXCEPTION.LangPack.ManifestZip" xml:space="preserve">
+    <value>Có lỗi trong quá trình đọc bảng mô tả của Gói Ngôn Ngữ từ file zip. Lỗi: {0} </value>
+  </data>
+  <data name="EXCEPTION.LangPack.ManifestLoad" xml:space="preserve">
+    <value>Có lỗi xảy ra trong quá trình nạp bảng mô tả của Gói Ngôn Ngữ. Lỗi: {0} </value>
+  </data>
+  <data name="EXCEPTION.LangPack.FileMissing" xml:space="preserve">
+    <value>File {0} không tìm thấy trong bảng kê khai của Gói Ngôn Ngữ (Language Pack manifest). </value>
+  </data>
+  <data name="EXCEPTION.LangPack.Install" xml:space="preserve">
+    <value>Có lỗi xảy ra trong quá trình nạp các file tài nguyên của Gói Ngôn Ngữ. Lỗi: {0} </value>
+  </data>
+  <data name="LOG.LangPack.Job.LoadManifest" xml:space="preserve">
+    <value>Nạp file kê khai. </value>
+  </data>
+  <data name="LOG.LangPack.Job.DeserializeManifest" xml:space="preserve">
+    <value>Giải mã file kê khai. </value>
+  </data>
+  <data name="LOG.LangPack.Job.LoadFiles" xml:space="preserve">
+    <value>Đang giải nén các file ngôn ngữ </value>
+  </data>
+  <data name="LOG.LangPack.Job.SaveFiles" xml:space="preserve">
+    <value>Nhập file ngôn ngữ  </value>
+  </data>
+  <data name="LOG.LangPack.Job.CreateLocale" xml:space="preserve">
+    <value>Tạo/Cập nhật Thiết lập Địa phương </value>
+  </data>
+  <data name="LOG.LangPackReader.LoadFiles" xml:space="preserve">
+    <value>Đang giải nén file ngôn ngữ: {0} </value>
+  </data>
+  <data name="LOG.LangPackReader.UnzipFiles" xml:space="preserve">
+    <value>Nhập file: {0}</value>
+  </data>
+  <data name="LOG.LangPackReader.CreateLocale" xml:space="preserve">
+    <value>Đang tạo Ngôn Ngữ: {0} </value>
+  </data>
+  <data name="Wizard.Success.SuccessTitle" xml:space="preserve">
+    <value>Xin Chúc mừng:</value>
+  </data>
+  <data name="Wizard.Success.SuccessDetail" xml:space="preserve">
+    <value>&lt;p&gt;
+					Xin chúc mừng. Quá trình kết thúc thành công.
+				&lt;/p&gt;</value>
+  </data>
+  <data name="Wizard.Success.FailureTitle" xml:space="preserve">
+    <value>Quá Trình Thất Bại:</value>
+  </data>
+  <data name="Wizard.Success.FailureDetail" xml:space="preserve">
+    <value>				&lt;p&gt;Thật không may là đã có lỗi xảy ra trong Wizard này. Hãy xem lại thông điệp dưới đây và kiểm tra với nhà cung cấp của bạn.&lt;/p&gt;
+</value>
+  </data>
+  <data name="LOG.PAWriter.CreateManifest" xml:space="preserve">
+    <value>Tạo file kê khai. {0} </value>
+  </data>
+  <data name="LOG.PAWriter.CreateArchive" xml:space="preserve">
+    <value>Thêm file vào Private Assembly: {0} </value>
+  </data>
+  <data name="LOG.PAWriter.SavedFile" xml:space="preserve">
+    <value>File {0} đã được lưu vào Private Assembly. </value>
+  </data>
+  <data name="LOG.PAWriter.ERROR.SavingFile" xml:space="preserve">
+    <value>Có lỗi xảy ra trong khi lưu file vào Private Assembly: {0} </value>
+  </data>
+  <data name="LOG.PAWriter.CreateZipFile" xml:space="preserve">
+    <value>Tạo Private Assembly: {0} </value>
+  </data>
+  <data name="ModuleVisibleAdministrator.Text" xml:space="preserve">
+    <value>Chỉ Hiển Thị Cho Các Quản Trị Viên</value>
+  </data>
+  <data name="LOG.PALogger.Info" xml:space="preserve">
+    <value>Thông Tin </value>
+  </data>
+  <data name="LOG.PALogger.Warning" xml:space="preserve">
+    <value>Cảnh Báo </value>
+  </data>
+  <data name="LOG.PALogger.Failure" xml:space="preserve">
+    <value>Thất Bại</value>
+  </data>
+  <data name="LOG.PALogger.StartJob" xml:space="preserve">
+    <value>Bắt Đầu Công Việc </value>
+  </data>
+  <data name="LOG.PALogger.EndJob" xml:space="preserve">
+    <value>Kết Thúc Công Việc </value>
+  </data>
+  <data name="AllUsers.Text" xml:space="preserve">
+    <value>Tất Cả Người Dùng </value>
+  </data>
+  <data name="Superuser.Text" xml:space="preserve">
+    <value>Superuser </value>
+  </data>
+  <data name="UnauthenticatedUsers.Text" xml:space="preserve">
+    <value>Khách </value>
+  </data>
+  <data name="RestrictedFileType.Text" xml:space="preserve">
+    <value>File {0} Là Một Kiểu File Bị Cấm. Những Kiểu File Được Chấp Nhận Bao Gồm ( *. {1} ). Hãy Liên Hệ Nhà Superuser Của Bạn Nếu Bạn Cần Tải Lên Một Kiểu File Không Được Hỗ Trợ. </value>
+  </data>
+  <data name="SaveFileError.Text" xml:space="preserve">
+    <value>Lỗi Xảy Ra Khi Cố Gắng Lưu File {0}. Hãy Liên Hệ Nhà Cung Cấp Hosting Của Bạn Để Bảo Đảm Những Thiết Lập An Ninh Phù Hợp Đã Được Kích Hoạt Ở Máy Chủ. </value>
+  </data>
+  <data name="DiskSpaceExceeded.Text" xml:space="preserve">
+    <value>File {0} Vượt Quá Chỗ Trống Cho Phép Trên Đĩa Cứng. Hãy Liên Hệ Hosting Của Bạn Để Yêu Cầu Được Tăng Thêm Chỗ Chứa Cho Portal.</value>
+  </data>
+  <data name="WordCleanButton.Text" xml:space="preserve">
+    <value>Dọn dẹp MS Word HTML</value>
+  </data>
+  <data name="INSTALL_Aborted.Text" xml:space="preserve">
+    <value>Huỷ bỏ cài đặt - Phiên bản định cài cũ hơn phiên bản hiện có</value>
+  </data>
+  <data name="First.Text" xml:space="preserve">
+    <value>Đầu tiên </value>
+  </data>
+  <data name="Next.Text" xml:space="preserve">
+    <value>Tiếp</value>
+  </data>
+  <data name="Previous.Text" xml:space="preserve">
+    <value>Trước</value>
+  </data>
+  <data name="Last.Text" xml:space="preserve">
+    <value>Cuối </value>
+  </data>
+  <data name="Recordsperpage.Text" xml:space="preserve">
+    <value>Số mục trên trang </value>
+  </data>
+  <data name="Recordsperpage.Help" xml:space="preserve">
+    <value>Chọn số mục tối đa có thể hiển thị trên một trang.</value>
+  </data>
+  <data name="LOG.LangPack.Provider" xml:space="preserve">
+    <value>module </value>
+  </data>
+  <data name="InvalidFileName.Text" xml:space="preserve">
+    <value>Tên File Không Hợp Lệ - Tên File không thể chứa  '</value>
+  </data>
+  <data name="AdminOnly.Text" xml:space="preserve">
+    <value>Giành Riêng Cho Admin</value>
+  </data>
+  <data name="AdminTemplate.Error" xml:space="preserve">
+    <value>Lỗi phân tích Template Admin</value>
+  </data>
+  <data name="AllRoles.Text" xml:space="preserve">
+    <value>&lt; Tất Cả Nhóm &gt;</value>
+  </data>
+  <data name="Cancel.Action" xml:space="preserve">
+    <value>Hủy Bỏ</value>
+  </data>
+  <data name="ChildPortal.Error" xml:space="preserve">
+    <value> Lỗi xảy ra khi cấu hình Portal con </value>
+  </data>
+  <data name="CreateAdminUser.Error" xml:space="preserve">
+    <value>Lỗi xảy ra khi tạo tài khoản Quản Trị</value>
+  </data>
+  <data name="CreatePortal.Error" xml:space="preserve">
+    <value>Lỗi xảy ra khi tạo Portal </value>
+  </data>
+  <data name="CreateProfileDefinitions.Error" xml:space="preserve">
+    <value>Lỗi xảy ra khi tạo Mô Tả Hồ Sơ</value>
+  </data>
+  <data name="DeleteItems.Confirm" xml:space="preserve">
+    <value>Bạn Có Chắc Là Bạn Muốn Xoá? </value>
+  </data>
+  <data name="DeleteUploadFolder.Error" xml:space="preserve">
+    <value>Lỗi xảy ra trong khi xóa thư mục tải lên</value>
+  </data>
+  <data name="FilePermission.Error" xml:space="preserve">
+    <value>Bạn Không Được Phép Xem File Này</value>
+  </data>
+  <data name="GlobalRoles.Text" xml:space="preserve">
+    <value>&lt; Nhóm Thành Viên Hệ Thống &gt;</value>
+  </data>
+  <data name="InsertSmileyButton.Text" xml:space="preserve">
+    <value>Chèn Smiley </value>
+  </data>
+  <data name="LOG.LangPackReader.ModuleWarning" xml:space="preserve">
+    <value>File tài nguyên {0} chưa được lưu vì module {1} chưa được cài đặt </value>
+  </data>
+  <data name="MemberOnly.Text" xml:space="preserve">
+    <value>Giành Riêng Cho Thành Viên </value>
+  </data>
+  <data name="ModuleLoadWarning.Error" xml:space="preserve">
+    <value>Cảnh Báo về Nạp Module</value>
+  </data>
+  <data name="ModuleLoadWarning.Text" xml:space="preserve">
+    <value>Một hoặc nhiều module trên trang này chưa được nạp. Hãy refresh lại trang (click F5 trên hầu hết các browser).  Nếu lỗi này vẫn còn, hãy thông báo cho&lt;a href="mailto:{0}"&gt;Quản Trị Site&lt;/a&gt;.</value>
+  </data>
+  <data name="OnLine.Text" xml:space="preserve">
+    <value>Online </value>
+  </data>
+  <data name="PasswordMismatch.Text" xml:space="preserve">
+    <value>Password và phần Thẩm Tra Password không phù hợp </value>
+  </data>
+  <data name="PortalTemplate.Error" xml:space="preserve">
+    <value>Lỗi xảy ra khi phân tích Template Portal </value>
+  </data>
+  <data name="Public.Text" xml:space="preserve">
+    <value>Công Khai</value>
+  </data>
+  <data name="RoleGroupFilter.Text" xml:space="preserve">
+    <value>Lọc Theo Nhóm: </value>
+  </data>
+  <data name="Visibility.Text" xml:space="preserve">
+    <value>Tính Hiển Thị:</value>
+  </data>
+  <data name="XML_Loaded.Text" xml:space="preserve">
+    <value>đã nạp xml.</value>
+  </data>
+  <data name="FTB_FolderCreate.Error" xml:space="preserve">
+    <value>Lỗi chưa biết khi tạo thư mục.</value>
+  </data>
+  <data name="FTB_FolderCreate.Permission" xml:space="preserve">
+    <value>Bạn không được phép tạo thư mục.</value>
+  </data>
+  <data name="FTB_FolderCreated.Text" xml:space="preserve">
+    <value>Thư mục {0} đã được tạo thành công.</value>
+  </data>
+  <data name="FTB_FolderDelete.Error" xml:space="preserve">
+    <value>Có lỗi xảy ra khi xóa thư mục.</value>
+  </data>
+  <data name="FTB_FolderDelete.Permission" xml:space="preserve">
+    <value>Bạn không được phép xóa thư mục.</value>
+  </data>
+  <data name="FTB_FolderDeleted.Text" xml:space="preserve">
+    <value>Thư mục {0} được xóa thành công.</value>
+  </data>
+  <data name="FTB_ImageDelete.Error" xml:space="preserve">
+    <value>Lỗi chưa biết xảy ra khi xóa ảnh.</value>
+  </data>
+  <data name="FTB_ImageDelete.Permission" xml:space="preserve">
+    <value>Bạn không được phép xóa ảnh.</value>
+  </data>
+  <data name="FTB_ImageDeleted.Text" xml:space="preserve">
+    <value>Ảnh {0} được xóa thành công.</value>
+  </data>
+  <data name="FTB_ImageUpload.Error" xml:space="preserve">
+    <value>Có lỗi xảy ra khi tải lên ảnh.</value>
+  </data>
+  <data name="FTB_ImageUpload.Permission" xml:space="preserve">
+    <value>Bạn không được phép tải lên ảnh.</value>
+  </data>
+  <data name="FTB_ImageUploaded.Text" xml:space="preserve">
+    <value>Ảnh {0} được tải lên thành công.</value>
+  </data>
+  <data name="FTB_ImageUploadNoFile.Text" xml:space="preserve">
+    <value>Không có file nào được tải lên.</value>
+  </data>
+  <data name="INSTALL_Compatibility.Text" xml:space="preserve">
+    <value>Hủy bỏ cài đặt - Module bạn định cài không tương thích với phiên bản hiện tại của ứng dụng chủ ( bạn cần phải nâng cấp )</value>
+  </data>
+  <data name="LastPortal.Text" xml:space="preserve">
+    <value>Bạn không thể xóa portal cuối cùng trong cơ sở dữ liệu </value>
+  </data>
+</root>

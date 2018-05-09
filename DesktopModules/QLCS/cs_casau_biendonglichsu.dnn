@@ -1,0 +1,27 @@
+<dotnetnuke version="3.0" type="Module">
+  <folders>
+    <folder>
+      <name>CS_BienDongLichSu</name>
+      <friendlyname>CS_BienDongLichSu</friendlyname>
+      <foldername>QLCS</foldername>
+      <modulename>CS_BienDongLichSu</modulename>
+      <description>CS_BienDongLichSu</description>
+      <version>01.00.00</version>
+      <businesscontrollerclass>
+      </businesscontrollerclass>
+      <modules>
+        <module>
+          <friendlyname>CS_BienDongLichSu</friendlyname>
+          <cachetime>0</cachetime>
+          <controls>
+            <control>
+              <title>BienDongLichSu</title>
+              <src>DesktopModules/QLCS/casau_biendong_lichsu.ascx</src>
+              <type>Edit</type>
+            </control>
+          </controls>
+        </module>
+      </modules>
+    </folder>
+  </folders>
+</dotnetnuke>

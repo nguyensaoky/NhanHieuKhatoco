@@ -1,0 +1,27 @@
+<dotnetnuke version="3.0" type="Module">
+  <folders>
+    <folder>
+      <name>CS_GietMoCaChiTietLichSu</name>
+      <friendlyname>CS_GietMoCaChiTietLichSu</friendlyname>
+      <foldername>QLCS</foldername>
+      <modulename>CS_GietMoCaChiTietLichSu</modulename>
+      <description>CS_GietMoCaChiTietLichSu</description>
+      <version>01.00.00</version>
+      <businesscontrollerclass>
+      </businesscontrollerclass>
+      <modules>
+        <module>
+          <friendlyname>CS_GietMoCaChiTietLichSu</friendlyname>
+          <cachetime>0</cachetime>
+          <controls>
+            <control>
+              <title>GietMoCaChiTiet LichSu</title>
+              <src>DesktopModules/QLCS/gietmoca_chitiet_lichsu.ascx</src>
+              <type>Edit</type>
+            </control>
+          </controls>
+        </module>
+      </modules>
+    </folder>
+  </folders>
+</dotnetnuke>

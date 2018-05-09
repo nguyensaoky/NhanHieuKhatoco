@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="ResMimeType">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="Version">
+    <value>1.0.0.0</value>
+  </resheader>
+  <resheader name="Reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="Writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ModuleSettings.Text">
+    <value>Thiết Lập Module</value>
+  </data>
+  <data name="ModuleSettingsHelp.Text">
+    <value>Ở mục này, bạn có thể định nghĩa các thiết lập liên quan đến nội dung của Module và quyền truy cập (vd. những thiết lập giống nhau ở tất cả các trang mà Module xuất hiện ).</value>
+  </data>
+  <data name="plTitle.Text">
+    <value>Tiêu Đề Module:</value>
+  </data>
+  <data name="plTitle.Help">
+    <value>Nhập vào một tiêu đề cho Module. Nó sẽ xuất hiện ở trên Thanh Tiêu Đề của Container của Module, nếu được Container hỗ trợ.</value>
+  </data>
+  <data name="PageSettings.Text">
+    <value>Thiết Lập Trang</value>
+  </data>
+  <data name="PageSettingsHelp.Text">
+    <value>Ở mục này, bạn có thể định nghĩa những thiết lập đặc thù cho sự xuất hiện của module của trang này.</value>
+  </data>
+  <data name="Security.Text">
+    <value>Thiết Lập Nâng Cao</value>
+  </data>
+  <data name="plAllTabs.Text">
+    <value>Hiển Thị Module Ở Tất Cả Các Trang?</value>
+  </data>
+  <data name="plAllTabs.Help">
+    <value>Chọn xem module có nên xuất hiện ở cùng một vị trí ở tất cả các trang của site hay không</value>
+  </data>
+  <data name="plVisibility.Text">
+    <value>Đặc Tính Hiển Thị:</value>
+  </data>
+  <data name="plVisibility.Help">
+    <value>Chọn đặc tính hiển thị mặc định cho Module</value>
+  </data>
+  <data name="plTab.Text">
+    <value>Chuyển Đến Trang:</value>
+  </data>
+  <data name="plTab.Help">
+    <value>Di chuyển module này sang một trang khác.</value>
+  </data>
+  <data name="plHeader.Text">
+    <value>Header: </value>
+  </data>
+  <data name="plHeader.Help">
+    <value>Nhập vào dòng chữ sẽ được hiển thị ở đầu Module</value>
+  </data>
+  <data name="plFooter.Text">
+    <value>Footer: </value>
+  </data>
+  <data name="plFooter.Help">
+    <value>Nhập vào dòng chữ sẽ được hiển thị ở dưới Module</value>
+  </data>
+  <data name="plIcon.Text">
+    <value>Icon: </value>
+  </data>
+  <data name="plIcon.Help">
+    <value>Chọn một Icon cho module này để hiển thị trên Thanh Tiêu Đề</value>
+  </data>
+  <data name="plAlign.Text">
+    <value>Sắp Hàng:</value>
+  </data>
+  <data name="plAlign.Help">
+    <value>Chọn Sắp hàng cho Module</value>
+  </data>
+  <data name="plColor.Text">
+    <value>Màu:</value>
+  </data>
+  <data name="plColor.Help">
+    <value>Chọn một màu cho Module</value>
+  </data>
+  <data name="plBorder.Text">
+    <value>Đường Biên:</value>
+  </data>
+  <data name="plBorder.Help">
+    <value>Nhập vào độ rộng đường biên cho Module</value>
+  </data>
+  <data name="plModuleContainer.Text">
+    <value>Module Container: </value>
+  </data>
+  <data name="plModuleContainer.Help">
+    <value>Chọn một Container cho Module (để thêm vào một Container mới đến File Manager)</value>
+  </data>
+  <data name="plPermissions.Text">
+    <value>Quyền Truy Cập:</value>
+  </data>
+  <data name="plPermissions.Help">
+    <value>Chọn quyền truy cập Xem và Cấu Hình bằng cách chọn/ bỏ chọn các hộp trong lưới. module có thể thừa kế quyền truy cập của nó từ Trang chứa nó. Để làm được điều này chọn hộp kiểm Thừa Kế Quyền Truy Cập Hiển Thị .</value>
+  </data>
+  <data name="plCacheTime.Text">
+    <value>Thời Gian Cache:</value>
+  </data>
+  <data name="plCacheTime.Help">
+    <value>Nhập vào thời gian cho đối tượng này được giữ trong Cache</value>
+  </data>
+  <data name="plStartDate.Text">
+    <value>Ngày Bắt Đầu:</value>
+  </data>
+  <data name="plStartDate.Help">
+    <value>Chọn ngày bắt đầu để hiển thị  module này. Bạn có thể sử dụng Lịch để chọn lấy một ngày.</value>
+  </data>
+  <data name="plEndDate.Text">
+    <value>Ngày Kết Thúc:</value>
+  </data>
+  <data name="plEndDate.Help">
+    <value>Chọn ngày kết thúc cho module. Bạn có thể sử dụng Lịch để chọn lấy một ngày.</value>
+  </data>
+  <data name="plDefault.Text">
+    <value>Đặt Thiết Lập Mặc Định?</value>
+  </data>
+  <data name="plDefault.Help">
+    <value>Chọn tuỳ chọn này nếu bạn muốn Thiết Lập Trang của module này được sử dụng như là thiết lập mặc định khi thêm vào các module mới.</value>
+  </data>
+  <data name="plAllModules.Text">
+    <value>Áp Dụng Cho Tất Cả Các Module?</value>
+  </data>
+  <data name="plAllModules.Help">
+    <value>Chọn tuỳ chọn này nếu bạn muốn Thiết Lập Trang của module được áp dụng cho tất cả các module hiện có trong site.</value>
+  </data>
+  <data name="SpecificSettings.Text">
+    <value>Thiết Lập Đặc Trưng Của Module</value>
+  </data>
+  <data name="SpecificSettingsHelp.Text">
+    <value>Ở mục này, bạn có thể đặt các thiết lập đặc trưng cho module này.</value>
+  </data>
+  <data name="GeneralDetails.Text">
+    <value>Thiết Lập Cơ Bản</value>
+  </data>
+  <data name="Appearance.Text">
+    <value>Thiết Lập Cơ Bản</value>
+  </data>
+  <data name="OtherSettings.Text">
+    <value>Thiết Lập Nâng Cao</value>
+  </data>
+  <data name="InheritPermissions.Text">
+    <value>Thừa kế quyền &lt;b&gt;Hiển Thị&lt;/b&gt; từ &lt;b&gt;Trang&lt;/b&gt;</value>
+  </data>
+  <data name="ControlTitle_module.Text">
+    <value>Module </value>
+  </data>
+  <data name="plDisplayTitle.Text">
+    <value>Hiển Thị Container?</value>
+  </data>
+  <data name="plDisplayTitle.Help">
+    <value>Chọn tuỳ chọn này nếu bạn muốn hiển thị container của Module</value>
+  </data>
+  <data name="plDisplaySyndicate.Text">
+    <value>Cho phép Chia Sẻ?</value>
+  </data>
+  <data name="plDisplayPrint.Help">
+    <value>Chọn tuỳ chọn này nếu bạn muốn cho phép chức năng in ấn cho module</value>
+  </data>
+  <data name="plDisplaySyndicate.Help">
+    <value>Chọn tuỳ chọn này nếu bạn muốn cho phép RSS cho module này</value>
+  </data>
+  <data name="plDisplayPrint.Text">
+    <value>Cho Phép In Ấn?</value>
+  </data>
+  <resheader name="valStartDate">
+    <value>&lt;br&gt;Invalid Start Date</value>
+  </resheader>
+  <resheader name="valEndDate">
+    <value>&lt;br&gt;Invalid End Date</value>
+  </resheader>
+  <data name="valStartDate.ErrorMessage">
+    <value>&lt;br&gt;Ngày Bắt Đầu Không Hợp Lệ</value>
+  </data>
+  <data name="valEndDate.ErrorMessage">
+    <value>&lt;br&gt;Ngày Kết Thúc Không Hợp Lệ</value>
+  </data>
+  <data name="valCacheTime.ErrorMessage">
+    <value>&lt;br&gt;Thời Gian Cache Không Hợp Lệ</value>
+  </data>
+  <data name="ModuleHelp.Text">
+    <value>&lt;h1&gt;Thiết Lập Module&lt;/h1&gt;&lt;p&gt;Cách Quản trị viên có thể quản lý các Thiết Lập Module cho trang hiện tại. Điều này cho phép bạn xác định các đặc tính của module bao gồm nội dung, quyền truy cập, và các thuộc tính hiển thị.&lt;/p&gt;</value>
+  </data>
+  <data name="valBorder.ErrorMessage">
+    <value>&lt;br&gt;Đường biên không hợp lệ (phải là một số từ 0 đến 9)</value>
+  </data>
+</root>

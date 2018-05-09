@@ -1,0 +1,27 @@
+<dotnetnuke version="3.0" type="Module">
+  <folders>
+    <folder>
+      <name>CS_CaAn_ThuocMulti</name>
+      <friendlyname>CS_CaAn_ThuocMulti</friendlyname>
+      <foldername>QLCS</foldername>
+      <modulename>CS_CaAn_ThuocMulti</modulename>
+      <description>CS_CaAn_ThuocMulti</description>
+      <version>01.00.00</version>
+      <businesscontrollerclass>
+      </businesscontrollerclass>
+      <modules>
+        <module>
+          <friendlyname>CS_CaAn_ThuocMulti</friendlyname>
+          <cachetime>0</cachetime>
+          <controls>
+            <control>
+              <title>CaSauAn Thuoc Multi</title>
+              <src>DesktopModules/QLCS/casauan_thuoc_multi.ascx</src>
+              <type>View</type>
+            </control>
+          </controls>
+        </module>
+      </modules>
+    </folder>
+  </folders>
+</dotnetnuke>

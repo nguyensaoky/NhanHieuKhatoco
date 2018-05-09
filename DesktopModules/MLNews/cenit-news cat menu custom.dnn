@@ -1,0 +1,33 @@
+<dotnetnuke version="3.0" type="Module">
+  <folders>
+    <folder>
+      <name>CenIT-News Category Menu Custom</name>
+      <friendlyname>CenIT-News Category Menu Custom</friendlyname>
+      <foldername>MLNews</foldername>
+      <modulename>CenIT-News Category Menu Custom</modulename>
+      <description>CenIT-News Category Menu Custom</description>
+      <version>01.00.00</version>
+      <businesscontrollerclass>
+      </businesscontrollerclass>
+      <modules>
+        <module>
+          <friendlyname>CenIT-News Category Menu Custom</friendlyname>
+          <cachetime>0</cachetime>
+          <controls>
+            <control>
+              <title>Cat Menu Custom</title>
+              <src>DesktopModules/MLNews/cat_menu_custom.ascx</src>
+              <type>View</type>
+            </control>
+            <control>
+              <key>settings</key>
+              <title>Cat Menu Custom Settings</title>
+              <src>DesktopModules/MLNews/cat_menu_custom_settings.ascx</src>
+              <type>Edit</type>
+            </control>
+          </controls>
+        </module>
+      </modules>
+    </folder>
+  </folders>
+</dotnetnuke>

@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="ResMimeType">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="Version">
+    <value>1.0.0.0</value>
+  </resheader>
+  <resheader name="Reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="Writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="plState.Text">
+    <value>Bang:</value>
+  </data>
+  <data name="plProvince.Text">
+    <value>Tỉnh:</value>
+  </data>
+  <data name="plStreet.Text">
+    <value>Đường Phố:</value>
+  </data>
+  <data name="plStreet.Help">
+    <value>Nhập phần tên đường phố trong địa chỉ của bạn.</value>
+  </data>
+  <data name="plUnit.Text">
+    <value>Unit #: </value>
+  </data>
+  <data name="plUnit.Help">
+    <value>Nhập Unit # hoặc Apartment #</value>
+  </data>
+  <data name="plCity.Text">
+    <value>Thành Phố:</value>
+  </data>
+  <data name="plCity.Help">
+    <value>Nhập Thành Phố</value>
+  </data>
+  <data name="plCountry.Text">
+    <value>Nước:</value>
+  </data>
+  <data name="plCountry.Help">
+    <value>Nhập Tên Nước</value>
+  </data>
+  <data name="StreetRequired.Text">
+    <value>&lt;br&gt;Cần Phải Nhập Phố.</value>
+  </data>
+  <data name="CityRequired.Text">
+    <value>&lt;br&gt;Cần Phải Nhập Thành Phố</value>
+  </data>
+  <data name="CountryRequired.Text">
+    <value>&lt;br&gt;Cần Phải Nhập Tên Nước.</value>
+  </data>
+  <data name="plState.Help">
+    <value>Chọn tên bang từ danh sách</value>
+  </data>
+  <data name="plProvince.Help">
+    <value>Chọn tên tỉnh từ danh sách</value>
+  </data>
+  <data name="StateRequired.Text">
+    <value>&lt;br&gt;Cần Phải Nhập Tên Bang.</value>
+  </data>
+  <data name="ProvinceRequired.Text">
+    <value>&lt;br&gt;Cần Phải Nhập Tên Tỉnh</value>
+  </data>
+  <data name="RegionRequired.Text">
+    <value>&lt;br&gt;Cần Phải Nhập Tên Vùng.</value>
+  </data>
+  <data name="plRegion.Text">
+    <value>Vùng:</value>
+  </data>
+  <data name="plRegion.Help">
+    <value>Nhập Tên Vùng</value>
+  </data>
+  <data name="plPostal.Text">
+    <value>Mã Bưu Điện:</value>
+  </data>
+  <data name="plPostal.Help">
+    <value>Nhập Mã Bưu Điện</value>
+  </data>
+  <data name="plZip.Text">
+    <value>ZIP:</value>
+  </data>
+  <data name="plZip.Help">
+    <value>Nhập mã ZIP</value>
+  </data>
+  <data name="PostalRequired.Text">
+    <value>&lt;br&gt;Cần Phải Nhập Mã Bưu Điện.</value>
+  </data>
+  <data name="plTelephone.Text">
+    <value>Telephone: </value>
+  </data>
+  <data name="plTelephone.Help">
+    <value>Nhập Số Điện Thoại</value>
+  </data>
+  <data name="TelephoneRequired.Text">
+    <value>&lt;br&gt;Cần Phải Nhập Số Điện Thoại.</value>
+  </data>
+  <data name="plCell.Text">
+    <value>Di Động:</value>
+  </data>
+  <data name="plCell.Help">
+    <value>Nhập Số Di Động</value>
+  </data>
+  <data name="CellRequired.Text">
+    <value>&lt;br&gt;Cần Phải Nhập Số Di Động.</value>
+  </data>
+  <data name="plFax.Text">
+    <value>Fax: </value>
+  </data>
+  <data name="plFax.Help">
+    <value>Nhập Số Fax</value>
+  </data>
+  <data name="FaxRequired.Text">
+    <value>&lt;br&gt;Cần Phải Nhập Số Fax</value>
+  </data>
+</root>

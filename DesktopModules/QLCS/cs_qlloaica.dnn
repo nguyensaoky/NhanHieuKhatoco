@@ -1,0 +1,33 @@
+<dotnetnuke version="3.0" type="Module">
+  <folders>
+    <folder>
+      <name>CS_QLLoaiCa</name>
+      <friendlyname>CS_QLLoaiCa</friendlyname>
+      <foldername>QLCS</foldername>
+      <modulename>CS_QLLoaiCa</modulename>
+      <description>CS_QLLoaiCa</description>
+      <version>01.00.00</version>
+      <businesscontrollerclass>
+      </businesscontrollerclass>
+      <modules>
+        <module>
+          <friendlyname>CS_QLLoaiCa</friendlyname>
+          <cachetime>0</cachetime>
+          <controls>
+            <control>
+              <title>LoaiCa Admin</title>
+              <src>DesktopModules/QLCS/loaica_admin.ascx</src>
+              <type>Edit</type>
+            </control>
+            <control>
+              <key>loaica_edit</key>
+              <title>LoaiCa Edit</title>
+              <src>DesktopModules/QLCS/loaica_edit.ascx</src>
+              <type>Edit</type>
+            </control>
+          </controls>
+        </module>
+      </modules>
+    </folder>
+  </folders>
+</dotnetnuke>

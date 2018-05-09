@@ -1,0 +1,33 @@
+<dotnetnuke version="3.0" type="Module">
+  <folders>
+    <folder>
+      <name>CS_QLLyDoThaiLoaiTrung</name>
+      <friendlyname>CS_QLLyDoThaiLoaiTrung</friendlyname>
+      <foldername>QLCS</foldername>
+      <modulename>CS_QLLyDoThaiLoaiTrung</modulename>
+      <description>CS_QLLyDoThaiLoaiTrung</description>
+      <version>01.00.00</version>
+      <businesscontrollerclass>
+      </businesscontrollerclass>
+      <modules>
+        <module>
+          <friendlyname>CS_QLLyDoThaiLoaiTrung</friendlyname>
+          <cachetime>0</cachetime>
+          <controls>
+            <control>
+              <title>LyDoThaiLoaiTrung Admin</title>
+              <src>DesktopModules/QLCS/lydothailoaitrung_admin.ascx</src>
+              <type>Edit</type>
+            </control>
+            <control>
+              <key>lydothailoaitrung_edit</key>
+              <title>LyDoThaiLoaiTrung Edit</title>
+              <src>DesktopModules/QLCS/lydothailoaitrung_edit.ascx</src>
+              <type>Edit</type>
+            </control>
+          </controls>
+        </module>
+      </modules>
+    </folder>
+  </folders>
+</dotnetnuke>

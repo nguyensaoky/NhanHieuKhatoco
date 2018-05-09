@@ -1,0 +1,27 @@
+<dotnetnuke version="3.0" type="Module">
+  <folders>
+    <folder>
+      <name>CS_PhucHoiCaBan</name>
+      <friendlyname>CS_PhucHoiCaBan</friendlyname>
+      <foldername>QLCS</foldername>
+      <modulename>CS_PhucHoiCaBan</modulename>
+      <description>CS_PhucHoiCaBan</description>
+      <version>01.00.00</version>
+      <businesscontrollerclass>
+      </businesscontrollerclass>
+      <modules>
+        <module>
+          <friendlyname>CS_PhucHoiCaBan</friendlyname>
+          <cachetime>0</cachetime>
+          <controls>
+            <control>
+              <title>PhucHoiCaBan</title>
+              <src>DesktopModules/QLCS/casau_phuchoicaban.ascx</src>
+              <type>Edit</type>
+            </control>
+          </controls>
+        </module>
+      </modules>
+    </folder>
+  </folders>
+</dotnetnuke>

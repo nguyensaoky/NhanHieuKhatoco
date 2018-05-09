@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/37/trunk/CS_Website/Admin/Security/App_LocalResources
+END
+Roles.ascx.resx
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/14/trunk/CS_Website/Admin/Security/App_LocalResources/Roles.ascx.resx
+END
+Register.ascx.resx
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/36/trunk/CS_Website/Admin/Security/App_LocalResources/Register.ascx.resx
+END
+EditGroups.ascx.resx
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/14/trunk/CS_Website/Admin/Security/App_LocalResources/EditGroups.ascx.resx
+END
+ResetPassword.ascx.resx
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/37/trunk/CS_Website/Admin/Security/App_LocalResources/ResetPassword.ascx.resx
+END
+Signin.ascx.resx
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/21/trunk/CS_Website/Admin/Security/App_LocalResources/Signin.ascx.resx
+END
+AccessDenied.ascx.resx
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/14/trunk/CS_Website/Admin/Security/App_LocalResources/AccessDenied.ascx.resx
+END
+EditRoles.ascx.resx
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/37/trunk/CS_Website/Admin/Security/App_LocalResources/EditRoles.ascx.resx
+END
+SendPassword.ascx.resx
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/36/trunk/CS_Website/Admin/Security/App_LocalResources/SendPassword.ascx.resx
+END
+SecurityRoles.ascx.resx
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/14/trunk/CS_Website/Admin/Security/App_LocalResources/SecurityRoles.ascx.resx
+END
+AuthenticationSettings.ascx.resx
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/14/trunk/CS_Website/Admin/Security/App_LocalResources/AuthenticationSettings.ascx.resx
+END

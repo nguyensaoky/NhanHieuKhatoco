@@ -1,0 +1,33 @@
+<dotnetnuke version="3.0" type="Module">
+  <folders>
+    <folder>
+      <name>CS_QLKhoiLuongCuoiKy</name>
+      <friendlyname>CS_QLKhoiLuongCuoiKy</friendlyname>
+      <foldername>QLCS</foldername>
+      <modulename>CS_QLKhoiLuongCuoiKy</modulename>
+      <description>CS_QLKhoiLuongCuoiKy</description>
+      <version>01.00.00</version>
+      <businesscontrollerclass>
+      </businesscontrollerclass>
+      <modules>
+        <module>
+          <friendlyname>CS_QLKhoiLuongCuoiKy</friendlyname>
+          <cachetime>0</cachetime>
+          <controls>
+            <control>
+              <title>KhoiLuongCuoiKy Admin</title>
+              <src>DesktopModules/QLCS/khoiluongcuoiky_admin.ascx</src>
+              <type>View</type>
+            </control>
+            <control>
+              <key>khoiluongcuoiky_edit</key>
+              <title>KhoiLuongCuoiKy Edit</title>
+              <src>DesktopModules/QLCS/khoiluongcuoiky_edit.ascx</src>
+              <type>View</type>
+            </control>
+          </controls>
+        </module>
+      </modules>
+    </folder>
+  </folders>
+</dotnetnuke>

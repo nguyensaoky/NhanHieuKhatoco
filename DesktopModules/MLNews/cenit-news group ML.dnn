@@ -1,0 +1,27 @@
+<dotnetnuke version="3.0" type="Module">
+  <folders>
+    <folder>
+      <name>CenIT-News MLGroup</name>
+      <friendlyname>CenIT-News MLGroup</friendlyname>
+      <foldername>MLNews</foldername>
+      <modulename>CenIT-News MLGroup</modulename>
+      <description></description>
+      <version>01.00.00</version>
+      <businesscontrollerclass>
+      </businesscontrollerclass>
+      <modules>
+        <module>
+          <friendlyname>CenIT-News MLGroup</friendlyname>
+          <cachetime>0</cachetime>
+          <controls>
+            <control>
+              <title>ML Group</title>
+              <src>DesktopModules/MLNews/MLGroup.ascx</src>
+              <type>Edit</type>
+            </control>
+          </controls>
+        </module>
+      </modules>
+    </folder>
+  </folders>
+</dotnetnuke>

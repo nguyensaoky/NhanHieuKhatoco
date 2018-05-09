@@ -1,0 +1,27 @@
+<dotnetnuke version="3.0" type="Module">
+  <folders>
+    <folder>
+      <name>CS_CaSau_BienDong ChuyenGiong</name>
+      <friendlyname>CS_CaSau_BienDong_ChuyenGiong</friendlyname>
+      <foldername>QLCS</foldername>
+      <modulename>CS_CaSau_BienDong_ChuyenGiong</modulename>
+      <description>CS_CaSau_BienDong_ChuyenGiong</description>
+      <version>01.00.00</version>
+      <businesscontrollerclass>
+      </businesscontrollerclass>
+      <modules>
+        <module>
+          <friendlyname>CS_CaSau_BienDong_ChuyenGiong</friendlyname>
+          <cachetime>0</cachetime>
+          <controls>
+            <control>
+              <title>CaSau ChuyenGiong</title>
+              <src>DesktopModules/QLCS/casau_chuyengiong.ascx</src>
+              <type>Edit</type>
+            </control>
+          </controls>
+        </module>
+      </modules>
+    </folder>
+  </folders>
+</dotnetnuke>

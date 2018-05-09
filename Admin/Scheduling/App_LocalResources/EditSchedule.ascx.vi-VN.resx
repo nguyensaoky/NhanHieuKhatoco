@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="ResMimeType">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="Version">
+    <value>1.0.0.0</value>
+  </resheader>
+  <resheader name="Reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="Writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ContentOptions.Action">
+    <value>Xem Trạng Thái Thời Khoá Biểu</value>
+  </data>
+  <data name="ScheduleHistory.Action">
+    <value>Xem Lịch Sử Nhật Ký</value>
+  </data>
+  <data name="plType.Text">
+    <value>Tên Class Đầy Đủ Và Assembly</value>
+  </data>
+  <data name="plEnabled.Text">
+    <value>Cho Phép Thời Khoá Biểu</value>
+  </data>
+  <data name="plTimeLapse.Text">
+    <value>Thời Gian Lặp Lại:</value>
+  </data>
+  <data name="plTimeLapse.Help">
+    <value>Ví dụ: "5" và chọn "Phút" để chạy tác vụ mỗi 5 phút. Để trống để tắt timer cho tác vụ này.</value>
+  </data>
+  <data name="Minutes.Text">
+    <value>Phút</value>
+  </data>
+  <data name="Days.Text">
+    <value>Ngày</value>
+  </data>
+  <data name="Hours.Text">
+    <value>Giờ</value>
+  </data>
+  <data name="plRetryTimeLapse.Text">
+    <value>Tần Số Thử Lại</value>
+  </data>
+  <data name="plRetryTimeLapse.Help">
+    <value>Ví dụ: "5" và chọn "Phút" để thực hiện lại tác vụ mỗi 5 phút sau khi thất bại. Để trống để tắt tính năng tính thời gian thực hiện lại cho tác vụ này.</value>
+  </data>
+  <data name="plRetainHistoryNum.Text">
+    <value>Duy Trì Lịch Sử Nhật Ký:</value>
+  </data>
+  <data name="plRetainHistoryNum.Help">
+    <value>Ví dụ: chọn "10" để giữ lại 10 sự kiện gần nhất trong chuỗi lịch sử nhật ký.</value>
+  </data>
+  <data name="plAttachToEvent.Text">
+    <value>Chạy ở Sự Kiện:</value>
+  </data>
+  <data name="plAttachToEvent.Help">
+    <value>Ví dụ: chọn "Bắt Đầu Ứng Dụng" để chạy sự kiện này khi ứng dụng bắt đầu. Hãy chú ý, các sự kiện được chạy ở APPLICATION_END (Kết thúc ứng dụng) có thể không được chạy một cách đáng tin cậy ở một số host.</value>
+  </data>
+  <data name="None.Text">
+    <value>Không</value>
+  </data>
+  <data name="APPLICATION_START.Text">
+    <value>APPLICATION_START </value>
+  </data>
+  <data name="plCatchUpEnabled.Text">
+    <value>Cho Phép Đuổi Kịp:</value>
+  </data>
+  <data name="plCatchUpEnabled.Help">
+    <value>Nếu được chọn, nếu máy chủ web ngừng hoạt động, khi máy chủ hoạt động trở lại sự kiện này sẽ được chạy một lần mỗi tần số bị mất trong thời gian ngừng hoạt động.</value>
+  </data>
+  <data name="plObjectDependencies.Text">
+    <value>Đối Tượng Phụ Thuộc:</value>
+  </data>
+  <data name="plObjectDependencies.Help">
+    <value>Nhập vào một bảng của những đối tượng khác mà sự kiện này dựa vào. Ví dụ: "Nhật ký site, người dùng, người dùng online"</value>
+  </data>
+  <data name="UpdateSuccess.Text">
+    <value>Những thay đổi của bạn đã được lưu giữ.</value>
+  </data>
+  <data name="DeleteSuccess.Text">
+    <value>Mục khoá biểu đã được xoá.</value>
+  </data>
+  <data name="ControlTitle_edit.Text">
+    <value>Thay Đổi Thời Khoá Biểu</value>
+  </data>
+  <data name="ModuleHelp.Text">
+    <value>&lt;h1&gt;Về Thời Khoá Biểu&lt;/h1&gt;&lt;p&gt;Cho phép bạn lập thời khoá biểu các tác vụ sẽ được chạy ở một thời điểm định trước.&lt;/p&gt;</value>
+  </data>
+  <data name="plType.Help">
+    <value>Đây là tên lớp đầy đủ theo sau tên assembly.  Ví dụ: "DotNetNuke.Entities.Users.PurgeUsersOnline, DOTNETNUKE"</value>
+  </data>
+  <data name="plServers.Text">
+    <value>Chạy Trên Server:</value>
+  </data>
+  <data name="plServers.Help">
+    <value>Nhập một danh sách cách nhau bởi dấu phảy các server mà tác vụ này sẽ chạy.</value>
+  </data>
+  <data name="Seconds.Text">
+    <value>Giây</value>
+  </data>
+  <data name="plEnabled.Help">
+    <value>Chọn để mở chức năng khóa biểu.</value>
+  </data>
+</root>

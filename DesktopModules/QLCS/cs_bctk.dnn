@@ -1,0 +1,201 @@
+<dotnetnuke version="3.0" type="Module">
+  <folders>
+    <folder>
+      <name>CS_BCTK</name>
+      <friendlyname>CS_BCTK</friendlyname>
+      <foldername>QLCS</foldername>
+      <modulename>CS_BCTK</modulename>
+      <description>CS_BCTK</description>
+      <version>01.00.00</version>
+      <businesscontrollerclass>
+      </businesscontrollerclass>
+      <modules>
+        <module>
+          <friendlyname>CS_BCTK</friendlyname>
+          <cachetime>0</cachetime>
+          <controls>
+            <control>
+              <title>Bien Dong TongDan</title>
+              <src>DesktopModules/QLCS/r_biendongdan.ascx</src>
+              <type>Edit</type>
+            </control>
+            <control>
+              <key>r_thongkecatheochuong</key>
+              <title>Thong Ke Ca Theo Chuong</title>
+              <src>DesktopModules/QLCS/r_thongkecatheochuong.ascx</src>
+              <type>Edit</type>
+            </control>
+            <control>
+              <key>r_thongkechuyengiaidoan</key>
+              <title>Thong Ke Ca Chuyen Giai Doan</title>
+              <src>DesktopModules/QLCS/r_thongkechuyengiaidoan.ascx</src>
+              <type>Edit</type>
+            </control>
+            <control>
+              <key>r_thongkechuyengiaidoan_chitiet</key>
+              <title>Thong Ke Ca Chuyen Giai Doan Chi Tiet</title>
+              <src>DesktopModules/QLCS/r_thongkechuyengiaidoan_chitiet.ascx</src>
+              <type>Edit</type>
+            </control>
+			<control>
+			  <key>r_vattu_nhacungcap</key>
+			  <title>Vat Tu - Nha Cung Cap</title>
+			  <src>DesktopModules/QLCS/r_vattu_nhacungcap.ascx</src>
+			  <type>Edit</type>
+		  </control>
+		  <control>
+              <key>r_thucantheongay</key>
+              <title>Thuc An Theo NGay</title>
+              <src>DesktopModules/QLCS/r_thucantheongay.ascx</src>
+              <type>Edit</type>
+            </control>
+            <control>
+              <key>r_thuoctheongay</key>
+              <title>Thuoc Theo NGay</title>
+              <src>DesktopModules/QLCS/r_thuoctheongay.ascx</src>
+              <type>Edit</type>
+            </control>
+            <control>
+              <key>r_dexuatthucantheongay</key>
+              <title>De Xuat Thuc An Theo NGay</title>
+              <src>DesktopModules/QLCS/r_dexuatthucantheongay.ascx</src>
+              <type>Edit</type>
+            </control>
+            <control>
+              <key>r_dexuatthuoctheongay</key>
+              <title>De Xuat Thuoc Theo NGay</title>
+              <src>DesktopModules/QLCS/r_dexuatthuoctheongay.ascx</src>
+              <type>Edit</type>
+            </control>
+            <control>
+              <key>r_gietmocatheongay</key>
+              <title>Giet Mo Ca Theo NGay</title>
+              <src>DesktopModules/QLCS/r_gietmocatheongay.ascx</src>
+              <type>Edit</type>
+            </control>
+            <control>
+              <key>r_gietmocatheovicat</key>
+              <title>Giet Mo Ca Theo Vi Cat</title>
+              <src>DesktopModules/QLCS/r_gietmocatheovicat.ascx</src>
+              <type>Edit</type>
+            </control>
+            <control>
+              <key>r_theodoicade</key>
+              <title>Theo Doi Ca De</title>
+              <src>DesktopModules/QLCS/r_theodoicade.ascx</src>
+              <type>Edit</type>
+            </control>
+            <control>
+              <key>r_tyleduccaisinhsan</key>
+              <title>Ty Le Duc Cai Sinh San</title>
+              <src>DesktopModules/QLCS/r_tyleduccaisinhsan.ascx</src>
+              <type>Edit</type>
+            </control>
+            <control>
+              <key>r_xuatnhapdcs</key>
+              <title>Xuat Nhap Da Ca Sau</title>
+              <src>DesktopModules/QLCS/r_xuatnhapdcs.ascx</src>
+              <type>Edit</type>
+            </control>
+            <control>
+              <key>r_xuatnhapdacasau</key>
+              <title>Xuat Nhap Da Ca Sau Theo Ngay</title>
+              <src>DesktopModules/QLCS/r_xuatnhapdacasau.ascx</src>
+              <type>Edit</type>
+            </control>
+            <control>
+              <key>r_xuatnhapspgm</key>
+              <title>Xuat Nhap San Pham Giet Mo</title>
+              <src>DesktopModules/QLCS/r_xuatnhapspgm.ascx</src>
+              <type>Edit</type>
+            </control>
+            <control>
+              <key>r_xuatnhapspgmtheoloai</key>
+              <title>Xuat Nhap San Pham Giet Mo Theo Loai</title>
+              <src>DesktopModules/QLCS/r_xuatnhapspgmtheoloai.ascx</src>
+              <type>Edit</type>
+            </control>
+            <control>
+              <key>r_xuatnhapthucan</key>
+              <title>Xuat Nhap Thuc An</title>
+              <src>DesktopModules/QLCS/r_xuatnhapthucan.ascx</src>
+              <type>Edit</type>
+            </control>
+            <control>
+              <key>r_xuatnhapthucantheoloai</key>
+              <title>Xuat Nhap Thuc An Theo Loai</title>
+              <src>DesktopModules/QLCS/r_xuatnhapthucantheoloai.ascx</src>
+              <type>Edit</type>
+            </control>
+            <control>
+              <key>r_xuatnhaptty</key>
+              <title>Xuat Nhap Thuoc Thu Y</title>
+              <src>DesktopModules/QLCS/r_xuatnhapthuocthuy.ascx</src>
+              <type>Edit</type>
+            </control>
+            <control>
+              <key>r_tonghopthitgietmo</key>
+              <title>Tong Hop Thit GietMo</title>
+              <src>DesktopModules/QLCS/r_tonghopthitgietmo.ascx</src>
+              <type>Edit</type>
+            </control>
+            <control>
+              <key>r_tonghopdagietmo</key>
+              <title>Tong Hop Da GietMo</title>
+              <src>DesktopModules/QLCS/r_tonghopdagietmo.ascx</src>
+              <type>Edit</type>
+            </control>
+            <control>
+              <key>r_casaucaichuade</key>
+              <title>Tong Hop Ca Sau Cai Chua De</title>
+              <src>DesktopModules/QLCS/r_casaucaichuade.ascx</src>
+              <type>Edit</type>
+            </control>
+            <control>
+              <key>r_casaudecacnam</key>
+              <title>Tong Hop Ca Sau De Cac Nam</title>
+              <src>DesktopModules/QLCS/r_casaudecacnam.ascx</src>
+              <type>Edit</type>
+            </control>
+            <control>
+              <key>r_tonghopcadetheoloai</key>
+              <title>Tong Hop Ca De Theo Loai</title>
+              <src>DesktopModules/QLCS/r_tonghopcadetheoloai.ascx</src>
+              <type>Edit</type>
+            </control>
+            <control>
+              <key>r_theodoichuyenchuong</key>
+              <title>Theo Doi Chuyen Chuong</title>
+              <src>DesktopModules/QLCS/r_theodoichuyenchuong.ascx</src>
+              <type>Edit</type>
+            </control>
+            <control>
+              <key>r_theodoichuyenchuong_khuchuong</key>
+              <title>Theo Doi Chuyen Chuong Khu Chuong</title>
+              <src>DesktopModules/QLCS/r_theodoichuyenchuong_khuchuong.ascx</src>
+              <type>Edit</type>
+            </control>
+            <control>
+              <key>r_theodoichuyenchuong_loaica</key>
+              <title>Theo Doi Chuyen Chuong Loai Ca</title>
+              <src>DesktopModules/QLCS/r_theodoichuyenchuong_loaica.ascx</src>
+              <type>Edit</type>
+            </control>
+			<control>
+			  <key>r_cachet_phanloailydo</key>
+			  <title>Tong Hop Ca Chet</title>
+			  <src>DesktopModules/QLCS/r_cachet_phanloailydo.ascx</src>
+			  <type>View</type>
+			</control>
+		    <control>
+			  <key>r_casauan_thucanpivot</key>
+			  <title>Thuc An Pivot</title>
+			  <src>DesktopModules/QLCS/r_casauan_thucanpivot.ascx</src>
+			  <type>View</type>
+		    </control>
+          </controls>
+        </module>
+      </modules>
+    </folder>
+  </folders>
+</dotnetnuke>

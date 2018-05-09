@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="ResMimeType">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="Version">
+    <value>1.0.0.0</value>
+  </resheader>
+  <resheader name="Reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="Writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Duplicate.ErrorMessage">
+    <value>Ngôn Ngữ Này Đã Được Định Nghĩa</value>
+  </data>
+  <data name="Delete.ErrorMessage">
+    <value>Ngôn Ngữ Hệ Thống (en-US) Không Thể Bị Xoá</value>
+  </data>
+  <data name="AddNewLocale.Text">
+    <value>Tạo Ngôn Ngữ Mới</value>
+  </data>
+  <data name="SupportedLocales.Text">
+    <value>Các Ngôn Ngữ Được Hỗ Trợ</value>
+  </data>
+  <data name="KeyFormat.ErrorMessage">
+    <value>&lt;br&gt;Định dạng Khóa: xx-YY  (xx là mã ngôn ngữ và YY là Mã Quốc Gia/Vùng)</value>
+  </data>
+  <data name="Name.Header">
+    <value>Tên</value>
+  </data>
+  <data name="Key.Header">
+    <value>Khóa</value>
+  </data>
+  <data name="DeleteFiles.Text">
+    <value>Xoá Tất Cả Các File Tài Nguyên Khi Xoá Một Thiết Lập Hệ Thống?</value>
+  </data>
+  <data name="TimeZones.Action">
+    <value>Soạn Thảo Múi Giờ</value>
+  </data>
+  <data name="Languages.Action">
+    <value>Soạn Thảo Ngôn Ngữ</value>
+  </data>
+  <data name="Save.ErrorMessage">
+    <value>Một Thao Tác File Thất Bại. Hãy Kiểm Tra Sự Cho Phép Truy Cập Đối Với File Tài Nguyên Để File Có Thể Được Soạn.</value>
+  </data>
+  <data name="NewLocale.ErrorMessage">
+    <value>Một file Múi Giờ mặc định đã được khởi tạo cho thiết lập địa phương mới. Bạn phải dịch file Múi Giờ này cho ngôn ngữ mới </value>
+  </data>
+  <data name="Verify.Action">
+    <value>Kiểm Tra File Tài Nguyên</value>
+  </data>
+  <data name="ControlTitle_.Text">
+    <value>Ngôn Ngữ</value>
+  </data>
+  <data name="PackageGenerate.Action">
+    <value>Tạo Gói Ngôn Ngữ</value>
+  </data>
+  <data name="PackageImport.Action">
+    <value>Tải Lên Gói Ngôn Ngữ</value>
+  </data>
+  <data name="ModuleHelp.Text">
+    <value>&lt;h1&gt;Về Ngôn Ngữ&lt;/h1&gt;&lt;p&gt;Super User có thể quản lý những ngôn ngữ được hỗ trợ được cài trong hệ thống.&lt;/p&gt;</value>
+  </data>
+  <data name="lbLocale.Text">
+    <value>Ngôn ngữ</value>
+  </data>
+  <data name="lbLocale.Help">
+    <value>Chọn ngôn ngữ sử dụng cho portal</value>
+  </data>
+  <data name="Enable.Text">
+    <value>Mở</value>
+  </data>
+  <data name="Disable.Text">
+    <value>Tắt</value>
+  </data>
+  <data name="Enabled.Text">
+    <value>Mở</value>
+  </data>
+  <data name="Disabled.Text">
+    <value>Tắt</value>
+  </data>
+  <data name="Status.Header">
+    <value>Trạng Thái</value>
+  </data>
+  <data name="Disable.ErrorMessage">
+    <value>Bạn không thể xóa hoặc vô hiệu hóa ngôn ngữ cuối cùng.</value>
+  </data>
+  <data name="DisableCurrent.ErrorMessage">
+    <value>Bạn không thể xóa hoặc tắt ngôn ngữ mặc định của portal.</value>
+  </data>
+  <data name="DisplayEnglish.Text">
+    <value>Tên Tiếng Anh</value>
+  </data>
+  <data name="DisplayNative.Text">
+    <value>Tên Gốc</value>
+  </data>
+  <data name="EnableBrowserHost.Text">
+    <value>Cho Phép Nhận Diện Ngôn Ngữ Trình Duyệt?</value>
+  </data>
+  <data name="EnableBrowserPortal.Text">
+    <value>Cho Phép Nhận Diện Ngôn Ngữ Trình Duyệt Cho Portal Hiện Tại?</value>
+  </data>
+</root>

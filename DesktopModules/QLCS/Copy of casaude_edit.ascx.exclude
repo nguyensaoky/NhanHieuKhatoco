@@ -1,0 +1,168 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="Copy of casaude_edit.ascx.cs" Inherits="DotNetNuke.Modules.QLCS.casaude_edit" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+<%@ Register TagPrefix="DDMS" TagName="MultiSelectDropDown" Src="MultiSelectDropDown.ascx" %>
+<link href="<%= ModulePath + "style.css" %>" rel="stylesheet" type="text/css" />
+<link href="<%= ModulePath + "style_main.css" %>" type="text/css" rel="stylesheet" />
+<script type="text/javascript" language="javascript" src="<%= ModulePath + "script_main.js"%>"></script>
+<script language="javascript" type="text/javascript">
+    function CountSLNo()
+    {
+        var td = document.getElementById('<%=txtTrungDe.ClientID%>').value;
+        var TrungBo = 0;
+        $(".TrungBo").each(function() {
+            if(!isNaN(this.value) && this.value.length!=0) {
+                TrungBo += parseFloat(this.value);
+            } 
+        });
+        alert(td - TrungBo);
+    }
+    
+    function confirmDelete()
+    {
+        var r=confirm("Bạn có chắc bạn muốn xóa?");
+        if (r==true)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+</script>
+<table>
+    <tr>
+        <td width="180px">Chuồng</td>
+        <td>
+            <asp:UpdatePanel ID="udpCaDe" runat="server" UpdateMode="Conditional">
+                <ContentTemplate>
+                    <asp:DropDownList runat="server" ID="ddlChuong" TabIndex="0" AutoPostBack="true" OnSelectedIndexChanged="ddlChuong_SelectedIndexChanged"></asp:DropDownList>
+                    Cá đẻ
+                    <asp:DropDownList runat="server" ID="ddlCaMe" TabIndex="1"></asp:DropDownList>
+                </ContentTemplate>
+            </asp:UpdatePanel>
+        </td>
+    </tr>
+    <tr>
+        <td>Người thu trứng</td>
+        <td>
+            <span style="POSITION: absolute;z-index:1;margin-top:-10px;">
+                <ddms:multiselectdropdown id="ddlNhanVien" runat="server" type="150" typev="150_150" AutoPostBack="true"></ddms:multiselectdropdown>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td>Ngày vào ấp</td>
+        <td>
+            <asp:TextBox ID="txtNgayVaoAp" runat="server" Width="400" TabIndex="2"/>
+            <cc1:calendarextender id="calNgayVaoAp" runat="server" format="dd/MM/yyyy 12:00:00"
+            popupbuttonid="txtNgayVaoAp" targetcontrolid="txtNgayVaoAp"></cc1:calendarextender>
+        </td>
+    </tr>
+    <tr>
+        <td>Khay ấp</td>
+        <td>
+            <asp:DropDownList runat="server" ID="ddlKhayAp" TabIndex="3"></asp:DropDownList>
+        </td>
+    </tr>
+    <tr>
+        <td>Phòng ấp</td>
+        <td>
+            <asp:DropDownList runat="server" ID="ddlPhongAp" TabIndex="3"></asp:DropDownList>
+        </td>
+    </tr>
+	<tr>
+		<td>TL trứng bình quân (g)</td>
+		<td><asp:TextBox ID="txtTLTBQ" runat="server" style="width:400px;" TabIndex="4"></asp:TextBox>
+        </td>
+	</tr>
+	<tr>
+		<td>Số trứng đẻ</td>
+		<td><asp:TextBox ID="txtTrungDe" runat="server" style="width:400px;" TabIndex="5">0</asp:TextBox></td>
+	</tr>
+	<tr>
+		<td>Số trứng vỡ</td>
+		<td><asp:TextBox ID="txtTrungVo" runat="server" style="width:400px;" TabIndex="6" CssClass="TrungBo">0</asp:TextBox></td>
+	</tr>
+	<tr>
+	    <td>Số trứng thải loại</td>
+	    <td>
+	        <asp:GridView ID="grvDanhSach" runat="server" AutoGenerateColumns="False" CssClass="mGrid" AlternatingRowStyle-CssClass="alt" OnRowDataBound="grvDanhSach_RowDataBound" Width="100%">
+                <Columns>
+                    <asp:BoundField HeaderText="Lý do thải loại trứng" DataField="TenLyDoThaiLoaiTrung">
+                        <HeaderStyle ForeColor="Yellow" />
+                        <ItemStyle HorizontalAlign="Center" />
+                    </asp:BoundField>
+                    <asp:TemplateField HeaderText="Số lượng trứng thải loại">
+                        <ItemTemplate>
+                            <asp:TextBox ID="txtSoLuong" runat="server" CssClass="TrungBo"></asp:TextBox>
+                            <asp:Button ID="btnSaveThaiLoaiTrung" runat="server" Enabled="false" BorderStyle="None" BackColor="Transparent"/>
+                        </ItemTemplate><ItemStyle HorizontalAlign="Center"></ItemStyle>
+                        <HeaderStyle ForeColor="Yellow"></HeaderStyle>
+                    </asp:TemplateField>
+                </Columns>
+                <PagerStyle CssClass="pgr" />
+                <AlternatingRowStyle CssClass="alt" />
+            </asp:GridView>
+	    </td>
+	</tr>
+	<tr>
+		<td>Số trứng không phôi</td>
+		<td><asp:TextBox ID="txtTrungKhongPhoi" runat="server" style="width:400px;" TabIndex="8" CssClass="TrungBo">0</asp:TextBox></td>
+	</tr>
+	<tr>
+		<td>Số trứng chết phôi 1</td>
+		<td><asp:TextBox ID="txtTrungChetPhoi1" runat="server" style="width:400px;" TabIndex="9" CssClass="TrungBo">0</asp:TextBox></td>
+	</tr>
+	<tr>
+		<td>Số trứng chết phôi 2</td>
+		<td><asp:TextBox ID="txtTrungChetPhoi2" runat="server" style="width:400px;" TabIndex="10" CssClass="TrungBo">0</asp:TextBox></td>
+	</tr>
+	<tr>
+		<td>Còn lại</td>
+		<td><asp:TextBox ID="txtConLai" runat="server" style="width:400px;" TabIndex="10" CssClass="TrungBo" Enabled="false">0</asp:TextBox></td>
+	</tr>
+	<tr>
+        <td>Ngày nở</td>
+        <td>
+            <asp:TextBox ID="txtNgayNo" runat="server" Width="260" TabIndex="11"/>
+            <a id="lnkCountSLNo" class="button" onclick="CountSLNo()">Tính số lượng cá nở</a>
+            <cc1:calendarextender id="calNgayNo" runat="server" format="dd/MM/yyyy 12:00:00" popupbuttonid="txtNgayNo" targetcontrolid="txtNgayNo"></cc1:calendarextender>
+        </td>
+    </tr>
+    <tr>
+        <td>Khay úm</td>
+        <td>
+            <asp:DropDownList runat="server" ID="ddlKhayUm" TabIndex="12"></asp:DropDownList>
+        </td>
+    </tr>
+    <tr>
+		<td>TL con bình quân (g)</td>
+		<td><asp:TextBox ID="txtTLCBQ" runat="server" style="width:400px;" TabIndex="13"></asp:TextBox></td>
+	</tr>
+	<tr>
+		<td>Chiều dài bình quân (cm)</td>
+		<td><asp:TextBox ID="txtCDBQ" runat="server" style="width:400px;" TabIndex="14"></asp:TextBox></td>
+	</tr>
+	<tr>
+		<td>Vòng bụng bình quân (cm)</td>
+		<td><asp:TextBox ID="txtVBBQ" runat="server" style="width:400px;" TabIndex="15"></asp:TextBox></td>
+	</tr>
+	<tr>
+		<td>Không ấp</td>
+		<td><asp:CheckBox ID="chkKhongAp" runat="server" /></td>
+	</tr>
+	<tr>
+		<td>Ghi chú</td>
+		<td><asp:TextBox ID="txtNote" runat="server" TextMode="MultiLine" style="width:400px;" Rows="3" TabIndex="15"></asp:TextBox></td>
+	</tr>
+	<tr>
+		<td colspan="2" align="center">
+            <asp:Button ID="Save" runat="server" OnClick="btnSave_Click" CssClass="button" tabindex="17" Text="Lưu"/>
+            <asp:Button ID="Delete" runat="server" OnClick="btnDelete_Click" CssClass="button" tabindex="17" Text="Xóa" OnClientClick="return confirmDelete()"/>
+            <asp:HyperLink ID="lnkCancel" runat="server" Font-Bold="true" CssClass="button" tabindex="18">Thoát</asp:HyperLink>
+		</td>
+	</tr>
+</table>
+<asp:HiddenField ID="hdIDTDD" runat="server" Value="0"/>
+<asp:HiddenField ID="hdSoTtrungNoCu" runat="server" Value="0"/>

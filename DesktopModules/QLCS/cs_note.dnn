@@ -1,0 +1,33 @@
+<dotnetnuke version="3.0" type="Module">
+  <folders>
+    <folder>
+      <name>CS_Note</name>
+      <friendlyname>CS_Note</friendlyname>
+      <foldername>QLCS</foldername>
+      <modulename>CS_Note</modulename>
+      <description>CS_Note</description>
+      <version>01.00.00</version>
+      <businesscontrollerclass>
+      </businesscontrollerclass>
+      <modules>
+        <module>
+          <friendlyname>CS_Note</friendlyname>
+          <cachetime>0</cachetime>
+          <controls>
+            <control>
+              <title>Note Admin</title>
+              <src>DesktopModules/QLCS/note_admin.ascx</src>
+              <type>Edit</type>
+            </control>
+            <control>
+              <key>note_edit</key>
+              <title>Note Edit</title>
+              <src>DesktopModules/QLCS/note_edit.ascx</src>
+              <type>Edit</type>
+            </control>
+          </controls>
+        </module>
+      </modules>
+    </folder>
+  </folders>
+</dotnetnuke>

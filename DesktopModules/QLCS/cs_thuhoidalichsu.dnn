@@ -1,0 +1,27 @@
+<dotnetnuke version="3.0" type="Module">
+  <folders>
+    <folder>
+      <name>CS_ThuHoiDaLichSu</name>
+      <friendlyname>CS_ThuHoiDaLichSu</friendlyname>
+      <foldername>QLCS</foldername>
+      <modulename>CS_ThuHoiDaLichSu</modulename>
+      <description>CS_ThuHoiDaLichSu</description>
+      <version>01.00.00</version>
+      <businesscontrollerclass>
+      </businesscontrollerclass>
+      <modules>
+        <module>
+          <friendlyname>CS_ThuHoiDaLichSu</friendlyname>
+          <cachetime>0</cachetime>
+          <controls>
+            <control>
+              <title>ThuHoiDaLichSu</title>
+              <src>DesktopModules/QLCS/casau_chinhsuacachet_lichsu.ascx</src>
+              <type>Edit</type>
+            </control>
+          </controls>
+        </module>
+      </modules>
+    </folder>
+  </folders>
+</dotnetnuke>

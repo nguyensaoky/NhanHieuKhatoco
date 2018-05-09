@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/28/trunk/CS_Website/Admin/Localization/App_LocalResources
+END
+LanguagePack.ascx.resx
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/14/trunk/CS_Website/Admin/Localization/App_LocalResources/LanguagePack.ascx.resx
+END
+ResourceVerifier.ascx.resx
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/21/trunk/CS_Website/Admin/Localization/App_LocalResources/ResourceVerifier.ascx.resx
+END
+Languages.ascx.resx
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/28/trunk/CS_Website/Admin/Localization/App_LocalResources/Languages.ascx.resx
+END
+LanguageEditor.ascx.resx
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/14/trunk/CS_Website/Admin/Localization/App_LocalResources/LanguageEditor.ascx.resx
+END
+LanguageEditorExt.ascx.resx
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/14/trunk/CS_Website/Admin/Localization/App_LocalResources/LanguageEditorExt.ascx.resx
+END
+TimeZoneEditor.ascx.resx
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/14/trunk/CS_Website/Admin/Localization/App_LocalResources/TimeZoneEditor.ascx.resx
+END

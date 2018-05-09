@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <!-- 
+    Vietnamese Translation 2005 by Nguyen Viet Trung,  viechinguyen@gmail.com
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="ResMimeType">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="Version">
+    <value>1.0.0.0</value>
+  </resheader>
+  <resheader name="Reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="Writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ControlTitle_edit.Text">
+    <value>Thay Đổi Tài Khoản Người Sử Dụng</value>
+  </data>
+  <data name="ModuleHelp.Text">
+    <value>&lt;h1&gt;Về Module Quản Lý Người Dùng&lt;/h1&gt;&lt;p&gt;Các Quản trị viên có thể quản lý những người dùng đã được đăng ký của họ. Module này cho phép bạn thêm vào những Người dùng mới, thay đổi những người dùng hiện tại, xoá tài khoản, và quản lý Cấp bậc An ninh của người dùng.&lt;/p&gt;
+</value>
+  </data>
+  <data name="UserLockedOut.Text">
+    <value>Tài khoản này đang bị khoá do có quá nhiều đăng nhập không thành công.</value>
+  </data>
+  <data name="InvalidUser.Text">
+    <value>Tài khoản này không phải là một Người dùng của Portal hiện tại.</value>
+  </data>
+  <data name="SuperUser.Text">
+    <value>Tài khoản này là một SuperUser.  Bạn không có quyền thay đổi một Tài khoản SuperUser.</value>
+  </data>
+  <data name="NoUser.Text">
+    <value>Tài khoản này không tồn tại</value>
+  </data>
+  <data name="plNewPassword.Text">
+    <value>Password Mới:</value>
+  </data>
+  <data name="plNewPassword.Help">
+    <value>Nhập Password Mới</value>
+  </data>
+  <data name="plNewConfirm.Text">
+    <value>Xác Nhận Password Mới:</value>
+  </data>
+  <data name="plNewConfirm.Help">
+    <value>Nhập lại password mới để chắc chắn là bạn không đánh sai</value>
+  </data>
+  <data name="ResetPassword.Text">
+    <value>Đặt Lại Password</value>
+  </data>
+  <data name="cmdUpdatePassword.Text">
+    <value>Cập Nhật Password</value>
+  </data>
+  <data name="NewPassword.Text">
+    <value>Bạn phải nhập một password mới.</value>
+  </data>
+  <data name="PasswordChanged.Text">
+    <value>Password đã được đặt lại.</value>
+  </data>
+  <data name="PasswordResetFailed.Text">
+    <value>Có lỗi xảy ra khi đặt password. Password đã không được thay đổi.</value>
+  </data>
+  <data name="AddContent.Action">
+    <value>Tạo Người Dùng</value>
+  </data>
+  <data name="AddUser.Text">
+    <value>Tạo Người Dùng</value>
+  </data>
+  <data name="cmdPassword.Text">
+    <value>Quản Lý Password</value>
+  </data>
+  <data name="cmdProfile.Text">
+    <value>Quản Lý Profile</value>
+  </data>
+  <data name="cmdRegister.Text">
+    <value>Đăng Ký</value>
+  </data>
+  <data name="cmdRoles.Text">
+    <value>Quản lý nhóm cho người dùng này</value>
+  </data>
+  <data name="cmdServices.Text">
+    <value>Quản Lý Dịch Vụ</value>
+  </data>
+  <data name="cmdUser.Text">
+    <value>Quản Lý Quyền Hạn Người Dùng</value>
+  </data>
+  <data name="ControlTitle_profile.Text">
+    <value>Quản Lý Hồ Sơ</value>
+  </data>
+  <data name="ControlTitle_register.Text">
+    <value>Đăng Ký</value>
+  </data>
+  <data name="InvalidPasswordAnswer.Text">
+    <value>Cần phải cung cấp câu trả lời </value>
+  </data>
+  <data name="InvalidPasswordQuestion.Text">
+    <value>Cần phải cung cấp câu hỏi</value>
+  </data>
+  <data name="ManageProfile.Action">
+    <value>Quản Lý Thuộc Tính Hồ Sơ</value>
+  </data>
+  <data name="MembershipTitle.Text">
+    <value>Thông Tin Đăng Ký</value>
+  </data>
+  <data name="NotAuthorized.Text">
+    <value>Bạn không được phép sửa thành viên này.</value>
+  </data>
+  <data name="Password.Action">
+    <value>Quản Lý Password của Thành Viên</value>
+  </data>
+  <data name="PasswordInvalid.Text">
+    <value>Bạn phải nhập password. Hãy liên hệ với quản trị nếu bạn không biết các yêu cầu đối với password</value>
+  </data>
+  <data name="PasswordMismatch.Text">
+    <value>Giá Trị Password Vừa Nhập Không Phù Hợp</value>
+  </data>
+  <data name="PasswordQAChanged.Text">
+    <value>Cập nhật thành công câu hỏi và câu trả lời.</value>
+  </data>
+  <data name="PrivateConfirmationMessage.Text">
+    <value>&lt;b&gt;Một email thông báo với các thông tin của bạn đã được gửi đến quản trị trang web để kiểm tra. Một khi quá trình đăng ký đã được xác nhận một email sẽ được gửi đến địa chỉ email của bạn : {0}.&lt;/b&gt;</value>
+  </data>
+  <data name="PrivateMembership.Text">
+    <value>&lt;b&gt;*Lưu Ý:&lt;/b&gt; Phương Thức Đăng Ký vào portal này là Riêng Tư. Một khi thông tin tài khoản của bạn đã được gửi đi, quản trị portal sẽ được thông báo và hồ sơ của bạn sẽ phải trải qua một quá trình thẩm định. Nếu hồ sơ được xác nhận, bạn sẽ nhận được thông báo về việc truy cập của bạn vào portal.</value>
+  </data>
+  <data name="Profile.Action">
+    <value>Quản Lý Hồ Sơ Thành Viên</value>
+  </data>
+  <data name="PublicMembership.Text">
+    <value>&lt;b&gt;*Lưu Ý:&lt;/b&gt; Phương Thức Đăng Ký vào portal này là Công Khai. Một khi thông tin về tài khoản của bạn bạn được gửi đi, bạn sẽ ngay lập tức được truy cập vào portal.</value>
+  </data>
+  <data name="Register.Text">
+    <value>Thông Tin Cá Nhân Ưu Tiên</value>
+  </data>
+  <data name="Required.Text">
+    <value>Tất cả các trường đánh dấu bằng dấu (*) là cần thiết.</value>
+  </data>
+  <data name="Roles.Action">
+    <value>Quản Lý nhóm cho thành viên này</value>
+  </data>
+  <data name="UserAuthorized.Text">
+    <value>Người dùng đã được chấp nhận.</value>
+  </data>
+  <data name="UserTitle.Text">
+    <value>Thiết Lập Thành Viên - {0} (Id: {1})</value>
+  </data>
+  <data name="UserUnAuthorized.Text">
+    <value>Thành viên đã bị từ chối.</value>
+  </data>
+  <data name="VerifiedConfirmationMessage.Text">
+    <value>&lt;b&gt;Một email với mã thẩm tra của bạn đã được gửi đến địa chỉ email của bạn : {0}&lt;br&gt;Hãy truy cập vào hộp thư của bạn và lấy mã thẩm định, sẽ cần đến để đăng nhập lần đầu tiên.&lt;/b&gt;</value>
+  </data>
+  <data name="VerifiedMembership.Text">
+    <value>&lt;b&gt;*Lưu Ý:&lt;/b&gt; Phương Thức Đăng Ký của portal này là Thẩm Tra. Sau khi bạn gửi đi thông tin tài khoản của mình, bạn sẽ nhận được một email có chứa Mã thẩm tra. Mã thẩm tra này sẽ được cần đến trong lần đầu tiên bạn truy cập vào trang web.</value>
+  </data>
+  <data name="PasswordMissing.Text">
+    <value>Bạn phải đưa ra password hiện tại để có thể thay đổi password.</value>
+  </data>
+  <data name="PasswordNotDifferent.Text">
+    <value>Password mới trùng với password cũ. Hãy nhập password khác.</value>
+  </data>
+  <data name="PasswordMailError.Text">
+    <value>Password đã được đặt lại, nhưng vẫn còn lỗi xảy ra khi gửi email thông báo.</value>
+  </data>
+  <data name="ExceededRegisterQuota.Text">
+    <value>Bạn không thể đăng ký trên site này vào lúc này. Hãy liên hệ quản trị để được biết bao giờ việc đăng ký được cho phép trở lại.</value>
+  </data>
+  <data name="ExceededUserQuota.Text">
+    <value>Tạo thêm người dùng này sẽ vượt quá hạn mức về số người dùng đối với site này. Hãy liên hệ hoster của bạn để yêu cầu mở rộng hạn mức.</value>
+  </data>
+  <data name="UserSubscribed.Text">
+    <value>Bạn đã được đăng ký vào chức danh {0}.</value>
+  </data>
+  <data name="UserUnSubscribed.Text">
+    <value>Bạn đã được hủy đăng ký vào chức danh {0}.</value>
+  </data>
+</root>

@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/28/trunk/CS_Website/Admin/Scheduling/App_LocalResources
+END
+EditSchedule.ascx.resx
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/28/trunk/CS_Website/Admin/Scheduling/App_LocalResources/EditSchedule.ascx.resx
+END
+ViewSchedule.ascx.resx
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/14/trunk/CS_Website/Admin/Scheduling/App_LocalResources/ViewSchedule.ascx.resx
+END
+ViewScheduleHistory.ascx.resx
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/14/trunk/CS_Website/Admin/Scheduling/App_LocalResources/ViewScheduleHistory.ascx.resx
+END
+ViewScheduleStatus.ascx.resx
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/14/trunk/CS_Website/Admin/Scheduling/App_LocalResources/ViewScheduleStatus.ascx.resx
+END

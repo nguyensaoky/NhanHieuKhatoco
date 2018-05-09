@@ -1,0 +1,27 @@
+<dotnetnuke version="3.0" type="Module">
+  <folders>
+    <folder>
+      <name>CS_VatTuBienDongLichSu</name>
+      <friendlyname>CS_VatTuBienDongLichSu</friendlyname>
+      <foldername>QLCS</foldername>
+      <modulename>CS_VatTuBienDongLichSu</modulename>
+      <description>CS_VatTuBienDongLichSu</description>
+      <version>01.00.00</version>
+      <businesscontrollerclass>
+      </businesscontrollerclass>
+      <modules>
+        <module>
+          <friendlyname>CS_VatTuBienDongLichSu</friendlyname>
+          <cachetime>0</cachetime>
+          <controls>
+            <control>
+              <title>VatTuBienDong LichSu</title>
+              <src>DesktopModules/QLCS/vattu_biendong_lichsu.ascx</src>
+              <type>Edit</type>
+            </control>
+          </controls>
+        </module>
+      </modules>
+    </folder>
+  </folders>
+</dotnetnuke>

@@ -1,0 +1,27 @@
+<dotnetnuke version="3.0" type="Module">
+  <folders>
+    <folder>
+      <name>CenIT-News MLNews</name>
+      <friendlyname>CenIT-News MLNews</friendlyname>
+      <foldername>MLNews</foldername>
+      <modulename>CenIT-News MLNews</modulename>
+      <description></description>
+      <version>01.00.00</version>
+      <businesscontrollerclass>
+      </businesscontrollerclass>
+      <modules>
+        <module>
+          <friendlyname>CenIT-News MLNews</friendlyname>
+          <cachetime>0</cachetime>
+          <controls>
+            <control>
+              <title>ML News</title>
+              <src>DesktopModules/MLNews/MLNews.ascx</src>
+              <type>View</type>
+            </control>
+          </controls>
+        </module>
+      </modules>
+    </folder>
+  </folders>
+</dotnetnuke>

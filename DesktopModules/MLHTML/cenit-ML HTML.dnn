@@ -1,0 +1,32 @@
+<dotnetnuke version="3.0" type="Module">
+  <folders>
+    <folder>
+      <name>CenIT-ML HTML</name>
+      <friendlyname>CenIT-ML HTML</friendlyname>
+      <foldername>MLHTML</foldername>
+      <modulename>CenIT-ML HTML</modulename>
+      <description>
+      </description>
+      <version>01.00.00</version>
+      <businesscontrollerclass>
+      </businesscontrollerclass>
+      <modules>
+        <module>
+          <friendlyname>CenIT-ML HTML</friendlyname>
+          <cachetime>0</cachetime>
+          <controls>
+            <control>
+              <src>DesktopModules/MLHTML/HtmlModule.ascx</src>
+              <type>View</type>
+            </control>
+            <control>
+              <key>Edit</key>
+              <src>DesktopModules/MLHTML/EditHtml.ascx</src>
+              <type>Edit</type>
+            </control>
+          </controls>
+        </module>
+      </modules>
+    </folder>
+  </folders>
+</dotnetnuke>

@@ -1,0 +1,98 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="vattu_admin.ascx.cs" Inherits="DotNetNuke.Modules.QLCS.vattu_admin" %>
+<%@ Register Assembly="System.Web.Extensions" Namespace="System.Web.UI" TagPrefix="asp" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+<link href="<%= ModulePath + "style.css" %>" rel="stylesheet" type="text/css" />
+<script type="text/javascript" language="javascript">
+    function openwindow(url, name, width, height)
+    {
+        var leftVal = (screen.width - width) / 2;
+        var topVal = (screen.height - height) / 2;
+        window.open(url,'','height=' + height + ',width=' + width +',toolbar=no,status=no,linemenubar=no,scrollbars=yes,resizable=yes,modal=yes,left=' + leftVal + ',top=' + topVal);
+    }
+    
+    function finishEdit()
+    {
+        jQuery('#<%= btnLoad.ClientID %>').click();
+    }
+</script>
+<div style="width:100%;">
+    <asp:UpdatePanel ID="udpDanhSach" runat="server" UpdateMode="Conditional">
+        <ContentTemplate>
+            <div class="FileManager_ToolBar" style="width:99%;">
+                Loại vật tư
+                <asp:DropDownList runat="server" ID="ddlLoaiVatTu" AutoPostBack="true" OnSelectedIndexChanged="ddlLoaiVatTu_SelectedIndexChanged">
+                    <asp:ListItem Value="TA">Thức ăn</asp:ListItem>
+                    <asp:ListItem Value="TTY">Thuốc thú y</asp:ListItem>
+                    <asp:ListItem Value="SPGM">Sản phẩm giết mổ</asp:ListItem>
+                    <asp:ListItem Value="DCS_M">Da cá sấu</asp:ListItem>
+                    <asp:ListItem Value="DCS_CBM">+ Da có bụng</asp:ListItem>
+                    <asp:ListItem Value="DCS_CLM">+ Da có lưng</asp:ListItem>
+                    <asp:ListItem Value="DCS_MDL">+ Da mổ dọc lưng</asp:ListItem>
+                    <asp:ListItem Value="DCS_DDL">+ Đầu, Da lưng</asp:ListItem>
+                    <asp:ListItem Value="DCS">Da cũ (không dùng nữa)</asp:ListItem>
+                    <asp:ListItem Value="DCS_">+ Da cũ không bụng, lưng</asp:ListItem>
+                    <asp:ListItem Value="DCS_CB">+ Da có bụng cũ</asp:ListItem>
+                    <asp:ListItem Value="DCS_CL">+ Da có lưng cũ</asp:ListItem>
+                </asp:DropDownList>
+                <asp:Button ID="btnLoad" runat="server" OnClick="btnLoad_Click" style="width:0px;height:0px;background-color:Transparent;border:none;"/>
+                <asp:HyperLink ID="lnkAddNew" runat="server" Text="Thêm vật tư mới" CssClass="button" style="float:right;"></asp:HyperLink>
+            </div>
+            <asp:GridView ID="grvDanhSach" runat="server" AllowPaging="False" AllowSorting="True"
+            AutoGenerateColumns="False" CssClass="mGrid" AlternatingRowStyle-CssClass="alt" 
+            OnRowDataBound="grvDanhSach_RowDataBound"
+            OnSorting="grvDanhSach_Sorting" Width="100%">
+                <Columns>
+                    <asp:BoundField DataField="TenVatTu" HeaderText="Vật tư" SortExpression="[MoTa]">
+                        <HeaderStyle ForeColor="Yellow"></HeaderStyle>
+                    </asp:BoundField>
+                    <asp:BoundField DataField="DonViTinh" HeaderText="Đơn vị tính" SortExpression="[DonViTinh]">
+                        <HeaderStyle ForeColor="Yellow"></HeaderStyle>
+                    </asp:BoundField>
+                    <asp:TemplateField HeaderText="Tồn hiện tại" SortExpression="[SoLuong]">
+                        <ItemTemplate>
+                            <asp:Label ID="lblSoLuong" runat="server"></asp:Label>
+                        </ItemTemplate>
+                        <ItemStyle HorizontalAlign="Right"></ItemStyle>
+                        <HeaderStyle ForeColor="Yellow"></HeaderStyle>
+                    </asp:TemplateField>
+                    <asp:TemplateField>
+                        <ItemTemplate>
+                            <asp:Button ID="btnBienDong" runat="server" Text="Biến động" OnClick="btnBienDong_Click"
+                                CssClass="button"></asp:Button>
+                            <asp:HyperLink ID="lnkLichSuBienDong" runat="server" CssClass="button">Lịch sử biến động</asp:HyperLink>
+                            <asp:HyperLink ID="lnkEdit" runat="server" CssClass="button">Sửa thông tin</asp:HyperLink>
+                        </ItemTemplate>
+                        <ItemStyle HorizontalAlign="Center"></ItemStyle>
+                    </asp:TemplateField>
+                </Columns>
+            </asp:GridView>
+            <asp:ObjectDataSource ID="odsDanhSach" runat="server" EnableCaching="false" SelectMethod="GetVatTu" 
+            TypeName="DotNetNuke.Modules.QLCS.CaSauDataObject" SortParameterName="sortBy">
+                <SelectParameters>
+                    <asp:Parameter Name="LVT" />
+                </SelectParameters>
+            </asp:ObjectDataSource>
+        </ContentTemplate>
+    </asp:UpdatePanel>
+</div>
+<asp:GridView ID="grvHidden" runat="server"
+    AutoGenerateColumns="False" OnRowDataBound="grvHidden_RowDataBound"
+    Width="100%" BorderStyle="Solid" HeaderStyle-BackColor="#999999" Font-Names="Arial" HeaderStyle-Font-Names="Arial" RowStyle-Font-Names="Arial">
+    <Columns>
+        <asp:BoundField DataField="TenVatTu" HeaderText="Vật tư">
+            <HeaderStyle ForeColor="Yellow"></HeaderStyle>
+        </asp:BoundField>
+        <asp:BoundField DataField="DonViTinh" HeaderText="Đơn vị tính">
+            <HeaderStyle ForeColor="Yellow"></HeaderStyle>
+        </asp:BoundField>
+        <asp:TemplateField HeaderText="Tồn hiện tại">
+            <ItemTemplate>
+                <asp:Label ID="lblSoLuong" runat="server"></asp:Label>
+            </ItemTemplate>
+            <ItemStyle HorizontalAlign="Right"></ItemStyle>
+            <HeaderStyle ForeColor="Yellow"></HeaderStyle>
+        </asp:TemplateField>
+    </Columns>
+</asp:GridView>
+<asp:Button ID="btnExcel" runat="server" Text="Xuất Excel" OnClick="btnExcel_Click" CssClass="button" Visible="false"/>
+<asp:HiddenField ID="hdVatTuBienDongPage" runat="server" Value="0"/>        

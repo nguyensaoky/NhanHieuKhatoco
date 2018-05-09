@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="ResMimeType">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="Version">
+    <value>1.0.0.0</value>
+  </resheader>
+  <resheader name="Reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="Writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Lists.Text">
+    <value>Danh Sách</value>
+  </data>
+  <data name="AddList.Text">
+    <value>Thêm Danh Sách</value>
+  </data>
+  <data name="ListEntries.Text">
+    <value>Mục Danh Sách</value>
+  </data>
+  <data name="plListParent.Text">
+    <value>Gốc:</value>
+  </data>
+  <data name="plListParent.Help">
+    <value>Gốc</value>
+  </data>
+  <data name="plListName.Text">
+    <value>Tên Danh Sách:</value>
+  </data>
+  <data name="plListName.Help">
+    <value>Tên Danh Sách</value>
+  </data>
+  <data name="plEntryCount.Text">
+    <value>Tổng Số:</value>
+  </data>
+  <data name="plEntryCount.Help">
+    <value>Số Mục </value>
+  </data>
+  <data name="cmdAddEntry.Text">
+    <value>Thêm Mục</value>
+  </data>
+  <data name="cmdDeleteList.Text">
+    <value>Xoá Danh Sách</value>
+  </data>
+  <data name="btnEdit.AlternateText">
+    <value>Thay đổi mục</value>
+  </data>
+  <data name="btnUp.AlternateText">
+    <value>Chuyển mục lên trên</value>
+  </data>
+  <data name="btnDown.AlternateText">
+    <value>Chuyển mục xuống dưới</value>
+  </data>
+  <data name="plParentKey.Text">
+    <value>Gốc:</value>
+  </data>
+  <data name="plParentKey.Help">
+    <value>Gốc</value>
+  </data>
+  <data name="plSelectList.Text">
+    <value>Danh Sách Mẹ:</value>
+  </data>
+  <data name="plSelectList.Help">
+    <value>Chọn danh sách mẹ của danh sách này</value>
+  </data>
+  <data name="plSelectParent.Text">
+    <value>Mục Mẹ:</value>
+  </data>
+  <data name="plSelectParent.Help">
+    <value>Chọn mục mẹ cho danh sách này</value>
+  </data>
+  <data name="plEntryName.Text">
+    <value>Tên Mục:</value>
+  </data>
+  <data name="plEntryName.Help">
+    <value>Tên mục</value>
+  </data>
+  <data name="plEntryText.Text">
+    <value>Mục Text:</value>
+  </data>
+  <data name="plEntryText.Help">
+    <value>Hiển thị text</value>
+  </data>
+  <data name="plEntryValue.Text">
+    <value>Giá Trị Mục:</value>
+  </data>
+  <data name="plEntryValue.Help">
+    <value>Giá trị mục</value>
+  </data>
+  <data name="plEnableSortOrder.Text">
+    <value>Cho Phép Sắp Xếp Thứ Tự:</value>
+  </data>
+  <data name="plEnableSortOrder.Help">
+    <value>Chọn hoặc cho phép sắp xếp thứ tự tự chọn cho danh sách này</value>
+  </data>
+  <data name="cmdSave.Text">
+    <value>Lưu</value>
+  </data>
+  <data name="cmdDeleteEntry.Text">
+    <value>Xoá Mục</value>
+  </data>
+  <data name="cmdCancel.Text">
+    <value>Huỷ Bỏ</value>
+  </data>
+  <data name="ControlTitle_.Text">
+    <value>Danh Sách</value>
+  </data>
+  <data name="ModuleHelp.Text">
+    <value>&lt;h1&gt;Về Thay Đổi Danh Sách&lt;/h1&gt;&lt;p&gt;Cho phép bạn thay đổi những danh sách thông thường.&lt;/p&gt;</value>
+  </data>
+  <data name="valEntryText.ErrorMessage">
+    <value>&lt;br&gt;Cần Phải Nhập Nội Dung</value>
+  </data>
+  <data name="valEntryValue.ErrorMessage">
+    <value>&lt;br&gt;Cần Phải Nhập Giá Trị</value>
+  </data>
+</root>

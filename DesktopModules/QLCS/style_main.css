@@ -1,0 +1,307 @@
+/*----------------------------------------------------CHIEU NGANG MULTI DROPDOWN----------------------------------------------------*/
+/*----------------------------------------------------100----------------------------------------------------*/
+div.DT_100
+{
+	border-left: groove 1px #5b5c71;
+	border-top: groove 1px #5b5c71;
+	border-right:  groove 1px #5b5c71;	
+	border-bottom: groove 1px #5b5c71;
+	vertical-align: middle;
+	background-color: White;	
+	width: 100px;
+	height:18px;
+}
+input.MSTBM_100
+{
+	border: none; 
+	height: 14px;
+	width: 80px;
+	color: black;
+	float: left;
+}
+input.MSTBM_100 span
+{
+	display: none;
+	position: absolute;
+	top: 20px;
+	left: -10px;
+	width: 80px;
+	padding: 5px;
+	z-index: 100;
+	background: #000;
+	color: #fff;
+	-moz-border-radius: 5px; /* this works only in camino/firefox */
+	-webkit-border-radius: 5px; /* this is just for Safari */
+}
+input.MSTBM_100:hover span
+{
+	display: block;
+}
+/*----------------------------------------------------100----------------------------------------------------*/
+/*----------------------------------------------------150----------------------------------------------------*/
+div.DT_150
+{
+	border-left: groove 1px #5b5c71;
+	border-top: groove 1px #5b5c71;
+	border-right:  groove 1px #5b5c71;	
+	border-bottom: groove 1px #5b5c71;
+	vertical-align: middle;
+	background-color: White;	
+	width: 150px;
+	height:18px;
+}
+input.MSTBM_150
+{
+	border: none; 
+	height: 14px;
+	width: 130px;
+	color: black;
+	float: left;
+}
+input.MSTBM_150 span
+{
+	display: none;
+	position: absolute;
+	top: 20px;
+	left: -10px;
+	width: 130px;
+	padding: 5px;
+	z-index: 100;
+	background: #000;
+	color: #fff;
+	-moz-border-radius: 5px; /* this works only in camino/firefox */
+	-webkit-border-radius: 5px; /* this is just for Safari */
+}
+input.MSTBM_150:hover span
+{
+	display: block;
+}
+/*----------------------------------------------------150----------------------------------------------------*/
+/*----------------------------------------------------200----------------------------------------------------*/
+div.DT_200
+{
+	border-left: groove 1px #5b5c71;
+	border-top: groove 1px #5b5c71;
+	border-right:  groove 1px #5b5c71;	
+	border-bottom: groove 1px #5b5c71;
+	vertical-align: middle;
+	background-color: White;	
+	width: 200px;
+	height:18px;
+}
+input.MSTBM_200
+{
+	border: none; 
+	height: 14px;
+	width: 180px;
+	color: black;
+	float: left;
+}
+input.MSTBM_200 span
+{
+	display: none;
+	position: absolute;
+	top: 20px;
+	left: -10px;
+	width: 180px;
+	padding: 5px;
+	z-index: 100;
+	background: #000;
+	color: #fff;
+	-moz-border-radius: 5px; /* this works only in camino/firefox */
+	-webkit-border-radius: 5px; /* this is just for Safari */
+}
+input.MSTBM_200:hover span
+{
+	display: block;
+}
+/*----------------------------------------------------200----------------------------------------------------*/
+/*----------------------------------------------------310----------------------------------------------------*/
+div.DT_310
+{
+	border-left: groove 1px #5b5c71;
+	border-top: groove 1px #5b5c71;
+	border-right:  groove 1px #5b5c71;	
+	border-bottom: groove 1px #5b5c71;
+	vertical-align: middle;
+	background-color: White;	
+	width: 310px;
+	height:18px;
+}
+input.MSTBM_310
+{
+	border: none; 
+	height: 14px;
+	width: 290px;
+	color: black;
+	float: left;
+}
+input.MSTBM_310 span
+{
+	display: none;
+	position: absolute;
+	top: 20px;
+	left: -10px;
+	width: 290px;
+	padding: 5px;
+	z-index: 100;
+	background: #000;
+	color: #fff;
+	-moz-border-radius: 5px; /* this works only in camino/firefox */
+	-webkit-border-radius: 5px; /* this is just for Safari */
+}
+input.MSTBM_310:hover span
+{
+	display: block;
+}
+/*----------------------------------------------------310----------------------------------------------------*/
+/*----------------------------------------------------CHIEU NGANG MULTI DROPDOWN----------------------------------------------------*/
+/*----------------------------------------------------CHIEU DOC MULTI DROPDOWN----------------------------------------------------*/
+div.DVMain_100_250
+{
+	border-right: groove 1px #5b5c71;
+	border-top: groove 1px #5b5c71;
+	display: none;
+	scrollbar-face-color: white; 
+	margin: 0px;
+	scrollbar-highlight-color: whitesmoke;
+	overflow: auto;
+	border-left: groove 1px #5b5c71;
+	width: 100px;
+	scrollbar-arrow-color: black;
+	scrollbar-track-color: white;
+	border-bottom: groove 1px #5b5c71;
+	scrollbar-darkshadow-color: whitesmoke;
+	HEIGHT: 250px;
+	background-color: White;
+}
+div.DVMain_100_150
+{
+	border-right: groove 1px #5b5c71;
+	border-top: groove 1px #5b5c71;
+	display: none;
+	scrollbar-face-color: white; 
+	margin: 0px;
+	scrollbar-highlight-color: whitesmoke;
+	overflow: auto;
+	border-left: groove 1px #5b5c71;
+	width: 100px;
+	scrollbar-arrow-color: black;
+	scrollbar-track-color: white;
+	border-bottom: groove 1px #5b5c71;
+	scrollbar-darkshadow-color: whitesmoke;
+	HEIGHT: 150px;
+	background-color: White;
+}
+div.DVMain_100_80
+{
+	border-right: groove 1px #5b5c71;
+	border-top: groove 1px #5b5c71;
+	display: none;
+	scrollbar-face-color: white; 
+	margin: 0px;
+	scrollbar-highlight-color: whitesmoke;
+	overflow: auto;
+	border-left: groove 1px #5b5c71;
+	width: 100px;
+	scrollbar-arrow-color: black;
+	scrollbar-track-color: white;
+	border-bottom: groove 1px #5b5c71;
+	scrollbar-darkshadow-color: whitesmoke;
+	HEIGHT: 80px;
+	background-color: White;
+}
+div.DVMain_150_150
+{
+	border-right: groove 1px #5b5c71;
+	border-top: groove 1px #5b5c71;
+	display: none;
+	scrollbar-face-color: white; 
+	margin: 0px;
+	scrollbar-highlight-color: whitesmoke;
+	overflow: auto;
+	border-left: groove 1px #5b5c71;
+	width: 150px;
+	scrollbar-arrow-color: black;
+	scrollbar-track-color: white;
+	border-bottom: groove 1px #5b5c71;
+	scrollbar-darkshadow-color: whitesmoke;
+	HEIGHT: 150px;
+	background-color: White;
+}
+div.DVMain_200_300
+{
+	border-right: groove 1px #5b5c71;
+	border-top: groove 1px #5b5c71;
+	display: none;
+	scrollbar-face-color: white; 
+	margin: 0px;
+	scrollbar-highlight-color: whitesmoke;
+	overflow: auto;
+	border-left: groove 1px #5b5c71;
+	width: 200px;
+	scrollbar-arrow-color: black;
+	scrollbar-track-color: white;
+	border-bottom: groove 1px #5b5c71;
+	scrollbar-darkshadow-color: whitesmoke;
+	HEIGHT: 300px;
+	background-color: White;
+}
+div.DVMain_310_300
+{
+	border-right: groove 1px #5b5c71;
+	border-top: groove 1px #5b5c71;
+	display: none;
+	scrollbar-face-color: white; 
+	margin: 0px;
+	scrollbar-highlight-color: whitesmoke;
+	overflow: auto;
+	border-left: groove 1px #5b5c71;
+	width: 310px;
+	scrollbar-arrow-color: black;
+	scrollbar-track-color: white;
+	border-bottom: groove 1px #5b5c71;
+	scrollbar-darkshadow-color: whitesmoke;
+	HEIGHT: 300px;
+	background-color: White;
+}
+/*----------------------------------------------------CHIEU DOC MULTI DROPDOWN----------------------------------------------------*/
+
+#DVLI
+{
+	WIDTH: 308px;
+	background-color: transparent; 	
+}
+#DVLI:hover
+{
+	WIDTH: 308px;
+	background-color : #D4D0C8;
+}
+.LI
+{
+	WIDTH: 308px;
+	background-color: transparent; 	
+	text-decoration: none;
+	color: #000;
+}
+.LI:Hover
+{
+	WIDTH: 308px;
+	background-color : #D4D0C8;
+	text-decoration: none;
+	color: #000;
+}
+
+label.LIL
+{
+	font-size: 12px;
+	color: Black;
+}
+IMG.DDA
+{
+	vertical-align: middle;
+	cursor: hand;
+	height: 18px;
+	width: 18px;
+	border: none;	
+}

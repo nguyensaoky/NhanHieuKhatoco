@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="ResMimeType">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="Version">
+    <value>1.0.0.0</value>
+  </resheader>
+  <resheader name="Reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="Writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AddContent.Action">
+    <value>Thêm Mục Vào Thời Khoá Biểu</value>
+  </data>
+  <data name="lblStatusLabel.Text">
+    <value>Trạng Thái Hiện Tại:</value>
+  </data>
+  <data name="lblMaxThreadsLabel.Text">
+    <value>Số Thread Lớn Nhất:</value>
+  </data>
+  <data name="lblActiveThreadsLabel.Text">
+    <value>Những Thread Đang Hoạt Động:</value>
+  </data>
+  <data name="lblFreeThreadsLabel.Text">
+    <value>Những Thread rỗi:</value>
+  </data>
+  <data name="lblCommand.Text">
+    <value>Lệnh:</value>
+  </data>
+  <data name="lblProcessing.Text">
+    <value>Xử Lý Mục</value>
+  </data>
+  <data name="ScheduleID.Header">
+    <value>ID Nhật Ký</value>
+  </data>
+  <data name="Type.Header">
+    <value>Kiểu</value>
+  </data>
+  <data name="Started.Header">
+    <value>Đã Bắt Đầu</value>
+  </data>
+  <data name="Duration.Header">
+    <value>Khoảng thời gian&lt;br&gt;(giây)</value>
+  </data>
+  <data name="ObjectDependencies.Header">
+    <value>Đối Tượng Phụ Thuộc</value>
+  </data>
+  <data name="TriggeredBy.Header">
+    <value>Gây Ra Bởi</value>
+  </data>
+  <data name="Thread.Header">
+    <value>Thread </value>
+  </data>
+  <data name="Notes.Header">
+    <value>Chú Ý</value>
+  </data>
+  <data name="Servers.Header">
+    <value>Servers </value>
+  </data>
+  <data name="lblQueue.Text">
+    <value>Mục Đang Đợi</value>
+  </data>
+  <data name="NextStart.Header">
+    <value>Khởi Động Tiếp Theo</value>
+  </data>
+  <data name="Overdue.Header">
+    <value>Quá Hạn&lt;br&gt;(giây)</value>
+  </data>
+  <data name="TimeRemaining.Header">
+    <value>Thời Gian Còn Lại&lt;br&gt;(giây)</value>
+  </data>
+  <data name="NoTasks.Text">
+    <value>Không có tác vụ nào đang đợi và không có tác vụ nào đang chạy.</value>
+  </data>
+  <data name="DisabledMessage.Text">
+    <value>Thời khoá biểu hiện đang bị tắt</value>
+  </data>
+  <data name="Disabled.Text">
+    <value>Tắt</value>
+  </data>
+  <data name="ManuallyStopped.Text">
+    <value>Được Dừng Bằng Tay Từ Trang Trạng Thái Thời Khoá Biểu</value>
+  </data>
+  <data name="ModuleHelp.Text">
+    <value>&lt;h1&gt;Về Thời Khoá Biểu&lt;/h1&gt;&lt;p&gt;Cho phép bạn lập lịch những tác vụ được chạy ở một khoảng thời gian định trước.&lt;/p&gt;</value>
+  </data>
+  <data name="cmdStart.Text">
+    <value>Bắt Đầu</value>
+  </data>
+  <data name="cmdStop.Text">
+    <value>Kết Thúc</value>
+  </data>
+  <data name="ControlTitle_status.Text">
+    <value>Trạng Thái Thời Khoá Biểu</value>
+  </data>
+</root>

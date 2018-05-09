@@ -1,0 +1,505 @@
+﻿using System;
+using System.Data;
+using System.Configuration;
+using System.Collections;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+using System.Xml;
+using System.Text;
+using System.IO;
+using System.Data;
+using System.Data.SqlClient;
+
+namespace DotNetNuke.Modules.QLCS
+{
+    public partial class casau_admin : DotNetNuke.Entities.Modules.PortalModuleBase
+    {
+        private CaSauController csCont = new CaSauController();
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                Page.ClientScript.RegisterClientScriptInclude("jquery", ResolveUrl("~/js/jquery.js"));
+                if (!IsPostBack)
+                {
+                    txtTruocNgay.Text = DateTime.Now.AddDays(1).ToString("dd/MM/yyyy");
+                    DataTable dtLoaiCa = csCont.LoadLoaiCa(1);
+                    ddlLoaiCa.DataSource = dtLoaiCa;
+                    ddlLoaiCa.DataTextField = "TenLoaiCa";
+                    ddlLoaiCa.DataValueField = "IDLoaiCa";
+                    ddlLoaiCa.DataBind();
+
+                    DataTable dtChuong = csCont.LoadChuong(1);
+                    ddlChuong.DataSource = dtChuong;
+                    ddlChuong.DataTextField = "Chuong";
+                    ddlChuong.DataValueField = "IDChuong";
+                    ddlChuong.DataBind();
+                    ddlChuong.Items.Insert(0, new ListItem("","0"));
+
+                    DataTable dtCaMe = csCont.LoadCaSauMe_AllTrangThai();
+                    ddlCaMe.DataSource = dtCaMe;
+                    ddlCaMe.DataTextField = "CaMe";
+                    ddlCaMe.DataValueField = "IDCaSau";
+                    ddlCaMe.DataBind();
+                    ddlCaMe.Items.Insert(0, new ListItem("","0"));
+
+                    DataTable dtStatus = new DataTable("Status");
+                    DataRow dr = null;
+                    dtStatus.Columns.AddRange(new DataColumn[] { new DataColumn("ID"), new DataColumn("Description") });
+                    dr = dtStatus.NewRow();
+                    dr["ID"] = 0;
+                    dr["Description"] = "Bình thường";
+                    dtStatus.Rows.Add(dr);
+                    dr = dtStatus.NewRow();
+                    dr["ID"] = 1;
+                    dr["Description"] = "Bệnh";
+                    dtStatus.Rows.Add(dr);
+                    dr = dtStatus.NewRow();
+                    dr["ID"] = -4;
+                    dr["Description"] = "Loại thải";
+                    dtStatus.Rows.Add(dr);
+                    dr = dtStatus.NewRow();
+                    dr["ID"] = -3;
+                    dr["Description"] = "Đã bán";
+                    dtStatus.Rows.Add(dr);
+                    dr = dtStatus.NewRow();
+                    dr["ID"] = -2;
+                    dr["Description"] = "Giết mổ";
+                    dtStatus.Rows.Add(dr);
+                    dr = dtStatus.NewRow();
+                    dr["ID"] = -1;
+                    dr["Description"] = "Chết";
+                    dtStatus.Rows.Add(dr);
+                    ddlStatus.DataSource = dtStatus;
+                    ddlStatus.DataValueField = "ID";
+                    ddlStatus.DataTextField = "Description";
+                    ddlStatus.DataBind();
+
+                    DotNetNuke.Entities.Tabs.TabController t = new DotNetNuke.Entities.Tabs.TabController();
+                    int CaSauBienDongPage = t.GetTabByName(ConfigurationManager.AppSettings["QLCS_CaSauBienDongPage"], PortalId).TabID;
+
+                    btnChuyenChuong.Attributes["onclick"] = "openwindow('" + DotNetNuke.Common.Globals.NavigateURL(CaSauBienDongPage, "", "type/chuyenchuong") + "','',600,400);";
+                    btnChuyenGioiTinh.Attributes["onclick"] = "openwindow('" + DotNetNuke.Common.Globals.NavigateURL(CaSauBienDongPage, "", "type/chuyengioitinh") + "','',600,400);";
+                    btnChuyenLoaiCa.Attributes["onclick"] = "openwindow('" + DotNetNuke.Common.Globals.NavigateURL(CaSauBienDongPage, "", "type/chuyenloaica") + "','',600,400);";
+                    btnChuyenNguonGoc.Attributes["onclick"] = "openwindow('" + DotNetNuke.Common.Globals.NavigateURL(CaSauBienDongPage, "", "type/chuyennguongoc") + "','',600,400);";
+                    btnChuyenMaSo.Attributes["onclick"] = "openwindow('" + DotNetNuke.Common.Globals.NavigateURL(CaSauBienDongPage, "", "type/chuyenmaso") + "','',600,400);";
+                    btnChuyenTrangThai.Attributes["onclick"] = "openwindow('" + DotNetNuke.Common.Globals.NavigateURL(CaSauBienDongPage, "", "type/chuyentrangthai") + "','',700,600);";
+                    btnChuyenGiong.Attributes["onclick"] = "openwindow('" + DotNetNuke.Common.Globals.NavigateURL(CaSauBienDongPage, "", "type/chuyengiong") + "','',600,400);";
+                    btnChuyenNgayNo.Attributes["onclick"] = "openwindow('" + DotNetNuke.Common.Globals.NavigateURL(CaSauBienDongPage, "", "type/chuyenngayno") + "','',600,400);";
+                    btnChuyenNgayXuongChuong.Attributes["onclick"] = "openwindow('" + DotNetNuke.Common.Globals.NavigateURL(CaSauBienDongPage, "", "type/chuyenngayxuongchuong") + "','',600,400);";
+                    btnChuyenCaMe.Attributes["onclick"] = "openwindow('" + DotNetNuke.Common.Globals.NavigateURL(CaSauBienDongPage, "", "type/chuyencame") + "','',600,400);";
+                    
+                    lnkAddCaSau.NavigateUrl = DotNetNuke.Common.Globals.NavigateURL(PortalSettings.ActiveTab.TabID, "casau_add", "mid/" + this.ModuleId.ToString());
+
+                    if (Session["AutoDisplay_CS"] != null && Convert.ToBoolean(Session["AutoDisplay_CS"]))
+                    {
+                        txtID.Text = Session["CSAdmin_ID"].ToString();
+                        txtMaSo.Text = Session["CSAdmin_MaSo"].ToString();
+                        ddlGioiTinh.SelectedValue = Session["CSAdmin_GioiTinh"].ToString();
+                        ddlLoaiCa.SelectedOptionsValueList = Session["CSAdmin_LoaiCa"].ToString();
+                        Config.SetSelectedValues(ddlChuong, Session["CSAdmin_Chuong"].ToString());
+                        Config.SetSelectedValues(ddlCaMe, Session["CSAdmin_CaMe"].ToString());
+                        if (Session["CSAdmin_TrangThai"] != null && Session["CSAdmin_TrangThai"].ToString() != "")
+                        {
+                            ddlStatus.SelectedOptionsValueList = Session["CSAdmin_TrangThai"].ToString();
+                        }
+                        else
+                        {
+                            ddlStatus.SelectedOptionsValueList = "0, 1, 2, ";
+                        }
+                        btnLoad_Click(null, null);
+                    }
+                    else
+                    {
+                        ddlStatus.SelectedOptionsValueList = "0, 1, 2, ";
+                    }
+
+                    if (!UserInfo.IsSuperUser && !UserInfo.IsInRole("Administrators") && !CaSauController.HasEditPermission(UserInfo.Roles, "QLCS"))
+                    {
+                        lnkAddCaSau.Visible = false;
+                        tdSub.Visible = false;
+                        grvDanhSach.Columns[11].Visible = false;
+                    }
+                    hdListBienDongPage.Value = t.GetTabByName(ConfigurationManager.AppSettings["QLCS_CaSauListBienDongPage"], PortalId).TabID.ToString();
+                    btnLoad.OnClientClick = "Blur(" + ddlLoaiCa.ControlClientID + ");Blur(" + ddlStatus.ControlClientID + ");";
+                }
+                ddlLoaiCa.CallingPage = this.Page;
+                ddlLoaiCa.OnItemsSelected += new DotNetNuke.Modules.QLCS.MultiSelectDropDownDelegate(ddlLoaiCa_OnItemsSelected);
+                ddlStatus.CallingPage = this.Page;
+                ddlStatus.OnItemsSelected += new DotNetNuke.Modules.QLCS.MultiSelectDropDownDelegate(ddlStatus_OnItemsSelected);
+            }
+            catch (Exception ex)
+            {
+            }
+        }
+
+        protected void grvDanhSach_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                DataRow r = ((DataRowView)e.Row.DataItem).Row;
+                HtmlInputCheckBox chkChon = (HtmlInputCheckBox)(e.Row.FindControl("chkChon"));
+                Label lblStatus = (Label)(e.Row.FindControl("lblStatus"));
+                HyperLink lnkIDCaSau = (HyperLink)(e.Row.FindControl("lnkIDCaSau"));
+                Label lblSTT = (Label)(e.Row.FindControl("lblSTT"));
+                lnkIDCaSau.Attributes["onclick"] = "openwindow('" + DotNetNuke.Common.Globals.NavigateURL(int.Parse(hdListBienDongPage.Value), "", "IDCaSau/" + r["IDCaSau"].ToString()) + "','',800,600);";
+                lnkIDCaSau.Attributes["style"] = "cursor:pointer;font-weight:bold;";
+                chkChon.Attributes["name"] = r["IDCaSau"].ToString();
+                chkChon.Attributes["onclick"] = "chon_click(event, this);";
+                int tt = Convert.ToInt32(r["Status"]);
+                if (tt < 0) lblStatus.Text = r["TrangThai"].ToString() + " (" + Convert.ToDateTime(r["LatestChange"]).ToString("dd/MM/yyyy") + ")";
+                else 
+                { 
+                    lblStatus.Text = r["TrangThai"].ToString();
+                    if (Convert.ToInt32(r["EndStatus"]) < 0) lblStatus.Text += " (" + Convert.ToDateTime(r["LatestChange"]).ToString("dd/MM/yyyy") + ")";
+                }
+                int t = e.Row.RowIndex+1;
+                lblSTT.Text = t.ToString();
+            }
+        }
+
+        protected void grvDanhSach_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            udpDanhSach.Update();
+        }
+
+        protected void grvDanhSach_Sorting(object sender, GridViewSortEventArgs e)
+        {
+            hdOrderBy.Value = e.SortExpression;
+            udpDanhSach.Update();
+        }
+
+        private string LoadODSParameters()
+        {
+            System.Globalization.CultureInfo ci = System.Globalization.CultureInfo.CreateSpecificCulture("vi-VN");
+            string strWhereClause = "";
+            if (ddlStatus.SelectedOptionsValueList != "")
+            {
+                string[] arr = ddlStatus.SelectedOptionsValueList.Split(new string[] {", "}, StringSplitOptions.RemoveEmptyEntries);
+                if (arr.Length == 6) strWhereClause += "0=0";
+                else strWhereClause += "Status in (" + ddlStatus.SelectedOptionsValueList.Remove(ddlStatus.SelectedOptionsValueList.Length - 2) + ")";
+            }
+            else
+            {
+                return "";
+            }
+            if (txtID.Text.Trim() != "")
+            {
+                strWhereClause += " and IDCaSau = '" + txtID.Text + "'";
+            }
+            if (txtMaSo.Text.Trim() != "")
+            {
+                strWhereClause += " and MaSo = '" + txtMaSo.Text + "'";
+            }
+            if (ddlGioiTinh.SelectedValue != "-2")
+            {
+                strWhereClause += " and GioiTinh = " + ddlGioiTinh.SelectedValue;
+            }
+            if (ddlGiong.SelectedValue != "-1")
+            {
+                strWhereClause += " and Giong = " + ddlGiong.SelectedValue;
+            }
+            if(ddlLoaiCa.SelectedOptionsValueList != "")
+            {
+                strWhereClause += " and LoaiCa in (" + ddlLoaiCa.SelectedOptionsValueList.Remove(ddlLoaiCa.SelectedOptionsValueList.Length-2) + ")";
+            }
+            if (Config.GetSelectedValues(ddlChuong) != "0, " && Config.GetSelectedValues(ddlChuong) != "")
+            {
+                strWhereClause += " and Chuong in (" + Config.GetSelectedValues(ddlChuong).Remove(Config.GetSelectedValues(ddlChuong).Length - 2) + ")";
+            }
+            if (Config.GetSelectedValues(ddlCaMe) != "0, " && Config.GetSelectedValues(ddlCaMe) != "")
+            {
+                strWhereClause += " and CaMe in (" + Config.GetSelectedValues(ddlCaMe).Remove(Config.GetSelectedValues(ddlCaMe).Length - 2) + ")";
+            }
+            if (txtFromDate.Text != "")
+            {
+                strWhereClause += " and NgayXuongChuong >= '" + DateTime.Parse(txtFromDate.Text, ci).ToString("yyyyMMdd") + "'";
+            }
+            if (txtToDate.Text != "")
+            {
+                strWhereClause += " and NgayXuongChuong < '" + DateTime.Parse(txtToDate.Text, ci).AddDays(1).ToString("yyyyMMdd") + "'";
+            }
+            bool Die = false;
+            if (txtDieFrom.Text != "")
+            {
+                strWhereClause += " and LatestChange >= '" + DateTime.Parse(txtDieFrom.Text, ci).ToString("yyyyMMdd") + "' and Status < 0";
+                Die = true;
+            }
+            if (txtDieTo.Text != "")
+            {
+                strWhereClause += " and LatestChange < '" + DateTime.Parse(txtDieTo.Text, ci).AddDays(1).ToString("yyyyMMdd") + "'";
+                if (!Die) strWhereClause += " and Status < 0";
+            }
+            return strWhereClause;
+        }
+
+        protected void btnLoad_Click(object sender, EventArgs e)
+        {
+            Session["AutoDisplay_CS"] = true;
+            Session["CSAdmin_ID"] = txtID.Text;
+            Session["CSAdmin_MaSo"] = txtMaSo.Text;
+            Session["CSAdmin_GioiTinh"] = ddlGioiTinh.SelectedValue;
+            Session["CSAdmin_LoaiCa"] = ddlLoaiCa.SelectedOptionsValueList;
+            Session["CSAdmin_Chuong"] = Config.GetSelectedValues(ddlChuong);
+            Session["CSAdmin_CaMe"] = Config.GetSelectedValues(ddlCaMe);
+            Session["CSAdmin_TrangThai"] = ddlStatus.SelectedOptionsValueList;
+
+            grvDanhSach.DataSourceID = "odsDanhSach";
+            grvDanhSach.PageSize = int.Parse(ddlPageSize.SelectedValue);
+            string strWhereClause = LoadODSParameters();
+            if (strWhereClause != "")
+            {
+                if (txtTruocNgay.Text == "") txtTruocNgay.Text = DateTime.Now.AddDays(1).ToString("dd/MM/yyyy");
+                odsDanhSach.SelectParameters["WhereClause"].DefaultValue = strWhereClause;
+                odsDanhSach.SelectParameters["Date"].DefaultValue = txtTruocNgay.Text.Trim();
+                lblTongSo.Text = CaSauDataObject.Count(strWhereClause, txtTruocNgay.Text.Trim()).ToString();
+                grvDanhSach.Visible = true;
+            }
+            else
+            {
+                grvDanhSach.Visible = false;
+                lblTongSo.Text = "0";
+            }
+            udpDanhSach.Update();
+        }
+
+        private bool existInList(string idCaSau, ListBox lstChon)
+        {
+            foreach (ListItem item in lstChon.Items)
+            {
+                if (item.Value == idCaSau)
+                    return true;
+            }
+            return false;
+        }
+
+        protected void btnChon_Click(object sender, EventArgs e)
+        {
+            foreach (GridViewRow row in grvDanhSach.Rows)
+            {
+                HyperLink lnkIDCaSau = (HyperLink)(row.FindControl("lnkIDCaSau"));
+                HtmlInputCheckBox chkChon = (HtmlInputCheckBox)(row.FindControl("chkChon"));
+                if (chkChon.Checked && !existInList(lnkIDCaSau.Text, lstChon))
+                {
+                    lstChon.Items.Add(new ListItem(lnkIDCaSau.Text + "-VC:" + row.Cells[1].Text + "-LC:" + HttpContext.Current.Server.HtmlDecode(row.Cells[6].Text) + "-CH:" + row.Cells[2].Text, lnkIDCaSau.Text));
+                    lstChon.Items[lstChon.Items.Count - 1].Selected = true;
+                }
+            }
+            udpDanhSachChon.Update();
+        }
+        
+        protected void btnBo_Click(object sender, EventArgs e)
+        {
+            for (int i = lstChon.Items.Count-1; i>=0; i--)
+            {
+                if (lstChon.Items[i].Selected)
+                {
+                    lstChon.Items.RemoveAt(i);
+                }
+            }
+            udpDanhSachChon.Update();
+        }
+
+        protected void btnBoToanBo_Click(object sender, EventArgs e)
+        {
+            lstChon.Items.Clear();
+            udpDanhSachChon.Update();
+        }
+
+        protected void btnChuyenChuong_Click(object sender, EventArgs e)
+        {
+            string s = "";
+            foreach (ListItem i in lstChon.Items)
+            {
+                if(i.Selected) s += "@" + i.Value + "@";
+            }
+            Session["DSCaSauChuyenChuong"] = s;
+        }
+
+        protected void btnChuyenMaSo_Click(object sender, EventArgs e)
+        {
+            string s = "";
+            foreach (ListItem i in lstChon.Items)
+            {
+                if (i.Selected) s += "@" + i.Value + "@";
+            }
+            Session["DSCaSauChuyenMaSo"] = s;
+            
+        }
+
+        protected void btnChuyenGioiTinh_Click(object sender, EventArgs e)
+        {
+            string s = "";
+            foreach (ListItem i in lstChon.Items)
+            {
+                if (i.Selected) s += "@" + i.Value + "@";
+            }
+            Session["DSCaSauChuyenGioiTinh"] = s;
+            
+        }
+
+        protected void btnChuyenLoaiCa_Click(object sender, EventArgs e)
+        {
+            string s = "";
+            foreach (ListItem i in lstChon.Items)
+            {
+                if (i.Selected) s += "@" + i.Value + "@";
+            }
+            Session["DSCaSauChuyenLoaiCa"] = s;
+            
+        }
+
+        protected void btnChuyenNguonGoc_Click(object sender, EventArgs e)
+        {
+            string s = "";
+            foreach (ListItem i in lstChon.Items)
+            {
+                if (i.Selected) s += "@" + i.Value + "@";
+            }
+            Session["DSCaSauChuyenNguonGoc"] = s;
+            
+        }
+
+        protected void btnChuyenTrangThai_Click(object sender, EventArgs e)
+        {
+            string s = "";
+            foreach (ListItem i in lstChon.Items)
+            {
+                if (i.Selected) s += "@" + i.Value + "@";
+            }
+            Session["DSCaSauChuyenTrangThai"] = s;
+            
+        }
+
+        protected void btnChuyenGiong_Click(object sender, EventArgs e)
+        {
+            string s = "";
+            foreach (ListItem i in lstChon.Items)
+            {
+                if (i.Selected) s += "@" + i.Value + "@";
+            }
+            Session["DSCaSauChuyenGiong"] = s;
+            
+        }
+
+        protected void btnChuyenNgayNo_Click(object sender, EventArgs e)
+        {
+            string s = "";
+            foreach (ListItem i in lstChon.Items)
+            {
+                if (i.Selected) s += "@" + i.Value + "@";
+            }
+            Session["DSCaSauChuyenNgayNo"] = s;
+            
+        }
+
+        protected void btnChuyenNgayXuongChuong_Click(object sender, EventArgs e)
+        {
+            string s = "";
+            foreach (ListItem i in lstChon.Items)
+            {
+                if (i.Selected) s += "@" + i.Value + "@";
+            }
+            Session["DSCaSauChuyenNgayXuongChuong"] = s;
+            
+        }
+
+        protected void btnChuyenCaMe_Click(object sender, EventArgs e)
+        {
+            string s = "";
+            foreach (ListItem i in lstChon.Items)
+            {
+                if (i.Selected) s += "@" + i.Value + "@";
+            }
+            Session["DSCaSauChuyenCaMe"] = s;
+            
+        }
+
+        protected void btnXoaCa_Click(object sender, EventArgs e)
+        {
+            string s = "";
+            foreach (ListItem i in lstChon.Items)
+            {
+                if (i.Selected) s += "@" + i.Value + "@";
+            }
+            csCont.CaSauDelete(s);
+            for (int i = lstChon.Items.Count - 1; i >= 0; i-- )
+            {
+                if (lstChon.Items[i].Selected) lstChon.Items.RemoveAt(i);
+            }
+            btnLoad_Click(null, null);
+        }
+
+        protected void btnExcel_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                System.Globalization.CultureInfo ci = System.Globalization.CultureInfo.CreateSpecificCulture("vi-VN");
+                string filename = "QuanLyDan" + DateTime.Now.ToString("yyyy_MM_dd_HH_mm_ss") + ".xls";
+                string strSQL = "QLCS_GetCaSau";
+                SqlParameter[] param = new SqlParameter[4];
+                if (txtTruocNgay.Text == "")
+                {
+                    txtTruocNgay.Text = DateTime.Now.ToString("dd/MM/yyyy");
+                }
+                param[0] = new SqlParameter("@WhereClause", LoadODSParameters());
+                param[1] = new SqlParameter("@OrderBy", hdOrderBy.Value);
+                param[2] = new SqlParameter("@Date", DateTime.Parse(txtTruocNgay.Text, ci).ToString("yyyyMMdd"));
+                param[3] = new SqlParameter("@dDate", DateTime.Parse(txtTruocNgay.Text, ci));
+                DataTable dt = DotNetNuke.NewsProvider.DataProvider.SelectSP(strSQL, param);
+
+                Response.ClearContent();
+                Response.ClearHeaders();
+                Response.AppendHeader("Content-Disposition", "attachment; filename=" + filename);
+                Response.ContentType = "application/vnd.ms-excel";
+                string s = "<html><head><meta http-equiv='Content-Type' content='text/html; charset=utf-8'/></head><body width='100%' style='text-align:center;font-family:Times New Roman;'><br/><center style='font-weight:bold;font-size:15pt;'></center><br/>";
+                s += "<table border='1'>";
+                s += "<tr>";
+                DataColumn col = null;
+                for(int i=0; i<dt.Columns.Count; i++)
+                {
+                    col = dt.Columns[i];
+                    s += "<td style='background-color:#CCC;'>" + col.Caption + "</td>";
+                }
+                s += "</tr>";
+                DataRow row = null;
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    row = dt.Rows[i];
+                    s += "<tr>";
+                    for (int j = 0; j < dt.Columns.Count; j++)
+                    {
+                        s += "<td>" + row[j].ToString() + "</td>";
+                    }
+                    s += "</tr>";
+                }
+                s += "</table>";
+                s += "</body></html>";
+                Response.Write(s);
+            }
+            catch (Exception ex)
+            {
+                Response.Write(ex.Message);
+            }
+        }
+
+        private void ddlLoaiCa_OnItemsSelected(object sender, DotNetNuke.Modules.QLCS.MultiSelectDropDownItemSelectedEventArgs args)
+        {
+        }
+        
+        private void ddlChuong_OnItemsSelected(object sender, DotNetNuke.Modules.QLCS.MultiSelectDropDownItemSelectedEventArgs args)
+        {
+        }
+
+        private void ddlCaMe_OnItemsSelected(object sender, DotNetNuke.Modules.QLCS.MultiSelectDropDownItemSelectedEventArgs args)
+        {
+        }
+
+        private void ddlStatus_OnItemsSelected(object sender, DotNetNuke.Modules.QLCS.MultiSelectDropDownItemSelectedEventArgs args)
+        {
+        }
+    }
+}

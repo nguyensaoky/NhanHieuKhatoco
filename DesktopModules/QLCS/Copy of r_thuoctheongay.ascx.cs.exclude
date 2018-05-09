@@ -1,0 +1,242 @@
+﻿using System;
+using System.Data;
+using System.Configuration;
+using System.Collections;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+using DotNetNuke.Services.Localization;
+using System.Collections.Generic;
+using System.Data.SqlClient;
+
+namespace DotNetNuke.Modules.QLCS
+{
+    public partial class r_thuoctheongay : DotNetNuke.Entities.Modules.PortalModuleBase
+    {
+        private CaSauController csCont = new CaSauController();
+        System.Globalization.CultureInfo ci = System.Globalization.CultureInfo.CreateSpecificCulture("vi-VN");
+        int scale = 1;
+        private void BindControls()
+        {
+            System.Globalization.CultureInfo ci = System.Globalization.CultureInfo.CreateSpecificCulture("vi-VN");
+            txtFromDate.Text = "01/" + DateTime.Now.Month.ToString() + "/" + DateTime.Now.Year.ToString();
+            txtToDate.Text = DateTime.Now.ToString("dd/MM/yyyy");
+
+            DataTable dtLoaiCa = csCont.LoadLoaiCa(1);
+            ddlLoaiCa.DataSource = dtLoaiCa;
+            ddlLoaiCa.DataTextField = "TenLoaiCa";
+            ddlLoaiCa.DataValueField = "IDLoaiCa";
+            ddlLoaiCa.DataBind();
+            ddlLoaiCa.Items.Insert(0, new ListItem("", "0"));
+
+            DataTable dtThuoc = csCont.LoadVatTu("TTY");
+            ddlThuoc.DataSource = dtThuoc;
+            ddlThuoc.DataTextField = "TenVatTu";
+            ddlThuoc.DataValueField = "IDVatTu";
+            ddlThuoc.DataBind();
+            ddlThuoc.Items.Insert(0, new ListItem("", "0"));
+        }
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            ci = System.Globalization.CultureInfo.CreateSpecificCulture(UserInfo.Profile.PreferredLocale);
+            try
+            {
+                if (!Page.IsPostBack)
+                {
+                    txtScale.Text = ConfigurationManager.AppSettings["QLCS_VatTu_TTY_Scale"];
+                    BindControls();
+                }
+                scale = int.Parse(txtScale.Text);
+            }
+            catch (Exception ex)
+            {
+                Response.Write(ex.Message);
+            }
+        }
+
+        protected void btnExcel_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string filename = "ThuocTheoNgay";
+                string tieude = "";
+                string strSQL = "QLCS_BCTK_ThuocTheoNgay";
+                SqlParameter[] param = new SqlParameter[4];
+                if (txtFromDate.Text == "")
+                {
+                    txtFromDate.Text = DateTime.Now.ToString("dd/MM/yyyy");
+                }
+                if (txtToDate.Text == "")
+                {
+                    txtToDate.Text = DateTime.Now.AddDays(1).ToString("dd/MM/yyyy");
+                }
+                string StrLoaiCa = "";
+                if (Config.GetSelectedValues(ddlLoaiCa) != "0, " && Config.GetSelectedValues(ddlLoaiCa) != "")
+                {
+                    StrLoaiCa = "@" + Config.GetSelectedValues(ddlLoaiCa).Replace(", ", "@@").Remove(Config.GetSelectedValues(ddlLoaiCa).Length - 1);
+                }
+                string StrThuoc = "";
+                if (Config.GetSelectedValues(ddlThuoc) != "0, " && Config.GetSelectedValues(ddlThuoc) != "")
+                {
+                    StrThuoc = "@" + Config.GetSelectedValues(ddlThuoc).Replace(", ", "@@").Remove(Config.GetSelectedValues(ddlThuoc).Length - 1);
+                }
+                param[0] = new SqlParameter("@dFrom", txtFromDate.Text);
+                param[1] = new SqlParameter("@dTo", txtToDate.Text);
+                param[2] = new SqlParameter("@StrLoaiCa", StrLoaiCa);
+                param[3] = new SqlParameter("@StrThuoc", StrThuoc);
+                filename += txtFromDate.Text + "___" + txtToDate.Text + ".xls";
+                filename = filename.Replace("/", "_");
+                tieude += "<b>BẢNG THEO DÕI THUỐC TỪ NGÀY " + txtFromDate.Text + " ĐẾN NGÀY " + txtToDate.Text + "</b>";
+                DataTable dt = DotNetNuke.NewsProvider.DataProvider.SelectSP(strSQL, param);
+
+                Response.ClearContent();
+                Response.ClearHeaders();
+                Response.AppendHeader("Content-Disposition", "attachment; filename=" + filename);
+                Response.ContentType = "application/vnd.ms-excel";
+                System.Text.StringBuilder sb = new System.Text.StringBuilder();
+                sb.Append("<html><head><meta http-equiv='Content-Type' content='text/html; charset=utf-8'/></head><body width='100%' style='text-align:center;font-family:Times New Roman;'><br/><center style='font-weight:bold;font-size:15pt;'>" + tieude + "</center><br/>");
+                sb.Append(@"<table border='1'>");
+                sb.Append(@"<tr style='font-weight:bold; vertical-align:middle;'>
+                          <td>Loại Thuốc thú y</td>
+                          <td>Đơn vị tính</td>
+                          <td>Ngày xuất</td>
+                          <td>Loại cá</td>
+                          <td>Số lượng cá</td>
+                          <td>Lượng thuốc</td>
+                          <td>Số lượng cá Giống</td>
+                          <td>Lượng thuốc Giống dùng</td>
+                          <td>Số lượng cá TT</td>
+                          <td>Lượng thuốc TT dùng</td>
+                         </tr>");
+                foreach (DataRow r in dt.Rows)
+                {
+                    int slg = 0;
+                    int slc = 0;
+                    if (r["SoLuongGiong"] != DBNull.Value) slg = Convert.ToInt32(r["SoLuongGiong"]);
+                    if (r["SoLuongCa"] != DBNull.Value) slc = Convert.ToInt32(r["SoLuongCa"]);
+                    int sltt = slc - slg;
+
+                    decimal kl = 0;
+                    decimal klg = 0;
+                    decimal kltt = 0;
+                    if (r["KhoiLuongGiong"] != DBNull.Value) klg = Convert.ToDecimal(r["KhoiLuongGiong"]);
+                    if (r["SoLuong"] != DBNull.Value) kl = Convert.ToDecimal(r["SoLuong"]);
+                    if (slg == 0) { klg = 0; kltt = kl; }
+                    else if (sltt == 0) { klg = kl; kltt = 0; }
+                    else { kltt = kl - klg; }
+
+                    sb.Append("<tr>");
+                    sb.Append("<td style='vertical-align:middle;text-align:left;'>" + r["LoaiThuoc"].ToString() + "</td>");
+                    sb.Append("<td style='vertical-align:middle;text-align:left;'>" + r["DonViTinh"].ToString() + "</td>");
+                    sb.Append("<td style='vertical-align:middle;'>" + Convert.ToDateTime(r["NgayXuat"]).ToString("dd/MM/yyyy") + "</td>");
+                    sb.Append("<td style='vertical-align:middle;text-align:left;'>" + r["LoaiCa"].ToString() + "</td>");
+                    sb.Append("<td style='vertical-align:middle;text-align:right;'>" + Config.ToXVal2(slc,0) + "</td>");
+                    sb.Append(@"<td style='vertical-align:middle;text-align:right;mso-number-format:""\#\,\#\#0\.000""'>" + Config.ToXVal2(r["SoLuong"], scale) + "</td>");
+                    sb.Append("<td style='vertical-align:middle;text-align:right;'>" + Config.ToXVal2(slg,0) + "</td>");
+                    sb.Append(@"<td style='vertical-align:middle;text-align:right;mso-number-format:""\#\,\#\#0\.000""'>" + Config.ToXVal2(klg, scale) + "</td>");
+                    sb.Append("<td style='vertical-align:middle;text-align:right;'>" + Config.ToXVal2(sltt,0) + "</td>");
+                    sb.Append(@"<td style='vertical-align:middle;text-align:right;mso-number-format:""\#\,\#\#0\.000""'>" + Config.ToXVal2(kltt, scale) + "</td>");
+                    sb.Append("</tr>");
+                }
+                sb.Append("</table><br/>");
+                sb.Append("</body></html>");
+                Response.Write(sb.ToString());
+            }
+
+            catch (Exception ex)
+            {
+                Response.Write(ex.Message);
+            }
+        }
+
+        protected void btnView_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string tieude = "";
+                string strSQL = "QLCS_BCTK_ThuocTheoNgay";
+                SqlParameter[] param = new SqlParameter[4];
+                if (txtFromDate.Text == "")
+                {
+                    txtFromDate.Text = DateTime.Now.ToString("dd/MM/yyyy");
+                }
+                if (txtToDate.Text == "")
+                {
+                    txtToDate.Text = DateTime.Now.AddDays(1).ToString("dd/MM/yyyy");
+                }
+                string StrLoaiCa = "";
+                if (Config.GetSelectedValues(ddlLoaiCa) != "0, " && Config.GetSelectedValues(ddlLoaiCa) != "")
+                {
+                    StrLoaiCa = "@" + Config.GetSelectedValues(ddlLoaiCa).Replace(", ", "@@").Remove(Config.GetSelectedValues(ddlLoaiCa).Length - 1);
+                }
+                string StrThuoc = "";
+                if (Config.GetSelectedValues(ddlThuoc) != "0, " && Config.GetSelectedValues(ddlThuoc) != "")
+                {
+                    StrThuoc = "@" + Config.GetSelectedValues(ddlThuoc).Replace(", ", "@@").Remove(Config.GetSelectedValues(ddlThuoc).Length - 1);
+                }
+                param[0] = new SqlParameter("@dFrom", txtFromDate.Text);
+                param[1] = new SqlParameter("@dTo", txtToDate.Text);
+                param[2] = new SqlParameter("@StrLoaiCa", StrLoaiCa);
+                param[3] = new SqlParameter("@StrThuoc", StrThuoc);
+                tieude += "<b>BẢNG THEO DÕI THUỐC TỪ NGÀY " + txtFromDate.Text + " ĐẾN NGÀY " + txtToDate.Text + "</b>";
+                DataTable dt = DotNetNuke.NewsProvider.DataProvider.SelectSP(strSQL, param);
+                System.Text.StringBuilder sb = new System.Text.StringBuilder();
+                sb.Append("<center style='font-weight:bold;font-size:15pt;'>" + tieude + "</center><br/>");
+                sb.Append("<table id='thongke' class='stripe row-border order-column cell-border' cellspacing='0' width='100%'><thead>");
+                sb.Append(@"<tr>
+                          <th>Loại Thuốc thú y</th>
+                          <th>Đơn vị tính</th>
+                          <th>Ngày xuất</th>
+                          <th>Loại cá</th>
+                          <th>Số lượng cá</th>
+                          <th>Lượng thuốc</th>
+                          <th>Số lượng cá Giống</th>
+                          <th>Lượng thuốc Giống dùng</th>
+                          <th>Số lượng cá TT</th>
+                          <th>Lượng thuốc TT dùng</th>
+                         </tr></thead><tbody>");
+                foreach (DataRow r in dt.Rows)
+                {
+                    int slg = 0;
+                    int slc = 0;
+                    if (r["SoLuongGiong"] != DBNull.Value) slg = Convert.ToInt32(r["SoLuongGiong"]);
+                    if (r["SoLuongCa"] != DBNull.Value) slc = Convert.ToInt32(r["SoLuongCa"]);
+                    int sltt = slc - slg;
+
+                    decimal kl = 0;
+                    decimal klg = 0;
+                    decimal kltt = 0;
+                    if (r["KhoiLuongGiong"] != DBNull.Value) klg = Convert.ToDecimal(r["KhoiLuongGiong"]);
+                    if (r["SoLuong"] != DBNull.Value) kl = Convert.ToDecimal(r["SoLuong"]);
+                    if (slg == 0) { klg = 0; kltt = kl; }
+                    else if (sltt == 0) { klg = kl; kltt = 0; }
+                    else { kltt = kl - klg; }
+
+                    sb.Append("<tr>");
+                    sb.Append("<td>" + r["LoaiThuoc"].ToString()+ "</td>");
+                    sb.Append("<td>" + r["DonViTinh"].ToString() + "</td>");
+                    sb.Append("<td style='text-align:center;'>" + Convert.ToDateTime(r["NgayXuat"]).ToString("dd/MM/yyyy") + "</td>");
+                    sb.Append("<td>" + r["LoaiCa"].ToString() + "</td>");
+                    sb.Append("<td style='text-align:right;'>" + Config.ToXVal2(slc,0) + "</td>");
+                    sb.Append("<td style='text-align:right;'>" + Config.ToXVal2(r["SoLuong"],scale) + "</td>");
+                    sb.Append("<td style='text-align:right;'>" + Config.ToXVal2(slg,0) + "</td>");
+                    sb.Append("<td style='text-align:right;'>" + Config.ToXVal2(klg, scale) + "</td>");
+                    sb.Append("<td style='text-align:right;'>" + Config.ToXVal2(sltt,0) + "</td>");
+                    sb.Append("<td style='text-align:right;'>" + Config.ToXVal2(kltt, scale) + "</td>");
+                    sb.Append("</tr>");
+                }
+                sb.Append("</tbody></table>");
+                lt.Text = sb.ToString();
+            }
+
+            catch (Exception ex)
+            {
+                Response.Write(ex.Message);
+            }
+        }
+    }
+}

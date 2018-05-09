@@ -1,0 +1,139 @@
+﻿using System;
+using System.Data;
+using System.Configuration;
+using System.Collections;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+using DotNetNuke.Services.Localization;
+using System.Collections.Generic;
+
+namespace DotNetNuke.Modules.QLCS
+{
+    public partial class casau_chuyendan : DotNetNuke.Entities.Modules.PortalModuleBase
+    {
+        CaSauController csCont = new CaSauController();
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            Page.ClientScript.RegisterClientScriptInclude("jquery", ResolveUrl("~/js/jquery.js"));
+            if (!IsPostBack)
+            {
+                DotNetNuke.Entities.Tabs.TabController t = new DotNetNuke.Entities.Tabs.TabController();
+                txtThoiDiemChuyen.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+                lblCode.Text = DateTime.Now.ToString("MMmmHHyyssdd");
+                hdListBienDongPage.Value = t.GetTabByName(ConfigurationManager.AppSettings["QLCS_CaSauListBienDongPage"], PortalId).TabID.ToString();
+            }
+        }
+
+        protected void btnChuyen_Click(object sender, EventArgs e)
+        {
+            if (lblCode.Text == txtCode.Text)
+            {
+                IFormatProvider culture = new System.Globalization.CultureInfo("vi-VN", true);
+                if (DateTime.Parse(txtThoiDiemChuyen.Text, culture) < Config.NgayKhoaSo())
+                {
+                    Page.ClientScript.RegisterStartupScript(typeof(string), "chuyenfail", "<script language=javascript>alert('Ngày chuyển không được trước ngày khóa sổ');</script>", false);
+                    return;
+                }
+                string StrLoaiCa = "";
+                foreach (ListItem i in cblLoaiCa.Items)
+                {
+                    if (i.Selected)
+                    {
+                        StrLoaiCa += "@" + i.Value + "@";
+                    }
+                }
+                int res = csCont.ChuyenDanNew(DateTime.Parse(txtThoiDiemChuyen.Text, culture), UserId, StrLoaiCa);
+                if (res == 0) Page.ClientScript.RegisterStartupScript(typeof(string), "failed", "<script language=javascript>alert('Ngày chuyển không hợp lệ');</script>", false);
+                else Page.ClientScript.RegisterStartupScript(typeof(string), "updated", "<script language=javascript>alert('Đã chuyển xong với những cá sấu hợp lệ');window.opener.finishEdit();self.close();</script>", false);
+            }
+            else
+            {
+                lblError.Text = "Nhập lại mã";
+            }
+        }
+
+        protected void grvDanhSach_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                DataRow r = ((DataRowView)e.Row.DataItem).Row;
+                HtmlInputCheckBox chkChon = (HtmlInputCheckBox)(e.Row.FindControl("chkChon"));
+                Label lblStatus = (Label)(e.Row.FindControl("lblStatus"));
+                HyperLink lnkIDCaSau = (HyperLink)(e.Row.FindControl("lnkIDCaSau"));
+                Label lblSTT = (Label)(e.Row.FindControl("lblSTT"));
+                lnkIDCaSau.Attributes["onclick"] = "openwindow('" + DotNetNuke.Common.Globals.NavigateURL(int.Parse(hdListBienDongPage.Value), "", "IDCaSau/" + r["IDCaSau"].ToString()) + "','',800,600);";
+                lnkIDCaSau.Attributes["style"] = "cursor:pointer;font-weight:bold;";
+                chkChon.Attributes["name"] = r["IDCaSau"].ToString();
+                chkChon.Attributes["onclick"] = "chon_click(event, this);";
+                lblStatus.Text = r["TrangThai"].ToString();
+                int t = e.Row.RowIndex + 1;
+                lblSTT.Text = t.ToString();
+            }
+        }
+
+        protected void grvDanhSach_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            udpDanhSach.Update();
+        }
+
+        protected void grvDanhSach_Sorting(object sender, GridViewSortEventArgs e)
+        {
+            udpDanhSach.Update();
+        }
+
+        private string LoadODSParameters()
+        {
+            System.Globalization.CultureInfo ci = System.Globalization.CultureInfo.CreateSpecificCulture("vi-VN");
+            string strWhereClause = "(";
+            int count = 0;
+            foreach (ListItem i in cblLoaiCa.Items)
+            {
+                if (i.Selected)
+                {
+                    if (strWhereClause == "(") strWhereClause += "LoaiCa = " + i.Value;
+                    else strWhereClause += " or LoaiCa = " + i.Value;
+                    count++;
+                }
+            }
+            strWhereClause += ")";
+            if (strWhereClause == "()") strWhereClause = "";
+            else strWhereClause += " and ";
+            strWhereClause += "Lock = 1 and Status > -1";
+            return strWhereClause;
+        }
+
+        protected void btnView_Click(object sender, EventArgs e)
+        {
+            grvDanhSach.DataSourceID = "odsDanhSach";
+            grvDanhSach.PageSize = int.Parse(ddlPageSize.SelectedValue);
+            string strWhereClause = LoadODSParameters();
+            odsDanhSach.SelectParameters["WhereClause"].DefaultValue = strWhereClause;
+            lblTongSo.Text = CaSauDataObject.CountMainTable(strWhereClause).ToString();
+            if (lblTongSo.Text == "0") btnMoKhoa.Visible = false;
+            else btnMoKhoa.Visible = true;
+            udpDanhSach.Visible = true;
+            udpDanhSach.Update();
+        }
+
+        protected void btnMoKhoa_Click(object sender, EventArgs e)
+        {
+            string StrCa = "";
+            foreach (GridViewRow row in grvDanhSach.Rows)
+            {
+                HyperLink lnkIDCaSau = (HyperLink)(row.FindControl("lnkIDCaSau"));
+                HtmlInputCheckBox chkChon = (HtmlInputCheckBox)(row.FindControl("chkChon"));
+                if (chkChon.Checked)
+                {
+                    StrCa += "@" + lnkIDCaSau.Text + "@";
+                }
+            }
+            csCont.LockCaSau(StrCa, false);
+            btnView_Click(null, null);
+            udpDanhSach.Update();
+        }
+    }
+}

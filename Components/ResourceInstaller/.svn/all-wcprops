@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/28/trunk/CS_Website/Components/ResourceInstaller
+END
+ModuleDef_V2Provider.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/2/trunk/CS_Website/Components/ResourceInstaller/ModuleDef_V2Provider.xsd
+END
+template.dnn.txt
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/2/trunk/CS_Website/Components/ResourceInstaller/template.dnn.txt
+END
+ModuleDef_V2.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/2/trunk/CS_Website/Components/ResourceInstaller/ModuleDef_V2.xsd
+END
+ModuleDef_V3.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/28/trunk/CS_Website/Components/ResourceInstaller/ModuleDef_V3.xsd
+END
+ModuleDef_V2Skin.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/2/trunk/CS_Website/Components/ResourceInstaller/ModuleDef_V2Skin.xsd
+END

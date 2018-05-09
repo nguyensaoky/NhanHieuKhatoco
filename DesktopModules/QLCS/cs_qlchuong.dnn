@@ -1,0 +1,33 @@
+<dotnetnuke version="3.0" type="Module">
+  <folders>
+    <folder>
+      <name>CS_QLChuong</name>
+      <friendlyname>CS_QLChuong</friendlyname>
+      <foldername>QLCS</foldername>
+      <modulename>CS_QLChuong</modulename>
+      <description>CS_QLChuong</description>
+      <version>01.00.00</version>
+      <businesscontrollerclass>
+      </businesscontrollerclass>
+      <modules>
+        <module>
+          <friendlyname>CS_QLChuong</friendlyname>
+          <cachetime>0</cachetime>
+          <controls>
+            <control>
+              <title>Chuong Admin</title>
+              <src>DesktopModules/QLCS/chuong_admin.ascx</src>
+              <type>Edit</type>
+            </control>
+            <control>
+              <key>chuong_edit</key>
+              <title>Chuong Edit</title>
+              <src>DesktopModules/QLCS/chuong_edit.ascx</src>
+              <type>Edit</type>
+            </control>
+          </controls>
+        </module>
+      </modules>
+    </folder>
+  </folders>
+</dotnetnuke>

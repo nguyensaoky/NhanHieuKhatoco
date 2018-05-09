@@ -1,0 +1,33 @@
+<dotnetnuke version="3.0" type="Module">
+  <folders>
+    <folder>
+      <name>CS_QLNhaCungCap</name>
+      <friendlyname>CS_QLNhaCungCap</friendlyname>
+      <foldername>QLCS</foldername>
+      <modulename>CS_QLNhaCungCap</modulename>
+      <description>CS_QLNhaCungCap</description>
+      <version>01.00.00</version>
+      <businesscontrollerclass>
+      </businesscontrollerclass>
+      <modules>
+        <module>
+          <friendlyname>CS_QLNhaCungCap</friendlyname>
+          <cachetime>0</cachetime>
+          <controls>
+            <control>
+              <title>NhaCungCap Admin</title>
+              <src>DesktopModules/QLCS/nhacungcap_admin.ascx</src>
+              <type>Edit</type>
+            </control>
+            <control>
+              <key>nhacungcap_edit</key>
+              <title>NhaCungCap Edit</title>
+              <src>DesktopModules/QLCS/nhacungcap_edit.ascx</src>
+              <type>Edit</type>
+            </control>
+          </controls>
+        </module>
+      </modules>
+    </folder>
+  </folders>
+</dotnetnuke>

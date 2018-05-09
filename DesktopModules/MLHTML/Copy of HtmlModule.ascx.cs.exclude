@@ -1,0 +1,245 @@
+using DotNetNuke; 
+using System.Web.UI; 
+using System.Text.RegularExpressions;
+using DotNetNuke.Services.Exceptions;
+using DotNetNuke.Services.Localization;
+using System.Web.UI.WebControls;
+using System.Collections;
+using Microsoft.VisualBasic;
+using System;
+
+namespace DotNetNuke.HTML 
+{ 
+    public partial class HtmlModule : DotNetNuke.Entities.Modules.PortalModuleBase, Entities.Modules.IActionable 
+    { 
+        #region " Private Members " 
+        
+        private Hashtable tagCache; 
+        private string requiredEaloVersion = "01.00.00"; 
+        
+        #endregion 
+        
+        #region " Private Methods " 
+        private string ManageUploadDirectory(string strHTML, string strUploadDirectory) 
+        {
+            string ManageUploadDirectory = "";
+            int P = -1; 
+            P = strHTML.ToLower().IndexOf("src=\"");
+            while (P > -1)
+            {
+                ManageUploadDirectory = ManageUploadDirectory + strHTML.Substring(0, P + 5);
+                strHTML = strHTML.Substring(P + 5);
+                string strSRC = strHTML.Substring(0, strHTML.IndexOf("\"")); 
+                if ((!strSRC.Contains("://")) && (strSRC.Substring(0,1) != "/") && (!strSRC.Contains(strUploadDirectory.Substring(strUploadDirectory.IndexOf("Portals/"))))) 
+                { 
+                    strHTML = strUploadDirectory + strHTML; 
+                } 
+                P = strHTML.ToLower().IndexOf("src=\""); 
+            } 
+            return ManageUploadDirectory + strHTML; 
+        } 
+        
+        private string ProcessTags(string content) 
+        { 
+            System.Text.StringBuilder sb = new System.Text.StringBuilder(); 
+            string retVal = null; 
+            int position = 0;
+            if ((content != null)) 
+            { 
+                foreach (Match _match in Regex.Matches(content, "\\[([^\\[]*?)\\]")) 
+                { 
+                    //Append the text before the match to the result 
+                    sb.Append(content.Substring(position, _match.Index - position)); 
+                    //Process the tag and append the output to the result 
+                    sb.Append(ProcessTag(_match.Value)); 
+                    //Set the starting point for the next match 
+                    position = _match.Index + _match.Value.Length; 
+                } 
+                //Append the rest of the text to the result 
+                sb.Append(content.Substring(position));
+                retVal = sb.ToString(); 
+            } 
+            return retVal; 
+        } 
+        
+        private string ProcessTag(string tag) 
+        { 
+            //Store the tag in the result to keep the text if its not a smarttag 
+            string retval = tag; 
+            string[] tagitems = tag.Substring(1, tag.Length - 2).Trim().Split(" ".ToCharArray()); 
+            //Ensure case independency 
+            tagitems.SetValue(((string)tagitems.GetValue(0)).ToUpper(), 0); 
+            //Initialize cache if not created 
+            if (tagCache == null)
+            {
+                tagCache = new Hashtable();
+            }
+            //If we have tag in cache, simply return the cached content 
+            if (tagCache.ContainsKey(tag)) 
+            { 
+                retval = tagCache[tag].ToString(); 
+            } 
+            else 
+            { 
+                //Build tag content value if its a known tag 
+                switch ((string)tagitems.GetValue(0)) 
+                { 
+                    case "PORTAL.NAME": 
+                        retval = PortalSettings.PortalName; 
+                        tagCache[tag] = retval;
+                        break; 
+                    case "DATE": 
+                        if (tagitems.Length == 2) 
+                        {
+                            try 
+                            { 
+                                retval = System.DateTime.Now.ToString((string)tagitems.GetValue(1)); 
+                            }
+                            catch 
+                            {
+                                retval = System.DateTime.Now.ToShortDateString(); 
+                            }
+                        }
+                        else
+                        { 
+                            retval = System.DateTime.Now.ToShortDateString();
+                        } 
+                        tagCache[tag] = retval;
+                        break;
+                    case "TIME": 
+                        if (tagitems.Length == 2) 
+                        { 
+                            try 
+                            {
+                                retval = System.DateTime.Now.ToString((string)tagitems.GetValue(1)); 
+                            } 
+                            catch 
+                            { 
+                                retval = System.DateTime.Now.ToShortTimeString(); 
+                            } 
+                        } 
+                        else 
+                        {
+                            retval = System.DateTime.Now.ToShortTimeString(); 
+                        } 
+                        tagCache[tag] = retval; 
+                        break; 
+                } 
+            } 
+            return retval; 
+        } 
+        
+        #endregion 
+        
+        #region " Event Handlers " 
+        
+        protected override void OnInit(System.EventArgs e) 
+        { 
+            base.OnInit(e); 
+            bool runable = false; 
+            DotNetNuke.Entities.Modules.DesktopModuleController moduleController = new DotNetNuke.Entities.Modules.DesktopModuleController(); 
+            DotNetNuke.Entities.Modules.DesktopModuleInfo moduleInfo = moduleController.GetDesktopModuleByModuleName("effority.Ealo"); 
+            if ((moduleInfo != null)) 
+            { 
+                int version = int.Parse(moduleInfo.Version.Replace(".", "")); 
+                int requiredEaloVersionInt = int.Parse(requiredEaloVersion.Replace(".", "")); 
+                if (version >= requiredEaloVersionInt) 
+                { 
+                    runable = true; 
+                } 
+            } 
+            if (!runable) 
+            { 
+                this.Controls.Clear(); 
+                Label message = new Label(); 
+                message.Text = Localization.GetString("EaloAPI", this.LocalResourceFile); 
+                message.CssClass = "NormalRed"; 
+                message.Font.Size = 14; 
+                this.Controls.Add(message); 
+                return; 
+            } 
+        } 
+        
+        private void Page_Load(object sender, System.EventArgs e) 
+        { 
+            try 
+            { 
+                lblContent.EditEnabled = this.IsEditable; 
+                effority.Ealo.StringInfo objText = null; 
+                objText = effority.Ealo.Controller.GetStringByQualifierAndStringName(Consts.DesktopHTMLQualifier, ModuleId.ToString(), System.Threading.Thread.CurrentThread.CurrentCulture.Name, true); 
+                // get default content from resource file 
+                string strContent = Localization.GetString("AddContentFromToolBar.Text", LocalResourceFile); 
+                System.Collections.Hashtable fHsh = Entities.Portals.PortalSettings.GetSiteSettings(PortalId); 
+                if (((string)fHsh["InlineEditorEnabled"]) == "False") 
+                {
+                    lblContent.EditEnabled = false; 
+                    strContent = Localization.GetString("AddContentFromActionMenu.Text", LocalResourceFile); 
+                } 
+                if (lblContent.EditEnabled) 
+                { 
+                    //localize toolbar 
+                    foreach (DotNetNuke.UI.WebControls.DNNToolBarButton objButton in this.tbEIPHTML.Buttons) 
+                    { 
+                        objButton.ToolTip = Services.Localization.Localization.GetString("cmd" + objButton.ToolTip, LocalResourceFile); 
+                    } 
+                } 
+                else 
+                { 
+                    this.tbEIPHTML.Visible = false; 
+                } 
+                // get html 
+                if ((objText != null)) 
+                { 
+                    strContent = Server.HtmlDecode((string)objText.StringText); 
+                } 
+                // handle Smart Tags that might have been used 
+                strContent = ProcessTags(strContent); 
+                //add content to module 
+                lblContent.Controls.Add(new LiteralControl(ManageUploadDirectory(strContent, PortalSettings.HomeDirectory))); 
+                // menu action handler 
+                UI.Skins.Skin ParentSkin = UI.Skins.Skin.GetParentSkin(this); 
+                //We should always have a ParentSkin, but need to make sure 
+                if ((ParentSkin != null)) 
+                { 
+                    //Register our EventHandler as a listener on the ParentSkin so that it may tell us when a menu has been clicked. 
+                    ParentSkin.RegisterModuleActionEvent(this.ModuleId, ModuleAction_Click); 
+                } 
+            }
+            catch (Exception exc) 
+            { 
+                Exceptions.ProcessModuleLoadException(this, exc); 
+            } 
+        } 
+        
+        private void lblContent_UpdateLabel(object source, UI.WebControls.DNNLabelEditEventArgs e) 
+        { 
+            // get HtmlText object 
+            effority.Ealo.Controller.UpdateStringByQualiferAndStringName(Consts.DesktopHTMLQualifier, ModuleId.ToString(), e.Text, System.Threading.Thread.CurrentThread.CurrentCulture.Name); 
+            SynchronizeModule(); 
+        }
+        
+        public void ModuleAction_Click(object sender, Entities.Modules.Actions.ActionEventArgs e) 
+        { 
+            if (e.Action.Url.Length > 0) 
+            { 
+                Response.Redirect(e.Action.Url, true); 
+            } 
+        } 
+        
+        #endregion 
+        
+        #region " Optional Interfaces " 
+        
+        public Entities.Modules.Actions.ModuleActionCollection ModuleActions 
+        { 
+            get 
+            { 
+                Entities.Modules.Actions.ModuleActionCollection Actions = new Entities.Modules.Actions.ModuleActionCollection(); 
+                Actions.Add(GetNextActionID(), Localization.GetString(Entities.Modules.Actions.ModuleActionType.AddContent, LocalResourceFile), Entities.Modules.Actions.ModuleActionType.AddContent, "", "", EditUrl(), false, Security.SecurityAccessLevel.Edit, true, false ); 
+                return Actions; 
+            } 
+        } 
+
+        #endregion
+    } 
+} 

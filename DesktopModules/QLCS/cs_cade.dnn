@@ -1,0 +1,39 @@
+<dotnetnuke version="3.0" type="Module">
+  <folders>
+    <folder>
+      <name>CS_CaDe</name>
+      <friendlyname>CS_CaDe</friendlyname>
+      <foldername>QLCS</foldername>
+      <modulename>CS_CaDe</modulename>
+      <description>CS_CaDe</description>
+      <version>01.00.00</version>
+      <businesscontrollerclass>
+      </businesscontrollerclass>
+      <modules>
+        <module>
+          <friendlyname>CS_CaDe</friendlyname>
+          <cachetime>0</cachetime>
+          <controls>
+            <control>
+              <title>CaSau De Admin</title>
+              <src>DesktopModules/QLCS/casaude_admin.ascx</src>
+              <type>Edit</type>
+            </control>
+            <control>
+              <key>casaude_edit</key>
+              <title>CaSau De Edit</title>
+              <src>DesktopModules/QLCS/casaude_edit.ascx</src>
+              <type>Edit</type>
+            </control>
+            <control>
+              <key>casaucon_rachuong</key>
+              <title>CaSau Con Ra Chuong</title>
+              <src>DesktopModules/QLCS/casaucon_rachuong.ascx</src>
+              <type>Edit</type>
+            </control>
+          </controls>
+        </module>
+      </modules>
+    </folder>
+  </folders>
+</dotnetnuke>

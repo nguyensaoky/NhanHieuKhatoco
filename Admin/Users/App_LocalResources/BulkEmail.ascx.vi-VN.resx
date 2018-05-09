@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <!-- 
+    Vietnamese Translation 2005 by Nguyen Viet Trung,  viechinguyen@gmail.com
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="ResMimeType">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="Version">
+    <value>1.0.0.0</value>
+  </resheader>
+  <resheader name="Reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="Writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="BasicSettings.Text">
+    <value>Thiết Lập Cơ Bản</value>
+  </data>
+  <data name="BasicSettingsDescription.Text">
+    <value>Ở phần này, bạn có thể đặt những thiết lập cơ bản cho thông điệp của bạn.</value>
+  </data>
+  <data name="plRoles.Text">
+    <value>Cấp Bậc Người Dùng</value>
+  </data>
+  <data name="plRoles.Help">
+    <value>Bạn có thể chọn những Cấp bậc Người sử dụng nhận thông điệp này. VD tất cả quản trị viên, hoặc tất cả Thành Viên Đã Được Đăng Ký.</value>
+  </data>
+  <data name="plEmail.Text">
+    <value>Danh Sách Email</value>
+  </data>
+  <data name="plEmail.Help">
+    <value>Bạn có thể thêm vào địa chỉ Email, ngăn cách nhau bởi một dấu ";".</value>
+  </data>
+  <data name="plSubject.Text">
+    <value>Chủ Đề</value>
+  </data>
+  <data name="plSubject.Help">
+    <value>Nhập chủ đề của thông điệp.</value>
+  </data>
+  <data name="Message.Text">
+    <value>Thông Điệp</value>
+  </data>
+  <data name="MessageDescription.Text">
+    <value>Bạn có thể chọn Công cụ Soạn thảo dưới đây để viết thông điệp của bạn.</value>
+  </data>
+  <data name="AdvancedSettings.Text">
+    <value>Thiết Lập Nâng Cao</value>
+  </data>
+  <data name="AdvancedSettingsHelp.Text">
+    <value>Ở phần này, bạn có thể đặt những thiết lập nâng cao hơn cho thông điệp của bạn.</value>
+  </data>
+  <data name="plAttachment.Text">
+    <value>Đính Kèm</value>
+  </data>
+  <data name="plAttachment.Help">
+    <value>Chọn một file đính kèm cho thông điệp.</value>
+  </data>
+  <data name="plPriority.Text">
+    <value>Quyền Ưu Tiên</value>
+  </data>
+  <data name="plPriority.Help">
+    <value>Chọn quyền ưu tiên cho thông điệp.</value>
+  </data>
+  <data name="Normal.Text">
+    <value>Bình Thường</value>
+  </data>
+  <data name="High.Text">
+    <value>Cao</value>
+  </data>
+  <data name="Low.Text">
+    <value>Thấp</value>
+  </data>
+  <data name="plSendMethod.Text">
+    <value>Cách Thức Gửi</value>
+  </data>
+  <data name="plSendMethod.Help">
+    <value>Chọn cách thức gửi đi của email này.</value>
+  </data>
+  <data name="SendTo.Text">
+    <value>Đến:Một Thông Điệp Trên Mỗi Địa Chỉ Email ( Cụ thể một cá nhân )</value>
+  </data>
+  <data name="SendBCC.Text">
+    <value>BCC: Một Email Đến Một Danh Sách( Không cụ thể một cá nhân nào )</value>
+  </data>
+  <data name="plSendAction.Text">
+    <value>Thực Hiện Gửi</value>
+  </data>
+  <data name="plSendAction.Help">
+    <value>Chọn cách bạn muốn thông điệp được gửi đi.</value>
+  </data>
+  <data name="Synchronous.Text">
+    <value>Đồng Bộ</value>
+  </data>
+  <data name="Asynchronous.Text">
+    <value>Không Đồng Bộ</value>
+  </data>
+  <data name="cmdSend.Text">
+    <value>Gửi Email</value>
+  </data>
+  <data name="ControlTitle_.Text">
+    <value>Thư Tin</value>
+  </data>
+  <data name="MessageSent.Text">
+    <value>Thông Điệp Đã Được Gửi</value>
+  </data>
+  <data name="ModuleHelp.Text">
+    <value>&lt;h1&gt;Về Thư Tin&lt;/h1&gt;&lt;p&gt;Các Quản trị viên có thể gửi email số lượng lớn đến tất cả người dùng thuộc về một Vai trò cụ thể nào đó.&lt;/p&gt;</value>
+  </data>
+  <data name="Heading.Text">
+    <value> </value>
+  </data>
+  <data name="plFrom.Help">
+    <value>Nhập địa chỉ gửi thư.</value>
+  </data>
+  <data name="plFrom.Text">
+    <value>Từ</value>
+  </data>
+  <data name="revEmailAddress.ErrorMessage">
+    <value>Địa chỉ email ở định dạng không hợp lệ!</value>
+  </data>
+</root>

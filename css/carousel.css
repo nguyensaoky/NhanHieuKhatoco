@@ -1,0 +1,48 @@
+.carousel-component { 
+	position:relative;
+	overflow:hidden;
+	display:none;
+}
+				
+.carousel-component ul.carousel-list { 
+	width:10000000px;
+	position:relative;
+	z-index:1;
+}
+
+.carousel-component .carousel-list li { 
+	float:left;
+	list-style:none;
+	overflow:hidden;
+}
+
+.carousel-component ul.carousel-list { 
+	margin:0px;
+	padding: 0px;
+}
+
+.carousel-component .carousel-list li a { 
+	display:block;
+}
+
+.carousel-component .carousel-prev { 
+	position:absolute;
+	top:40px;
+	z-index:3;
+	cursor:pointer; 
+	left:5px;
+}
+
+.carousel-component .carousel-next { 
+	position:absolute;
+	top:40px;
+	z-index:3;
+	cursor:pointer; 
+	right:5px;
+}
+
+.carousel-component .carousel-clip-region { 
+	overflow:hidden;
+	margin-left: 40px;
+	position:relative; 
+}

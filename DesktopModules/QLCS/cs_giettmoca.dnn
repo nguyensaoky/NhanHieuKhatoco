@@ -1,0 +1,45 @@
+<dotnetnuke version="3.0" type="Module">
+  <folders>
+    <folder>
+      <name>CS_GietMoCa</name>
+      <friendlyname>CS_GietMoCa</friendlyname>
+      <foldername>QLCS</foldername>
+      <modulename>CS_GietMoCa</modulename>
+      <description>CS_GietMoCa</description>
+      <version>01.00.00</version>
+      <businesscontrollerclass>
+      </businesscontrollerclass>
+      <modules>
+        <module>
+          <friendlyname>CS_GietMoCa</friendlyname>
+          <cachetime>0</cachetime>
+          <controls>
+            <control>
+              <title>GietMoCa Admin</title>
+              <src>DesktopModules/QLCS/gietmoca_admin.ascx</src>
+              <type>Edit</type>
+            </control>
+            <control>
+              <key>gietmoca_add</key>
+              <title>GietMoCa Add</title>
+              <src>DesktopModules/QLCS/gietmoca_add.ascx</src>
+              <type>Edit</type>
+            </control>
+            <control>
+              <key>gietmoca_edit</key>
+              <title>GietMoCa Edit</title>
+              <src>DesktopModules/QLCS/gietmoca_edit.ascx</src>
+              <type>Edit</type>
+            </control>
+            <control>
+              <key>gietmoca_chitiet</key>
+              <title>GietMoCa ChiTiet</title>
+              <src>DesktopModules/QLCS/gietmoca_chitiet.ascx</src>
+              <type>Edit</type>
+            </control>
+          </controls>
+        </module>
+      </modules>
+    </folder>
+  </folders>
+</dotnetnuke>

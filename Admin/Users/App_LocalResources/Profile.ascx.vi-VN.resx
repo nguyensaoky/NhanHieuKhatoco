@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="ResMimeType">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="Version">
+    <value>1.0.0.0</value>
+  </resheader>
+  <resheader name="Reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="Writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ProfileProperties_FirstName.Text">
+    <value>Họ:</value>
+  </data>
+  <data name="ProfileProperties_LastName.Text">
+    <value>Tên:</value>
+  </data>
+  <data name="ProfileProperties_MiddleName.Text">
+    <value>Đệm:</value>
+  </data>
+  <data name="ProfileProperties_Prefix.Text">
+    <value>Chức Danh:</value>
+  </data>
+  <data name="ProfileProperties_FirstName.Help">
+    <value>Nhập họ</value>
+  </data>
+  <data name="ProfileProperties_LastName.Help">
+    <value>Nhập tên</value>
+  </data>
+  <data name="ProfileProperties_MiddleName.Help">
+    <value>Đệm:</value>
+  </data>
+  <data name="ProfileProperties_Prefix.Help">
+    <value>Nhập Chức Danh (eg Mr. Dr.)</value>
+  </data>
+  <data name="ProfileProperties_Suffix.Text">
+    <value>Hậu Tố:</value>
+  </data>
+  <data name="ProfileProperties_Suffix.Help">
+    <value>Nhập hậu tố (eg BSc, PhD)</value>
+  </data>
+  <data name="ProfileProperties_Unit.Text">
+    <value>Số Nhà:</value>
+  </data>
+  <data name="ProfileProperties_Unit.Help">
+    <value>Nhập số nhà</value>
+  </data>
+  <data name="ProfileProperties_Street.Text">
+    <value>Đường Phố:</value>
+  </data>
+  <data name="ProfileProperties_Street.Help">
+    <value>Nhập phần đường phố của địa chỉ  (eg. 123 Main Street)</value>
+  </data>
+  <data name="ProfileProperties_City.Text">
+    <value>Tỉnh, Thành:</value>
+  </data>
+  <data name="ProfileProperties_City.Help">
+    <value>Nhập phần Tỉnh, Thành trong địa chỉ</value>
+  </data>
+  <data name="ProfileProperties_Region.Text">
+    <value>Vùng:</value>
+  </data>
+  <data name="ProfileProperties_Region.Help">
+    <value>Nhập phần tên vùng (bang, vùng, miền) của địa chỉ</value>
+  </data>
+  <data name="ProfileProperties_Country.Text">
+    <value>Quốc Gia:</value>
+  </data>
+  <data name="ProfileProperties_Country.Help">
+    <value>Chọn tên nước</value>
+  </data>
+  <data name="ProfileProperties_PostalCode.Text">
+    <value>Mã Bưu Điện:</value>
+  </data>
+  <data name="ProfileProperties_PostalCode.Help">
+    <value>Nhập phần mã bưu điện</value>
+  </data>
+  <data name="ProfileProperties_Telephone.Text">
+    <value>Số Điện Thoại:</value>
+  </data>
+  <data name="ProfileProperties_Telephone.Help">
+    <value>Nhập số điện thoại</value>
+  </data>
+  <data name="ProfileProperties_Cell.Text">
+    <value>Số Di Động:</value>
+  </data>
+  <data name="ProfileProperties_Cell.Help">
+    <value>Nhập số máy di động</value>
+  </data>
+  <data name="ProfileProperties_Fax.Text">
+    <value>Fax: </value>
+  </data>
+  <data name="ProfileProperties_Fax.Help">
+    <value>Nhập số fax</value>
+  </data>
+  <data name="ProfileProperties_Website.Text">
+    <value>Website: </value>
+  </data>
+  <data name="ProfileProperties_Website.Help">
+    <value>Nhập địa chỉ website.</value>
+  </data>
+  <data name="ProfileProperties_IM.Text">
+    <value>IM: </value>
+  </data>
+  <data name="ProfileProperties_IM.Help">
+    <value>Nhập một tài khoản IM (AOL, MSN, Yahoo etc)</value>
+  </data>
+  <data name="ProfileProperties_TimeZone.Text">
+    <value>Múi Giờ:</value>
+  </data>
+  <data name="ProfileProperties_TimeZone.Help">
+    <value>Chọn múi giờ từ danh sách thả xuống</value>
+  </data>
+  <data name="ProfileProperties_PreferredLocale.Text">
+    <value>Thiết Lập Địa Phương:</value>
+  </data>
+  <data name="ProfileProperties_PreferredLocale.Help">
+    <value>Chọn thiết lập địa phương của bạn.</value>
+  </data>
+  <data name="ProfileTitle.Text">
+    <value>Sửa Đổi Hồ Sơ - {0} (Id: {1})</value>
+  </data>
+  <data name="ProfileProperties_Cell.Required">
+    <value>Cần phải nhập số máy di động</value>
+  </data>
+  <data name="ProfileProperties_City.Required">
+    <value>Tỉnh, Thành cần phải được điền</value>
+  </data>
+  <data name="ProfileProperties_Country.Required">
+    <value>Cần phải chọn một quốc gia</value>
+  </data>
+  <data name="ProfileProperties_Fax.Required">
+    <value>Cần phải nhập số fax</value>
+  </data>
+  <data name="ProfileProperties_FirstName.Required">
+    <value>Cần phải nhập phần họ</value>
+  </data>
+  <data name="ProfileProperties_IM.Required">
+    <value>Cần phải nhập tài khoản IM</value>
+  </data>
+  <data name="ProfileProperties_LastName.Required">
+    <value>Cần phải nhập tên</value>
+  </data>
+  <data name="ProfileProperties_MiddleName.Required">
+    <value>Cần phải nhập chức danh</value>
+  </data>
+  <data name="ProfileProperties_PostalCode.Required">
+    <value>Cần phải nhập mã bưu điện</value>
+  </data>
+  <data name="ProfileProperties_PreferredLocale.Required">
+    <value>Cần phải chọn thiết lập địa phương</value>
+  </data>
+  <data name="ProfileProperties_Prefix.Required">
+    <value>Cần phải nhập chức danh</value>
+  </data>
+  <data name="ProfileProperties_Region.Required">
+    <value>Cần phải nhập tên vùng</value>
+  </data>
+  <data name="ProfileProperties_Street.Required">
+    <value>Cần phải nhập đường phố</value>
+  </data>
+  <data name="ProfileProperties_Suffix.Required">
+    <value>Cần phải nhập Hậu tố</value>
+  </data>
+  <data name="ProfileProperties_Telephone.Required">
+    <value>Cần phải nhập số điện thoại</value>
+  </data>
+  <data name="ProfileProperties_TimeZone.Required">
+    <value>Cần phải chọn múi giờ</value>
+  </data>
+  <data name="ProfileProperties_Unit.Required">
+    <value>Cần phải nhập số nhà</value>
+  </data>
+  <data name="ProfileProperties_Website.Required">
+    <value>Cần phải nhập địa chỉ website</value>
+  </data>
+  <data name="ProfileProperties_Biography.Text">
+    <value>Tiểu Sử:</value>
+  </data>
+  <data name="ProfileProperties_Biography.Help">
+    <value>Sử dụng Editor để nhập một Tiểu Sử ngắn gọn</value>
+  </data>
+  <data name="ProfileProperties_Biography.Required">
+    <value>Tiểu Sử là cần thiết</value>
+  </data>
+  <data name="ProfileProperties_Country.Not Specified">
+    <value>Chưa Xác Định</value>
+  </data>
+  <data name="ProfileProperties_Address.Header">
+    <value>Địa Chỉ</value>
+  </data>
+  <data name="ProfileProperties_Contact Info.Header">
+    <value>Thông Tin Liên Lạc</value>
+  </data>
+  <data name="ProfileProperties_Name.Header">
+    <value>Tên</value>
+  </data>
+  <data name="ProfileProperties_Preferences.Header">
+    <value>Sở Thích</value>
+  </data>
+</root>

@@ -1,0 +1,177 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="casau_chuyendan_colock.ascx.cs" Inherits="DotNetNuke.Modules.QLCS.casau_chuyendan" %>
+<link href="<%= ModulePath + "style.css" %>" rel="stylesheet" type="text/css" />
+<script type="text/javascript" language="javascript">
+    var lastChecked = null;
+    function chon_click(event, chk) {
+        var chkboxes = jQuery('.ChkChon');
+        if(!lastChecked) {
+            lastChecked = chk;
+            jQuery('#<%=lblNumChecked.ClientID%>').text(countchecked());
+            return;
+        }
+        if (event.shiftKey)
+        {
+            var start = chkboxes.index(chk);
+            var end = chkboxes.index(lastChecked);
+            chkboxes.slice(Math.min(start,end), Math.max(start,end)+ 1).attr('checked', lastChecked.checked);
+        }
+        lastChecked = chk;
+        jQuery('#<%=lblNumChecked.ClientID%>').text(countchecked());
+    }
+
+    function SelectAll(CheckBoxControl)
+    {
+        if (CheckBoxControl.checked == true)
+        {
+            jQuery('.ChkChon').attr('checked', 'checked');
+        }
+        else if (CheckBoxControl.checked == false)
+        {
+            jQuery('.ChkChon').removeAttr('checked');
+        }
+        jQuery('#<%=lblNumChecked.ClientID%>').text(countchecked());
+    }
+    
+    function countchecked()
+    {
+        return jQuery(".ChkChon:checked").length;
+    }
+    
+    function openwindow(url, name, width, height)
+    {
+        var leftVal = (screen.width - width) / 2;
+        var topVal = (screen.height - height) / 2;
+        window.open(url,'','height=' + height + ',width=' + width +',toolbar=no,status=no,linemenubar=no,scrollbars=yes,resizable=yes,modal=yes,left=' + leftVal + ',top=' + topVal);
+    }
+</script>
+<div id="wrapper" runat="server">
+    <b>CHÚ Ý: BACKUP CSDL TRƯỚC KHI THỰC HIỆN THAO TÁC NÀY</b><br/><br/>
+    <div style="float:left;">Chọn loại cá</div>
+    <asp:CheckBoxList id="cblLoaiCa" runat="server" RepeatColumns="4" RepeatDirection="Horizontal" RepeatLayout="Flow">
+        <asp:ListItem ID="chkCaCon" Value="1" Selected="true">Cá con</asp:ListItem>
+        <asp:ListItem ID="chkMotNam" Value="2" Selected="true">Cá một năm</asp:ListItem>
+        <asp:ListItem ID="chkST1" Value="3" Selected="true">Cá ST1</asp:ListItem>
+        <asp:ListItem ID="chkST2" Value="4" Selected="true">Cá ST2</asp:ListItem>
+    </asp:CheckBoxList>
+    <asp:Button ID="btnViewCaKhoa" runat="server" Text="Xem danh sách cá bị khóa" OnClick="btnView_Click" CssClass="button"/>&nbsp;
+    <asp:Button ID="btnMoKhoa" runat="server" Text="Mở khóa cá được chọn" OnClick="btnMoKhoa_Click" CssClass="button" Visible="false"/>
+    <br />
+    <asp:UpdatePanel ID="udpDanhSach" runat="server" UpdateMode="Conditional" Visible="false">
+        <ContentTemplate>
+            <table width="100%" class="FileManager_ToolBar">
+                <tr>
+                    <td align="left">
+                        Tổng số cá trong danh sách: <asp:Label Font-Bold="true" ID="lblTongSo" runat="server"></asp:Label>
+                    </td>
+                    <td align="right">
+                        Số cá được chọn: <asp:Label ID="lblNumChecked" runat="server" Font-Bold="true" ForeColor="Red" Text="0"/>&nbsp;
+                        Hiển thị <asp:DropDownList runat="server" ID="ddlPageSize">
+                        <asp:ListItem>10</asp:ListItem>
+                        <asp:ListItem>20</asp:ListItem>
+                        <asp:ListItem>30</asp:ListItem>
+                        <asp:ListItem>40</asp:ListItem>
+                        <asp:ListItem>50</asp:ListItem>
+                        <asp:ListItem>100</asp:ListItem>
+                        <asp:ListItem>150</asp:ListItem>
+                        <asp:ListItem>200</asp:ListItem>
+                        <asp:ListItem Selected="true">500</asp:ListItem>
+                        <asp:ListItem>1000</asp:ListItem>
+                        <asp:ListItem>2000</asp:ListItem>
+                        <asp:ListItem>5000</asp:ListItem>
+                    </asp:DropDownList>mục/trang
+                    </td>
+                </tr>
+            </table>
+            <asp:GridView ID="grvDanhSach" runat="server" AllowPaging="True" AllowSorting="True"
+                AutoGenerateColumns="False" CssClass="mGrid" PagerStyle-CssClass="pgr" AlternatingRowStyle-CssClass="alt" OnPageIndexChanging="grvDanhSach_PageIndexChanging" 
+                OnRowDataBound="grvDanhSach_RowDataBound"
+                PageSize="50" OnSorting="grvDanhSach_Sorting" Width="100%">
+                <Columns>
+                    <asp:TemplateField HeaderText="ID" SortExpression="[IDCaSau] DESC">
+                        <ItemTemplate>
+                            <asp:HyperLink ID="lnkIDCaSau" runat="server" Text='<%# Eval("IDCaSau") %>'/>
+                        </ItemTemplate><ItemStyle HorizontalAlign="Center"></ItemStyle>
+                        <HeaderStyle ForeColor="Yellow"></HeaderStyle>
+                    </asp:TemplateField>
+                    <asp:BoundField DataField="MaSo" HeaderText="Vi cắt" SortExpression="[MaSo] DESC">
+                        <HeaderStyle ForeColor="Yellow"></HeaderStyle>
+                    </asp:BoundField>
+                    <asp:BoundField DataField="TenChuong" HeaderText="Chuồng" SortExpression="[Chuong] DESC">
+                        <HeaderStyle ForeColor="Yellow"></HeaderStyle>
+                    </asp:BoundField>
+                    <asp:BoundField DataField="CaMe" HeaderText="Mẹ" SortExpression="[CaMe] DESC">
+                        <HeaderStyle ForeColor="Yellow"></HeaderStyle>
+                    </asp:BoundField>
+                    <asp:BoundField DataField="GioiTinh" HeaderText="Giới tính" SortExpression="[GioiTinh] DESC">
+                        <HeaderStyle ForeColor="Yellow"></HeaderStyle>
+                    </asp:BoundField>
+                    <asp:BoundField DataField="Giong" HeaderText="Giống" SortExpression="[Giong] DESC">
+                        <HeaderStyle ForeColor="Yellow"></HeaderStyle>
+                    </asp:BoundField>
+                    <asp:BoundField DataField="TenLoaiCa" HeaderText="Loại" SortExpression="[LoaiCa] DESC">
+                        <HeaderStyle ForeColor="Yellow"></HeaderStyle>
+                    </asp:BoundField>
+                    <asp:BoundField DataField="NgayNo" HeaderText="Ngày nở" SortExpression="[NgayNo] DESC" DataFormatString="{0:dd/MM/yyyy}" HtmlEncode="False">
+                        <HeaderStyle ForeColor="Yellow"></HeaderStyle>
+                    </asp:BoundField>
+                    <asp:BoundField DataField="NgayXuongChuong" HeaderText="Ngày XC" SortExpression="[NgayXuongChuong] DESC" DataFormatString="{0:dd/MM/yyyy}" HtmlEncode="False">
+                        <HeaderStyle ForeColor="Yellow"></HeaderStyle>
+                    </asp:BoundField>
+                    <asp:BoundField DataField="TenNguonGoc" HeaderText="Nguồn gốc" SortExpression="[NguonGoc] DESC">
+                        <HeaderStyle ForeColor="Yellow"></HeaderStyle>
+                    </asp:BoundField>
+                    <asp:TemplateField HeaderText="Trạng thái" SortExpression="[Status] DESC">
+                        <ItemTemplate>
+                            <asp:Label ID="lblStatus" runat="server"></asp:Label>
+                        </ItemTemplate>
+                        <ItemStyle HorizontalAlign="Center"></ItemStyle>
+                        <HeaderStyle ForeColor="Yellow"></HeaderStyle>
+                    </asp:TemplateField>
+                    <asp:TemplateField>
+                        <HeaderTemplate>
+                            Chọn <input type="CheckBox" name="SelectAllCheckBox" onclick="SelectAll(this)"/>
+                        </HeaderTemplate>
+                        <HeaderStyle ForeColor="Yellow" VerticalAlign="Middle"></HeaderStyle>
+                        <ItemTemplate>
+                            <input type="CheckBox" ID="chkChon" runat="server" class="ChkChon"/>
+                        </ItemTemplate><ItemStyle HorizontalAlign="Center"></ItemStyle>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="STT">
+                        <ItemTemplate>
+                            <asp:Label ID="lblSTT" runat="server"/>
+                        </ItemTemplate><ItemStyle HorizontalAlign="Center"></ItemStyle>
+                        <HeaderStyle ForeColor="Yellow"></HeaderStyle>
+                    </asp:TemplateField>
+                </Columns>
+            </asp:GridView>
+            <asp:ObjectDataSource ID="odsDanhSach" runat="server" EnableCaching="false" SelectMethod="GetMainTable" EnablePaging="true"
+                TypeName="DotNetNuke.Modules.QLCS.CaSauDataObject" StartRowIndexParameterName="startIndex" MaximumRowsParameterName="pageSize"
+                SortParameterName="sortBy" SelectCountMethod="CountMainTable">
+                <SelectParameters>
+                    <asp:Parameter Name="WhereClause" />
+                </SelectParameters>
+            </asp:ObjectDataSource>
+        </ContentTemplate>
+    </asp:UpdatePanel>
+    <br />
+    <br />
+    <br />
+    <br />
+    <div style="width:250px;float:left;"><b>CHUYỂN ĐÀN TỰ ĐỘNG</b></div>
+    <br />
+    <br />
+    <div style="width:200px;float:left;">Ngày giờ chuyển</div>
+    <asp:TextBox ID="txtThoiDiemChuyen" runat="server"></asp:TextBox>
+    <br />
+    <br />
+    <div style="width:200px;float:left;">Nhập mã sau vào ô để xác nhận</div>
+    <asp:Label ID="lblCode" runat="server"></asp:Label>
+    <asp:TextBox ID="txtCode" runat="server"></asp:TextBox><asp:Label ID="lblError" runat="server"></asp:Label>
+    <br />
+    <br />
+    <asp:Button ID="btnChuyen" runat="server" Text="Chuyển cá không bị khóa thuộc các loại cá được chọn phía trên" OnClick="btnChuyen_Click" CssClass="button"/>
+    <asp:HiddenField ID="hdListBienDongPage" runat="server" Value="0" EnableViewState="true"/>
+    <br />
+    <br />
+    <br />
+</div>

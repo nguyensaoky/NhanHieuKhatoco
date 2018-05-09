@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+  <xsl:template match="/">
+      <xsl:apply-templates select="/categories/category"></xsl:apply-templates>
+  </xsl:template>
+
+  <xsl:template match="category">
+    <tr>
+      <xsl:if test="odd='true'">
+        <xsl:attribute name="style">background:#F0F6FC</xsl:attribute>
+      </xsl:if>
+      <td style="text-align:center;">
+        <xsl:value-of select="OrderNumber"></xsl:value-of>
+      </td>
+      <td style="text-align:center;">
+        <xsl:value-of select="CatCode"></xsl:value-of>
+      </td>
+      <td>
+        <a>
+          <xsl:attribute name="href">
+            <xsl:value-of select="link"></xsl:value-of>
+          </xsl:attribute>
+          <xsl:value-of select="CatName"></xsl:value-of>
+        </a>
+      </td>
+      <td style="text-align:center;">
+        <a>
+          <xsl:attribute name="href">
+            <xsl:value-of select="url_edit"></xsl:value-of>
+          </xsl:attribute>
+          <img border="0">
+            <xsl:attribute name="src">
+              <xsl:value-of select="ImgLevel2"></xsl:value-of>
+            </xsl:attribute>
+          </img>
+        </a>
+      </td>
+    </tr>
+  </xsl:template>
+</xsl:stylesheet>
+

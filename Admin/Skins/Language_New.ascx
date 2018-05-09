@@ -1,0 +1,3 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true"  Inherits="DotNetNuke.UI.Skins.Controls.Language_New" CodeFile="Language_New.ascx.cs" %>
+<asp:LinkButton ID="cmdVi" runat="server" CausesValidation="False" OnClick="cmdLanguage_Click" Text="Tiếng Việt"></asp:LinkButton>&nbsp;|&nbsp;
+<asp:LinkButton ID="cmdEn" runat="server" CausesValidation="False" OnClick="cmdLanguage_Click" Text="English"></asp:LinkButton>

@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/37/trunk/CS_Website/Admin/Sales
+END
+PayPalSubscription.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/17/trunk/CS_Website/Admin/Sales/PayPalSubscription.aspx
+END
+PayPalPIN.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/17/trunk/CS_Website/Admin/Sales/PayPalPIN.aspx
+END
+Purchase.ascx
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/17/trunk/CS_Website/Admin/Sales/Purchase.ascx
+END
+PayPalSubscription.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/37/trunk/CS_Website/Admin/Sales/PayPalSubscription.aspx.cs
+END
+Purchase.ascx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/37/trunk/CS_Website/Admin/Sales/Purchase.ascx.cs
+END
+PayPalIPN.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/24/trunk/CS_Website/Admin/Sales/PayPalIPN.aspx.cs
+END

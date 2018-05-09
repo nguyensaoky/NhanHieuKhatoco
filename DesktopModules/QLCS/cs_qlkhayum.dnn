@@ -1,0 +1,33 @@
+<dotnetnuke version="3.0" type="Module">
+  <folders>
+    <folder>
+      <name>CS_QLKhayUm</name>
+      <friendlyname>CS_QLKhayUm</friendlyname>
+      <foldername>QLCS</foldername>
+      <modulename>CS_QLKhayUm</modulename>
+      <description>CS_QLKhayUm</description>
+      <version>01.00.00</version>
+      <businesscontrollerclass>
+      </businesscontrollerclass>
+      <modules>
+        <module>
+          <friendlyname>CS_QLKhayUm</friendlyname>
+          <cachetime>0</cachetime>
+          <controls>
+            <control>
+              <title>KhayUm Admin</title>
+              <src>DesktopModules/QLCS/khayum_admin.ascx</src>
+              <type>Edit</type>
+            </control>
+            <control>
+              <key>khayum_edit</key>
+              <title>KhayUm Edit</title>
+              <src>DesktopModules/QLCS/khayum_edit.ascx</src>
+              <type>Edit</type>
+            </control>
+          </controls>
+        </module>
+      </modules>
+    </folder>
+  </folders>
+</dotnetnuke>

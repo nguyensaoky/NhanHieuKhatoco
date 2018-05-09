@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="ResMimeType">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="Version">
+    <value>1.0.0.0</value>
+  </resheader>
+  <resheader name="Reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="Writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ModuleHelp.Text">
+    <value>&lt;P&gt;Với module này bạn có thể thẩm định tất cả các gói ngôn ngữ trong portal và kiểm tra trạng thái của nó so với ngôn ngữ hệ thống mặc định. Quá trình thẩm tra sẽ xem tất cả các file hệ thống mặc định và so sánh chúng với phiên bản địa phương cho tất cả các ngôn ngữ được hỗ trợ.&lt;/P&gt;
+&lt;P&gt;Một khi bạn nhận được báo cáo, nếu tìm thấy một vấn đề nào đó, bạn có thể sử dụng &lt;STRONG&gt;Soạn Thảo Ngôn Ngữ&lt;/STRONG&gt; để giải quyết vấn đề.&lt;/P&gt;
+&lt;P&gt;Có 3 vấn đề khác nhau có thể được tìm thấy trong mỗi file tài nguyên:&lt;/P&gt;
+&lt;UL&gt;
+&lt;LI&gt;&lt;SPAN class=SubHead&gt;Không Tìm Thấy File&lt;/SPAN&gt;: Phiên Bản Địa Phương cho một file tài nguyên cho trước bị mất. Để giải quyết vấn đề này, chọn file tài nguyên trong &lt;STRONG&gt;Soạn Thảo Ngôn Ngữ &lt;/STRONG&gt; và ngôn ngữ nơi gây ra lỗi. File thiết lập địa phương sẽ được tự động khởi tạo. 
+&lt;LI&gt;&lt;SPAN class=SubHead&gt;Mục Bị Mất&lt;/SPAN&gt; Phiên bản địa phương cho một file tài nguyên cho trước không bao gồm một số mục có ở file tài nguyên hệ thống mặc định. Để sửa lỗi này chọn file tài nguyên từ &lt;STRONG&gt;Soạn Thảo Ngôn Ngữ&lt;/STRONG&gt; và file ngôn ngữ gây ra lỗi. Bạn sẽ được cho một lựa chọn thêm tất cả các key bị mất vào file tài nguyên thiết lập hệ thống.&lt;LI&gt;&lt;SPAN class=SubHead&gt;Mục Không Còn Dùng Đến Nữa&lt;/SPAN&gt;: phiên bản địa phương của một file tài nguyên bao gồm một số mục không có ở file tài nguyên hệ thống. Để sửa lỗi này chọn file tài nguyên hệ thống từ STRONG&gt;Soạn Thảo Ngôn Ngữ&lt;/STRONG&gt; và ngôn ngữ nơi xảy ra lỗi. Các key không còn cần thiết sẽ được tự động xoá.&lt;/LI&gt;&lt;/UL&gt;</value>
+  </data>
+  <data name="cmdVerify.Text">
+    <value>Thẩm Định Các File Tài Nguyên</value>
+  </data>
+  <data name="Locale.Text">
+    <value>Ngôn Ngữ:&amp;nbsp; </value>
+  </data>
+  <data name="MissingFiles.Text">
+    <value>Các file tài nguyên bị thiếu:&amp;nbsp;</value>
+  </data>
+  <data name="MissingEntries.Text">
+    <value>File Với Các Mục Bị Thiếu:&amp;nbsp;</value>
+  </data>
+  <data name="ObsoleteEntries.Text">
+    <value>Các File Với Các Mục Bị Lỗi Thời:&amp;nbsp;</value>
+  </data>
+  <data name="ControlTitle_verify.Text">
+    <value>Thẩm Định File Tài Nguyên</value>
+  </data>
+  <data name="OldFiles.Text">
+    <value>File Cũ Hơn Mặc Định Hệ Thống:&amp;nbsp;</value>
+  </data>
+  <data name="DuplicateEntries.Text">
+    <value>Các File Với Mục Trùng Lặp:&amp;nbsp;</value>
+  </data>
+  <data name="ErrorFiles.Text">
+    <value>File Resource Bị Lỗi:&amp;nbsp;</value>
+  </data>
+</root>

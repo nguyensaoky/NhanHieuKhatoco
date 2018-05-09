@@ -1,0 +1,395 @@
+﻿@charset "utf-8";
+html{margin-top:0px !important}
+body,a,ul,input,textarea{margin:0;padding:0;font:12px/18px Arial, Helvetica, sans-serif}
+
+.menutop ul li ul.Quảnlýđàn {
+	background: #67B8DE;
+	border: 0px solid #000;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
+	margin: 1px 0 0 -10px;
+	padding: 0 10px 0;
+	position: absolute;
+	width: 230px;
+	z-index:10
+}
+.menutop ul li ul.Quảnlýđàn li {
+	border-bottom: 1px dotted #CCC;
+	display: block;
+	float: none;	
+	/*padding: 8px 0;*/
+	text-align: center;
+	width: 230px;
+	margin: 0;
+	border-right:none;
+	text-align: left;
+}
+
+.menutop ul li ul.Quảnlýđàn li ul.Nhậtkýchănnuôi{
+	background: #67B8DE;
+	border: 0px solid #000;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
+	margin: 1px 0 0 10px;
+	padding: 0 10px 0;
+	position: absolute;
+	width: 200px;
+	z-index:10
+}
+.menutop ul li ul.Quảnlýđàn li ul.Nhậtkýchănnuôi li{
+	border-bottom: 1px dotted #CCC;
+	display: block;
+	float: none;	
+	/*padding: 8px 0;*/
+	text-align: center;
+	width: 200px;
+	margin: 0;
+	border-right:none;
+	text-align: left;
+}
+
+.menutop ul li ul.Cáăn {
+	background: #67B8DE;
+	border: 0px solid #000;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
+	margin: 1px 0 0 -10px;
+	padding: 0 10px 0;
+	position: absolute;
+	width: 170px;
+	z-index:10
+}
+.menutop ul li ul.Cáăn li {
+	border-bottom: 1px dotted #CCC;
+	display: block;
+	float: none;	
+	/*padding: 8px 0;*/
+	text-align: center;
+	width: 170px;
+	margin: 0;
+	border-right:none;
+	text-align: left;
+}
+
+.menutop ul li ul.Danhmục {
+	background: #67B8DE;
+	border: 0px solid #000;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
+	margin: 1px 0 0 -10px;
+	padding: 0 10px 0;
+	position: absolute;
+	width: 145px;
+	z-index:10
+}
+.menutop ul li ul.Danhmục li {
+	border-bottom: 1px dotted #CCC;
+	display: block;
+	float: none;	
+	/*padding: 8px 0;*/
+	text-align: center;
+	width: 145px;
+	margin: 0;
+	border-right:none;
+	text-align: left;
+}
+
+.menutop ul li ul.Vậttư {
+	background: #67B8DE;
+	border: 0px solid #000;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
+	margin: 1px 0 0 -10px;
+	padding: 0 10px 0;
+	position: absolute;
+	width: 135px;
+	z-index:10
+}
+.menutop ul li ul.Vậttư li {
+	border-bottom: 1px dotted #CCC;
+	display: block;
+	float: none;	
+	/*padding: 8px 0;*/
+	text-align: center;
+	width: 135px;
+	margin: 0;
+	border-right:none;
+	text-align: left;
+}
+
+.menutop ul li ul.Vậttư li ul.Dacásấu{
+	background: #67B8DE;
+	border: 0px solid #000;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
+	margin: 1px 0 0 10px;
+	padding: 0 10px 0;
+	position: absolute;
+	width: 90px;
+	z-index:10
+}
+.menutop ul li ul.Vậttư li ul.Dacásấu li{
+	border-bottom: 1px dotted #CCC;
+	display: block;
+	float: none;	
+	/*padding: 8px 0;*/
+	text-align: center;
+	width: 90px;
+	margin: 0;
+	border-right:none;
+	text-align: left;
+}
+
+.menutop ul li ul.Thốngkê {
+	background: #67B8DE;
+	border: 0px solid #000;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
+	margin: 1px 0 0 -10px;
+	padding: 0 10px 0;
+	position: absolute;
+	width: 80px;
+	z-index:10
+}
+.menutop ul li ul.Thốngkê li {
+	border-bottom: 1px dotted #CCC;
+	display: block;
+	float: none;	
+	/*padding: 8px 0;*/
+	text-align: center;
+	width: 80px;
+	margin: 0;
+	border-right:none;
+	text-align: left;
+}
+
+.menutop ul li ul.Thốngkê li ul.Đàn{
+	background: #67B8DE;
+	border: 0px solid #000;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
+	margin: 1px 0 0 10px;
+	padding: 0 10px 0;
+	position: absolute;
+	width: 210px;
+	z-index:10
+}
+.menutop ul li ul.Thốngkê li ul.Đàn li{
+	border-bottom: 1px dotted #CCC;
+	display: block;
+	float: none;	
+	/*padding: 8px 0;*/
+	text-align: center;
+	width: 210px;
+	margin: 0;
+	border-right:none;
+	text-align: left;
+}
+
+.menutop ul li ul.Thốngkê li ul.Đàn li ul.Nhậtkýchănnuôi{
+	background: #67B8DE;
+	border: 0px solid #000;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
+	margin: 1px 0 0 10px;
+	padding: 0 10px 0;
+	position: absolute;
+	width: 150px;
+	z-index:10
+}
+.menutop ul li ul.Thốngkê li ul.Đàn li ul.Nhậtkýchănnuôi li{
+	border-bottom: 1px dotted #CCC;
+	display: block;
+	float: none;	
+	/*padding: 8px 0;*/
+	text-align: center;
+	width: 150px;
+	margin: 0;
+	border-right:none;
+	text-align: left;
+}
+
+.menutop ul li ul.Thốngkê li ul.Đàn li ul.Theodõichuyểnchuồng{
+	background: #67B8DE;
+	border: 0px solid #000;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
+	margin: 1px 0 0 10px;
+	padding: 0 10px 0;
+	position: absolute;
+	width: 150px;
+	z-index:10
+}
+.menutop ul li ul.Thốngkê li ul.Đàn li ul.Theodõichuyểnchuồng li{
+	border-bottom: 1px dotted #CCC;
+	display: block;
+	float: none;	
+	/*padding: 8px 0;*/
+	text-align: center;
+	width: 150px;
+	margin: 0;
+	border-right:none;
+	text-align: left;
+}
+
+.menutop ul li ul.Thốngkê li ul.Cásấuăn{
+	background: #67B8DE;
+	border: 0px solid #000;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
+	margin: 1px 0 0 10px;
+	padding: 0 10px 0;
+	position: absolute;
+	width: 210px;
+	z-index:10
+}
+.menutop ul li ul.Thốngkê li ul.Cásấuăn li{
+	border-bottom: 1px dotted #CCC;
+	display: block;
+	float: none;	
+	/*padding: 8px 0;*/
+	text-align: center;
+	width: 210px;
+	margin: 0;
+	border-right:none;
+	text-align: left;
+}
+
+.menutop ul li ul.Thốngkê li ul.Cásấuđẻ{
+	background: #67B8DE;
+	border: 0px solid #000;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
+	margin: 1px 0 0 10px;
+	padding: 0 10px 0;
+	position: absolute;
+	width: 190px;
+	z-index:10
+}
+.menutop ul li ul.Thốngkê li ul.Cásấuđẻ li{
+	border-bottom: 1px dotted #CCC;
+	display: block;
+	float: none;	
+	/*padding: 8px 0;*/
+	text-align: center;
+	width: 190px;
+	margin: 0;
+	border-right:none;
+	text-align: left;
+}
+
+.menutop ul li ul.Thốngkê li ul.Giếtmổcá{
+	background: #67B8DE;
+	border: 0px solid #000;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
+	margin: 1px 0 0 10px;
+	padding: 0 10px 0;
+	position: absolute;
+	width: 100px;
+	z-index:10
+}
+.menutop ul li ul.Thốngkê li ul.Giếtmổcá li{
+	border-bottom: 1px dotted #CCC;
+	display: block;
+	float: none;	
+	/*padding: 8px 0;*/
+	text-align: center;
+	width: 100px;
+	margin: 0;
+	border-right:none;
+	text-align: left;
+}
+
+.menutop ul li ul.Thốngkê li ul.Vậttư{
+	background: #67B8DE;
+	border: 0px solid #000;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
+	margin: 1px 0 0 10px;
+	padding: 0 10px 0;
+	position: absolute;
+	width: 200px;
+	z-index:10
+}
+.menutop ul li ul.Thốngkê li ul.Vậttư li{
+	border-bottom: 1px dotted #CCC;
+	display: block;
+	float: none;	
+	/*padding: 8px 0;*/
+	text-align: center;
+	width: 200px;
+	margin: 0;
+	border-right:none;
+	text-align: left;
+}
+
+.menutop ul li ul.Hệthống {
+	background: #67B8DE;
+	border: 0px solid #000;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
+	margin: 1px 0 0 -10px;
+	padding: 0 10px 0;
+	position: absolute;
+	width: 170px;
+	z-index:10
+}
+
+.menutop ul li ul.Hệthống li {
+	border-bottom: 1px dotted #CCC;
+	display: block;
+	float: none;	
+	/*padding: 8px 0;*/
+	text-align: center;
+	width: 170px;
+	margin: 0;
+	border-right:none;
+	text-align: left;
+}
+.menutop ul li ul li:last-child {
+	border-bottom:none;
+}
+
+.menutop ul li ul li a {text-shadow: none;display:block;line-height:20px}
+
+.menutop ul li a:hover { color: #FFFF00;}
+
+.menutop ul li ul li a:hover { color: #FFFF00;}
+
+.menutop ul li ul li:last-child:not(li.arrow) {
+	border: 0;
+}
+
+.menutop ul li{float:left;border-right:double 1px #ffff00;text-align: center;}
+.menutop li:last-child{border-right:none}
+.menutop li a{display:block;color:#fff;font-weight:bold;font-family:Arial;font-size:15px;}
+.menutop li ul li a{display:block;color:#fff;font-weight:bold;font-family:Arial;font-size:14px;}
+
+/* Arrow */
+.arrow {
+	background: url(arrow.png) no-repeat 63px 0px;
+	border: 0;
+	display: none;
+	position: absolute;
+	top: -10px;
+	left:0px;
+	height: 11px;
+	width:146px;
+	text-indent: -9999px;
+}

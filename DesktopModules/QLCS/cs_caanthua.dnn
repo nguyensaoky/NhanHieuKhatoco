@@ -1,0 +1,27 @@
+<dotnetnuke version="3.0" type="Module">
+  <folders>
+    <folder>
+      <name>CS_CaAnThua</name>
+      <friendlyname>CS_CaAnThua</friendlyname>
+      <foldername>QLCS</foldername>
+      <modulename>CS_CaAnThua</modulename>
+      <description>CS_CaAnThua</description>
+      <version>01.00.00</version>
+      <businesscontrollerclass>
+      </businesscontrollerclass>
+      <modules>
+        <module>
+          <friendlyname>CS_CaAnThua</friendlyname>
+          <cachetime>0</cachetime>
+          <controls>
+            <control>
+              <title>CaSauAn Thua</title>
+              <src>DesktopModules/QLCS/casauan_thua.ascx</src>
+              <type>View</type>
+            </control>
+          </controls>
+        </module>
+      </modules>
+    </folder>
+  </folders>
+</dotnetnuke>

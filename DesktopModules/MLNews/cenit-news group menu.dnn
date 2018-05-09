@@ -1,0 +1,33 @@
+<dotnetnuke version="3.0" type="Module">
+  <folders>
+    <folder>
+      <name>CenIT-News Group Menu</name>
+      <friendlyname>CenIT-News Group Menu</friendlyname>
+      <foldername>MLNews</foldername>
+      <modulename>CenIT-News Group Menu</modulename>
+      <description>CenIT-News Group Menu</description>
+      <version>01.00.00</version>
+      <businesscontrollerclass>
+      </businesscontrollerclass>
+      <modules>
+        <module>
+          <friendlyname>CenIT-News Group Menu</friendlyname>
+          <cachetime>0</cachetime>
+          <controls>
+            <control>
+              <title>News Group Menu</title>
+              <src>DesktopModules/MLNews/group_menu.ascx</src>
+              <type>View</type>
+            </control>
+            <control>
+              <key>Settings</key>
+              <title>News Group Menu Setting</title>
+              <src>DesktopModules/MLNews/group_menu_settings.ascx</src>
+              <type>Edit</type>
+            </control>
+          </controls>
+        </module>
+      </modules>
+    </folder>
+  </folders>
+</dotnetnuke>

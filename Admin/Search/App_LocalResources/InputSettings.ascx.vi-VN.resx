@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <!-- 
+    Vietnamese Translation 2005 by Nguyen Viet Trung,  viechinguyen@gmail.com
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="ResMimeType">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="Version">
+    <value>1.0.0.0</value>
+  </resheader>
+  <resheader name="Reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="Writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="plModuleCombo.Text">
+    <value>Module Kết Quả Tìm Kiếm:</value>
+  </data>
+  <data name="plModuleCombo.Help">
+    <value>Chọn Module Kết quả tìm kiếm gắn với module này</value>
+  </data>
+  <data name="plGoCheck.Text">
+    <value>Hiện hình ảnh "Go":</value>
+  </data>
+  <data name="plGoCheck.Help">
+    <value>Chọn xem bạn có muốn dùng một hình ảnh "Go"</value>
+  </data>
+  <data name="plSearchCheck.Text">
+    <value>Hiện Hình Ảnh Tìm Kiếm:</value>
+  </data>
+  <data name="plSearchCheck.Help">
+    <value>Chọn xem bạn có muốn sử dụng một hình ảnh "Search" </value>
+  </data>
+  <data name="ModuleHelp.Text">
+    <value>		&lt;h1&gt;Về Việc Cấu Hình Nhập Thông Tin Tìm Kiếm &lt;/h1&gt;
+		&lt;p&gt;Module Nhập Thông Tin Tìm Kiếm cho phép một người dùng nhập một từ hoặc một cụm từ để tìm kiếm trong portal cho thông tin cần tìm. Có 2 lựa chọn tìm kiếm kiểm soát việc hiển thị và các hoạt động bên trong module. &lt;/p&gt;
+		&lt;ul&gt;
+				&lt;li&gt;
+						&lt;div align="left"&gt;
+								&lt;strong&gt;Hiện Hình Ảnh Search –&lt;/strong&gt; chọn hộp kiểm lựa chọn để hiện một hình ảnh đồ hoạ ‘SEARCH’ ở bên phải của hộp chữ NHẬP TÌM KIẾM. &lt;/div&gt;
+				&lt;/li&gt;
+		&lt;/ul&gt;
+		&lt;ul&gt;
+				&lt;li&gt;
+						&lt;div align="left"&gt;
+								&lt;strong&gt;Hiện Hình Ảnh "Go" -&lt;/strong&gt; chọn hộp kiểm lựa chọn để hiện một hình ảnh đồ hoạ có chữ ‘GO’ ở bên phải ô chữ "NHẬP TÌM KIẾM". &lt;/div&gt;
+				&lt;/li&gt;
+		&lt;/ul&gt;
+</value>
+  </data>
+  <data name="ControlTitle_settings.Text">
+    <value>Cấu Hình Nhập Thông Tin Tìm Kiếm</value>
+  </data>
+  <data name="NoSearchModule.Text">
+    <value>Không tìm thấy module hiển thị kết quả tìm kiếm</value>
+  </data>
+</root>

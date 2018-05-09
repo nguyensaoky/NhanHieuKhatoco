@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="ResMimeType">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="Version">
+    <value>1.0.0.0</value>
+  </resheader>
+  <resheader name="Reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="Writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="BasicSettings.Text">
+    <value>Thiết Lập Cơ Bản</value>
+  </data>
+  <data name="BasicSettingsHelp.Text">
+    <value>Ở phần này, bạn có thể đặt những thiết lập cơ bản cho trang.</value>
+  </data>
+  <data name="TabName.Text">
+    <value>Tên Trang</value>
+  </data>
+  <data name="TabNameHelp.Text">
+    <value>Đây là tên của trang. Dòng chữ bạn nhập vào sẽ được hiển thị trên menu hệ thống.</value>
+  </data>
+  <data name="Title.Text">
+    <value>Tiêu Đề Trang</value>
+  </data>
+  <data name="TitleHelp.Text">
+    <value>Nhập vào một tiêu đề cho Trang ở đây. Dòng chữ bạn nhập vào sẽ được hiển thị trên tiêu đề của cửa sổ trình duyệt.</value>
+  </data>
+  <data name="Description.Text">
+    <value>Mô Tả</value>
+  </data>
+  <data name="DescriptionHelp.Text">
+    <value>Nhập vào một mô tả về trang này ở đây.</value>
+  </data>
+  <data name="ParentTab.Text">
+    <value>Trang Mẹ</value>
+  </data>
+  <data name="ParentTabHelp.Text">
+    <value>Chọn trang mà bạn muốn trang này làm trang con của nó.</value>
+  </data>
+  <data name="Url.Text">
+    <value>Liên Kết Url</value>
+  </data>
+  <data name="UrlHelp.Text">
+    <value>Nếu bạn muốn trang này cư xử như một liên kết duyệt đến một tài nguyên khác, bạn có thể chỉ rõ Giá trị Liên kết URL ở đây. Chú ý là mục này là tuỳ chọn.</value>
+  </data>
+  <data name="Copy.Text">
+    <value>Copy Trang</value>
+  </data>
+  <data name="CopyModules.Text">
+    <value>Copy Module Từ:</value>
+  </data>
+  <data name="CopyModulesHelp.Text">
+    <value>Chọn trang (nếu có) mà từ đó bạn muốn copy các module.</value>
+  </data>
+  <data name="CopyContent.Text">
+    <value>Copy Nội Dung</value>
+  </data>
+  <data name="CopyContentHelp.Text">
+    <value>Chọn tuỳ chọn này nếu bạn muốn copy cả nội dung module. Thêm vào đó bạn có thể xác định bạn muốn tạo một module mới (không có nội dung), một module là bản sao của một module hiện có (với nội dung) hoặc một Tham chiếu đến một module có sẵn (chia sẻ nội dung).</value>
+  </data>
+  <data name="AdvancedSettings.Text">
+    <value>Thiết Lập Nâng Cao</value>
+  </data>
+  <data name="AdvancedSettingsHelp.Text">
+    <value>Ở phần này, bạn có thể đặt những thiết lập nâng cao hơn cho trang này.</value>
+  </data>
+  <data name="Appearance.Text">
+    <value>Giao Diện</value>
+  </data>
+  <data name="Icon.Text">
+    <value>Icon </value>
+  </data>
+  <data name="IconHelp.Text">
+    <value>Bạn có thể chọn một icon có thể được dùng để hiển thị trên menu.</value>
+  </data>
+  <data name="TabSkin.Text">
+    <value>Skin Của Trang</value>
+  </data>
+  <data name="TabSkinHelp.Text">
+    <value>Skin được chọn sẽ được áp dụng cho trang này.</value>
+  </data>
+  <data name="TabContainer.Text">
+    <value>Container của Trang</value>
+  </data>
+  <data name="TabContainerHelp.Text">
+    <value>Container được chọn sẽ được áp dụng cho tất cả các module của trang này.</value>
+  </data>
+  <data name="Hidden.Text">
+    <value>Ẩn</value>
+  </data>
+  <data name="HiddenHelp.Text">
+    <value>Nếu trang bị ẩn nó không xuất hiện ở menu. Tuy nhiên bạn vẫn có thể liên kết đến nó dựa vào URL của nó.</value>
+  </data>
+  <data name="Disabled.Text">
+    <value>Đóng</value>
+  </data>
+  <data name="DisabledHelp.Text">
+    <value>Nếu trang bị vô hiệu hoá nó sẽ không được hiển thị cho những người dùng của site. Bạn có thể chặn những nội dung mà bạn muốn hiển thị sau này.</value>
+  </data>
+  <data name="SecuritySettings.Text">
+    <value>Thiết Lập An Ninh</value>
+  </data>
+  <data name="Permissions.Text">
+    <value>Quyền Truy Cập</value>
+  </data>
+  <data name="PermissionsHelp.Text">
+    <value>Chọn những nhóm người có thể xem và quản lý trang.</value>
+  </data>
+  <data name="OtherSettings.Text">
+    <value>Những Thiết Lập Khác</value>
+  </data>
+  <data name="KeyWords.Text">
+    <value>Từ Khoá</value>
+  </data>
+  <data name="KeyWordsHelp.Text">
+    <value>Nhập một vài từ khoá của trang (ngăn cách nhau bởi dấu phảy). Những từ khoá này được sử dụng bởi các công cụ tìm kiếm để chỉ mục đến trang của site của bạn.</value>
+  </data>
+  <data name="plStartDate.Text">
+    <value>Ngày Bắt Đầu:</value>
+  </data>
+  <data name="plStartDate.Help">
+    <value>Nhập vào ngày bắt đầu hiển thị trang này. Bạn có thể sử dụng Lịch để chọn một ngày.</value>
+  </data>
+  <data name="plEndDate.Text">
+    <value>Ngày Kết Thúc:</value>
+  </data>
+  <data name="plEndDate.Help">
+    <value>Nhập vào ngày kết thúc hiển thị trang. Bạn có thể sử dụng Lịch để chọn lấy một ngày.</value>
+  </data>
+  <data name="SubmitToGoogle.Text">
+    <value>Đưa Trang Lên Google</value>
+  </data>
+  <data name="ControlTitle_tab.Text">
+    <value>Quản Lý Trang</value>
+  </data>
+  <data name="ControlTitle_edit.Text">
+    <value>Thay Đổi Trang</value>
+  </data>
+  <data name="valTabName.ErrorMessage">
+    <value>&lt;br&gt;Cần Phải Nhập Tên Trang</value>
+  </data>
+  <data name="DeleteSpecialPage.Text">
+    <value>Một trang được định nghĩa như là Trang Gốc, Trang Splash, Trang Đăng Nhập hay Trang Người Dùng của portal, hoặc trang hiển thị cuối cùng của portal không thể bị xoá.</value>
+  </data>
+  <data name="valStartDate.ErrorMessage">
+    <value>&lt;br&gt;Ngày Bắt Đầu Không Hợp Lệ</value>
+  </data>
+  <data name="valEndDate.ErrorMessage">
+    <value>&lt;br&gt;Ngày Kết Thúc Không Hợp Lệ</value>
+  </data>
+  <data name="ModuleHelp.Text">
+    <value>&lt;h1&gt;Quản Lý Trang&lt;/h1&gt;&lt;p&gt;Module này cho phép bạn thay đổi các thiết lập cho một trang, xóa trang, hoặc đưa trang đó lên Google để được đánh chỉ mục.&lt;/p&gt;</value>
+  </data>
+  <data name="PageDetails.Text">
+    <value>Chi Tiết Về Trang</value>
+  </data>
+  <data name="RefreshInterval.Text">
+    <value>Thời Gian Làm Tươi (giây)</value>
+  </data>
+  <data name="RefreshInterval.Help">
+    <value>Nhập khoảng thời gian giữa các lần trang được làm tươi. (VD: Nhập "60" cho 1 phút hoặc để trống để tắt)</value>
+  </data>
+  <data name="PageHeadText.Text">
+    <value>Tag Đầu Trang</value>
+  </data>
+  <data name="PageHeadText.Help">
+    <value>Nhập một tag bất kỳ (i.e. các tag META) sẽ được dựng ở tag "HEAD" của mã HTML cho trang này.</value>
+  </data>
+  <data name="DefaultTemplate.Text">
+    <value>Mặc Định</value>
+  </data>
+  <data name="ModuleCopy.Text">
+    <value>Copy </value>
+  </data>
+  <data name="ModuleNew.Text">
+    <value>Mới</value>
+  </data>
+  <data name="ModuleReference.Text">
+    <value>Tham Chiếu</value>
+  </data>
+  <data name="Template.Text">
+    <value>Trang Mẫu</value>
+  </data>
+  <data name="TemplateHelp.Text">
+    <value>Chọn một mẫu trang bạn muốn sử dụng để tạo trang này.</value>
+  </data>
+  <data name="cmdCopyPerm.Text">
+    <value>Copy quyền truy cập</value>
+  </data>
+  <data name="cmdCopySkin.Text">
+    <value>Copy giao diện</value>
+  </data>
+  <data name="ExceededQuota.Text">
+    <value>Thêm trang này sẽ vượt quá hạn mức số trang của site.  Hãy liên lạc với hoster của bạn để yêu cầu tăng hạn mức.</value>
+  </data>
+  <data name="plCopyPerm.Help">
+    <value>Copy các thiết lập về quyền truy cập được chọn cho các trang con.</value>
+  </data>
+  <data name="plCopyPerm.Text">
+    <value>Copy thiết lập về quyền truy cập cho trang con:</value>
+  </data>
+  <data name="plCopySkin.Help">
+    <value>Copy các lựa chọn về giao diện hiện tại (skin và container) của trang cho các trang con.</value>
+  </data>
+  <data name="plCopySkin.Text">
+    <value>Copy giao diện cho trang con:</value>
+  </data>
+</root>

@@ -1,0 +1,97 @@
+.button {
+    background: #67B8DE;
+    color: #FFF !important;
+    font-family: verdana,sans-serif;
+    font-size: 12px;
+    padding: 3px;
+	font-weight: bold;
+	border: none;
+	border-bottom: solid 2px #777;
+	border-right: solid 2px #777;
+	cursor: pointer;
+	display: inline-block;
+	vertical-align:top;
+}
+.button:hover
+{
+	color: #00F !important;
+	text-decoration:none;
+}
+.button:visited {
+    color: #FFF !important;
+    text-decoration:none;
+}
+
+.buttondisable {
+    background: #ccc;
+    color: #999 !important;
+    font-family: verdana,sans-serif;
+    font-size: 12px;
+    padding: 3px;
+	font-weight: bold;
+	border: none;
+	border-bottom: solid 2px #777;
+	border-right: solid 2px #777;
+	cursor: pointer;
+	display: inline-block;
+	vertical-align:top;
+}
+.buttondisable:hover
+{
+	color: #999 !important;
+	text-decoration:none;
+}
+.buttondisable:visited {
+    color: #999 !important;
+    text-decoration:none;
+}
+
+table.mGrid { width: 100%; background-color: #fff; margin: 10px 0 10px 0; border: solid 1px #525252; border-collapse:collapse; }
+table.mGrid td { padding: 2px; border: solid 1px #c1c1c1; color: #111111;}
+table.mGrid th { padding: 4px 2px; background-color: #4099FF; border-left: solid 1px #525252; vertical-align:middle;text-align:center;font-weight:bold;color: #ffff00;}
+table.mGrid th a {text-align:center;font-weight:bold;color: #ffff00;}
+table.mGrid .alt { background-color: #eeeeee;}
+table.mGrid .pgr {background-color: #424242;}
+table.mGrid .pgr table { margin: 5px 0; }
+table.mGrid .pgr td { border-width: 0; padding: 0 6px; border-left: solid 1px #666; font-weight: bold; color: #fff; line-height: 12px; }
+table.mGrid .pgr a { color: #aaa; text-decoration: none; }
+table.mGrid .pgr a:hover { color: #fff; text-decoration: none;}
+
+.SearchMore{ background-color: #F0F0F0; border:solid 1px #CCC;}
+.TextButton{ padding:0;vertical-align:text-top;cursor:pointer;overflow:visible;}
+
+.FileManager_ToolBar{ background-color: #F0F0F0; border:solid 1px #CCC; width:100%; padding: 5px;margin-bottom:5px;}
+.FileManager_ToolBar .toprow td{border-bottom: 1px solid #CCC;}
+
+.lichsubiendong
+{
+	margin-left: 10px;	
+}
+.lichsubiendong table
+{
+	width:98%;
+}
+.lichsubiendong th
+{
+	background-color:#ccc;text-align:center;font-weight:bold;
+	padding: 5px;
+}
+.lichsubiendong td
+{
+	border:1px solid #ccc;
+	padding: 5px;
+}
+.ThongKe
+{
+	border: solid 1px #000;	
+}
+.ThongKe td
+{
+	border: solid 1px #000 !important;	
+}
+.wrapper_margin
+{
+	width:100%;
+	margin-top: 15px;
+	margin-left: 15px;
+}

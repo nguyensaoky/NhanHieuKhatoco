@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="ResMimeType">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="Version">
+    <value>1.0.0.0</value>
+  </resheader>
+  <resheader name="Reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="Writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ControlTitle_manageprofile.Text">
+    <value>Quản Lý Thuộc Tính Hồ Sơ</value>
+  </data>
+  <data name="AddContent.Action">
+    <value>Thêm Thuộc Tính Hồ Sơ</value>
+  </data>
+  <data name="cmdRefresh.Text">
+    <value>Refresh Grid </value>
+  </data>
+  <data name="Edit.Header">
+    <value>
+    </value>
+  </data>
+  <data name="Del.Header">
+    <value>
+    </value>
+  </data>
+  <data name="Name.Header">
+    <value>Tên</value>
+  </data>
+  <data name="Category.Header">
+    <value>Mục</value>
+  </data>
+  <data name="DataType.Header">
+    <value>Kiểu Dữ Liệu</value>
+  </data>
+  <data name="Length.Header">
+    <value>Độ Dài</value>
+  </data>
+  <data name="DefaultValue.Header">
+    <value>Giá Trị Mặc Định</value>
+  </data>
+  <data name="ValidationExpression.Header">
+    <value>Chuỗi Kiểm Tra</value>
+  </data>
+  <data name="Required.Header">
+    <value>Bắt Buộc</value>
+  </data>
+  <data name="Visible.Header">
+    <value>Hiện</value>
+  </data>
+  <data name="Dn.Header">
+    <value>
+    </value>
+  </data>
+  <data name="Up.Header">
+    <value>
+    </value>
+  </data>
+  <data name="MoveDown.Text">
+    <value>Xuống</value>
+  </data>
+  <data name="MoveUp.Text">
+    <value>Lên</value>
+  </data>
+  <data name="cmdApply.Text">
+    <value>Áp Dụng Thay Đổi</value>
+  </data>
+  <data name="ProfilePropertiesHelp.Text">
+    <value>Bạn có thể thay đổi thứ tự các trường của hồ sơ, và việc chúng có là Bắt Buộc hay Hiện hay không. Click vào nút "Áp Dụng Thay Đổi" để lưu lại những thay đổi mà bạn vừa thực hiện. Để sửa đổi các thuộc tính khác của mỗi Thuộc Tính Hồ Sơ, click vào hình chiếc bút chì trên cột đầu của lưới.</value>
+  </data>
+</root>

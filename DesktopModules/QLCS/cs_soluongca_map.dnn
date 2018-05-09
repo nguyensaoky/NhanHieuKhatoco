@@ -1,0 +1,27 @@
+<dotnetnuke version="3.0" type="Module">
+  <folders>
+    <folder>
+      <name>CS_SoLuongCa_Map</name>
+      <friendlyname>CS_SoLuongCa_Map</friendlyname>
+      <foldername>QLCS</foldername>
+      <modulename>CS_SoLuongCa_Map</modulename>
+      <description>CS_SoLuongCa_Map</description>
+      <version>01.00.00</version>
+      <businesscontrollerclass>
+      </businesscontrollerclass>
+      <modules>
+        <module>
+          <friendlyname>CS_SoLuongCa_Map</friendlyname>
+          <cachetime>0</cachetime>
+          <controls>
+            <control>
+              <title>SoLuongCa_Map</title>
+              <src>DesktopModules/QLCS/r_soluongca_map.ascx</src>
+              <type>View</type>
+            </control>
+          </controls>
+        </module>
+      </modules>
+    </folder>
+  </folders>
+</dotnetnuke>

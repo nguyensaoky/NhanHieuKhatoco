@@ -1,0 +1,633 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="SyndicateModule.Action" xml:space="preserve">
+    <value>Chia Sẻ Thông Tin</value>
+  </data>
+  <data name="ExportModule.Action" xml:space="preserve">
+    <value>Xuất Nội Dung</value>
+  </data>
+  <data name="ImportModule.Action" xml:space="preserve">
+    <value>Nhập Nội Dung</value>
+  </data>
+  <data name="OnlineHelp.Action" xml:space="preserve">
+    <value>Trợ Giúp Trực Tuyến</value>
+  </data>
+  <data name="ModuleHelp.Action" xml:space="preserve">
+    <value>Trợ giúp</value>
+  </data>
+  <data name="ModuleSettings.Action" xml:space="preserve">
+    <value>Thiết Lập</value>
+  </data>
+  <data name="DeleteModule.Action" xml:space="preserve">
+    <value>Xoá</value>
+  </data>
+  <data name="PrintModule.Action" xml:space="preserve">
+    <value>In Ấn</value>
+  </data>
+  <data name="ClearCache.Action" xml:space="preserve">
+    <value>Xoá Cache</value>
+  </data>
+  <data name="MoveTop.Action" xml:space="preserve">
+    <value>Lên Trên Cùng</value>
+  </data>
+  <data name="MoveUp.Action" xml:space="preserve">
+    <value>Chuyển Lên</value>
+  </data>
+  <data name="MoveDown.Action" xml:space="preserve">
+    <value>Xuống Dưới</value>
+  </data>
+  <data name="MoveBottom.Action" xml:space="preserve">
+    <value>Xuống Cuối</value>
+  </data>
+  <data name="MovePane.Action" xml:space="preserve">
+    <value>Chuyển Đến</value>
+  </data>
+  <data name="MoveRoot.Action" xml:space="preserve">
+    <value>Di Chuyển</value>
+  </data>
+  <data name="Admin.String" xml:space="preserve">
+    <value>Admin </value>
+  </data>
+  <data name="Site Settings.String" xml:space="preserve">
+    <value>Thiết Lập Site</value>
+  </data>
+  <data name="Tabs.String" xml:space="preserve">
+    <value>Trang</value>
+  </data>
+  <data name="Security Roles.String" xml:space="preserve">
+    <value>Cấp Bậc</value>
+  </data>
+  <data name="User Accounts.String" xml:space="preserve">
+    <value>Tài Khoản Người Dùng</value>
+  </data>
+  <data name="Vendors.String" xml:space="preserve">
+    <value>Khách hàng</value>
+  </data>
+  <data name="Site Log.String" xml:space="preserve">
+    <value>Nhật ký Site</value>
+  </data>
+  <data name="Bulk Email.String" xml:space="preserve">
+    <value>Thư Báo</value>
+  </data>
+  <data name="File Manager.String" xml:space="preserve">
+    <value>Quản lý File</value>
+  </data>
+  <data name="Recycle Bin.String" xml:space="preserve">
+    <value>Thùng Rác</value>
+  </data>
+  <data name="Log Viewer.String" xml:space="preserve">
+    <value>Xem Nhật Ký</value>
+  </data>
+  <data name="Skins.String" xml:space="preserve">
+    <value>Skin</value>
+  </data>
+  <data name="Host.String" xml:space="preserve">
+    <value>Host </value>
+  </data>
+  <data name="Host Settings.String" xml:space="preserve">
+    <value>Thiết Lập Host</value>
+  </data>
+  <data name="Portals.String" xml:space="preserve">
+    <value>Portal</value>
+  </data>
+  <data name="Module Definitions.String" xml:space="preserve">
+    <value>Định nghĩa Module</value>
+  </data>
+  <data name="SQL.String" xml:space="preserve">
+    <value>SQL </value>
+  </data>
+  <data name="Schedule.String" xml:space="preserve">
+    <value>Lập Lịch</value>
+  </data>
+  <data name="Languages.String" xml:space="preserve">
+    <value>Ngôn Ngữ</value>
+  </data>
+  <data name="BannerType.Banner.String" xml:space="preserve">
+    <value>Banner </value>
+  </data>
+  <data name="BannerType.MicroButton.String" xml:space="preserve">
+    <value>MicroButton </value>
+  </data>
+  <data name="BannerType.Button.String" xml:space="preserve">
+    <value>Button </value>
+  </data>
+  <data name="BannerType.Block.String" xml:space="preserve">
+    <value>Block </value>
+  </data>
+  <data name="BannerType.Skyscraper.String" xml:space="preserve">
+    <value>Skyscraper </value>
+  </data>
+  <data name="BannerType.Text.String" xml:space="preserve">
+    <value>Text </value>
+  </data>
+  <data name="BannerType.Script.String" xml:space="preserve">
+    <value>Script </value>
+  </data>
+  <data name="Search Admin.String" xml:space="preserve">
+    <value>Tìm Kiếm Admin</value>
+  </data>
+  <data name="Lists.String" xml:space="preserve">
+    <value>Danh Sách</value>
+  </data>
+  <data name="Superuser Accounts.String" xml:space="preserve">
+    <value>Tài Khoản SuperUser</value>
+  </data>
+  <data name="View.Permission" xml:space="preserve">
+    <value>Xem Module</value>
+  </data>
+  <data name="Edit.Permission" xml:space="preserve">
+    <value>Cấu Hình Module</value>
+  </data>
+  <data name="View Tab.Permission" xml:space="preserve">
+    <value>Xem Trang</value>
+  </data>
+  <data name="Edit Tab.Permission" xml:space="preserve">
+    <value>Cấu Hình Trang</value>
+  </data>
+  <data name="View Folder.Permission" xml:space="preserve">
+    <value>Xem Thư Mục</value>
+  </data>
+  <data name="Write to Folder.Permission" xml:space="preserve">
+    <value>Ghi Vào Thư Mục</value>
+  </data>
+  <data name="EMAIL_SMTP_TEST_SUBJECT.Text" xml:space="preserve">
+    <value>Kiểm tra thiết lập SMTP của [Host:HostTitle] </value>
+  </data>
+  <data name="MESSAGE_PORTAL_PRIVACY.Text" xml:space="preserve">
+    <value>&lt;div align="left"&gt;
+[Portal:PortalName] cam kết bảo vệ sự riêng tư và phát triển những kĩ thuật cung cấp cho bạn những công cụ mạnh mẽ và an toàn nhất trên mạng. Bản Tuyên Bố về Sự Riêng Tư này áp dụng cho trang web [Portal:PortalName] và điều chỉnh việc thu thập và sử dụng thông tin. Bằng việc sử dụng website  [Portal:PortalName] 
+, bạn bằng lòng thực hiện những điều khoản được mô tả trong bản Tuyên Bố này.&lt;br&gt;&lt;br&gt; 
+&lt;span class="SubHead"&gt;Về Việc Thu Thập Những Thông Tin Cá Nhân Của Bạn&lt;/span&gt;&lt;br&gt;&lt;br&gt;
+[Portal:PortalName] thu thập những thông tin mang tính chất cá nhân của bạn, như địa chỉ email, tên, địa chỉ nhà hoặc nơi làm việc hay số điện thoại. [Portal:PortalName] còn thu thập những thông tin cá nhân mang tính chất riêng tư như mã bưu điện, tuổi, giới tính, sở thích của bạn.&lt;br&gt;&lt;br&gt;
+Cả những thông tin về phần cứng và phần mềm trên máy tính của bạn cũng được  [Portal:PortalName] thu thập. Những thông tin này có thể bao gồm: địa chỉ IP của bạn, loại trình duyệt bạn đang dùng, tên miền, thời gian truy cập và những website đã giới thiệu cho bạn đến với chúng tôi. Những thông tin này  được sử dụng bởi [Portal:PortalName] để phục vụ cho sự vận hành của dịch vụ, để duy trì chất lượng dịch vụ, và để cung cấp những thông số về việc sử dụng trang web [Portal:PortalName] .&lt;br&gt;&lt;br&gt; 
+Hãy ghi nhớ rằng nếu bạn trực tiếp để lộ những thông tin cá nhân riêng tư hoặc những thông tin nhạy cảm qua những bảng tin công khai của [Portal:PortalName], những thông tin này có thể được người khác lấy và sử dụng. Hãy chú ý:  
+[Portal:PortalName] không đọc những thông tin mang tính truyền thông liên lạc của bạn.&lt;br&gt;&lt;br&gt; 
+[Portal:PortalName] khuyến khích bạn xem lại những điều khoản về tính bảo mật của những trang web bạn liên kết đến từ [Portal:PortalName] để từ đó bạn có thể hiểu những website đó thu thập, sử dụng và chia sẻ những thông tin đó như thế nào. [Portal:PortalName] không chịu trách nhiệm về những điều khoản về tính bảo mật thông tin hay những nội dung khác của các website bên ngoài [Portal:PortalName] và những website thành viên thuộc [Portal:PortalName].&lt;br&gt;&lt;br&gt;
+&lt;span class="SubHead"&gt;Về Việc Sử Dụng Những Thông Tin Cá Nhân Của Bạn&lt;/span&gt;&lt;br&gt;&lt;br&gt;
+[Portal:PortalName] thu thập những thông tin của bạn để vận hành trang web [Portal:PortalName] và cung cấp những dịch vụ mà bạn yêu cầu. [Portal:PortalName] còn sử dụng những thông tin cá nhân của bạn để thông báo cho bạn về những sản phẩm, dịch vụ khác từ 
+[Portal:PortalName] và những chi nhánh của nó. [Portal:PortalName] có thể tiếp xúc với bạn thông qua quan sát để nghiên cứu lối ứng xử của bạn, như ý kiến của bạn về những dịch vụ hiện tại hoặc tiềm năng của những dịch vụ mới có thể sẽ được cung cấp.&lt;br&gt;&lt;br&gt;
+[Portal:PortalName] không bán, thuê hay cho thuê dach sách khách hàng của mình cho các nhóm thứ ba. [Portal:PortalName] có thể, bất cứ lúc nào, tiếp xúc với bạn về một đối tác bên ngoài với một lời đề nghị cụ thể mà bạn có thể quan tâm. Trong những trường hợp đó, những thông tin cá nhân của bạn (email, tên, địa chỉ, điện thoại) không được chuyển đến bên thứ ba. Thêm vào đó, [Portal:PortalName] có thể chia sẻ dữ liệu với những đối tác tin cậy để giúp chúng tôi thực hiện những nghiên cứu thống kê, gửi cho bạn email hay thư tay, thực hiện hỗ trợ khách hàng, hoặc sắp xếp việc giao hàng. Tất cả những công ty thuộc bên thứ ba đó đều bị cấm sử dụng những thông tin cá nhân của bạn ngoại trừ việc cung cấp dịch vụ cho [Portal:PortalName], và họ được yêu cầu duy trì tính bảo mật của những thông tin của bạn.&lt;br&gt;&lt;br&gt;
+[Portal:PortalName] không sử dụng hoặc tiết lộ những thông tin cá nhân nhạy cảm, như chủng tộc, tôn giáo, hoặc đảng phái chính trị mà không có sự cho phép của bạn.&lt;br&gt;&lt;br&gt;
+[Portal:PortalName] theo dõi những trang mà khách hàng của chúng tôi ghé thăm bên trong [Portal:PortalName], nhằm xác định dịch vụ nào của  [Portal:PortalName] được yêu thích nhất.  Những thông tin này được sử dụng để cung cấp những nội dung đặc chế và quảng cáo bên trong 
+[Portal:PortalName] đến những khách hàng mà hành vi của họ chỉ ra là họ quan tâm đến một vấn đề cụ thể nào đó.&lt;br&gt;&lt;br&gt;
+[Portal:PortalName] sẽ tiết lộ những thông tin của bạn mà không cần thông báo, chỉ khi cần phải như vậy theo luật pháp hoặc khi tin rằng những hành động đó là cần thiết để: (a) phù hợp với các sắc lệnh luật pháp hoặc tuân theo quá trình hợp pháp của [Portal:PortalName]; (b) bảo vệ quyền lợi của 
+[Portal:PortalName]; và, (c) hành động dưới những tình huống cấp thiết để bảo vệ sự an toàn cá nhân của những người dùng của  [Portal:PortalName],  hoặc của cộng đồng.&lt;br&gt;&lt;br&gt;
+&lt;span class="SubHead"&gt;Về Việc Sử Dụng Cookie&lt;/span&gt;&lt;br&gt;&lt;br&gt; 
+[Portal:PortalName] sử dụng "cookies"  để giúp bạn cá nhân hoá những kinh nghiệm về mạng của bạn. Một cookie là một file văn bản được đặt ở ổ đĩa cứng của bạn hoặc ở một trang chủ web. Cookie không thể được sử dụng để chạy chương trình hay đưa virus vào máy tính của bạn. Cookie được ấn định cho riêng bạn, và chỉ được đọc bởi một máy chủ web trong tên miền cung cấp cookie cho bạn.&lt;br&gt;&lt;br&gt;
+Một trong những mục đích chủ yếu của cookie là cung cấp cho bạn những chức năng thuận tiện để tiết kiệm thời gian của bạn. Mục đích của một cookie là bảo với máy chủ web là bạn đã phản hồi lại một trang cụ thể nào đó. Ví dụ, nếu bạn cá nhân hoá các trang [Portal:PortalName] , hoặc đăng kí với trang [Portal:PortalName] hoặc các dịch vụ của nó, một cookie sẽ giúp [Portal:PortalName] gọi lại những thông tin cụ thể trong những lần ghé thăm sau này. Điều này giúp đơn giản hoá quá trình ghi chép các thông tin cá nhân của bạn, như địa chỉ hoá đơn, địa chỉ gửi hàng... Khi bạn quay lại cùng một trang [Portal:PortalName] đó, thông tin mà bạn cung cấp lúc trước có thể được lấy ra, để bạn có thể dễ dàng sử dụng các chức năng của [Portal:PortalName] mà bạn đã cá nhân hoá.&lt;br&gt;&lt;br&gt;
+Bạn có khả năng chấp nhận hoặc từ chối cookie. Hầu hết các trình duyệt web tự động chấp nhận cookie, nhưng bạn có thể dễ dàng thay đổi các thiết lập trình duyệt của mình để từ chối cookie nếu bạn thích. Nếu bạn từ chối cookie, bạn không thể thấy được hết những chức năng tương tác của các dịch vụ của [Portal:PortalName] hoặc những trang web mà bạn đến thăm.&lt;br&gt;&lt;br&gt;
+&lt;span class="SubHead"&gt;Tính Bảo Mật Của Những Thông Tin Cá Nhân Của Bạn&lt;/span&gt;&lt;br&gt;&lt;br&gt;
+[Portal:PortalName] đóng chặt những thông tin cá nhân của bạn đối với những truy cập trái phép, sử dụng hoặc tiết lộ. [Portal:PortalName] đóng chặt những thông tin định danh cá nhân bạn cung cấp trên những máy chủ trong một môi trường được điều chỉnh và an toàn, bảo vệ khỏi những truy cập trái phép, sử dụng hoặc tiết lộ. Khi thông tin cá nhân (như số thẻ tín dụng) được chuyển đến những trang web khác, chúng đều được bảo vệ thông qua mã hoá, như giao thức Secure Socket Layer (SSL).&lt;br&gt;&lt;br&gt;
+&lt;span class="SubHead"&gt;Về Sự Thay Đổi Của Bản Tuyên Bố Này&lt;/span&gt;&lt;br&gt;&lt;br&gt;
+[Portal:PortalName] sẽ thường xuyên cập nhật bản Tuyên Bố về Sự Riêng Tư này để đáp ứng những phản hồi từ các công ty và khách hàng. [Portal:PortalName] khuyến khích bạn định kỳ xem lại bản Tuyên Bố này để được biết  [Portal:PortalName] đang bảo vệ thông tin của bạn như thế nào.&lt;br&gt;&lt;br&gt;
+&lt;span class="SubHead"&gt;Thông Tin&lt;/span&gt;&lt;br&gt;&lt;br&gt;
+[Portal:PortalName] đón chào những bình luận của bạn về Bản Tuyên Bố Về Sự Riêng Tư này. Nếu bạn tin rằng [Portal:PortalName] chưa tôn trọng bản Tuyên Bố này, hãy liên hệ [Portal:PortalName] tại &lt;a href="mailto:[Portal:Email]"&gt;[Portal:Email]&lt;/a&gt;. Chúng tôi sẽ cố gắng xem xét và sửa chữa vấn đề một cách nhanh chóng nhất có thể.&lt;br&gt;
+&lt;br&gt;
+&lt;/div&gt;
+		</value>
+  </data>
+  <data name="EMAIL_PORTAL_SIGNUP_SUBJECT.Text" xml:space="preserve">
+    <value>Đăng kí Dùng thử Portal [Host:HostTitle]</value>
+  </data>
+  <data name="EMAIL_PORTAL_SIGNUP_BODY.Text" xml:space="preserve">
+    <value>Bạn [User:DisplayName] thân mến,
+
+Portal Website của bạn đã được tạo. Hãy đọc những thông tin sau một cách cẩn thận và nhớ lưu chúng vào một nơi an toàn để tiện tra cứu sau này.
+
+Địa chỉ của Portal Website: [Portal:URL]
+Tên quản trị: [Membership:UserName]
+Password: [Membership:Password]
+Mã thẩm tra: [User:VerificationCode]
+
+Hãy ghé thăm website khi có dịp để cập nhật nội dung và tận dụng hết những tính năng mạnh mẽ của nó.
+Xin cảm ơn, chúng tôi rất biết ơn sự hợp tác của bạn... 
+[Host:HostTitle]
+
+</value>
+  </data>
+  <data name="MESSAGE_PORTAL_TERMS.Text" xml:space="preserve">
+    <value>&lt;div align="left"&gt;
+&lt;span class="SubHead"&gt;CAM KẾT GIỮA NGƯỜI DÙNG VÀ [Portal:PortalName]&lt;/span&gt;&lt;br&gt;&lt;br&gt;
+Website  [Portal:PortalName] bao gồm nhiều trang web được thực hiện bởi [Portal:PortalName].&lt;br&gt;&lt;br&gt;
+Website [Portal:PortalName] được cung cấp cho bạn với điều kiện bạn đồng ý với mọi điều khoản ở đây. Việc bạn sử dụng  [Portal:PortalName] thể hiện sự chấp nhận của bạn với những điều khoản đó.&lt;br&gt;&lt;br&gt;
+&lt;span class="SubHead"&gt;VỀ VIỆC SỬA ĐỔI NHỮNG ĐIỀU KHOẢN CAM KẾT NÀY&lt;/span&gt;&lt;br&gt;&lt;br&gt;
+[Portal:PortalName] có quyền thay đổi những điều khoản liên quan đến những gì [Portal:PortalName] được cung cấp, bao gồm nhưng không giới hạn ở những chi phí liên quan đến việc sử dụng của website [Portal:PortalName] .&lt;br&gt;&lt;br&gt;
+&lt;span class="SubHead"&gt;lIÊN KẾT ĐẾN NHỮNG CÔNG TY THỨ BA&lt;/span&gt;&lt;br&gt;&lt;br&gt;
+Website [Portal:PortalName] có thể chứa đựng những liên kết tới những website khác ("Các Trang Liên Kết"). Những Trang Liên Kết này không thuộc thẩm quyền của [Portal:PortalName] và [Portal:PortalName] không chịu trách nhiệm về nội dung của bất cứ Trang Liên Kết nào, bao gồm cả giới hạn của bất cứ liên kết nào bên trong mỗi Trang Liên Kết, hay bất cứ thay đổi hoặc cập nhật nào của mỗi Trang Liên Kết. [Portal:PortalName] không chịu trách nhiệm về bất cứ một sự chuyển giao nào từ bất cứ một Trang Liên Kết nào.  [Portal:PortalName] đang cung cấp những liên kết này đến bạn chỉ như là một tiện nghi, và sự bao gồm của bất cứ liên kết nào không bao hàm sự chứng thực bởi [Portal:PortalName] về những trang của bất cứ tổ chức nào với những hoạt động của nó.&lt;br&gt;&lt;br&gt;
+&lt;span class="SubHead"&gt;KHÔNG CHẤP NHẬN CÁC HÀNH VI SỬ DỤNG TRÁI PHÁP LUẬT HOẶC BỊ CẤM &lt;/span&gt;&lt;br&gt;&lt;br&gt; Như là một điều kiện của việc sử dụng của bạn của trang web [Portal:PortalName], bạn bảo đảm với [Portal:PortalName] rằng bạn sẽ không sử dụng trang web [Portal:PortalName] cho bất cứ mục đích trái pháp luật hoặc bị cấm bởi những điều khoản này. Bạn không thể sử dụng trang web [Portal:PortalName] bằng bất cứ cách nào có thể gây tổn hại, gây quá tải hay gây ảnh hưởng tới sự vận hành của [Portal:PortalName] hoặc gây trở ngại đến việc sử dụng của những người khác đối với [Portal:PortalName]. Bạn không được lấy hoặc cố lấy bất cứ thành phần hoặc thông tin nào không được cung cấp có chủ đích bởi [Portal:PortalName] dưới mọi hình thức.&lt;br&gt;&lt;br&gt;
+&lt;span class="SubHead"&gt;SỬ DỤNG NHỮNG DỊCH VỤ THÔNG TIN&lt;/span&gt;&lt;br&gt;&lt;br&gt; 
+Trang web [Portal:PortalName] có thể chứa những dịch vụ bảng thông báo, khu vực tán gẫu, nhóm tin, diễn đàn, các trang web cá nhân, lịch, và/hoặc những thông điệp hay những phương tiện thông tin được thiết kế cho phép bạn giao lưu với công chúng hoặc một nhóm người, bạn đồng ý sử dụng những dịch vụ thông tin chỉ để thông báo, gửi và nhận các thông điệp và những thành phần phù hợp và liên quan đến một Dịch vụ Thông tin cụ thể. Như là một ví dụ, và không phải là một giới hạn, bạn đồng ý  là khi sử dụng một Dịch vụ Thông tin, bạn sẽ không:&lt;br&gt;&lt;br&gt;
+&lt;ul&gt;
+&lt;li&gt;
+Phỉ báng, lăng mạ, quấy rỗi, đe doạ hoặc xâm phạm đến những quyền lợi hợp pháp (như quyền riêng tư và quyền công khai) của người khác.&lt;br&gt;&lt;br&gt;
+&lt;li&gt;
+Phổ biến, tải lên, truyền bá, gieo rắc bất cứ chủ đề, tên, thành phần hoặc thông tin không phù hợp, mang tính báng bổ, xỉ nhục, tục tĩu, không đứng đắn hoặc trái pháp luật&lt;br&gt;
+&lt;br&gt;
+&lt;li&gt;
+Tải lên những file bao gồm những phần mềm hoặc các thành phần khác được bảo vệ bởi luật sở hữu trí tuệ( hoặc bởi quyền riêng tư) trừ khi bạn có tất cả những quyền đó hoặc đã nhận được đủ sự đồng ý cần thiết.&lt;br&gt;
+&lt;br&gt;
+&lt;li&gt;
+Tải lên những file chứa virus, file lỗi, hoặc bất cứ phần mềm hoặc chương trình tương tự nào khác có thể gây tổn hại đến sự vận hành của các máy tính khác.&lt;br&gt;
+&lt;br&gt;
+&lt;li&gt;
+Quảng cáo, rao bán hoặc mua bất cứ hàng hoá hoặc dịch vụ vì bất cứ mục đích thương mại nào trừ khi những Dịch vụ Thông tin đó đặc biệt cho phép những thông điệp đó.&lt;br&gt;
+&lt;br&gt;
+&lt;li&gt;
+Tải xuống bất cứ file nào được đưa lên bởi người sử dụng của Dịch vụ Thông tin khác mà bạn biết hoặc đáng lẽ phải biết, là không thể được truyền bá một cách hợp pháp theo cách đó.&lt;br&gt;
+&lt;br&gt;
+&lt;li&gt;
+Làm sai hoặc xoá thẩm quyền tác giả, thông cáo pháp luật hoặc dấu hiệu chủ quyền hoặc nhãn mác của nguồn ban đầu của phần mềm hoặc những thành phần khác chứa đựng bên trong một file được tải lên.&lt;br&gt;
+&lt;br&gt;
+&lt;li&gt;
+Giới hạn hoặc ngăn cấm bất cứ người nào khác sử dụng những Dịch vụ Thông tin.&lt;br&gt;
+&lt;br&gt;
+&lt;li&gt;
+Xâm phạm bất cứ chỉ số hạnh kiểm hoặc bất cứ nguyên tắc chỉ đạo nào khác có thể được áp dụng cho một Dịch vụ Thông tin cụ thể.&lt;br&gt;
+&lt;br&gt;
+&lt;li&gt;
+Thu thập những thông tin cá nhân của người khác như email, địa chỉ,... mà không được người đó cho phép.&lt;br&gt;
+&lt;br&gt;
+&lt;li&gt;
+Xâm phạm các quy tắc, điều lệ đang được áp dụng.&lt;/li&gt;
+&lt;/ul&gt;
+[Portal:PortalName] không có nghĩa vụ giám sát các Dịch vụ Thông tin. Tuy nhiên, [Portal:PortalName] có quyền xem xét các thành phần được đưa lên một Dịch vụ Thông tin và có quyền loại bỏ bât cứ thành phần nào tuỳ ý. [Portal:PortalName] có quyền chấm dứt sự truy cập của bạn vào mỗi Dịch vụ Thông tin hoăc tất cả vào bất cứ lúc nào mà không cần thông báo vì bất cứ lí do gì.&lt;br&gt;&lt;br&gt;
+[Portal:PortalName] có quyền vào mọi lúc tiết lộ bất cứ thông tin nào nếu cần thiết để đáp ứng luật pháp, quy định hoặc những quá trình hợp pháp hoặc yêu cầu của nhà chức trách, hoặc sửa đổi, từ chối đưa lên hoặc loại bỏ bất cứ thông tin hoặc thành phần nào, toàn bộ hoặc một phần, tuỳ ý của [Portal:PortalName].&lt;br&gt;&lt;br&gt;
+Luôn luôn cẩn thận khi đưa ra bất cứ thông tin cá nhân nào về chính bạn hoặc con cái bạn ở bất cứ Dịch vụ Thông tin nào. [Portal:PortalName] không kiểm soát hay chứng thực nội dung, các thông điệp hoặc thông tin tìm được ở bất cứ Dịch vụ Thông tin nào và, vì thế, [Portal:PortalName] từ chối bất cứ trách nhiệm pháp lý nào có liên quan đến các Dịch vụ Thông tin và bất cứ hành động nào là hệ quả từ sự tham gia của bạn vào bất cứ Dịch vụ Thông tin nào. Những người quản lý host không được uỷ quyền là người phát ngôn của [Portal:PortalName], vì thế quan điểm của họ không nhất thiết là sự phản ánh của quan điểm của [Portal:PortalName].&lt;br&gt;&lt;br&gt;
+Cách thành phần được tải lên một Dịch vụ Thông tin có thể bị giới hạn về chức năng sử dụng, sự sao chép và / hoặc sự phổ biến. Bạn chịu trách nhiệm tôn trọng những giới hạn đó nếu bạn tải xuống các thành phần.&lt;br&gt;&lt;br&gt; 
+&lt;span class="SubHead"&gt;CÁC THÀNH PHẦN ĐƯỢC CUNG CẤP CHO [Portal:PortalName] HOẶC ĐƯỢC ĐƯA LÊN CÁC WEBSITE CỦA [Portal:PortalName]&lt;/span&gt;&lt;br&gt;&lt;br&gt;
+[Portal:PortalName] không yêu cầu quyền sở hữu của các thành phần bạn cung cấp cho [Portal:PortalName] (bao gồm cả những phản hồi và những đề nghị, gợi ý) hoặc đưa lên, tải lên, nhập vào bất cứ website [Portal:PortalName] nào hoặc các dịch vụ liên quan 
+. Tuy nhiên, bằng sự đưa lên, tải lên, nhập vào các thông tin bạn cho phép [Portal:PortalName], các công ty chi nhánh của nó được phép sử dụng những thông tin đó trong mối liên hệ với những hoạt động thương mại Internet bao gồm, mà không có giới hạn, quyền được: sao lưu, phân phối, chuyển giao, đưa lên công chúng, thi hành công khai, mô phỏng, biên tập, dịch và sắp xếp lại những thông tin đó, và phổ biến tên tuổi của bạn gắn liền với tài liệu.&lt;br&gt;&lt;br&gt; Không có sự bồi hoàn nào liên quan đến việc sử dụng của những thông tin, như đã nói ở đây. [Portal:PortalName] không chịu trách nhiệm đưa lên hoặc sử dụng những thông tin bạn cung cấp và có thể loại bỏ bất cứ thông tin nào vào bất cứ thời điểm nào [Portal:PortalName] muốn.&lt;br&gt;&lt;br&gt; Bằng việc đưa lên, tải lên, nhập vào những thông tin ấy bạn bảo đảm là bạn sở hữu hoặc kiểm soát mọi quyền liên quan đến thông tin của bạn như đã nói ở phần này bao gồm, mà không có giới hạn, mọi quyền cần thiết cho bạn để cung cấp, đưa lên, tải lên, nhập vào những thông tin đó.&lt;br&gt;&lt;br&gt;
+&lt;span class="SubHead"&gt;SỰ TỪ BỎ TRÁCH NHIỆM PHÁP LÝ&lt;/span&gt;&lt;br&gt;&lt;br&gt;
+NHỮNG THÔNG TIN, PHẦN MỀM, SẢN PHẨM, VÀ DỊCH VỤ BAO GỒM BÊN TRONG HOẶC SẴN CÓ Ở  [Portal:PortalName] CÓ THỂ BAO GỒM NHỮNG SỰ THIẾU CHÍNH XÁC HOẶC LỖI ĐÁNH MÁY, NHỮNG THAY ĐỔI SẼ ĐƯỢC ĐỊNH KỲ THÊM VÀO NHỮNG THÔNG TIN Ở ĐÂY. [Portal:PortalName] VÀ NHỮNG NHÀ CUNG CẤP CỦA NÓ CÓ THỂ CẢI TIẾN VÀ / HOẶC THAY ĐỔI NHỮNG NỘI DUNG BÊN TRONG [Portal:PortalName] VÀO BẤT CỨ LÚC NÀO. NHỮNG LỜI KHUYÊN NHẬN ĐƯỢC TỪ  [Portal:PortalName] KHÔNG NÊN ĐƯỢC DỰA VÀO ĐỂ RA NHỮNG QUYẾT ĐỊNH CÁ NHÂN, Y TẾ, LUẬT PHÁP HOẶC TÀI CHÍNH VÀ BẠN NÊN HỎI Ý KIẾN CỦA NHỮNG CHUYÊN GIA THÍCH HỢP CHO NHỮNG LỜI KHUYÊN VỀ HOÀN CẢNH CỦA BẠN.&lt;br&gt;&lt;br&gt; [Portal:PortalName] VÀ / HOẶC NHỮNG NHÀ CUNG CẤP CỦA NÓ KHÔNG ĐẠI DIỆN CHO SỰ PHÙ HỢP, SỰ ĐÁNG TIN CẬY, SỰ CÓ SẴN, HẠN ĐỊNH VÀ SỰ CHÍNH XÁC CỦA NHỮNG THÔNG TIN, PHẦN MỀM, SẢN PHẨM, DỊCH VỤ VÀ NHỮNG HÌNH ẢNH CÓ LIÊN QUAN CHỨA ĐỰNG BÊN TRONG [Portal:PortalName] VÌ BẤT CỨ MỤC ĐÍCH NÀO. MỞ RỘNG RA THEO NHỮNG LUẬT LỆ HIỆN HÀNH, TẤT CẢ NHỮNG THÔNG TIN, PHẦN MỀM, SẢN PHẨM, DỊCH VỤ VÀ NHỮNG HÌNH ẢNH CÓ LIÊN QUAN ĐƯỢC CUNG CẤP "LÀ CHÍNH NÓ" MÀ KHÔNG CÓ MỘT SỰ BẢO ĐẢM HOẶC ĐIỀU KIỆN TRÊN BẤT CỨ HÌNH THỨC NÀO. [Portal:PortalName] VÀ / HOẶC NHỮNG NHÀ CUNG CẤP CỦA NÓ DO ĐÓ TỪ CHỐI MỌI BẢO ĐẢM VÀ ĐIỀU KIỆN LIÊN QUAN ĐẾN NHỮNG THÔNG TIN, PHẦN MỀM, SẢN PHẨM, DỊCH VỤ VÀ NHỮNG HÌNH ẢNH LIÊN QUAN NÀY, BAO GỒM TẤT CẢ NHỮNG BẢO ĐẢM HOẶC ĐIỀU KIỆN MẶC NHIÊN CỦA TÍNH CÓ THỂ BÁN ĐƯỢC CỦA THÔNG TIN, PHẦN MỀM, DỊCH VỤ VÀ NHỮNG HÌNH ẢNH CÓ LIÊN QUAN. &lt;br&gt;&lt;br&gt; MỞ RỘNG RA THEO NHỮNG LUẬT LỆ HIỆN HÀNH, TRONG BẤT CỨ TRƯỜNG HỢP NÀO [Portal:PortalName] VÀ / HOẶC NHỮNG NHÀ CUNG CẤP CỦA NÓ KHÔNG CHỊU TRÁCH NHIỆM CHO BẤT CỨ TỔN HẠI TRỰC TIẾP, KHÔNG TRỰC TIẾP, DO SỰ TRỪNG PHẠT, TỔN HẠI DO TAI NẠN, TỔN HẠI VÌ MỘT LÝ DO ĐẶC BIỆT, TỔN HẠI TỰ PHÁT HAY BẤT CỨ TỔN HẠI NÀO BAO GỒM CẢ, MÀ KHÔNG CÓ GIỚI HẠN, TỔN HẠI DO MẤT MÁT VỀ SỬ DỤNG, DỮ LIỆU HAY LỢI NHUẬN, PHÁT SINH BÊN NGOÀI HOẶC BÊN TRONG BẤT CỨ CÁCH NÀO LIÊN QUAN ĐẾN VIỆC SỬ DỤNG HAY THI HÀNH CỦA [Portal:PortalName], VỚI SỰ TRÌ HOÃN HOẶC SỰ KHÔNG CÓ KHẢ NĂNG SỬ DỤNG [Portal:PortalName] HOẶC NHỮNG DỊCH VỤ CÓ LIÊN QUAN, SỰ DỰ PHÒNG HOẶC THẤT BẠI TRONG CUNG CẤP SẢN PHẨM, HOẶC VÌ BẤT CỨ THÔNG TIN, PHẦN MỀM, SẢN PHẨM, DỊCH VỤ VÀ NHỮNG HÌNH ẢNH CÓ LIÊN QUAN LẤY ĐƯỢC TỪ [Portal:PortalName] , HOĂC PHÁT SINH BÊN NGOÀI VIỆC SỬ DỤNG [Portal:PortalName] , DÙ LÀ DỰA VÀO HỢP ĐỒNG, LẦM LỖI, SƠ SUẤT, TRÁCH NHIỆM PHÁP LÝ NGHIÊM NGẶT HOẶC MẶT KHÁC, NGAY CẢ KHI [Portal:PortalName] HOẶC BẤT CỨ NHÀ PHÂN PHỐI NÀO CỦA NÓ ĐÃ ĐƯỢC KHUYÊN VỀ KHẢ NĂNG CỦA TỔN HẠI. VÌ MỘT VÀI CHÍNH QUYỀN KHÔNG CHO PHÉP SỰ LOẠI TRỪ HOẶC NHỮNG GIỚI HẠN VỀ TRÁCH NHIỆM PHÁP LÝ VỀ NHỮNG TỔN HẠI DO HỆ QUẢ HOẶC DO TAI NẠN, NHỮNG HẠN CHẾ TRÊN CÓ THỂ KHÔNG ÁP DỤNG VỚI BẠN. NẾU BẠN KHÔNG HÀI LÒNG VỚI BẤT CỨ PHẦN NÀO CỦA [Portal:PortalName] HOẶC VỚI BẤT CỨ ĐIỀU KHOẢN SỬ DỤNG NÀO TRONG NÀY, CÁCH GIẢI QUYẾT DUY NHẤT CỦA BẠN LÀ NGỪNG SỬ DỤNG [Portal:PortalName].&lt;br&gt;&lt;br&gt; lIÊN HỆ DỊCH VỤ: [Portal:Email]&lt;br&gt;&lt;br&gt;&lt;span class="SubHead"&gt;KẾT THÚC / GIỚI HẠN TRUY CẬP&lt;/span&gt;&lt;br&gt;&lt;br&gt; [Portal:PortalName] có quyền đơn phương chấm dứt  hoặc hạn chế truy cập của bạn vào [Portal:PortalName] và những dịch vụ có liên quan hoặc bất cứ phần nào trong đó vào bất cứ lúc nào, mà không cần thông báo. Việc sử dụng của [Portal:PortalName] không được cho phép ở bất cứ quyền hạn nào không có hiệu lực cho tất cả các điều khoản này, bao gồm cả sự không giới hạn của văn bản này. Bạn đồng ý là không có bất kỳ một sự liều lĩnh tập thể, bè phái, tuyển dụng, hoặc quan hệ môi giới nào tồn tại giữa bạn và [Portal:PortalName] như là một kết quả của bản thoả thuận này hoặc việc sử dụng của [Portal:PortalName]. Hoạt động của [Portal:PortalName] phản ánh pháp luật hiện hành và những quá trình luật pháp, và không có gì chứa đựng trong bản thoả thuận này cản trở quyền [Portal:PortalName] tuân theo pháp luật hoặc các quá trình luật pháp liên quan đến việc sử dụng của bạn về [Portal:PortalName] hoặc những thông tin được cung cấp cho hoặc được thu thập bởi [Portal:PortalName] có liên quan đến việc sử dụng đó. Nếu phần nào của bản thoả thuận này được xác định là sai trái hoặc không thể thực hiện được trong pháp luật hiện hành bao gồm, nhưng không giới hạn ở, sự từ bỏ trách nhiệm pháp lý và những giới hạn pháp lý đã được thiết lập trước đó, thì thì những điều khoản sai trái hoặc không thể thực thi được sẽ được cho là được thay thế bởi những điều khoản đúng đắn, có thể thực thi gần nhất với dự định của những điều khoản cũ và những thoả thuận còn lại sẽ tiếp tục có hiệu lực. Trừ khi được chỉ rõ ở đây, bản thoả thuận này cấu thành tất cả những thoả thuận còn lại giữa người xử dụng và [Portal:PortalName] với sự liên quan với [Portal:PortalName] và nó thay thế tất cả những liên lạc và thoả thuận trước đó và đương thời, dù là điện tử, nói miệng hay viết tay, giữa người sử dụng và [Portal:PortalName] trong mối liên quan với [Portal:PortalName]. Một bản in của bản thoả thuận này và tất cả các chú ý dưới dạng điện tử sẽ được thừa nhận theo luật pháp hoặc những quá trình quản lý dựa vào hoặc liên quan đến bản thoả thuận này đưa ra trong cùng điều kiện như những văn bản thương mại khác và được ghi theo nguyên bản và duy trì trên bản in. Chính mong muốn của các bên là văn bản này và những tài liệu liên quan được in ở tiếng Việt.&lt;br&gt;&lt;br&gt;
+&lt;span class="SubHead"&gt;NHỮNG CHÚ Ý VỀ BẢN QUYỀN VÀ THƯƠNG HIỆU:&lt;/span&gt;&lt;br&gt;&lt;br&gt; Tất cả nội dung của  [Portal:PortalName] là: [Portal:FooterText] và / hoặc các nhà cung cấp của nó. All rights reserved.&lt;br&gt;&lt;br&gt;
+&lt;span class="SubHead"&gt;THƯƠNG HIỆU&lt;/span&gt;&lt;br&gt;&lt;br&gt; Tên của các công ty và các sản phẩm đề cập đến ở đây có thể là thương hiệu của từng chủ nhân của nó.&lt;br&gt;&lt;br&gt; Những công ty, tổ chức, sản phẩm, người và sự kiện ví dụ được miêu tả ở đây là hư cấu. Không có sự liên quan nào với các công ty, tổ chức , sản phẩm, cá nhân hoặc sự kiện là có chủ đích hoặc hàm ý.&lt;br&gt;&lt;br&gt; Tất cả các quyền lợi không được trực tiếp công nhận ở đây đều được tôn trọng.&lt;br&gt;&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;/div&gt;</value>
+  </data>
+  <data name="EMAIL_USER_REGISTRATION_ADMINISTRATOR_SUBJECT.Text" xml:space="preserve">
+    <value>Đăng kí người dùng mới của [Portal:PortalName] </value>
+  </data>
+  <data name="EMAIL_USER_REGISTRATION_ADMINISTRATOR_BODY.Text" xml:space="preserve">
+    <value>Ngày: [Date:Current]
+Tên: [Profile:FirstName]
+Họ: [Profile:LastName]
+Đơn vị: [Profile:Unit]
+Số nhà: [Profile:Street]
+Thành phố: [Profile:City]
+Vùng: [Profile:Region]
+Quốc gia: [Profile:Country]
+Mã bưu điện: [Profile:PostalCode]
+Điện thoại: [Profile:Telephone]
+Email: [Membership:Email]
+</value>
+  </data>
+  <data name="EMAIL_USER_REGISTRATION_PRIVATE_SUBJECT.Text" xml:space="preserve">
+    <value>Đăng kí thành viên [Portal:PortalName]</value>
+  </data>
+  <data name="EMAIL_USER_REGISTRATION_PRIVATE_BODY.Text" xml:space="preserve">
+    <value>Bạn [User:DisplayName] thân mến,
+
+Xin cảm ơn bạn vì đã đăng kí tại portal website [Portal:PortalName]. Hãy đọc kỹ những thông tin sau một cách cẩn thận và nhớ lưu chúng lại ở một nơi an toàn để tiện tra cứu về sau: 
+
+Địa chỉ Portal Website: [Portal:URL]
+Tên tài khoản: [Membership:UserName]
+Password: [Membership:Password]
+
+Chi tiết về tài khoản của bạn sẽ được người quản trị portal xem xét lại và bạn sẽ nhận được thông báo về kết quả.
+
+Xin cảm ơn, chúng tôi rất biết ơn sự hợp tác của bạn...
+[Portal:PortalName]
+
+</value>
+  </data>
+  <data name="MESSAGE_REGISTRATION_INSTRUCTIONS.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="EMAIL_ROLE_ASSIGNMENT_SUBJECT.Text" xml:space="preserve">
+    <value>Cập nhật tài khoản [Portal:PortalName] </value>
+  </data>
+  <data name="EMAIL_ROLE_ASSIGNMENT_BODY.Text" xml:space="preserve">
+    <value>Bạn [User:DisplayName] thân mến,
+
+Tài khoản của bạn ở portal [Portal:PortalName] vừa được cập nhật để thêm vào các quyền sau:
+
+Quyền: [Custom:0]
+Mô tả: [Custom:1]
+
+Xin cảm ơn sự hợp tác của bạn...
+[Portal:PortalName]
+</value>
+  </data>
+  <data name="EMAIL_ROLE_UNASSIGNMENT_SUBJECT.Text" xml:space="preserve">
+    <value>Cập nhật tài khoản người dùng [Portal:PortalName] </value>
+  </data>
+  <data name="EMAIL_ROLE_UNASSIGNMENT_BODY.Text" xml:space="preserve">
+    <value>Bạn [User:DisplayName] thân mến,
+
+Tài khoản của bạn ở portal [Portal:PortalName] vừa được cập nhật để loại bỏ quyền sau:
+
+Quyền: [Custom:0]
+Mô tả: [Custom:1]
+
+Xin cảm ơn sự hợp tác của bạn...
+[Portal:PortalName]
+</value>
+  </data>
+  <data name="MESSAGE_LOGIN_INSTRUCTIONS.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="EMAIL_PASSWORD_REMINDER_SUBJECT.Text" xml:space="preserve">
+    <value>Nhắc password cho [Portal:PortalName] </value>
+  </data>
+  <data name="EMAIL_PASSWORD_REMINDER_BODY.Text" xml:space="preserve">
+    <value>Bạn [User:DisplayName] thân mến,
+
+Bạn vừa yêu cầu gợi ý password tại [Portal:PortalName].
+
+Hãy đăng nhập sử dụng những thông tin sau:
+
+Địa chỉ của Website: [Portal:URL]
+Tên tài khoản:   [Membership:Username]
+Password: [Membership:Password]
+
+Vui lòng bỏ qua thư này nếu bạn không yêu cầu gợi ý password.
+[Portal:PortalName]
+
+</value>
+  </data>
+  <data name="EMAIL_USER_UNREGISTER_SUBJECT.Text" xml:space="preserve">
+    <value>Hủy bỏ hồ sơ thành viên[Portal:PortalName] 
+</value>
+  </data>
+  <data name="EMAIL_USER_UNREGISTER_BODY.Text" xml:space="preserve">
+    <value>Ngày: [Date:Current]
+Tên: [Profile:FirstName]
+Họ: [Profile:LastName]
+Đơn vị: [Profile:Unit]
+Số nhà: [Profile:Street]
+Thành phố: [Profile:City]
+Vùng: [Profile:Region]
+Quốc gia: [Profile:Country]
+Mã bưu điện: [Profile:PostalCode]
+Điện thoại: [Profile:Telephone]
+Email: [Membership:Email]
+</value>
+  </data>
+  <data name="EMAIL_USER_REGISTRATION_PUBLIC_SUBJECT.Text" xml:space="preserve">
+    <value>Đăng kí thành viên [Portal:PortalName]</value>
+  </data>
+  <data name="EMAIL_USER_REGISTRATION_PUBLIC_BODY.Text" xml:space="preserve">
+    <value>Bạn [User:DisplayName] thân mến,
+
+Chúng tôi rất vui mừng thông báo với bạn là bạn đã trở thành Thành viên chính thức của portal website  [Portal:PortalName] . Hãy đọc kĩ những thông tin sau và nhớ lưu chúng vào một nơi an toàn để tiện tra cứu sau này:
+
+Địa chỉ Portal Website: [Portal:URL]
+Tên người sử dụng: [Membership:UserName]
+Password: [Membership:Password]
+Mã thẩm tra:[Membership:VerificationCode]
+
+Hãy thường xuyên ghé thăm trang web để xem lại nội dung và tận dụng hết những tính năng mạnh mẽ của nó.
+
+Xin cảm ơn, chúng tôi rất biết ơn sự giúp đỡ của bạn...
+[Portal:PortalName]
+
+</value>
+  </data>
+  <data name="EMAIL_AFFILIATE_NOTIFICATION_SUBJECT.Text" xml:space="preserve">
+    <value>Thông Báo Affiliate của [Portal:PortalName] </value>
+  </data>
+  <data name="EMAIL_AFFILIATE_NOTIFICATION_BODY.Text" xml:space="preserve">
+    <value>Bạn [Custom:0] thân mến,
+
+Tài khoản Affiliate của bạn ở [Portal:PortalName] đã được tạo.
+
+Hãy sử dụng liên kết sau để kết nối đến trang web của chúng tôi:
+[Custom:1]
+
+Xin cảm ơn,
+[Portal:PortalName]
+
+</value>
+  </data>
+  <data name="Site Wizard.String" xml:space="preserve">
+    <value>Site Wizard </value>
+  </data>
+  <data name="EMAIL_BANNER_NOTIFICATION_BODY.Text" xml:space="preserve">
+    <value>Banner: [Custom:0]
+Mô tả: [Custom:1]
+Hình Ảnh: [Custom:2]
+CPM/Chi phí: [Custom:3]
+Impressions: [Custom:4]
+Ngày bắt đầu: [Custom:5]
+Ngày kết thúc: [Custom:6]
+Số lần xem: [Custom:7]
+Số click: [Custom:8]</value>
+  </data>
+  <data name="EMAIL_BANNER_NOTIFICATION_SUBJECT.Text" xml:space="preserve">
+    <value>[Custom:0] </value>
+  </data>
+  <data name="EMAIL_VENDOR_REGISTRATION_ADMINISTRATOR_BODY.Text" xml:space="preserve">
+    <value>Ngày: [Custom:0]
+Tên Vendor : [Custom:1]
+First Name: [Custom:2]
+Last Name: [Custom:3]
+Số: [Custom:4]
+Phố: [Custom:5]
+Thành phố: [Custom:6]
+Vùng: [Custom:7]
+Nước: [Custom:8]
+Mã bưu điện: [Custom:9]
+Telephone: [Custom:10]
+Fax: [Custom:11]
+Cell: [Custom:12]
+Email: [Custom:13]
+Website: [Custom:14]</value>
+  </data>
+  <data name="EMAIL_VENDOR_REGISTRATION_ADMINISTRATOR_SUBJECT.Text" xml:space="preserve">
+    <value>Đăng Ký Vendor [Portal:PortalName]</value>
+  </data>
+  <data name="EMAIL_VENDOR_REGISTRATION_BODY.Text" xml:space="preserve">
+    <value> Bạn [Custom:0] [Custom:1] thân mến,
+ 
+ Công ty của bạn đã đăng ký thành công ở website [Portal:PortalName] .
+ 
+ Xin cảm ơn,
+ 
+ [Portal.PortalName]</value>
+  </data>
+  <data name="EMAIL_VENDOR_REGISTRATION_SUBJECT.Text" xml:space="preserve">
+    <value>Đăng Ký Vendor [Portal:PortalName]</value>
+  </data>
+  <data name="Authentication.String" xml:space="preserve">
+    <value>Authentication </value>
+  </data>
+  <data name="EMAIL_PROFILE_UPDATED_BODY.Text" xml:space="preserve">
+    <value>Bạn [User:DisplayName] thân mến,
+
+Hồ sơ của bạn tại portal website [Portal:PortalName] đã được cập nhật.
+
+Kính thư,
+[Portal:PortalName]
+
+</value>
+  </data>
+  <data name="EMAIL_PROFILE_UPDATED_SUBJECT.Text" xml:space="preserve">
+    <value>Thông Báo Cập Nhật Hồ Sơ Của [Portal:PortalName]</value>
+  </data>
+  <data name="EMAIL_USER_LOCKOUT_BODY.Text" xml:space="preserve">
+    <value>Vừa xác định một nỗ lực truy cập vào một tài khoản người dùng bị khóa ( username: [Custom:0] ) vào lúc [Date:Current]. Có thể bạn sẽ muốn điều tra thêm về việc này...
+
+Xin cảm ơn,
+[Portal:PortalName]
+</value>
+  </data>
+  <data name="EMAIL_USER_LOCKOUT_SUBJECT.Text" xml:space="preserve">
+    <value>Cảnh Báo Về Việc Khóa Tài Khoản Người Dùng [Portal:PortalName]</value>
+  </data>
+  <data name="EMAIL_USER_REGISTRATION_VERIFIED_BODY.Text" xml:space="preserve">
+    <value>Bạn [User:DisplayName] thân mến,
+
+Chúng tôi xin vui mừng thống báo với bạn là bạn đã được chấp nhận là một Thành Viên Chính Thức của website [Portal:PortalName]. Hãy đọc những thông tin sau một cách cẩn thận và hãy chắc chắn là bạn sẽ lưu email này ở một nơi an toàn để tham khảo đến sau này.
+
+Địa chỉ trang web: [Portal:URL]
+Username: [Membership:UserName]
+Password: [Membership:Password]
+Mã Thẩm Tra: [User:VerificationCode]
+
+Bạn có thể sử dụng liên kết sau để hoàn thành quá trình đăng ký của mình:
+
+http://[Portal:URL]/default.aspx?ctl=Login&amp;username=[Membership:UserName]&amp;verificationcode=[User:VerificationCode]
+
+Hãy giành thời gian ghé thăm trang web để xem nội dung của nó và để tận dụng những tính năng mà nó mang lại cho bạn.
+
+Xin cảm ơn sự hợp tác của bạn ...
+
+[Portal:PortalName]
+
+</value>
+  </data>
+  <data name="EMAIL_USER_REGISTRATION_VERIFIED_SUBJECT.Text" xml:space="preserve">
+    <value>[Portal:PortalName] Đăng Ký Thành Viên Mới</value>
+  </data>
+  <data name="MESSAGE_RETRIEVEPASSWORD_INSTRUCTIONS.Text" xml:space="preserve">
+    <value>Để lấy lại password, bạn sẽ phải cung cấp cho chúng tôi tên tài khoản của bạn, cùng với câu trả lời cho câu hỏi gợi ý. </value>
+  </data>
+</root>

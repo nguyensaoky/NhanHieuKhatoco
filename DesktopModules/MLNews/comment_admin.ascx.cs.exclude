@@ -1,0 +1,120 @@
+using System;
+using System.Data;
+using System.Configuration;
+using System.Collections;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+using System.Xml;
+using System.Data.SqlClient;
+using System.Collections.Generic;
+
+namespace DotNetNuke.News
+{
+    public partial class comment_admin : DotNetNuke.Entities.Modules.PortalModuleBase
+    {
+        private int CountPage(int pagesize, int NewsID)
+        {
+            string strSQL = "News_countCommentByNews";
+            SqlParameter para = new SqlParameter("@NewsID", NewsID);
+            object o = DotNetNuke.NewsProvider.DataProvider.ExecuteScalarSP(strSQL, para);
+            if (o != null)
+            {
+                int countrecord = Convert.ToInt32(o);
+                int pg = countrecord / pagesize;
+                if (pagesize * pg < countrecord) pg++;
+                return pg;
+            }
+            return 0;
+        }
+
+        private void BindCatDDL()
+        {
+            CategoryController catdb = new CategoryController();
+            DataTable dt = catdb.LoadTree(false, PortalId, "");
+            ddlCat.DataSource = dt;
+            ddlCat.DataTextField = "CatName";
+            ddlCat.DataValueField = "CatID";
+            ddlCat.DataBind();
+        }
+
+        private void BindNewsDDL()
+        {
+            NewsController newsCont = new NewsController();
+            Dictionary<int, NewsInfo> dicNews = newsCont.GetNewsByCat(ddlCat.SelectedValue);
+            ArrayList fLstNews = new ArrayList();
+            foreach (NewsInfo fNewsInfo in dicNews.Values)
+            {
+                fLstNews.Add(fNewsInfo);
+            }
+            ddlNews.DataSource = fLstNews;
+            ddlNews.DataTextField = "Headline";
+            ddlNews.DataValueField = "ID";
+            ddlNews.DataBind();
+        }
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                //if (!RoleProvider.IsAdminRole(PortalSettings.AdministratorRoleName))
+                //{
+                //    lblRestricted.Visible = true;
+                //    return;
+                //}
+                if (!Page.IsPostBack)
+                {
+                    lnkBack.NavigateUrl = DotNetNuke.Common.Globals.NavigateURL(PortalSettings.ActiveTab.TabID, "", "mid/" + this.ModuleId.ToString());
+                    BindCatDDL();
+                    if (ddlCat.Items.Count > 0)
+                    {
+                        ddlCat.Items[0].Selected = true;
+                        ddlCat_SelectedIndexChanged(null, null);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Response.Write(ex.Message);
+            }
+        }
+
+        protected void BindComment()
+        {
+            int pg = 0;
+            if (Request.QueryString["pg"] != null)
+                pg = Convert.ToInt32(Request.QueryString["pg"]) - 1;
+            int pagesize = 20;
+            if (ddlNews.Items.Count > 0)
+            {
+                int pages = CountPage(pagesize, int.Parse(ddlNews.SelectedValue));
+                if (pages > 1)
+                {
+                    string format = DotNetNuke.Common.Globals.NavigateURL(PortalSettings.ActiveTab.TabID, "admin_comment", "mid/" + this.ModuleId.ToString(), "pg/@@page");
+                    paging.Visible = true;
+                    paging.showing(pages, pg, format);
+                }
+                NewsController engine = new NewsController();
+                string deleteFormatUrl = DotNetNuke.Common.Globals.NavigateURL(PortalSettings.ActiveTab.TabID, "delete_comment", "mid/" + this.ModuleId.ToString(), "id/@@id");
+                int NumRecord = 0;
+                XmlDocument doc = engine.LoadPageCommentXML(deleteFormatUrl, int.Parse(ddlNews.SelectedValue), pg, pagesize, out NumRecord);
+                string template = "DesktopModules/MLNews/Xsl/comment_admin.xsl";
+                DotNetNuke.NewsProvider.Utils.XMLTransform(xmlTransformer, template, doc);
+            }
+        }
+
+        protected void ddlCat_SelectedIndexChanged(object sender, System.EventArgs e)
+        {
+            BindNewsDDL();
+            ddlNews_SelectedIndexChanged(null, null);
+        }
+
+        protected void ddlNews_SelectedIndexChanged(object sender, System.EventArgs e)
+        {
+            BindComment();
+        }
+    }
+}

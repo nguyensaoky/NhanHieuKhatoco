@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="ResMimeType">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="Version">
+    <value>1.0.0.0</value>
+  </resheader>
+  <resheader name="Reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="Writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Name.Header">
+    <value>Tên</value>
+  </data>
+  <data name="Description.Header">
+    <value>Mô Tả</value>
+  </data>
+  <data name="Fee.Header">
+    <value>Chi Phí</value>
+  </data>
+  <data name="Every.Header">
+    <value>Mỗi</value>
+  </data>
+  <data name="Period.Header">
+    <value>Thời Kỳ</value>
+  </data>
+  <data name="Trial.Header">
+    <value>Dùng Thử</value>
+  </data>
+  <data name="ExpiryDate.Header">
+    <value>Ngày Hết Hạn</value>
+  </data>
+  <data name="PleaseRegister.Text">
+    <value>&lt;&lt;br&gt;Để tận dụng Dịch Vụ Thành Viên của chúng tôi, trước hết bạn phải là một thành viên của site. Nếu bạn đã từng đăng ký trong quá khứ, hãy  please &lt;a class=""CommandButton"" href=""{0}?tabid={1}&amp;showlogin=1""&gt;Đăng Nhập&lt;/a&gt; ngay bây giờ. Nếu bạn chưa đăng ký , hãy  &lt;a class=""CommandButton"" href=""{0}?tabid={1}&amp;def=Register""&gt;Đăng Ký&lt;/a&gt; ngay bây giờ.</value>
+  </data>
+  <data name="MembershipNotOffered.Text">
+    <value>Dịch vụ Thành viên chưa được cung cấp vào thời điểm này.</value>
+  </data>
+  <data name="RegisterNote.Text">
+    <value>&lt;b&gt;*Chú ý:&lt;/b&gt; Tất cả các trường đánh dấu sao (*) cần phải được điền.</value>
+  </data>
+  <data name="PrivateMembership.Text">
+    <value>&lt;b&gt;*Chú ý:&lt;/b&gt; Cách thức đăng ký của portal này là Riêng Tư. Một khi thông tin tài khoản của bạn được gửi đi, người quản trị Portal sẽ được thông báo và mong muốn của bạn sẽ được xem xét. Nếu mong muốn của bạn được chấp nhận, bạn sẽ nhận được thông báo về việc truy cập vào site.</value>
+  </data>
+  <data name="PublicMembership.Text">
+    <value>&lt;b&gt;*Chú Ý:&lt;/b&gt; Cách Thức Đăng Ký Thành Viên của portal này là Công Khai. Nếu thông tin tài khoản được gửi đi, bạn sẽ được giao quyền truy cập một cách ngay lập tức vào portal.</value>
+  </data>
+  <data name="VerifiedMembership.Text">
+    <value>&lt;b&gt;*Chú Ý:&lt;/b&gt; Phương thức đăng ký thành viên của portal này là Thẩm Tra Lại. Khi thông tin thành viên của bạn được gửi đi, bạn sẽ nhận được một email chứa một Mã Thẩm Tra đặc biệt. Mã Thẩm Tra sẽ được cần đến lần đầu tiên khi bạn đăng nhập vào portal.</value>
+  </data>
+  <data name="Required.Text">
+    <value> Tất cả các trường đánh dấu sao (*) cần phải được điền.</value>
+  </data>
+  <data name="cmdRegister.Text">
+    <value>Đăng Ký</value>
+  </data>
+  <data name="Subscribe.Text">
+    <value>Đăng Ký</value>
+  </data>
+  <data name="CancelConfirm.Text">
+    <value>Bạn Có Chắc Là Bạn Muốn Huỷ Bỏ Tài Khoản Của Bạn?</value>
+  </data>
+  <data name="PasswordMatchFailure.Text">
+    <value>Giá Trị Password Vừa Nhập Không Đúng.</value>
+  </data>
+  <data name="RegistrationFailure.Text">
+    <value>Đăng ký thất bại! Tên người sử dụng &lt;u&gt;{0}&lt;/u&gt; đã được đăng ký.&lt;br&gt;Hãy chọn một tên người sử dụng khác.</value>
+  </data>
+  <data name="OldPassword.Text">
+    <value>Bạn phải nhập vào Password cũ.</value>
+  </data>
+  <data name="NewPassword.Text">
+    <value>Bạn phải cung cấp một password mới.</value>
+  </data>
+  <data name="PasswordChanged.Text">
+    <value>Password của bạn đã được thay đổi.</value>
+  </data>
+  <data name="plLocale.Text">
+    <value>Ngôn Ngữ:</value>
+  </data>
+  <data name="plLocale.Help">
+    <value>Chọn ngôn ngữ mà bạn thích từ danh sách</value>
+  </data>
+  <data name="plTimeZone.Text">
+    <value>Múi Giờ:</value>
+  </data>
+  <data name="plTimeZone.Help">
+    <value>Chọn múi giờ của bạn</value>
+  </data>
+  <data name="plDateFormat.Text">
+    <value>Định Dạng Ngày Tháng:</value>
+  </data>
+  <data name="plDateFormat.Help">
+    <value>Chọn Định dạng ngày tháng</value>
+  </data>
+  <data name="cmdUnregister.Text">
+    <value>Huỷ Đăng Ký</value>
+  </data>
+  <data name="plOldPassword.Text">
+    <value>Password Cũ:</value>
+  </data>
+  <data name="plOldPassword.Help">
+    <value>Nhập vào Password cũ</value>
+  </data>
+  <data name="plNewPassword.Text">
+    <value>Password Mới:</value>
+  </data>
+  <data name="plNewPassword.Help">
+    <value>Nhập Vào Password mới của bạn</value>
+  </data>
+  <data name="plNewConfirm.Text">
+    <value>Xác Nhận Password Mới:</value>
+  </data>
+  <data name="plNewConfirm.Help">
+    <value>Nhập Lại password mới của bạn để chắc chắn là bạn không đánh nhầm</value>
+  </data>
+  <data name="ChangePassword.Text">
+    <value>Thay Đổi Password</value>
+  </data>
+  <data name="Services.Text">
+    <value>Dịch Vụ Thành Viên</value>
+  </data>
+  <data name="cmdUpdatePassword.Text">
+    <value>Cập Nhật Password</value>
+  </data>
+  <data name="Preferences.Text">
+    <value>Ưu Tiên</value>
+  </data>
+  <data name="ControlTitle_register.Text">
+    <value>Đăng Ký</value>
+  </data>
+  <data name="ControlTitle_.Text">
+    <value>Tài Khoản Người Dùng</value>
+  </data>
+  <data name="PasswordUpdateFailed.Text">
+    <value>Có lỗi xảy ra khi thiết lập password của bạn. Password của bạn đã không được thay đổi. Hãy chắc chắn là bạn đã nhập vào password cũ một cách chính xác và thử lại.</value>
+  </data>
+  <data name="VerifiedConfirmationMessage.Text">
+    <value>&lt;b&gt;Một email với mã thẩm tra của bạn đã được gửi đến địa chỉ email của bạn: {0}&lt;br&gt;Hãy truy cập hòm thư của mình để lấy mã thẩm tra cần thiết để bạn đăng nhập lần đầu.&lt;/b&gt;</value>
+  </data>
+  <data name="PrivateConfirmationMessage.Text">
+    <value>&lt;b&gt;Một email với thông tin về bạn đã được gửi đến quản trị portal để kiểm tra. Sau khi quá trình đăng ký được xác nhận một email sẽ được gửi đến email của bạn: {0}.&lt;/b&gt;</value>
+  </data>
+  <data name="Unsubscribe.Text">
+    <value>Hủy Đăng Ký</value>
+  </data>
+  <data name="cmdRSVP.Text">
+    <value>Đăng Ký</value>
+  </data>
+  <data name="plRSVPCode.Help">
+    <value>Bạn có thể đăng ký tham gia vào một số Nhóm Thành Viên bằng cách nhập vào một Mã RSVP. Nếu bạn đã được cho mã này hãy nhập nó vào và click vào Subscribe</value>
+  </data>
+  <data name="plRSVPCode.Text">
+    <value>Nhập Mã RSVP:</value>
+  </data>
+</root>

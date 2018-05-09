@@ -1,0 +1,39 @@
+<dotnetnuke version="3.0" type="Module">
+  <folders>
+    <folder>
+      <name>CS_QLDan</name>
+      <friendlyname>CS_QLDan</friendlyname>
+      <foldername>QLCS</foldername>
+      <modulename>CS_QLDan</modulename>
+      <description>CS_QLDan</description>
+      <version>01.00.00</version>
+      <businesscontrollerclass>
+      </businesscontrollerclass>
+      <modules>
+        <module>
+          <friendlyname>CS_QLDan</friendlyname>
+          <cachetime>0</cachetime>
+          <controls>
+            <control>
+              <title>CaSau Admin</title>
+              <src>DesktopModules/QLCS/casau_admin.ascx</src>
+              <type>Edit</type>
+            </control>
+            <control>
+              <key>casau_add</key>
+              <title>CaSau Add</title>
+              <src>DesktopModules/QLCS/casau_add.ascx</src>
+              <type>Edit</type>
+            </control>
+            <control>
+              <key>casau_edit</key>
+              <title>CaSau Edit</title>
+              <src>DesktopModules/QLCS/casau_edit.ascx</src>
+              <type>Edit</type>
+            </control>
+          </controls>
+        </module>
+      </modules>
+    </folder>
+  </folders>
+</dotnetnuke>

@@ -1,0 +1,33 @@
+<dotnetnuke version="3.0" type="Module">
+  <folders>
+    <folder>
+      <name>CS_QLNhanVien</name>
+      <friendlyname>CS_QLNhanVien</friendlyname>
+      <foldername>QLCS</foldername>
+      <modulename>CS_QLNhanVien</modulename>
+      <description>CS_QLNhanVien</description>
+      <version>01.00.00</version>
+      <businesscontrollerclass>
+      </businesscontrollerclass>
+      <modules>
+        <module>
+          <friendlyname>CS_QLNhanVien</friendlyname>
+          <cachetime>0</cachetime>
+          <controls>
+            <control>
+              <title>NhanVien Admin</title>
+              <src>DesktopModules/QLCS/nhanvien_admin.ascx</src>
+              <type>Edit</type>
+            </control>
+            <control>
+              <key>nhanvien_edit</key>
+              <title>NhanVien Edit</title>
+              <src>DesktopModules/QLCS/nhanvien_edit.ascx</src>
+              <type>Edit</type>
+            </control>
+          </controls>
+        </module>
+      </modules>
+    </folder>
+  </folders>
+</dotnetnuke>

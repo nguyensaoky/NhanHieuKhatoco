@@ -1,0 +1,27 @@
+<dotnetnuke version="3.0" type="Module">
+  <folders>
+    <folder>
+      <name>CS_PhucHoiDuLieu</name>
+      <friendlyname>CS_PhucHoiDuLieu</friendlyname>
+      <foldername>QLCS</foldername>
+      <modulename>CS_PhucHoiDuLieu</modulename>
+      <description>CS_PhucHoiDuLieu</description>
+      <version>01.00.00</version>
+      <businesscontrollerclass>
+      </businesscontrollerclass>
+      <modules>
+        <module>
+          <friendlyname>CS_PhucHoiDuLieu</friendlyname>
+          <cachetime>0</cachetime>
+          <controls>
+            <control>
+              <title>Phuc Hoi Du Lieu</title>
+              <src>DesktopModules/QLCS/phuchoidulieu.ascx</src>
+              <type>Edit</type>
+            </control>
+          </controls>
+        </module>
+      </modules>
+    </folder>
+  </folders>
+</dotnetnuke>

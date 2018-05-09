@@ -1,0 +1,294 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="ResMimeType">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="Version">
+    <value>1.0.0.0</value>
+  </resheader>
+  <resheader name="Reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="Writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="FileManager.Text">
+    <value>Quản Lý File </value>
+  </data>
+  <data name="HostRoot.Text">
+    <value>Gốc Host</value>
+  </data>
+  <data name="PortalRoot.Text">
+    <value>Gốc Portal</value>
+  </data>
+  <data name="FileName.Header">
+    <value>Tên File</value>
+  </data>
+  <data name="Size.Header">
+    <value>Kích Cỡ (Kb) </value>
+  </data>
+  <data name="DiskSpace.Text">
+    <value>Đĩa Trống </value>
+  </data>
+  <data name="Capacity.Text">
+    <value>Dung Lượng </value>
+  </data>
+  <data name="Used.Text">
+    <value>Đã Sử Dụng</value>
+  </data>
+  <data name="Free.Text">
+    <value>Trống</value>
+  </data>
+  <data name="MB.Text">
+    <value>MB </value>
+  </data>
+  <data name="AddContent.Action">
+    <value>Tải Lên File Mới</value>
+  </data>
+  <data name="ControlTitle_.Text">
+    <value>Quản Lý File </value>
+  </data>
+  <data name="Ok.Text">
+    <value>Ok </value>
+  </data>
+  <data name="Cancel.Text">
+    <value>Huỷ bỏ </value>
+  </data>
+  <data name="CopyFiles.Text">
+    <value>Copy File </value>
+  </data>
+  <data name="CancelCopy.Text">
+    <value>Huỷ Bỏ Copy </value>
+  </data>
+  <data name="MoveFiles.Text">
+    <value>Chuyển File</value>
+  </data>
+  <data name="CancelMove.Text">
+    <value>Huỷ Bỏ Di Chuyển </value>
+  </data>
+  <data name="NoFilesChecked.Text">
+    <value>Không File Nào Được Đánh Dấu</value>
+  </data>
+  <data name="PleaseSpecifyAFolderNameFirst.Text">
+    <value>Hãy Cho Biết Tên Thư Mục Trước Đã</value>
+  </data>
+  <data name="CopyCheckedFiles.Text">
+    <value>Copy Những File Được Đánh Dấu? </value>
+  </data>
+  <data name="MoveCheckedFiles.Text">
+    <value>Di Chuyển Những File Đã Được Đánh Dấu?</value>
+  </data>
+  <data name="DeleteFolder.Text">
+    <value>Xoá Thư Mục: </value>
+  </data>
+  <data name="MoveSelectedFilesTo.Text">
+    <value>Chuyển Các File Đã Được Đánh Dấu Đến:</value>
+  </data>
+  <data name="CopySelectedFilesTo.Text">
+    <value>Copy Những File Được Chọn Đến:</value>
+  </data>
+  <data name="UnzipSelectedFilesTo.Text">
+    <value>Giải Nén Những File Được Lựa Chọn Đến:</value>
+  </data>
+  <data name="AddFolderImg.AlternateText">
+    <value>Tạo Thư Mục</value>
+  </data>
+  <data name="DeleteFolderImg.AlternateText">
+    <value>Xoá Thư Mục </value>
+  </data>
+  <data name="RefreshImg.AlternateText">
+    <value>Làm Tươi</value>
+  </data>
+  <data name="CopyImg.AlternateText">
+    <value>Copy File </value>
+  </data>
+  <data name="MoveImg.AlternateText">
+    <value>Chuyển File</value>
+  </data>
+  <data name="UploadImg.AlternateText">
+    <value>Tải Lên</value>
+  </data>
+  <data name="DeleteImg.AlternateText">
+    <value>Xoá File </value>
+  </data>
+  <data name="FilterImg.AlternateText">
+    <value>Bộ Lọc</value>
+  </data>
+  <data name="RenameFileImg.AlternateText">
+    <value>Đổi Tên File</value>
+  </data>
+  <data name="SaveChangesImg.AlternateText">
+    <value>Lưu Thay Đổi</value>
+  </data>
+  <data name="DeleteFileImg.AlternateText">
+    <value>Xoá File </value>
+  </data>
+  <data name="CancelRenameImg.AlternateText">
+    <value>Huỷ Bỏ Đổi Tên </value>
+  </data>
+  <data name="UnzipFileImg.AlternateText">
+    <value>Giải Nén File</value>
+  </data>
+  <data name="GetFolderProperties.AlternateText">
+    <value>Lấy Thuộc Tính Của Thư Mục</value>
+  </data>
+  <data name="NotAllowedToDeleteRootFolder.Text">
+    <value>Không được phép xoá thư mục gốc...</value>
+  </data>
+  <data name="FolderAlreadyRemoved.Text">
+    <value>Thư Mục Đã Được Xoá...</value>
+  </data>
+  <data name="PleaseRemoveFilesBeforeDeleting.Text">
+    <value>Hãy Xoá File/Thư Mục Con Trước Khi Xoá Thư Mục...</value>
+  </data>
+  <data name="ErrorMovingFile.Text">
+    <value>Lỗi Di Chuyển File: </value>
+  </data>
+  <data name="ErrorCopyingFile.Text">
+    <value>Lỗi Copy File: </value>
+  </data>
+  <data name="plPermissions.Text">
+    <value>Quyền Truy Cập:</value>
+  </data>
+  <data name="plPermissions.Help">
+    <value>Ấn Định Quyền Truy Cập Đối Với Thư Mục</value>
+  </data>
+  <data name="Folders.Text">
+    <value>Thư Mục</value>
+  </data>
+  <data name="Date.Header">
+    <value>Ngày </value>
+  </data>
+  <data name="ErrorDeletingFolder.Text">
+    <value>Lỗi Xoá Thư Mục:&lt;BR&gt;</value>
+  </data>
+  <data name="NotEnoughSpace.Text">
+    <value>Portal không còn chỗ trống</value>
+  </data>
+  <data name="PleaseLogin.Text">
+    <value>Hãy đăng nhập trước khi copy/di chuyển file</value>
+  </data>
+  <data name="ErrorUnzippingFile.Text">
+    <value>Lỗi Giải Nén File: </value>
+  </data>
+  <data name="ItemsPerPage.Text">
+    <value>Các Mục Trong Một Trang:</value>
+  </data>
+  <data name="SpaceUsed.Text">
+    <value>Đã Sử Dụng: {0} trên {1} </value>
+  </data>
+  <data name="MovingFiles.Text">
+    <value>Chuyển File:</value>
+  </data>
+  <data name="CopyingFiles.Text">
+    <value>Copy File </value>
+  </data>
+  <data name="UnzippingFile.Text">
+    <value>Đang Giải Nén File:</value>
+  </data>
+  <data name="FromFolder.Text">
+    <value>Từ Thư Mục:</value>
+  </data>
+  <data name="ToFolder.Text">
+    <value>Đến Thư Mục: Chọn Thư Mục Đích Từ Folder Explorer.</value>
+  </data>
+  <data name="DeleteFiles.Text">
+    <value>Xoá Các File </value>
+  </data>
+  <data name="Security.Text">
+    <value>Thiết Lập An Toàn </value>
+  </data>
+  <data name="SelectAll.Text">
+    <value>Chọn Tất Cả </value>
+  </data>
+  <data name="UnSelectAll.Text">
+    <value>Bỏ Chọn Tất Cả</value>
+  </data>
+  <data name="Rename.Error">
+    <value>Lỗi Đổi Tên File: &lt;BR&gt;</value>
+  </data>
+  <data name="SetAttrubute.Error">
+    <value>Lỗi Xảy Ra Khi Cố Gắng Thay Đổi Thuộc Tính File: &lt;BR&gt; </value>
+  </data>
+  <data name="ModuleHelp.Text">
+    <value>&lt;h1&gt;Về Quản Lý File&lt;/h1&gt;&lt;p&gt;Các quản trị viên có thể quản lý các file được đặt trong thư mục tải lên của họ.Module này cho phép bạn tải lên những file mới, tải xuống file, xoá file và đồng bộ thư mục tải lên của bạn. Nó còn cung cấp thông tin về kích cỡ đĩa cứng đã được sử dụng và còn trống.&lt;/p&gt;</value>
+  </data>
+  <data name="Refresh.Text">
+    <value>Làm Tươi</value>
+  </data>
+  <data name="EnsureDeleteFile.Text">
+    <value>Bạn Có Chắc Là Bạn Muốn Xoá File {0} ? </value>
+  </data>
+  <data name="EnsureDeleteFolder.Text">
+    <value>Bạn Có Chắc Là Bạn Muốn Xoá Thư Mục {0} ? </value>
+  </data>
+  <data name="ErrorDeletingFile.Text">
+    <value>Lỗi Xoá File:&amp;nbsp;</value>
+  </data>
+  <data name="AddFolder.Text">
+    <value>Tạo Thư Mục</value>
+  </data>
+  <data name="DeleteFolderLabel.Text">
+    <value>Delete Folder </value>
+  </data>
+  <data name="FileBar.Text">
+    <value>Files: </value>
+  </data>
+  <data name="FolderBar.Text">
+    <value>Thư Mục:</value>
+  </data>
+  <data name="InsecureFileSystem.Text">
+    <value>File Hệ Thống - Không An Toàn</value>
+  </data>
+  <data name="lnkSyncFolderIMG.AlternateText">
+    <value>Đồng Bộ Hóa Thư Mục</value>
+  </data>
+  <data name="plStorageLocation.Help">
+    <value>Nơi thư mục được chọn lưu trữ file. </value>
+  </data>
+  <data name="plStorageLocation.Text">
+    <value>Nơi Lưu Trữ:</value>
+  </data>
+  <data name="Recursive.Text">
+    <value>Đệ Quy</value>
+  </data>
+  <data name="SecureDatabase.Text">
+    <value>CSDL - Được Bảo Vệ</value>
+  </data>
+  <data name="SecureFileSystem.Text">
+    <value>File Hệ Thống - Được Bảo Vệ</value>
+  </data>
+  <data name="SynchronizeFolder.Text">
+    <value>Đồng bộ thư mục </value>
+  </data>
+  <data name="UnlimitedSpace.Text">
+    <value>[không giới hạn]</value>
+  </data>
+</root>

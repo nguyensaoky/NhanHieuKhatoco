@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="ResMimeType">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="Version">
+    <value>1.0.0.0</value>
+  </resheader>
+  <resheader name="Reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="Writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="plPortalID.Text">
+    <value>Portal </value>
+  </data>
+  <data name="plPortalID.Help">
+    <value>Chọn Portal bạn muốn xem</value>
+  </data>
+  <data name="plLogType.Text">
+    <value>Kiểu</value>
+  </data>
+  <data name="plLogType.Help">
+    <value>Bạn có thể chọn giới hạn Nhật ký ở những kiểu sự kiện nhất định</value>
+  </data>
+  <data name="plShowRecords.Text">
+    <value>Hiển Thị Báo Cáo</value>
+  </data>
+  <data name="plShowRecords.Help">
+    <value>Chọn báo cáo bạn muốn xem</value>
+  </data>
+  <data name="ColorCoding.Text">
+    <value>Mở Mã Màu</value>
+  </data>
+  <data name="Settings.Text">
+    <value>Thiết Lập Hiển Thị</value>
+  </data>
+  <data name="Legend.Text">
+    <value>Chú Giải Mã Màu</value>
+  </data>
+  <data name="Date.Text">
+    <value>Ngày Tháng</value>
+  </data>
+  <data name="Type.Text">
+    <value>Kiểu Nhật Ký</value>
+  </data>
+  <data name="Username.Text">
+    <value>Tên Người Dùng</value>
+  </data>
+  <data name="Portal.Text">
+    <value>Portal </value>
+  </data>
+  <data name="Summary.Text">
+    <value>Tóm Tắt</value>
+  </data>
+  <data name="btnDelete.Text">
+    <value>Xoá Những Thông Báo Lỗi Đã Được Chọn</value>
+  </data>
+  <data name="btnClear.Text">
+    <value>Xoá Nhật Ký</value>
+  </data>
+  <data name="SendExceptions.Text">
+    <value>Gửi Thông Báo Lỗi</value>
+  </data>
+  <data name="ExceptionsWarning.Text">
+    <value>&lt;b&gt;Hãy chú ý&lt;/b&gt;: Bằng việc sử dụng những chức năng dưới đây, bạn có thể sẽ gửi đi những dữ liệu nhạy cảm qua Intenet dưới dạng ký tự thông thường (KHÔNG được mã hoá). Trước khi gửi đi những thông báo lỗi, hãy xem lại nội dung thông báo lỗi của bạn để xác nhận là không dữ liệu nhạy cảm nào được chứa đựng bên trong. Chỉ những mục nhật ký được chọn ở trên được gửi đi.
+</value>
+  </data>
+  <data name="SendExceptionsEmail.Text">
+    <value>Gửi Thông Báo Lỗi Qua Email</value>
+  </data>
+  <data name="plEmailAddress.Text">
+    <value>Địa Chỉ Email</value>
+  </data>
+  <data name="plEmailAddress.Help">
+    <value>Nhập vào địa chỉ Email của người bạn muốn nhận thông báo lỗi.</value>
+  </data>
+  <data name="SendMessage.Text">
+    <value>Thông Điệp (không bắt buộc)</value>
+  </data>
+  <data name="SendMessage.Help">
+    <value>Kèm một thông điệp vào thông báo lỗi</value>
+  </data>
+  <data name="btnEmail.Text">
+    <value>Gửi Đi Những Thông Báo Lỗi Đã Được Chọn</value>
+  </data>
+  <data name="AddContent.Action">
+    <value>Thay Đổi Các Thiết Lập Nhật Ký</value>
+  </data>
+  <data name="NoEntries.Text">
+    <value>Không có mục nhật ký nào cả.</value>
+  </data>
+  <data name="Showing.Text">
+    <value>Hiển thị {0} đến {1} của {2}</value>
+  </data>
+  <data name="DeleteSuccess.Text">
+    <value>Những thông báo lỗi được chọn đã được xoá.</value>
+  </data>
+  <data name="EmailSuccess.Text">
+    <value>Email của bạn đã được gửi.</value>
+  </data>
+  <data name="EmailFailure.Text">
+    <value>Email của bạn đã &lt;b&gt;không&lt;/b&gt; được gửi.</value>
+  </data>
+  <data name="ServiceUnavailable.Text">
+    <value>Dịch vụ mạng tại DotNetNuke.com hiện không có.</value>
+  </data>
+  <data name="ServerName.Text">
+    <value>&lt;b&gt;Tên Máy Chủ&lt;/b&gt;: </value>
+  </data>
+  <data name="LogCleared.Text">
+    <value>Nhật ký đã được xoá.</value>
+  </data>
+  <data name="ClickRow.Text">
+    <value>Click vào một hàng để xem chi tiết.</value>
+  </data>
+  <data name="ExceptionCode.Text">
+    <value>Thông Báo Lỗi</value>
+  </data>
+  <data name="ItemCreatedCode.Text">
+    <value>Mục Được Tạo</value>
+  </data>
+  <data name="ItemUpdatedCode.Text">
+    <value>Mục Được Cập Nhật</value>
+  </data>
+  <data name="ItemDeletedCode.Text">
+    <value>Mục Được Xoá</value>
+  </data>
+  <data name="SuccessCode.Text">
+    <value>Quá Trình Thành Công</value>
+  </data>
+  <data name="FailureCode.Text">
+    <value>Hoạt Động Thất Bại</value>
+  </data>
+  <data name="AdminOpCode.Text">
+    <value>Hoạt Động Thông Thường Của Admin</value>
+  </data>
+  <data name="AdminAlertCode.Text">
+    <value>Cảnh Báo Admin</value>
+  </data>
+  <data name="HostAlertCode.Text">
+    <value>Cảnh Báo Host</value>
+  </data>
+  <data name="ToEmail.Text">
+    <value>Đến Địa Chỉ Email Đã Xác Định</value>
+  </data>
+  <data name="ControlTitle_.Text">
+    <value>Xem Nhật Ký</value>
+  </data>
+  <data name="ModuleHelp.Text">
+    <value>&lt;h1&gt;Về Chức Năng Xem Nhật Ký&lt;/h1&gt;&lt;p&gt;Cho phép bạn xem các mục nhật ký về các sự kiện của portal.&lt;/p&gt;</value>
+  </data>
+  <data name="SecurityException.Text">
+    <value>Lỗi Bảo Mật </value>
+  </data>
+</root>

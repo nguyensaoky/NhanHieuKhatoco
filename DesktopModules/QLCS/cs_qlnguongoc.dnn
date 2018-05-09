@@ -1,0 +1,33 @@
+<dotnetnuke version="3.0" type="Module">
+  <folders>
+    <folder>
+      <name>CS_QLNguonGoc</name>
+      <friendlyname>CS_QLNguonGoc</friendlyname>
+      <foldername>QLCS</foldername>
+      <modulename>CS_QLNguonGoc</modulename>
+      <description>CS_QLNguonGoc</description>
+      <version>01.00.00</version>
+      <businesscontrollerclass>
+      </businesscontrollerclass>
+      <modules>
+        <module>
+          <friendlyname>CS_QLNguonGoc</friendlyname>
+          <cachetime>0</cachetime>
+          <controls>
+            <control>
+              <title>NguonGoc Admin</title>
+              <src>DesktopModules/QLCS/nguongoc_admin.ascx</src>
+              <type>Edit</type>
+            </control>
+            <control>
+              <key>nguongoc_edit</key>
+              <title>NguonGoc Edit</title>
+              <src>DesktopModules/QLCS/nguongoc_edit.ascx</src>
+              <type>Edit</type>
+            </control>
+          </controls>
+        </module>
+      </modules>
+    </folder>
+  </folders>
+</dotnetnuke>

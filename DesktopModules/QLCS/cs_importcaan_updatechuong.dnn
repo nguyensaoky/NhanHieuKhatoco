@@ -1,0 +1,27 @@
+<dotnetnuke version="3.0" type="Module">
+  <folders>
+    <folder>
+      <name>CS_ImportCaAn_UpdateChuong</name>
+      <friendlyname>CS_ImportCaAn_UpdateChuong</friendlyname>
+      <folAnrname>QLCS</folAnrname>
+      <modulename>CS_ImportCaAn_UpdateChuong</modulename>
+      <description>CS_ImportCaAn_UpdateChuong</description>
+      <version>01.00.00</version>
+      <businesscontrollerclass>
+      </businesscontrollerclass>
+      <modules>
+        <module>
+          <friendlyname>CS_ImportCaAn_UpdateChuong</friendlyname>
+          <cachetime>0</cachetime>
+          <controls>
+            <control>
+              <title>Import CaAn UpdateChuong</title>
+              <src>DesktopModules/QLCS/importcaan_updatechuong.ascx</src>
+              <type>Edit</type>
+            </control>
+          </controls>
+        </module>
+      </modules>
+    </folder>
+  </folders>
+</dotnetnuke>

@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="ResMimeType">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="Version">
+    <value>1.0.0.0</value>
+  </resheader>
+  <resheader name="Reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="Writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="BasicSettings.Text">
+    <value>Thiết Lập Cơ Bản</value>
+  </data>
+  <data name="BasicSettingsDescription.Text">
+    <value>Ở mục này, bạn có thể đặt những thiết lập cơ bản cho chức danh này.</value>
+  </data>
+  <data name="RoleName.Text">
+    <value>Tên Chức Danh </value>
+  </data>
+  <data name="RoleName.Help">
+    <value>Nhập vào tên của chức danh.</value>
+  </data>
+  <data name="Description.Text">
+    <value>Mô tả</value>
+  </data>
+  <data name="Description.Help">
+    <value>Nhập vào một mô tả cho chức danh này.</value>
+  </data>
+  <data name="PublicRole.Text">
+    <value>Chức Danh Công Khai?</value>
+  </data>
+  <data name="PublicRole.Help">
+    <value>Chức Danh  Này Là Công Khai?</value>
+  </data>
+  <data name="AutoAssignment.Text">
+    <value>Tự Động Gán?</value>
+  </data>
+  <data name="AutoAssignment.Help">
+    <value>Liệu chức danh này có được gán một cách tự động cho các thành viên?</value>
+  </data>
+  <data name="AdvancedSettings.Text">
+    <value>Thiết Lập Nâng Cao</value>
+  </data>
+  <data name="AdvancedSettingsHelp.Text">
+    <value>Ở phần này, bạn có thể đặt những thiết lập nâng cao hơn cho chức danh</value>
+  </data>
+  <data name="ServiceFee.Text">
+    <value>Phí Dịch Vụ</value>
+  </data>
+  <data name="ServiceFee.Help">
+    <value>Nhập vào chi phí mà người dùng với chức danh này phải chi trả.</value>
+  </data>
+  <data name="BillingPeriod.Text">
+    <value>Giai Đoạn Thanh Toán (Mỗi)</value>
+  </data>
+  <data name="BillingPeriod.Help">
+    <value>Hai trường này được sử dụng liên hợp với nhau để nhập vào Giai Đoạn Thanh Toán. Vd 2 tuần, hoặc 1 tháng.</value>
+  </data>
+  <data name="TrialFee.Text">
+    <value>Chi Phí Dùng Thử</value>
+  </data>
+  <data name="TrialFee.Help">
+    <value>Nhập chi phí dùng thử cho người dùng cho chức danh  này</value>
+  </data>
+  <data name="TrialPeriod.Text">
+    <value>Quá Trình Dùng Thử(Mỗi)</value>
+  </data>
+  <data name="TrialPeriod.Help">
+    <value>Hai trường này được dùng kết hợp với nhau để nhập vào Quá trình Dùng thử. VD 2 tuần, hoặc 1 tháng.</value>
+  </data>
+  <data name="cmdManage.Text">
+    <value>Quản Lý Người Dùng trong chức danh này</value>
+  </data>
+  <data name="valRoleName.Text">
+    <value>&lt;br&gt;Bạn Phải Nhập Vào Một Tên Hợp Lệ</value>
+  </data>
+  <data name="valServiceFee1.Text">
+    <value>Phí dịch vụ vừa nhập không hợp lệ</value>
+  </data>
+  <data name="valServiceFee2.Text">
+    <value>&lt;br&gt;Chi Phí Dịch Vụ Phải Lớn Hơn Hoặc Bằng Không</value>
+  </data>
+  <data name="valBillingPeriod1.Text">
+    <value>&lt;br&gt;Giá Trị Quá Trình Chi Trả Nhập Vào Không Hợp Lệ</value>
+  </data>
+  <data name="valBillingPeriod2.Text">
+    <value>&lt;br&gt;Quá Trình Chi Trả Phải Lớn Hơn Không</value>
+  </data>
+  <data name="valTrialFee1.Text">
+    <value>&lt;br&gt;Chi Phí Dùng Thử Vừa Nhập Không Hợp Lệ</value>
+  </data>
+  <data name="valTrialFee2.Text">
+    <value>Phí dùng thử phải lớn hơn hoặc bằng không</value>
+  </data>
+  <data name="valTrialPeriod1.Text">
+    <value>&lt;br&gt;Giá Trị Quá Trình Dùng Thử Vừa Nhập Không Hợp Lệ</value>
+  </data>
+  <data name="valTrialPeriod2.Text">
+    <value>&lt;br&gt;Quá Trình Dùng Thử Phải Lớn Hơn Không</value>
+  </data>
+  <data name="ControlTitle_edit.Text">
+    <value>Thay Đổi Chức Danh Thành Viên</value>
+  </data>
+  <data name="ModuleHelp.Text">
+    <value>&lt;h1&gt;Về Thay Đổi Chức Danh Thành Viên&lt;/h1&gt;&lt;p&gt; Các quản trị viên có thể quản lý các chức danh thành viên được định nghĩa cho portal của  họ. Module cho phép bạn thêm vào một chức danh thành viên mới, thay đổi những chức danh thành viên hiện có, xoá đi một chức danh thành viên và quản lý người dùng gắn liền với các chức danh thành viên .&lt;/p&gt;</value>
+  </data>
+  <data name="plIcon.Help">
+    <value>Chọn một icon cho chức danh thành viên.</value>
+  </data>
+  <data name="plIcon.Text">
+    <value>Icon: </value>
+  </data>
+  <data name="plRoleGroups.Help">
+    <value>Chọn Nhóm cho chức danh thành viên này.</value>
+  </data>
+  <data name="plRoleGroups.Text">
+    <value>Nhóm </value>
+  </data>
+  <data name="plRSVPCode.Help">
+    <value>Nhập một Mã RSVP cho chức danh thành viên này. Mã này có thể được sử dụng để cung cấp một cách thức nhanh chóng cho thành viên để được tham gia vào một hoặc nhiều chức danh thành viên.</value>
+  </data>
+  <data name="plRSVPCode.Text">
+    <value>RSVP Code: </value>
+  </data>
+  <data name="DuplicateRole.Text">
+    <value>Tên cho nhóm mà bạn vừa chọn hiện đã có. Chức danh mới vì thế vẫn chưa được tạo.</value>
+  </data>
+</root>

@@ -1,0 +1,366 @@
+﻿using System;
+using System.Data;
+using System.Configuration;
+using System.Collections;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+using DotNetNuke.Services.Localization;
+using System.Collections.Generic;
+
+namespace DotNetNuke.Modules.QLCS
+{
+    public partial class casaude_edit : DotNetNuke.Entities.Modules.PortalModuleBase
+    {
+        private CaSauController csCont = new CaSauController();
+        private void BindControls()
+        {
+            DataTable dtChuong = csCont.LoadChuongByTenChuong("@KSS@@TP@");
+            ddlChuong.DataSource = dtChuong;
+            ddlChuong.DataTextField = "Chuong";
+            ddlChuong.DataValueField = "IDChuong";
+            ddlChuong.DataBind();
+            ddlChuong_SelectedIndexChanged(null, null);
+            
+            DataTable dtKA = csCont.LoadKhayAp(1);
+            ddlKhayAp.DataSource = dtKA;
+            ddlKhayAp.DataTextField = "TenKhayAp";
+            ddlKhayAp.DataValueField = "IDKhayAp";
+            ddlKhayAp.DataBind();
+
+            DataTable dtKU = csCont.LoadKhayUm();
+            ddlKhayUm.DataSource = dtKU;
+            ddlKhayUm.DataTextField = "Chuong";
+            ddlKhayUm.DataValueField = "IDChuong";
+            ddlKhayUm.DataBind();
+
+            DataTable dtPhongAp = csCont.LoadPhongAp(1);
+            ddlPhongAp.DataSource = dtPhongAp;
+            ddlPhongAp.DataValueField = "IDPhongAp";
+            ddlPhongAp.DataTextField = "TenPhongAp";
+            ddlPhongAp.DataBind();
+            ddlPhongAp.Items.Insert(0, new ListItem("-----", "0"));
+
+            DataTable dtNhanVien = csCont.LoadNhanVien(1);
+            ddlNhanVien.DataSource = dtNhanVien;
+            ddlNhanVien.DataTextField = "TenNhanVien";
+            ddlNhanVien.DataValueField = "IDNhanVien";
+            ddlNhanVien.DataBind();
+        }
+
+        private void LoadData(int TheoDoiDeID)
+        {
+            int SoTrungNoCu = 0;
+            DataTable tdd = csCont.LoadTheoDoiDeByID(TheoDoiDeID);
+            if (tdd.Rows.Count == 0)
+                return;
+            if (Convert.ToBoolean(tdd.Rows[0]["Lock"]))
+            {
+                Save.Visible = false;
+                Delete.Visible = false;
+            }
+            ddlChuong.SelectedValue = tdd.Rows[0]["Chuong"].ToString();
+            ddlChuong_SelectedIndexChanged(null, null);
+            ddlCaMe.SelectedValue = tdd.Rows[0]["CaMe"].ToString();
+            ddlNhanVien.SelectedOptionsValueList = tdd.Rows[0]["NhanVien"].ToString();
+            if (tdd.Rows[0]["NgayVaoAp"] != DBNull.Value)
+            {
+                txtNgayVaoAp.Text = ((DateTime)tdd.Rows[0]["NgayVaoAp"]).ToString("dd/MM/yyyy HH:mm:ss");
+            }
+            if(tdd.Rows[0]["KhayAp"] != DBNull.Value)
+            {
+                ddlKhayAp.SelectedValue = tdd.Rows[0]["KhayAp"].ToString();
+            }
+            if (tdd.Rows[0]["PhongAp"] != DBNull.Value)
+            {
+                ddlPhongAp.SelectedValue = tdd.Rows[0]["PhongAp"].ToString();
+            }
+            if (tdd.Rows[0]["TrongLuongTrungBQ"] != DBNull.Value)
+            {
+                txtTLTBQ.Text = tdd.Rows[0]["TrongLuongTrungBQ"].ToString();
+            }
+            if (tdd.Rows[0]["TrungDe"] != DBNull.Value)
+            {
+                txtTrungDe.Text = tdd.Rows[0]["TrungDe"].ToString();
+                SoTrungNoCu = int.Parse(txtTrungDe.Text);
+            }
+            if (tdd.Rows[0]["TrungVo"] != DBNull.Value)
+            {
+                txtTrungVo.Text = tdd.Rows[0]["TrungVo"].ToString();
+                SoTrungNoCu -= int.Parse(txtTrungVo.Text);
+            }
+            if (tdd.Rows[0]["TrungKhongPhoi"] != DBNull.Value)
+            {
+                txtTrungKhongPhoi.Text = tdd.Rows[0]["TrungKhongPhoi"].ToString();
+                SoTrungNoCu -= int.Parse(txtTrungKhongPhoi.Text);
+            }
+            if (tdd.Rows[0]["TrungChetPhoi1"] != DBNull.Value)
+            {
+                txtTrungChetPhoi1.Text = tdd.Rows[0]["TrungChetPhoi1"].ToString();
+                SoTrungNoCu -= int.Parse(txtTrungChetPhoi1.Text);
+            }
+            if (tdd.Rows[0]["TrungChetPhoi2"] != DBNull.Value)
+            {
+                txtTrungChetPhoi2.Text = tdd.Rows[0]["TrungChetPhoi2"].ToString();
+                SoTrungNoCu -= int.Parse(txtTrungChetPhoi2.Text);
+            }
+            if (tdd.Rows[0]["TrungThaiLoai"] != DBNull.Value)
+            {
+                SoTrungNoCu -= Convert.ToInt32(tdd.Rows[0]["TrungThaiLoai"]);
+            }
+            if (tdd.Rows[0]["NgayNo"] != DBNull.Value)
+            {
+                DateTime dtNgayNo = (DateTime)tdd.Rows[0]["NgayNo"];
+                txtNgayNo.Text = dtNgayNo.ToString("dd/MM/yyyy HH:mm:ss");
+                if (dtNgayNo < Config.NgayKhoaSo())
+                {
+                    Save.Visible = false;
+                    Delete.Visible = false;
+                }
+            }
+            if (tdd.Rows[0]["KhayUm"] != DBNull.Value)
+            {
+                ddlKhayUm.SelectedValue = tdd.Rows[0]["KhayUm"].ToString();
+            }
+            if (tdd.Rows[0]["TrongLuongConBQ"] != DBNull.Value)
+            {
+                txtTLCBQ.Text = tdd.Rows[0]["TrongLuongConBQ"].ToString();
+            }
+            if (tdd.Rows[0]["ChieuDaiBQ"] != DBNull.Value)
+            {
+                txtCDBQ.Text = Convert.ToDecimal(tdd.Rows[0]["ChieuDaiBQ"]).ToString("0.#");
+            }
+            if (tdd.Rows[0]["VongBungBQ"] != DBNull.Value)
+            {
+                txtVBBQ.Text = Convert.ToDecimal(tdd.Rows[0]["VongBungBQ"]).ToString("0.#");;
+            }
+            if (tdd.Rows[0]["Status"] != DBNull.Value)
+            {
+                chkKhongAp.Checked = Convert.ToInt32(tdd.Rows[0]["Status"]) == -1?true:false;
+            }
+            if (tdd.Rows[0]["Note"] != DBNull.Value)
+            {
+                txtNote.Text = tdd.Rows[0]["Note"].ToString();
+            }
+            hdSoTtrungNoCu.Value = SoTrungNoCu.ToString();
+        }
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                Page.ClientScript.RegisterClientScriptInclude("jquery", ResolveUrl("~/js/impromptu/jquery.js"));
+                if (!Page.IsPostBack)
+                {
+                    BindControls();
+                    Save.OnClientClick = "Blur(" + ddlNhanVien.ControlClientID + ");";
+                    lnkCancel.NavigateUrl = DotNetNuke.Common.Globals.NavigateURL(PortalSettings.ActiveTab.TabID, "");
+                    if (Request.QueryString["tddid"] != null)
+                    {
+                        hdIDTDD.Value = Request.QueryString["tddid"];
+                        LoadData(int.Parse(hdIDTDD.Value));
+                    }
+                    else
+                    {
+                        Delete.Visible = false;
+                    }
+                    LoadThaiLoaiTrungData(int.Parse(hdIDTDD.Value));
+                    Save.OnClientClick = "Blur(" + ddlNhanVien.ControlClientID + ");";
+                }
+                ddlNhanVien.CallingPage = this.Page;
+                ddlNhanVien.OnItemsSelected += new DotNetNuke.Modules.QLCS.MultiSelectDropDownDelegate(ddlNhanVien_OnItemsSelected);
+                if (!UserInfo.IsSuperUser && !UserInfo.IsInRole("Administrators") && !CaSauController.HasEditPermission(UserInfo.Roles, "QLCS"))
+                {
+                    Save.Visible = false;
+                    Delete.Visible = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                Response.Write(ex.Message);
+            }
+        }
+
+        private void LoadThaiLoaiTrungData(int IDTheoDoiDe)
+        {
+            DataTable tblThaiLoaiTrung = csCont.TheoDoiDe_GetThaiLoaiTrung(IDTheoDoiDe);
+            grvDanhSach.DataSource = tblThaiLoaiTrung;
+            grvDanhSach.DataBind();
+        }
+
+        protected void grvDanhSach_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                DataRow r = ((DataRowView)e.Row.DataItem).Row;
+                TextBox txtSoLuong = (TextBox)(e.Row.FindControl("txtSoLuong"));
+                Button btnSaveThaiLoaiTrung = (Button)(e.Row.FindControl("btnSaveThaiLoaiTrung"));
+                if (r["SoLuongTrungThaiLoai"] == DBNull.Value) txtSoLuong.Text = "0";
+                else txtSoLuong.Text = r["SoLuongTrungThaiLoai"].ToString();
+                btnSaveThaiLoaiTrung.CommandArgument = r["IDLyDoThaiLoaiTrung"].ToString();
+            }
+        }
+
+        protected void btnSave_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                System.Globalization.CultureInfo ci = System.Globalization.CultureInfo.CreateSpecificCulture("vi-VN");
+                TheoDoiDeInfo tdd = new TheoDoiDeInfo();
+                tdd.ID = Convert.ToInt32(hdIDTDD.Value);
+                tdd.CaMe = int.Parse(ddlCaMe.SelectedValue);
+                if (txtNgayVaoAp.Text != "")
+                    tdd.NgayVaoAp = DateTime.Parse(txtNgayVaoAp.Text, ci);
+                if (ddlKhayAp.SelectedValue != "0")
+                    tdd.KhayAp = int.Parse(ddlKhayAp.SelectedValue);
+                if (ddlPhongAp.SelectedValue != "0")
+                    tdd.PhongAp = int.Parse(ddlPhongAp.SelectedValue);
+                if (txtTLTBQ.Text != "")
+                    tdd.TrongLuongTrungBQ = int.Parse(txtTLTBQ.Text);
+                if (txtTrungDe.Text != "")
+                    tdd.TrungDe = int.Parse(txtTrungDe.Text);
+                if (txtTrungVo.Text != "")
+                    tdd.TrungVo = int.Parse(txtTrungVo.Text);
+                tdd.TrungThaiLoai = 0;
+                if (txtTrungKhongPhoi.Text != "")
+                    tdd.TrungKhongPhoi = int.Parse(txtTrungKhongPhoi.Text);
+                if (txtTrungChetPhoi1.Text != "")
+                    tdd.TrungChetPhoi1 = int.Parse(txtTrungChetPhoi1.Text);
+                if (txtTrungChetPhoi2.Text != "")
+                    tdd.TrungChetPhoi2 = int.Parse(txtTrungChetPhoi2.Text);
+                if (txtNgayNo.Text != "")
+                {
+                    tdd.NgayNo = DateTime.Parse(txtNgayNo.Text, ci);
+                    if (tdd.NgayNo < Config.NgayKhoaSo())
+                    {
+                        Page.ClientScript.RegisterStartupScript(typeof(string), "insertupdatefail", "alert('Ngày nở không được trước ngày khóa sổ!');", true);
+                        return;
+                    }
+                    if (tdd.NgayNo < tdd.NgayVaoAp)
+                    {
+                        Page.ClientScript.RegisterStartupScript(typeof(string), "insertupdatefail", "alert('Ngày vào ấp không được sau ngày nở!');", true);
+                        return;
+                    }
+                }
+                if (ddlKhayUm.SelectedValue != "0")
+                    tdd.KhayUm = int.Parse(ddlKhayUm.SelectedValue);
+                if (txtTLCBQ.Text != "")
+                    tdd.TrongLuongConBQ = int.Parse(txtTLCBQ.Text);
+                if (txtCDBQ.Text != "")
+                    tdd.ChieuDaiBQ = decimal.Parse(txtCDBQ.Text);
+                if (txtVBBQ.Text != "")
+                    tdd.VongBungBQ = decimal.Parse(txtVBBQ.Text);
+                //Tuong thich
+                tdd.Chet1_30Ngay = 0;
+                if (chkKhongAp.Checked)
+                {
+                    tdd.Status = -1;
+                    tdd.NgayNo = null;
+                    tdd.KhayUm = null;
+                    tdd.TrongLuongConBQ = null;
+                    tdd.ChieuDaiBQ = null;
+                    tdd.VongBungBQ = null;
+                }
+                else if(tdd.NgayNo == null)
+                {
+                    tdd.Status = 0;
+                }
+                else
+                {
+                    tdd.Status = 1;
+                }
+                tdd.Note = txtNote.Text;
+                int result;
+                string arrLyDoThaiLoaiTrung = "";
+                string arrSoLuong = "";
+                foreach (GridViewRow r in grvDanhSach.Rows)
+                {
+                    TextBox txtSoLuong = (TextBox)(r.FindControl("txtSoLuong"));
+                    Button btnSaveThaiLoaiTrung = (Button)(r.FindControl("btnSaveThaiLoaiTrung"));
+                    arrLyDoThaiLoaiTrung += "@" + btnSaveThaiLoaiTrung.CommandArgument + "@";
+                    arrSoLuong += "@" + txtSoLuong.Text + "@";
+                }
+                string arrNhanVien = "";
+                if(ddlNhanVien.SelectedOptionsValueList != "")
+                {
+                    arrNhanVien = "@" + ddlNhanVien.SelectedOptionsValueList.Trim().Replace(",", "@").Replace(" ", "@");
+                }
+                if (tdd.ID != 0)
+                {
+                    result = csCont.UpdateTheoDoiDe(tdd, UserId, CountSoTrungNo(), arrLyDoThaiLoaiTrung, arrSoLuong, arrNhanVien);
+                    if (result == 1) Page.ClientScript.RegisterStartupScript(typeof(string), "insertsuccess", "alert('Cập nhật thành công!');", true);
+                    else if (result == -1) Page.ClientScript.RegisterStartupScript(typeof(string), "insertsuccess", "alert('Không cập nhật được do đã có cá con chết hoặc giết mổ hoặc bán!');", true);
+                    else if (result == -2) Page.ClientScript.RegisterStartupScript(typeof(string), "insertsuccess", "alert('Cá mẹ không hợp lệ!');", true);
+                    else if (result == -3) Page.ClientScript.RegisterStartupScript(typeof(string), "insertsuccess", "alert('Ngày nở không hợp lệ!');", true);
+                    else if (result == -4) Page.ClientScript.RegisterStartupScript(typeof(string), "insertsuccess", "alert('Cá mẹ hoặc ngày nở không hợp lệ!');", true);
+                    else if (result == -5) Page.ClientScript.RegisterStartupScript(typeof(string), "insertsuccess", "alert('Số trứng nở mới ít hơn số trứng nở cũ: không hợp lệ!');", true);
+                    else Page.ClientScript.RegisterStartupScript(typeof(string), "insertsuccess", "alert('Cập nhật không thành công!');", true);
+                }
+                else
+                {
+                    int IDTDD = 0;
+                    result = csCont.InsertTheoDoiDe(tdd, UserId, arrLyDoThaiLoaiTrung, arrSoLuong, arrNhanVien, out IDTDD);
+                    hdIDTDD.Value = IDTDD.ToString();
+                    Delete.Visible = true;
+                    Page.ClientScript.RegisterStartupScript(typeof(string), "insertsuccess", "alert('Đã thêm xong!');", true);
+                }
+                //if (result == -1)
+                //{
+                //    Page.ClientScript.RegisterStartupScript(typeof(string), "insertupdatefail", "alert('Cập nhật không thành công!');", true);
+                //}
+                //else
+                //{
+                //    Page.ClientScript.RegisterStartupScript(typeof(string), "insertsuccess", "alert('Cập nhật thành công!');", true);
+                //}
+            }
+            catch (Exception ex)
+            {
+                Response.Write(ex.Message);
+            }
+        }
+
+        protected void btnDelete_Click(object sender, EventArgs e)
+        {
+            int IDTDD = int.Parse(hdIDTDD.Value);
+            int res = csCont.TheoDoiDe_Delete(IDTDD, UserId);
+            if (res == 1)
+            {
+                Page.ClientScript.RegisterStartupScript(typeof(string), "dadelete", "alert('Đã xóa!');", true);
+                Response.Redirect(DotNetNuke.Common.Globals.NavigateURL(PortalSettings.ActiveTab.TabID, "", "mid/" + this.ModuleId.ToString()));
+            }
+            else Page.ClientScript.RegisterStartupScript(typeof(string), "chuadelete", "alert('Xóa không được do đã có cá con chết hoặc giết mổ hoặc bán!');", true);
+        }
+
+        protected void ddlChuong_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DataTable dtCaMe = csCont.LoadCaSauMe_AllTrangThai_ByChuong(int.Parse(ddlChuong.SelectedValue));
+            ddlCaMe.DataSource = dtCaMe;
+            ddlCaMe.DataValueField = "IDCaSau";
+            ddlCaMe.DataTextField = "CaMe";
+            ddlCaMe.DataBind();
+            udpCaDe.Update();
+        }
+
+        private int CountSoTrungNo()
+        {
+            int TN = int.Parse(txtTrungDe.Text);
+            TN -= int.Parse(txtTrungVo.Text);
+            TN -= int.Parse(txtTrungKhongPhoi.Text);
+            TN -= int.Parse(txtTrungChetPhoi1.Text);
+            TN -= int.Parse(txtTrungChetPhoi2.Text);
+            foreach (GridViewRow r in grvDanhSach.Rows)
+            {
+                TextBox txtSoLuong = (TextBox)(r.FindControl("txtSoLuong"));
+                TN -= int.Parse(txtSoLuong.Text);
+            }
+            return TN;
+        }
+
+        private void ddlNhanVien_OnItemsSelected(object sender, DotNetNuke.Modules.QLCS.MultiSelectDropDownItemSelectedEventArgs args)
+        {
+        }
+    }
+}

@@ -1,0 +1,27 @@
+<dotnetnuke version="3.0" type="Module">
+  <folders>
+    <folder>
+      <name>CS_ImportNhapVatTu</name>
+      <friendlyname>CS_ImportNhapVatTu</friendlyname>
+      <foldername>QLCS</foldername>
+      <modulename>CS_ImportNhapVatTu</modulename>
+      <description>CS_ImportNhapVatTu</description>
+      <version>01.00.00</version>
+      <businesscontrollerclass>
+      </businesscontrollerclass>
+      <modules>
+        <module>
+          <friendlyname>CS_ImportNhapVatTu</friendlyname>
+          <cachetime>0</cachetime>
+          <controls>
+            <control>
+              <title>Import NhapVatTu</title>
+              <src>DesktopModules/QLCS/importnhapvattu.ascx</src>
+              <type>Edit</type>
+            </control>
+          </controls>
+        </module>
+      </modules>
+    </folder>
+  </folders>
+</dotnetnuke>

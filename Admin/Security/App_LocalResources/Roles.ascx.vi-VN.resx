@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="ResMimeType">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="Version">
+    <value>1.0.0.0</value>
+  </resheader>
+  <resheader name="Reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="Writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Name.Header">
+    <value>Tên</value>
+  </data>
+  <data name="Description.Header">
+    <value>Mô Tả</value>
+  </data>
+  <data name="Fee.Header">
+    <value>Chi Phí</value>
+  </data>
+  <data name="Every.Header">
+    <value>Mỗi</value>
+  </data>
+  <data name="Period.Header">
+    <value>Thời Hạn</value>
+  </data>
+  <data name="Trial.Header">
+    <value>Dùng Thử</value>
+  </data>
+  <data name="Public.Header">
+    <value>Công Khai</value>
+  </data>
+  <data name="Auto.Header">
+    <value>Tự Động</value>
+  </data>
+  <data name="AddContent.Action">
+    <value>Thêm Vai Trò Mới</value>
+  </data>
+  <data name="ControlTitle_.Text">
+    <value>Vai Trò An Ninh</value>
+  </data>
+  <data name="ModuleHelp.Text">
+    <value>&lt;h1&gt;Về Vai Trò&lt;/h1&gt;&lt;p&gt; Các quản trị viên có thể quản lý các vai trò an ninh được định nghĩa cho portal của họ. Module cho phép bạn thêm vào các vai trò an ninh mới, thay đổi các vai trò an ninh hiện có,  xoá các vai trò an ninh, và quản lý người sử dụng gắn liền với các vai trò an ninh.&lt;/p&gt;</value>
+  </data>
+  <data name="AddGroup.Action">
+    <value>Tạo Role Group</value>
+  </data>
+  <data name="plRoleGroups.Help">
+    <value>Chọn Role Group bạn muốn xem </value>
+  </data>
+  <data name="plRoleGroups.Text">
+    <value>Lọc Theo Role Group:</value>
+  </data>
+  <data name="UserRoles.Text">
+    <value>Quản Lý Thành Viên</value>
+  </data>
+  <data name="UserSettings.Action">
+    <value>Thiết Lập Thành Viên </value>
+  </data>
+</root>

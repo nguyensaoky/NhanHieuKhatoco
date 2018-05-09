@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="ResMimeType">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="Version">
+    <value>1.0.0.0</value>
+  </resheader>
+  <resheader name="Reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="Writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="cmdReIndex.Text">
+    <value>Chỉ Mục Lại Nội Dung</value>
+  </data>
+  <data name="ControlTitle_.Text">
+    <value>Quản Trị Tìm Kiếm</value>
+  </data>
+  <data name="SearchSettingsHelp">
+    <value>Quản Trị Tìm Kiếm cho phép bạn thiết lập các Thiết Lập Tìm Kiếm cho site của bạn.</value>
+  </data>
+  <data name="plMaxWordLength.Text">
+    <value>Độ Dài Từ Lớn Nhất:</value>
+  </data>
+  <data name="plMaxWordLength.Help">
+    <value>Nhập vào cỡ từ lớn nhất được gộp vào Chỉ mục</value>
+  </data>
+  <data name="plMinWordLength.Text">
+    <value>Độ Dài Từ Nhỏ Nhất:</value>
+  </data>
+  <data name="plMinWordLength.Help">
+    <value>Nhập vào độ dài từ nhỏ nhất được gộp vào Chỉ mục.</value>
+  </data>
+  <data name="plIncludeCommon.Text">
+    <value>Gộp Từ Phổ Biến:</value>
+  </data>
+  <data name="plIncludeCommon.Help">
+    <value>Kiểm tra xem bạn có muốn gồm những Từ Phổ Biến vào Chỉ Mục Tìm Kiếm</value>
+  </data>
+  <data name="plIncludeNumeric.Text">
+    <value>Gộp Số:</value>
+  </data>
+  <data name="plIncludeNumeric.Help">
+    <value>Kiểm tra xem bạn có muốn gộp các số vào Chỉ Mục Tìm Kiếm</value>
+  </data>
+  <data name="ModuleHelp.Text">
+    <value>&lt;h1&gt;Về Quản Trị Tìm Kiếm&lt;/h1&gt;&lt;p&gt;Quản Trị Tìm Kiếm cung cấp khả năng để quản lý những thiết lập tìm kiếm.&lt;/p&gt;</value>
+  </data>
+</root>

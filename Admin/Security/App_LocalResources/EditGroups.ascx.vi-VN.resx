@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="ResMimeType">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="Version">
+    <value>1.0.0.0</value>
+  </resheader>
+  <resheader name="Reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="Writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="plRoleGroupName.Text">
+    <value>Tên Nhóm:</value>
+  </data>
+  <data name="plRoleGroupName.Help">
+    <value>Nhập tên cho nhóm.</value>
+  </data>
+  <data name="plDescription.Text">
+    <value>Mô tả:</value>
+  </data>
+  <data name="plDescription.Help">
+    <value>Nhập một mô tả về nhóm.</value>
+  </data>
+  <data name="valRoleGroupName.Text">
+    <value>&lt;br&gt;Bạn Phải Nhập Vào Một Tên Hợp Lệ</value>
+  </data>
+  <data name="ControlTitle_editgroup.Text">
+    <value>Cấu Hình Nhóm</value>
+  </data>
+  <data name="ModuleHelp.Text">
+    <value>&lt;h1&gt;Về Việc Cấu Hình Nhóm&lt;/h1&gt;&lt;p&gt;Các quản trị có thể quản lý các chức danh người dùng được định nghĩa cho portal của họ. Module này cho phép bạn tạo ra nhóm mới, sửa đổi các nhóm hiện có và xóa các nhóm.&lt;/p&gt;</value>
+  </data>
+  <data name="DuplicateRoleGroup.Text">
+    <value>Một nhóm thành viên với cùng tên hiện đã có trong cơ sở dữ liệu. Nhóm mới vì thế vẫn chưa được tạo.</value>
+  </data>
+</root>

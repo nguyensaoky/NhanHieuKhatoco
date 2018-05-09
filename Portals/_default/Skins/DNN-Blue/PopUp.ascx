@@ -1,0 +1,2 @@
+<%@ Control language="c#" CodeBehind="~/Admin/Skins/Skin.cs" AutoEventWireup="true" Inherits="DotNetNuke.UI.Skins.Skin" %>
+<div class="contentpane" id="ContentPane" runat="server" style="width:97%;"></div>

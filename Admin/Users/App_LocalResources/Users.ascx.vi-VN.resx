@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <!-- 
+    Vietnamese Translation 2005 by Nguyen Viet Trung,  viechinguyen@gmail.com
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="ResMimeType">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="Version">
+    <value>1.0.0.0</value>
+  </resheader>
+  <resheader name="Reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="Writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Name.Header">
+    <value>Tên</value>
+  </data>
+  <data name="Username.Header">
+    <value>Tên Người Dùng</value>
+  </data>
+  <data name="Address.Header">
+    <value>Địa Chỉ</value>
+  </data>
+  <data name="Telephone.Header">
+    <value>Số Điện Thoại</value>
+  </data>
+  <data name="Email.Header">
+    <value>Email </value>
+  </data>
+  <data name="LastLogin.Header">
+    <value>Lần Đăng Nhập Gần Nhất</value>
+  </data>
+  <data name="Authorized.Header">
+    <value>Chấp Nhận</value>
+  </data>
+  <data name="DeleteUnauthorized.Text">
+    <value>Xoá Tài Khoản Không Được Chấp Nhận</value>
+  </data>
+  <data name="AddContent.Action">
+    <value>Thêm Người Dùng Mới</value>
+  </data>
+  <data name="ControlTitle_.Text">
+    <value>Tài Khoản Người Dùng</value>
+  </data>
+  <data name="Search.Text">
+    <value>Tìm Kiếm:</value>
+  </data>
+  <data name="RecordsPage.Text">
+    <value>Số Bản Ghi/Trang:</value>
+  </data>
+  <data name="First.Text">
+    <value>Đầu</value>
+  </data>
+  <data name="Next.Text">
+    <value>Tiếp</value>
+  </data>
+  <data name="Previous.Text">
+    <value>Trước</value>
+  </data>
+  <data name="Last.Text">
+    <value>Cuối</value>
+  </data>
+  <data name="CreatedDate.Header">
+    <value>Ngày Tham Gia</value>
+  </data>
+  <data name="DisplayDate.Text">
+    <value>Hiển Thị Ngày Tháng:</value>
+  </data>
+  <data name="ModuleHelp.Text">
+    <value>&lt;h1&gt;Về Module Quản Lý Thành Viên&lt;/h1&gt;&lt;p&gt;Các Quản trị viên có thể quản lý những thành viên đăng ký của họ. Module này cho phép bạn thêm vào những thành viên mới, thay đổi những thành viên hiện có, xoá thành viên, và quản lý Vai trò an ninh của thành viên.&lt;/p&gt;
+</value>
+  </data>
+  <data name="Biography.Text">
+    <value>Tiểu Sử</value>
+  </data>
+  <data name="Cell.Text">
+    <value>Di động</value>
+  </data>
+  <data name="City.Text">
+    <value>Thành Phố</value>
+  </data>
+  <data name="Country.Text">
+    <value>Nước</value>
+  </data>
+  <data name="Delete.Text">
+    <value>Xóa</value>
+  </data>
+  <data name="DeleteUnAuthorized.Action">
+    <value>Xóa Thành Viên Bị Từ Chối</value>
+  </data>
+  <data name="DisplayName.Header">
+    <value>Tên </value>
+  </data>
+  <data name="Fax.Text">
+    <value>Fax </value>
+  </data>
+  <data name="Filter.Text">
+    <value>A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z  </value>
+  </data>
+  <data name="FirstName.Header">
+    <value>Họ</value>
+  </data>
+  <data name="FirstName.Text">
+    <value>Họ</value>
+  </data>
+  <data name="IM.Text">
+    <value>IM </value>
+  </data>
+  <data name="LastName.Header">
+    <value>Tên</value>
+  </data>
+  <data name="LastName.Text">
+    <value>Tên</value>
+  </data>
+  <data name="ManageProfile.Action">
+    <value>Quản Lý Thuộc Tính Hồ Sơ</value>
+  </data>
+  <data name="MiddleName.Text">
+    <value>Tên Đệm</value>
+  </data>
+  <data name="PostalCode.Text">
+    <value>Mã Bưu Điện</value>
+  </data>
+  <data name="PreferredLocale.Text">
+    <value>Thiết Lập Địa Phương</value>
+  </data>
+  <data name="Prefix.Text">
+    <value>Tiền Tố</value>
+  </data>
+  <data name="Region.Text">
+    <value>Vùng/Miền</value>
+  </data>
+  <data name="Street.Text">
+    <value>Phố</value>
+  </data>
+  <data name="Suffix.Text">
+    <value>Hậu Tố</value>
+  </data>
+  <data name="Telephone.Text">
+    <value>Điện Thoại</value>
+  </data>
+  <data name="TimeZone.Text">
+    <value>Múi Giờ</value>
+  </data>
+  <data name="Unit.Text">
+    <value>Đơn Vị</value>
+  </data>
+  <data name="UserDeleted.Text">
+    <value>Thành Viên Đã Bị Xóa</value>
+  </data>
+  <data name="UserDeleteError.Text">
+    <value>Lỗi Xảy Ra Khi Xóa Thành Viên</value>
+  </data>
+  <data name="UserRoles.Text">
+    <value>Quản Lý Nhóm Thành Viên</value>
+  </data>
+  <data name="UserSettings.Action">
+    <value>Thiết Lập Người Dùng</value>
+  </data>
+  <data name="Website.Text">
+    <value>Website </value>
+  </data>
+  <data name="Email.Text">
+    <value>Email </value>
+  </data>
+  <data name="Username.Text">
+    <value>Tên Tài Khoản</value>
+  </data>
+</root>

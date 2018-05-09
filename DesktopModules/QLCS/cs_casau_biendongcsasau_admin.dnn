@@ -1,0 +1,27 @@
+<dotnetnuke version="3.0" type="Module">
+  <folders>
+    <folder>
+      <name>CS_BienDongCaSau_Admin</name>
+      <friendlyname>CS_BienDongCaSau_Admin</friendlyname>
+      <foldername>QLCS</foldername>
+      <modulename>CS_BienDongCaSau_Admin</modulename>
+      <description>CS_BienDongCaSau_Admin</description>
+      <version>01.00.00</version>
+      <businesscontrollerclass>
+      </businesscontrollerclass>
+      <modules>
+        <module>
+          <friendlyname>CS_BienDongCaSau_Admin</friendlyname>
+          <cachetime>0</cachetime>
+          <controls>
+            <control>
+              <title>QuanLy BienDong CaSau</title>
+              <src>DesktopModules/QLCS/biendongcasau_admin.ascx</src>
+              <type>View</type>
+            </control>
+          </controls>
+        </module>
+      </modules>
+    </folder>
+  </folders>
+</dotnetnuke>

@@ -1,0 +1,311 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="Copy of casauan_edit_thucan.ascx.cs" Inherits="DotNetNuke.Modules.QLCS.casauan_edit_thucan" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+<link href="<%= ModulePath + "style.css" %>" rel="stylesheet" type="text/css" />
+<script language="javascript" type="text/javascript">
+    var lastChecked = null;
+    function chon_click(event, chk) {
+        var chkboxes = jQuery('.ChkChon');
+        if(!lastChecked) {
+            lastChecked = chk;
+            return;
+        }
+        if (event.shiftKey)
+        {
+            var start = chkboxes.index(chk);
+            var end = chkboxes.index(lastChecked);
+            chkboxes.slice(Math.min(start,end), Math.max(start,end)+ 1).attr('checked', lastChecked.checked);
+        }
+        lastChecked = chk;
+    }
+    
+    function countchecked()
+    {
+        return jQuery(".ChkChon:checked").length;
+    }
+    
+    function SelectAll(CheckBoxControl)
+    {
+        if (CheckBoxControl.checked == true)
+        {
+            jQuery('.ChkChon').attr('checked', 'checked');
+        }
+        else if (CheckBoxControl.checked == false)
+        {
+            jQuery('.ChkChon').removeAttr('checked');
+        }
+    }
+    function format_number(dec,fix)
+    {
+	    fixValue = parseFloat(Math.pow(10,fix));
+	    retValue = parseInt(Math.round(dec * fixValue)) / fixValue;
+	    return retValue;
+    }
+
+    function setVal(lnk, value)
+    {
+        $('#' + lnk.replace("lnkDelKhoiLuong", "txtKhoiLuong")).val(value);
+    }
+    
+    function phanbothucan()
+    {
+        var fix = $('#txtThapPhan').val();
+        var Tong = parseFloat(jQuery('#<%=txtKhoiLuongPhanBo.ClientID%>').val());
+        var TongDoiChieu = 0;
+        var TongCa = 0;
+        var FirstTextBox;
+        var FoundFirstTextBox = 0;
+        $(".LabelSoLuong").each(function() {
+            if(!isNaN(this.innerHTML) && this.innerHTML.length!=0) {
+                if($('#' + $(this).attr('id').replace("lblSoLuong", "chkChon")).attr('checked'))
+                    TongCa += parseFloat(this.innerHTML);
+            } 
+        });
+        if(TongCa > 0)
+        {
+            $(".LabelSoLuong").each(function() {
+                if($('#' + $(this).attr('id').replace("lblSoLuong", "chkChon")).attr('checked'))
+                {
+                    var value = format_number(Tong*this.innerHTML/TongCa, fix);
+                    $('#' + $(this).attr('id').replace("lblSoLuong", "txtKhoiLuong")).val(value);
+                    TongDoiChieu = TongDoiChieu + value;
+                    if(FoundFirstTextBox == 0)
+                    {
+                        FirstTextBox = $(this).attr('id').replace("lblSoLuong", "txtKhoiLuong");
+                        FoundFirstTextBox = 1;
+                    }
+                }
+            });
+            var oldValue = parseFloat($('#' + FirstTextBox).val());
+            $('#' + FirstTextBox).val(format_number(oldValue + Tong - TongDoiChieu,fix));
+        }
+        jQuery('.ChkChon').removeAttr('checked');
+    }
+    
+    function sosanhTong()
+    {
+        var fix = $('#txtThapPhan').val();
+        var Tong = parseFloat(jQuery('#<%=txtKhoiLuong.ClientID%>').val());
+        var TongDoiChieu = 0;
+//        var TongCa = 0;
+//        $(".LabelSoLuong").each(function() {
+//            if(!isNaN(this.innerHTML) && this.innerHTML.length!=0) {
+//                //if($('#' + $(this).attr('id').replace("lblSoLuong", "chkChon")).attr('checked'))
+//                    TongCa += parseFloat(this.innerHTML);
+//            } 
+//        });
+        //if(TongCa > 0)
+        //{
+            $(".LabelSoLuong").each(function() {
+                //if($('#' + $(this).attr('id').replace("lblSoLuong", "chkChon")).attr('checked'))
+                //{
+                    var value = parseFloat($('#' + $(this).attr('id').replace("lblSoLuong", "txtKhoiLuong")).val());
+                    if(isNaN(value)) value = 0;
+                    TongDoiChieu = TongDoiChieu + value;
+                //}
+            });
+            if(format_number(Tong,fix) == format_number(TongDoiChieu,fix)) return true;
+            else
+            {
+                var r=confirm("Tổng thực tế: " + format_number(TongDoiChieu,fix) + " khác tổng xuất: " + Tong + "! Bạn vẫn muốn lưu?");
+                if (r==true)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        //}
+        //else
+        //{
+//            var r=confirm("Không có cá cho ăn! Bạn vẫn muốn lưu?");
+//            if (r==true)
+//            {
+                //return true;
+//            }
+//            else
+//            {
+//                return false;
+//            }
+        //}
+    }
+    
+    function tinhTong()
+    {
+        var fix = $('#txtThapPhan').val();
+        var TongDoiChieu = 0;
+
+        //var TongCa = 0;
+//        $(".LabelSoLuong").each(function() {
+//            if(!isNaN(this.innerHTML) && this.innerHTML.length!=0) {
+//                //if($('#' + $(this).attr('id').replace("lblSoLuong", "chkChon")).attr('checked'))
+//                    TongCa += parseFloat(this.innerHTML);
+//            } 
+//        });
+        //if(TongCa > 0)
+        //{
+        
+            $(".LabelSoLuong").each(function() {
+                //if($('#' + $(this).attr('id').replace("lblSoLuong", "chkChon")).attr('checked'))
+                //{
+                    var value = parseFloat($('#' + $(this).attr('id').replace("lblSoLuong", "txtKhoiLuong")).val());
+                    if(isNaN(value)) value = 0;
+                    TongDoiChieu = TongDoiChieu + value;
+                //}
+            });
+            alert(format_number(TongDoiChieu,fix));
+        //}
+        //else
+        //{
+            //alert("0");
+        //}
+    }
+    
+    function openwindow(url, name, width, height)
+    {
+        var leftVal = (screen.width - width) / 2;
+        var topVal = (screen.height - height) / 2;
+        window.open(url,'','height=' + height + ',width=' + width +',toolbar=no,status=no,linemenubar=no,scrollbars=yes,resizable=yes,modal=yes,left=' + leftVal + ',top=' + topVal);
+    }
+</script>
+<table width="100%">
+    <tr>
+        <td>Thời điểm cho ăn</td>
+        <td><asp:TextBox ID="txtThoiDiem" runat="server" Width="400" TabIndex="2"/>
+            <cc1:calendarextender id="calThoiDiem" runat="server" format="dd/MM/yyyy 12:00:00"
+                popupbuttonid="txtThoiDiem" targetcontrolid="txtThoiDiem"></cc1:calendarextender>
+        </td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>
+            <asp:Button ID="btnSaveCaSauAn" runat="server" OnClick="btnSaveCaSauAn_Click" CssClass="button" Text="Lưu"/>
+            <asp:HyperLink ID="lnkCancel" runat="server" Font-Bold="true" tabindex="13" CssClass="button">Thoát</asp:HyperLink>            
+        </td>
+    </tr>
+</table>
+<br />
+<table width="100%" runat="server" id="tblThucAnChuong">
+    <tr>
+        <td align="left">
+            <b>CHI TIẾT THỨC ĂN</b><br />
+            Hiển thị thức ăn cho cá ăn 
+            <asp:DropDownList ID="ddlRowStatus" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddlRowStatus_SelectedIndexChanged">
+                <asp:ListItem Value="1">hiện hành</asp:ListItem>
+                <asp:ListItem Value="0">đã xóa</asp:ListItem>
+            </asp:DropDownList>
+            <asp:GridView ID="grvThucAn" runat="server" AutoGenerateColumns="False" CssClass="mGrid" PagerStyle-CssClass="pgr" AlternatingRowStyle-CssClass="alt" Width="100%" OnRowDataBound="grvThucAn_RowDataBound">
+                <Columns>
+                    <asp:BoundField DataField="TenLoaiCa" HeaderText="Loại cá">
+                        <HeaderStyle ForeColor="Yellow"></HeaderStyle>
+                    </asp:BoundField>
+                    <asp:BoundField DataField="TenVatTu" HeaderText="Thức ăn">
+                        <HeaderStyle ForeColor="Yellow"></HeaderStyle>
+                    </asp:BoundField>
+                    <asp:TemplateField HeaderText="Khối lượng">
+                        <ItemTemplate>
+                            <asp:Label ID="lblKhoiLuong" runat="server"/>
+                        </ItemTemplate><ItemStyle HorizontalAlign="Right"></ItemStyle>
+                        <HeaderStyle ForeColor="Yellow"></HeaderStyle>
+                    </asp:TemplateField>
+                    <asp:BoundField DataField="SoLuongCa" HeaderText="Số lượng cá ăn">
+                        <HeaderStyle ForeColor="Yellow"></HeaderStyle>
+                        <ItemStyle HorizontalAlign="Right"></ItemStyle>
+                    </asp:BoundField>
+                    <asp:TemplateField HeaderText="Người cho ăn">
+                        <ItemTemplate>
+                            <asp:Label ID="lblNguoiChoAn" runat="server"/>
+                        </ItemTemplate>
+                        <HeaderStyle ForeColor="Yellow"></HeaderStyle>
+                    </asp:TemplateField>
+                    <asp:TemplateField>
+                        <ItemTemplate>
+                            <asp:Button ID="btnXemThayDoi" runat="server" Text="Xem thay đổi" OnClick="btnXemThayDoi_Click" CssClass="button" />
+                        </ItemTemplate><ItemStyle HorizontalAlign="Center"></ItemStyle>
+                    </asp:TemplateField>
+                </Columns>
+            </asp:GridView>
+            <b>Tổng thức ăn: </b>
+            <asp:Label ID="lblTongThucAn" runat="server" Font-Bold="true" ForeColor="Blue" Text="0"></asp:Label><br /><br />
+            <asp:HyperLink ID="lnkThuoc" runat="server" Font-Bold="true" tabindex="13" CssClass="button">XEM CHI TIẾT THUỐC THÚ Y</asp:HyperLink>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <br />
+            <b>CHI TIẾT THỨC ĂN TỪNG CHUỒNG</b><br />
+            <span style="vertical-align:top;">Loại cá:</span>
+            <asp:DropDownList style="vertical-align:top;" ID="ddlLoaiCa" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddlLoaiCa_SelectedIndexChanged"/>&nbsp;&nbsp;&nbsp;
+            <span style="vertical-align:top;">Thức ăn:</span>
+            <asp:DropDownList style="vertical-align:top;" ID="ddlThucAn" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddlThucAn_SelectedIndexChanged"/>&nbsp;&nbsp;
+            <span style="vertical-align:top;">(Tồn </span><asp:Label style="vertical-align:top;" ID="lblTon" runat="server"></asp:Label><span style="vertical-align:top;">)</span>&nbsp;
+            <span style="vertical-align:top;">Khối lượng:</span>
+            <asp:TextBox style="vertical-align:top;" ID="txtKhoiLuong" runat="server" Width="100">0</asp:TextBox>
+            <span style="vertical-align:top;">Số lượng cá ăn:</span>
+            <asp:TextBox style="vertical-align:top;" ID="txtSoCaAn" runat="server" Width="100" BackColor="#EEEEEE" ForeColor="Black">0</asp:TextBox>
+            <asp:ListBox ID="ddlNguoiChoAn" runat="server" SelectionMode="Multiple" AutoPostBack="false" Rows="4" ToolTip="Người cho ăn" EnableViewState="true"></asp:ListBox>
+            <br />
+            <asp:GridView ID="grvDanhSach" runat="server" AutoGenerateColumns="False" CssClass="mGrid" PagerStyle-CssClass="pgr" AlternatingRowStyle-CssClass="alt" OnRowDataBound="grvDanhSach_RowDataBound" Width="100%">
+                <Columns>
+                    <asp:TemplateField HeaderText="STT">
+                        <ItemTemplate>
+                            <asp:Label ID="lblSTT" runat="server" />
+                        </ItemTemplate>
+                        <ItemStyle HorizontalAlign="Right"></ItemStyle>
+                        <HeaderStyle ForeColor="Yellow"></HeaderStyle>
+                    </asp:TemplateField>
+                    <asp:BoundField DataField="IDChuong" HeaderText="ID Chuồng">
+                        <HeaderStyle ForeColor="Yellow"></HeaderStyle>
+                        <ItemStyle HorizontalAlign="Right"></ItemStyle>
+                    </asp:BoundField>
+                    <asp:BoundField DataField="Chuong" HeaderText="Chuồng">
+                        <HeaderStyle ForeColor="Yellow"></HeaderStyle>
+                    </asp:BoundField>
+                    <asp:TemplateField HeaderText="Số lượng cá">
+                        <ItemTemplate>
+                            <asp:Label ID="lblSoLuong" runat="server" class="LabelSoLuong"></asp:Label>
+                        </ItemTemplate>
+                        <ItemStyle HorizontalAlign="Right"></ItemStyle>
+                        <HeaderStyle ForeColor="Yellow"></HeaderStyle>
+                    </asp:TemplateField>
+                    <asp:TemplateField>
+                        <HeaderTemplate>
+                            <input type="CheckBox" name="SelectAllCheckBox" onclick="SelectAll(this);"/>
+                        </HeaderTemplate>
+                        <ItemTemplate>
+                            <input type="CheckBox" id="chkChon" runat="server" class="ChkChon"/>
+                        </ItemTemplate><ItemStyle HorizontalAlign="Center"></ItemStyle>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Khối lượng thức ăn">
+                        <ItemTemplate>
+                            <asp:TextBox ID="txtKhoiLuong" runat="server" class="TextKhoiLuong" style="text-align:right;"></asp:TextBox>
+                            <asp:HyperLink ID="lnkDelKhoiLuong" runat="server" CssClass="button">Xóa</asp:HyperLink>
+                        </ItemTemplate>
+                        <ItemStyle HorizontalAlign="Center"></ItemStyle>
+                        <HeaderStyle ForeColor="Yellow"></HeaderStyle>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Ghi chú">
+                        <ItemTemplate>
+                            <asp:TextBox ID="txtGhiChu" runat="server" Width="400"></asp:TextBox>
+                            <asp:Button ID="btnSaveGhiChu" runat="server" OnClick="btnSaveGhiChu_Click" CssClass="button" Text="Lưu"/>
+                        </ItemTemplate>
+                        <ItemStyle HorizontalAlign="Center"></ItemStyle>
+                        <HeaderStyle ForeColor="Yellow"></HeaderStyle>
+                    </asp:TemplateField>
+                </Columns>
+            </asp:GridView>
+            <br />
+            <asp:Button ID="btnSaveThucAn" runat="server" OnClientClick="return sosanhTong()" OnClick="btnSaveThucAn_Click" CssClass="button" tabindex="12" Text="Lưu"/>&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:HyperLink ID="lnkTinhTong" runat="server" CssClass="button" onclick="tinhTong();">Tính tổng lượng thức ăn các chuồng</asp:HyperLink>&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:HyperLink ID="lnkPhanBoThucAn" runat="server" CssClass="button" onclick="phanbothucan();">Phân bổ thức ăn cho các chuồng được chọn</asp:HyperLink>&nbsp;&nbsp;&nbsp;&nbsp;
+            Khối lượng <asp:TextBox ID="txtKhoiLuongPhanBo" runat="server" Width="100">0</asp:TextBox>
+            Số chữ số thập phân <input type="text" id="txtThapPhan" size="1" value="1"/>
+        </td>
+    </tr>
+</table>
+<asp:HiddenField ID="hdCaSauAn" runat="server" Value=""/>
+<asp:HiddenField ID="hdInitLoaiCa" runat="server" Value="0"/>
+<asp:HiddenField ID="hdInitThucAn" runat="server" Value="0"/>
+<asp:HiddenField ID="hdNgayAn" runat="server" Value=""/>
+<br /><br /><br /><br />

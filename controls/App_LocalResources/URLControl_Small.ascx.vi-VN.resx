@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="ResMimeType">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="Version">
+    <value>1.0.0.0</value>
+  </resheader>
+  <resheader name="Reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="Writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Type.Text">
+    <value>Kiểu Liên Kết:</value>
+  </data>
+  <data name="URLType.Text">
+    <value>URL ( Liên Kết Đến Một Tài Nguyên Bên Ngoài )</value>
+  </data>
+  <data name="TabType.Text">
+    <value>Trang ( Một Trang Trên Site Của Bạn )</value>
+  </data>
+  <data name="FileType.Text">
+    <value>File ( Một File Trên Site Của Bạn )</value>
+  </data>
+  <data name="NoneType.Text">
+    <value>None </value>
+  </data>
+  <data name="URL.Text">
+    <value>Vị Trí: ( Nhập Địa Chỉ Của Liên Kết )&lt;BR&gt;</value>
+  </data>
+  <data name="Select.Text">
+    <value>Chọn Một URL Có Sẵn</value>
+  </data>
+  <data name="Add.Text">
+    <value>Thêm Một URL Mới</value>
+  </data>
+  <data name="Delete.Text">
+    <value>Xóa URL Đã Chọn Khỏi Danh Sách&lt;BR&gt;</value>
+  </data>
+  <data name="Tab.Text">
+    <value>Chọn Một Trang Trên Site Của Bạn:&lt;BR&gt;</value>
+  </data>
+  <data name="Folder.Text">
+    <value>Vị Trí File:&lt;BR&gt;</value>
+  </data>
+  <data name="File.Text">
+    <value>Tên File:&lt;BR&gt;</value>
+  </data>
+  <data name="Upload.Text">
+    <value>Tải Lên File Mới</value>
+  </data>
+  <data name="Save.Text">
+    <value>Tải Lên File Đã Chọn&lt;BR&gt;</value>
+  </data>
+  <data name="Cancel.Text">
+    <value>Chọn Một File Có Sẵn</value>
+  </data>
+  <data name="Track.Text">
+    <value>Theo Dõi Số Lần Liên Kết Được Click?&lt;BR&gt;</value>
+  </data>
+  <data name="Log.Text">
+    <value>Ghi Lại Người Dùng, Ngày Và Thời Gian Cho Mỗi Click?&lt;BR&gt;</value>
+  </data>
+  <data name="NewWindow.Text">
+    <value>Mở Liên Kết Trên Cửa Sổ Mới?&lt;BR&gt;</value>
+  </data>
+  <data name="UploadError.Text">
+    <value>Kiểu file {1} không hợp lệ trong trường hợp này. Các kiểu file hợp lệ là: {0}</value>
+  </data>
+  <data name="NoPermission.Text">
+    <value>Bạn không được phép xem các file trên site</value>
+  </data>
+  <data name="Root.Text">
+    <value>Root </value>
+  </data>
+  <data name="User.Text">
+    <value>Nhập UserName của một Thành Viên Trang Web Của Bạn:&lt;BR&gt;</value>
+  </data>
+  <data name="UserType.Text">
+    <value>Thành Viên ( Một Thành Viên Trang Web Của Bạn )</value>
+  </data>
+</root>

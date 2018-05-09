@@ -1,0 +1,15 @@
+.menu1 {
+  color:white;
+  background: #000;
+  font-family:arial, helvetica, sans-serif;
+  font-weight:bold;
+  font-size:12px;
+}
+
+.menu2 {
+  background: #ffff00;
+  color: blue;
+  font-family:arial, helvetica, sans-serif;
+  font-size:12px;
+  line-height: 19px;
+}

@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="ResMimeType">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="Version">
+    <value>1.0.0.0</value>
+  </resheader>
+  <resheader name="Reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="Writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="UserName.Header">
+    <value>Tên Người Sử Dụng</value>
+  </data>
+  <data name="SecurityRole.Header">
+    <value>Vai Trò An Ninh</value>
+  </data>
+  <data name="ExpiryDate.Header">
+    <value>Ngày Hết Hạn</value>
+  </data>
+  <data name="plUsers.Text">
+    <value>Tên Người Dùng</value>
+  </data>
+  <data name="plUsers.Help">
+    <value>Chọn Tên Người Dùng</value>
+  </data>
+  <data name="plRoles.Text">
+    <value>Vai Trò An Ninh</value>
+  </data>
+  <data name="plRoles.Help">
+    <value>Chọn Vai Trò An Ninh</value>
+  </data>
+  <data name="plExpiryDate.Text">
+    <value>Ngày Hết Hạn</value>
+  </data>
+  <data name="plExpiryDate.Help">
+    <value>Xác Định Ngày Việc Gán Vai Trò Này Hết Hạn ( Tuỳ Chọn ). Không Nhập Vào Giá Trị Nào Có Nghĩa Là Không Có Ngày Hết Hạn.</value>
+  </data>
+  <data name="SendNotification.Text">
+    <value>Gửi Thông Báo?</value>
+  </data>
+  <data name="cmdAdd.Text">
+    <value>Thêm Vai Trò</value>
+  </data>
+  <data name="valExpiryDate.Text">
+    <value>&lt;br&gt;Ngày hết hạn không hợp lệ</value>
+  </data>
+  <data name="RoleRemoveError.Text">
+    <value>Bạn Không Thể Loại Bỏ Quyền Quản Trị Portal Hoặc Vai Trò Người Dùng Đã Được Đăng Ký</value>
+  </data>
+  <data name="ControlTitle_user roles.Text">
+    <value>Vai Trò Người Dùng</value>
+  </data>
+  <data name="UserTitle.Text">
+    <value>Quản Lý Vai Trò Cho Người Sử Dụng {0} (Id: {1})</value>
+  </data>
+  <data name="RoleTitle.Text">
+    <value>Quản Lý Người Dùng Trong Vai Trò {0} (Id: {1})</value>
+  </data>
+  <data name="ModuleHelp.Text">
+    <value>&lt;h1&gt;Về Quản Lý Vai Trò An Ninh&lt;/h1&gt;&lt;p&gt;Người Quản trị có thể quản lý các vai trò an ninh cho portal của họ. Module cho phép bạn quản lý người dùng gắn liền với các vai trò an ninh.&lt;/p&gt;</value>
+  </data>
+  <data name="AddUser.Text">
+    <value>Thêm Người Dùng</value>
+  </data>
+  <data name="AddRole.Text">
+    <value>Thêm Vai Trò</value>
+  </data>
+  <data name="cmdValidate.Text">
+    <value>Kiểm Tra</value>
+  </data>
+  <data name="EffectiveDate.Header">
+    <value>Ngày Áp Dụng</value>
+  </data>
+  <data name="plEffectiveDate.Help">
+    <value>Xác định ngày việc gán quyền này được thực hiện( tùy chọn ). Không nhập giá trị nào có nghĩa là bạn muốn việc gán  quyền này được thực hiện ngay lập tức.</value>
+  </data>
+  <data name="plEffectiveDate.Text">
+    <value>Ngày Áp Dụng</value>
+  </data>
+  <data name="valDates.Text">
+    <value>&lt;br&gt;Ngày Hết Hạn phải lớn hơn Ngày Áp Dụng</value>
+  </data>
+  <data name="valEffectiveDate.Text">
+    <value>&lt;br&gt; Ngày Áp Dụng không hợp lệ</value>
+  </data>
+</root>

@@ -1,0 +1,115 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="Copy of nhatky.ascx.cs" Inherits="DotNetNuke.Modules.QLCS.nhatky" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+<link href="<%= ModulePath + "style.css" %>" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="<%= ModulePath + "jquery.dataTables.css" %>"/>
+<link rel="stylesheet" type="text/css" href="<%= ModulePath + "dataTables.fixedColumns.css" %>"/>
+<style type="text/css" class="init">
+	th, td { white-space: nowrap; }
+	div.dataTables_wrapper {
+		width: 1000px;
+		margin: 0 auto;
+	}
+</style>
+
+<script type="text/javascript" language="javascript" src="<%= ModulePath + "jquery.js"%>"></script>
+<script type="text/javascript" language="javascript" src="<%= ModulePath + "jquery.dataTables.js"%>"></script>
+<script type="text/javascript" language="javascript" src="<%= ModulePath + "dataTables.fixedColumns.js"%>"></script>
+<script type="text/javascript" language="javascript" class="init">
+	$(document).ready(function() {
+		var table = $('#thongke').DataTable( {
+			scrollY:        "600px",
+			scrollX:        true,
+			scrollCollapse: true,
+			paging:         false,
+			bFilter:        false,
+			bInfo:          false,
+			bSort:          false
+		} );
+		new $.fn.dataTable.FixedColumns( table, {
+			leftColumns: 1
+		} );
+		//new $.fn.dataTableExt.sErrMode = 'throw';
+	} );
+</script>
+<table>
+    <tr><td colspan="2"><center><b>NHẬT KÝ CHĂN NUÔI</b></center><br /></td></tr>
+    <tr>
+        <td width="100">
+            <b>Theo ngày</b>
+        </td>
+        <td>
+            Ngày
+            <asp:TextBox ID="txtNgay" runat="server" Width="100" TabIndex="6"/>
+            <cc1:calendarextender id="calNgay" runat="server" format="dd/MM/yyyy" popupbuttonid="txtNgay" targetcontrolid="txtNgay"></cc1:calendarextender>
+            Khu chuồng
+            <asp:DropDownList ID="ddlKhuChuong" runat="server">
+                <asp:ListItem Value="KSS">Sinh sản</asp:ListItem>
+                <asp:ListItem Value="DDA">Dưỡng da</asp:ListItem>
+                <asp:ListItem Value="cacon">Cá con</asp:ListItem>
+                <asp:ListItem Value="TG">Trung gian</asp:ListItem>
+                <asp:ListItem Value="TP">Thương phẩm</asp:ListItem>
+                <asp:ListItem Value="KU">Khay úm</asp:ListItem>
+            </asp:DropDownList>
+            <asp:Button ID="btnExcelNgay" runat="server" Text="Xuất Excel" OnClick="btnExcelNgay_Click" CssClass="button"/> 
+            <asp:Button ID="btnViewNgay" runat="server" Text="Xem" OnClick="btnViewNgay_Click" CssClass="button"/>    
+        </td>
+    </tr>
+    <tr><td colspan="2"><br /></td></tr>
+    <tr>
+        <td width="100">
+            <b>Theo loại cá</b>
+        </td>
+        <td>
+            Ngày
+            <asp:TextBox ID="txtNgay1" runat="server" Width="100" TabIndex="6"/>
+            <cc1:calendarextender id="calNgay1" runat="server" format="dd/MM/yyyy" popupbuttonid="txtNgay1" targetcontrolid="txtNgay1"></cc1:calendarextender>
+            Loại cá
+            <asp:DropDownList ID="ddlLoaiCa" runat="server">
+            </asp:DropDownList>
+            <asp:Button ID="btnExcelDan" runat="server" Text="Xuất Excel" OnClick="btnExcelDan_Click" CssClass="button"/> 
+            <asp:Button ID="btnViewDan" runat="server" Text="Xem" OnClick="btnViewDan_Click" CssClass="button"/>    
+        </td>
+    </tr>
+    <tr><td colspan="2"><br /></td></tr>
+    <tr>
+        <td>
+            <b>Theo chuồng</b>
+        </td>
+        <td>
+            Chuồng
+            <asp:DropDownList ID="ddlChuong" runat="server">
+            </asp:DropDownList>
+            từ ngày
+            <asp:TextBox ID="txtTuNgay" runat="server" Width="100" TabIndex="6"/>
+            <cc1:calendarextender id="calTuNgay" runat="server" format="dd/MM/yyyy" popupbuttonid="txtTuNgay" targetcontrolid="txtTuNgay"></cc1:calendarextender>
+            đến ngày
+            <asp:TextBox ID="txtDenNgay" runat="server" Width="100" TabIndex="6"/>
+            <cc1:calendarextender id="calDenNgay" runat="server" format="dd/MM/yyyy" popupbuttonid="txtDenNgay" targetcontrolid="txtDenNgay"></cc1:calendarextender>
+            <asp:Button ID="btnExcelChuong" runat="server" Text="Xuất Excel" OnClick="btnExcelChuong_Click" CssClass="button"/>
+            <asp:Button ID="btnViewChuong" runat="server" Text="Xem" OnClick="btnViewChuong_Click" CssClass="button"/>    
+        </td>
+    </tr>
+    <tr><td colspan="2"><center><br /><b>NHẬT KÝ CHUYỂN CHUỒNG</b></center><br /></td></tr>
+    <tr>
+        <td>
+            <b>Theo chuồng</b>
+        </td>
+        <td>
+            Chuồng
+            <asp:DropDownList ID="ddlChuong1" runat="server">
+            </asp:DropDownList>
+            từ ngày
+            <asp:TextBox ID="txtTuNgay1" runat="server" Width="100" TabIndex="6"/>
+            <cc1:calendarextender id="calTuNgay1" runat="server" format="dd/MM/yyyy" popupbuttonid="txtTuNgay1" targetcontrolid="txtTuNgay1"></cc1:calendarextender>
+            đến ngày
+            <asp:TextBox ID="txtDenNgay1" runat="server" Width="100" TabIndex="6"/>
+            <cc1:calendarextender id="calDenNgay1" runat="server" format="dd/MM/yyyy" popupbuttonid="txtDenNgay1" targetcontrolid="txtDenNgay1"></cc1:calendarextender>
+            <asp:Button ID="btnViewChuyenChuong" runat="server" Text="Xem" OnClick="btnViewChuyenChuong_Click" CssClass="button"/>    
+        </td>
+    </tr>
+</table>
+<br /><br /><br />
+<asp:Literal ID="ltNgay" runat="server"></asp:Literal>  
+<asp:Literal ID="ltLoaiCa" runat="server"></asp:Literal>  
+<asp:Literal ID="ltChuong" runat="server"></asp:Literal>
+<asp:Literal ID="ltChuyenChuong" runat="server"></asp:Literal>    

@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="ResMimeType">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="Version">
+    <value>1.0.0.0</value>
+  </resheader>
+  <resheader name="Reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="Writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AddContent.Action">
+    <value>Thêm Khai Báo Module Mới</value>
+  </data>
+  <data name="ModuleName.Header">
+    <value>Tên Module</value>
+  </data>
+  <data name="Description.Header">
+    <value>Mô Tả</value>
+  </data>
+  <data name="ControlTitle_.Text">
+    <value>Khai Báo Module</value>
+  </data>
+  <data name="ModuleUpload.Action">
+    <value>Tải Lên Module Mới</value>
+  </data>
+  <data name="ModuleHelp.Text">
+    <value>&lt;h1&gt;Về Khai Báo Module&lt;/h1&gt;&lt;p&gt;Tài khoản Super User có thể quản lý các Desktop Module được cài đặt trên hệ thống.&lt;/p&gt;</value>
+  </data>
+  <data name="Version.Header">
+    <value>Phiên Bản</value>
+  </data>
+  <data name="cmdGo">
+    <value>Go </value>
+  </data>
+  <data name="lblInstall.Text">
+    <value>Bạn có thể cài đặt thêm cho ứng dụng của mình các tính năng mới. Các Tính năng gồm các Module để quản lý nội dung, các Skin để thay đổi giao diện đồ họa, và các Language Pack để cấu hình ứng dụng cho phù hợp với từng vùng khác nhau. Để có thể bảo vệ tính thống nhất của ứng dụng của bạn, bạn nên sử dụng các Tính năng từ những nguồn đáng tin cậy. Các site sau có cung cấp nhiều tính năng mà bạn có thể yên tâm sử dụng cho ứng dụng của mình.</value>
+  </data>
+  <data name="lblSite.Text">
+    <value>Site: </value>
+  </data>
+  <data name="lblUpdate.Text">
+    <value>Ứng dụng này chứa một Dịch Vụ Cập Nhật, có chức năng hiển thị một hình ảnh thông báo khi có một phiên bản mới của module. Click vào hình ảnh này, trình duyệt sẽ chuyển đến nơi bạn có thể tìm được module mình cần để sử dụng. Hãy lưu ý là Dịch Vụ Cập Nhật chỉ được áp dụng đối với các module được xác định là thỏa mãn một số tiêu chí nhất định.</value>
+  </data>
+  <data name="Upgrade.Header">
+    <value>Có&lt;br&gt;Cập Nhật?</value>
+  </data>
+  <data name="Available.Text">
+    <value>Các Module Có Sẵn</value>
+  </data>
+  <data name="cmdInstall.Text">
+    <value>Cài Đặt Các Module Được Chọn</value>
+  </data>
+  <data name="cmdRefresh.Text">
+    <value>Làm Mới Trang</value>
+  </data>
+  <data name="Features.Text">
+    <value>Các Chức Năng</value>
+  </data>
+  <data name="Installed.Text">
+    <value>Các Module Đã Được Cài</value>
+  </data>
+  <data name="Installing.Text">
+    <value>Đang Cài: </value>
+  </data>
+  <data name="lblAvailable.Text">
+    <value>Các module sau đi cùng với ứng dụng của bạn, nhưng chưa được cài.Để cài một module, chọn (các) module đó và click Cài Đặt.</value>
+  </data>
+</root>

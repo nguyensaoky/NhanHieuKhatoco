@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="ResMimeType">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="Version">
+    <value>1.0.0.0</value>
+  </resheader>
+  <resheader name="Reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="Writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="cmdCreate.Text">
+    <value>Tạo</value>
+  </data>
+  <data name="LogTitle.Text">
+    <value>Nhật Ký Private Assembly</value>
+  </data>
+  <data name="LOG.MESSAGE.Success">
+    <value>&lt;p&gt;Tạo Private Assembly thành công:  {0}&lt;/p&gt;</value>
+  </data>
+  <data name="LOG.MESSAGE.Error">
+    <value>&lt;p&gt;Có lỗi xảy ra trong khi tạo Private Assembly. Hãy xem lại nhật ký dưới đây để biết thêm chi tiết.&lt;/p&gt;</value>
+  </data>
+  <data name="ControlTitle_package.Text">
+    <value>Tạo Private Assembly</value>
+  </data>
+  <data name="lblLink.Text">
+    <value>Các Private Assembly có thể được tải xuống từ thư mục &lt;i&gt;"Host Root"&lt;/i&gt; sử dụng &lt;a href="{0}"&gt;Quản Lý File&lt;/a&gt;</value>
+  </data>
+  <data name="plFileName.Text">
+    <value>Tên File:</value>
+  </data>
+  <data name="plFileName.Help">
+    <value>Bạn có thể tùy chọn đưa ra một file cho file zip được tạo. Tên mặc định là 'ModuleName.zip'</value>
+  </data>
+  <data name="plSource.Text">
+    <value>Gộp Mã Nguồn?</value>
+  </data>
+  <data name="plSource.Help">
+    <value>Bạn có thể tùy chọn gộp file mã nguồn vào gói.</value>
+  </data>
+  <data name="Create.ErrorMessage">
+    <value>Hãy nhập vào tên cho gói Module của bạn</value>
+  </data>
+  <data name="plManifest.Help">
+    <value>Bạn có thể tùy chọn tạo ra một file kê khai (*.dnn).  Nếu đã có file này nó cũng sẽ được gộp cùng với gói (.zip)</value>
+  </data>
+  <data name="plManifest.Text">
+    <value>Tạo File Kê Khai?</value>
+  </data>
+  <data name="plPrivate.Help">
+    <value>Bạn có thể chỉ ra module có hỗ trợ việc cài đặt vào một thư mục con trong thư mục assembly mặc định (vd \bin\Modules thay cho \bin).</value>
+  </data>
+  <data name="plPrivate.Text">
+    <value>Hỗ Trợ Thư Mục Private Assembly Riêng?</value>
+  </data>
+</root>

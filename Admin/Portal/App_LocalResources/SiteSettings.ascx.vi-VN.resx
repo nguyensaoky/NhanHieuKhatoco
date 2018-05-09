@@ -1,0 +1,321 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="ResMimeType">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="Version">
+    <value>1.0.0.0</value>
+  </resheader>
+  <resheader name="Reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="Writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="BasicSettings.Text">
+    <value>Thiết Lập Cơ Bản</value>
+  </data>
+  <data name="BasicSettingsHelp.Text">
+    <value>Ở phần này, bạn có thể đặt những thiết lập cơ bản cho site của bạn.</value>
+  </data>
+  <data name="SiteDetails.Text">
+    <value>Chi Tiết Site</value>
+  </data>
+  <data name="plPortalName.Text">
+    <value>Tiêu Đề:</value>
+  </data>
+  <data name="plPortalName.Help">
+    <value>Đây là tiêu đề cho portal của bạn. Dòng chữ bạn nhập vào sẽ hiện lên trên Thanh Tiêu Đề.</value>
+  </data>
+  <data name="plDescription.Text">
+    <value>Mô Tả:</value>
+  </data>
+  <data name="plDescription.Help">
+    <value>Nhập một mô tả về site của bạn ở đây.</value>
+  </data>
+  <data name="plKeyWords.Text">
+    <value>Từ Khoá:</value>
+  </data>
+  <data name="plKeyWords.Help">
+    <value>Nhập một vài từ khoá cho site của bạn (ngăn cách nhau bởi dấu phảy). Những từ khoá này được sử dụng bởi các công cụ tìm kiếm để giúp chỉ mục đến site của bạn.</value>
+  </data>
+  <data name="Appearance.Text">
+    <value>Trình Diện</value>
+  </data>
+  <data name="plLogo.Text">
+    <value>Logo: </value>
+  </data>
+  <data name="plLogo.Help">
+    <value>Tuỳ thuộc vào skin được chọn, hình ảnh này sẽ xuất hiện ở góc trên bên trái của trang.</value>
+  </data>
+  <data name="plPortalSkin.Text">
+    <value>Portal Skin: </value>
+  </data>
+  <data name="plPortalSkin.Help">
+    <value>Skin được chọn sẽ được áp dụng cho tất cả các trang của site, trừ khi bị quá tải ở mức Trang.</value>
+  </data>
+  <data name="plPortalContainer.Text">
+    <value>Portal Container: </value>
+  </data>
+  <data name="plPortalContainer.Help">
+    <value>Container được chọn sẽ được áp dụng cho tất cả các module trên site, trừ khi bị quá tải ở mức Trang hoặc mức Module.</value>
+  </data>
+  <data name="plAdminSkin.Text">
+    <value>Admin Skin: </value>
+  </data>
+  <data name="plAdminSkin.Help">
+    <value>Skin được chọn sẽ được áp dụng cho tất cả các trang quản trị của site.</value>
+  </data>
+  <data name="plAdminContainer.Text">
+    <value>Admin Container: </value>
+  </data>
+  <data name="plAdminContainer.Help">
+    <value>Container được chọn sẽ được áp dụng cho tất cả các module quản trị của site.</value>
+  </data>
+  <data name="plBackground.Text">
+    <value>Hình Nền:</value>
+  </data>
+  <data name="plBackground.Help">
+    <value>Tuỳ thuộc vào skin, nếu được chọn, một hình ảnh sẽ được hiện ở nền của tất cả các trang.</value>
+  </data>
+  <data name="AdvancedSettings.Text">
+    <value>Thiết Lập Nâng Cao</value>
+  </data>
+  <data name="AdvancedSettingsHelp.Text">
+    <value>Ở phần này, bạn có thể đặt những thiết lập ở mức cao hơn cho site của bạn.</value>
+  </data>
+  <data name="SecuritySettings.Text">
+    <value>Thiết Lập An Ninh</value>
+  </data>
+  <data name="plUserRegistration.Text">
+    <value>Đăng Ký Người Dùng:</value>
+  </data>
+  <data name="plUserRegistration.Help">
+    <value>Kiểu đăng ký người sử dụng được cho phép của site</value>
+  </data>
+  <data name="None.Text">
+    <value>Không</value>
+  </data>
+  <data name="Private.Text">
+    <value>Riêng Tư</value>
+  </data>
+  <data name="Public.Text">
+    <value>Công Khai</value>
+  </data>
+  <data name="Verified.Text">
+    <value>Đã Kiểm Tra</value>
+  </data>
+  <data name="Pages.Text">
+    <value>Quản Lý Trang</value>
+  </data>
+  <data name="plSplashTabId.Text">
+    <value>Trang Splash:</value>
+  </data>
+  <data name="plSplashTabId.Help">
+    <value>Trang Splash cho site của bạn.</value>
+  </data>
+  <data name="plHomeTabId.Text">
+    <value>Trang Chủ:</value>
+  </data>
+  <data name="plHomeTabId.Help">
+    <value>Trang Chủ của site.</value>
+  </data>
+  <data name="plLoginTabId.Text">
+    <value>Trang Đăng Nhập:</value>
+  </data>
+  <data name="plLoginTabId.Help">
+    <value>Trang Đăng Nhập cho site của bạn.</value>
+  </data>
+  <data name="plUserTabId.Text">
+    <value>Trang Người Dùng:</value>
+  </data>
+  <data name="plUserTabId.Help">
+    <value>Trang Người Dùng của site.</value>
+  </data>
+  <data name="Payment.Text">
+    <value>Thiết Lập Thanh Toán</value>
+  </data>
+  <data name="plCurrency.Text">
+    <value>Tiền Tệ:</value>
+  </data>
+  <data name="plCurrency.Help">
+    <value>Loại Tiền tệ được sử dụng trên site.</value>
+  </data>
+  <data name="plProcessor.Text">
+    <value>Xử Lý Thanh Toán:</value>
+  </data>
+  <data name="plProcessor.Help">
+    <value>Xử Lý Thanh Toán được sử dụng để điều khiển các hoạt động thanh toán của site.</value>
+  </data>
+  <data name="ProcessorWebSite.Text">
+    <value>Đến Website Xử Lý Thanh Toán</value>
+  </data>
+  <data name="plUserId.Text">
+    <value>UserId Xử Lý Thanh Toán:</value>
+  </data>
+  <data name="plUserId.Help">
+    <value>UserID cho Xử Lý Thanh Toán.</value>
+  </data>
+  <data name="plPassword.Text">
+    <value>Password Xử Lý Thanh Toán:</value>
+  </data>
+  <data name="plPassword.Help">
+    <value>Password người sử dụng cho Xử Lý Thanh Toán.</value>
+  </data>
+  <data name="Other.Text">
+    <value>Những Thiết Lập Khác</value>
+  </data>
+  <data name="plFooterText.Text">
+    <value>Bản Quyền:</value>
+  </data>
+  <data name="plFooterText.Help">
+    <value>Nếu được hỗ trợ bởi skin dòng chữ Bản Quyền này sẽ được hiển thị ở trên site của bạn.</value>
+  </data>
+  <data name="plBannerAdvertising.Text">
+    <value>Banner Quảng Cáo:</value>
+  </data>
+  <data name="plBannerAdvertising.Help">
+    <value>Loại Banner quảng cáo nào bạn muốn có ở trên site của bạn.</value>
+  </data>
+  <data name="Site.Text">
+    <value>Site </value>
+  </data>
+  <data name="Host.Text">
+    <value>Host </value>
+  </data>
+  <data name="plAdministrator.Text">
+    <value>Quản Trị Viên:</value>
+  </data>
+  <data name="plAdministrator.Help">
+    <value>Người Dùng Quản Trị Viên của site.</value>
+  </data>
+  <data name="plDefaultLanguage.Text">
+    <value>Ngôn Ngữ Mặc Định:</value>
+  </data>
+  <data name="plDefaultLanguage.Help">
+    <value>Ngôn ngữ mặc định của site.</value>
+  </data>
+  <data name="plTimeZone.Text">
+    <value>Múi Giờ Portal:</value>
+  </data>
+  <data name="plTimeZone.Help">
+    <value>Múi giờ cho địa phương của site.</value>
+  </data>
+  <data name="HostSettings.Text">
+    <value>Thiết Lập Host</value>
+  </data>
+  <data name="plPortalAlias.Text">
+    <value>Portal Alias: </value>
+  </data>
+  <data name="plPortalAlias.Help">
+    <value>Portal Alias là url được dùng để tìm đến portal.</value>
+  </data>
+  <data name="plExpiryDate.Text">
+    <value>Ngày Hết Hạn:</value>
+  </data>
+  <data name="plExpiryDate.Help">
+    <value>Ngày Hết Hạn là ngày mà Hợp đồng Hosting đối với portal hết hạn.</value>
+  </data>
+  <data name="plHostFee.Text">
+    <value>Chi Phí Hosting:</value>
+  </data>
+  <data name="plHostFee.Help">
+    <value>Chi phí Hosting là khoản tiền phải trả hàng tháng để host site này.</value>
+  </data>
+  <data name="plHostSpace.Text">
+    <value>Đĩa Trống:</value>
+  </data>
+  <data name="plHostSpace.Help">
+    <value>Số lượng đĩa trống theo MB được phép của site.</value>
+  </data>
+  <data name="plSiteLogHistory.Text">
+    <value>Lịch Sử Nhật Ký Site (Ngày):</value>
+  </data>
+  <data name="plSiteLogHistory.Help">
+    <value>Số ngày hoạt động của site được giữ lại đối với site này.</value>
+  </data>
+  <data name="plDesktopModules.Text">
+    <value>Premium Modules </value>
+  </data>
+  <data name="plDesktopModules.Help">
+    <value>Module Premium chỉ có ở những portal nhất định</value>
+  </data>
+  <data name="StylesheetEditor.Text">
+    <value>Thay Đổi Stylesheet</value>
+  </data>
+  <data name="SaveStyleSheet.Text">
+    <value>Lưu Style Sheet</value>
+  </data>
+  <data name="RestoreDefaultStyleSheet.Text">
+    <value>Phục Hồi Style Sheet Mặc Định</value>
+  </data>
+  <data name="LoginInstructions.Text">
+    <value>Hướng Dẫn Đăng Nhập</value>
+  </data>
+  <data name="RegistrationInstructions.Text">
+    <value>Hướng Dẫn Đăng Ký</value>
+  </data>
+  <data name="NewUserSignupMessage.Text">
+    <value>Thông Điệp Đăng Ký Người Dùng Mới</value>
+  </data>
+  <data name="DeleteMessage.Text">
+    <value>Bạn Có Chắc Là Bạn Muốn Xoá Portal Này?</value>
+  </data>
+  <data name="SubmitGoogle.Text">
+    <value>Đưa Site Lên Google</value>
+  </data>
+  <data name="plHomeDirectory.Text">
+    <value>Thư Mục Gốc:</value>
+  </data>
+  <data name="plHomeDirectory.Help">
+    <value>Nhập vào Thư Mục Gốc cho site</value>
+  </data>
+  <data name="ControlTitle_.Text">
+    <value>Thiết Lập Site</value>
+  </data>
+  <data name="ControlTitle_edit.Text">
+    <value>Thay Đổi Portal</value>
+  </data>
+  <data name="SkinUpload.Text">
+    <value>Tải Lên Skin</value>
+  </data>
+  <data name="ContainerUpload.Text">
+    <value>Tải Lên Container</value>
+  </data>
+  <data name="ModuleHelp.Text">
+    <value>&lt;h1&gt;Về Thiết Việc Lập Site&lt;/h1&gt;&lt;p&gt;Module Thiết Lập Site tượng trưng cho những tuỳ chọn địa phương của portal của bạn. Những thiết lập địa phương cho phép bạn tuỳ biến portal của bạn để thoả mãn những yêu cầu thương mại của bạn.&lt;/p&gt;</value>
+  </data>
+  <data name="cmdGoogle.Text">
+    <value>Đưa Site Lên Google</value>
+  </data>
+  <data name="RestoreCCSMessage.Text">
+    <value>Bạn Có Chắc Là Bạn Muốn Phục Hồi Stylesheet Mặc Định (Mọi Thay Đổi Đối Với Stylesheet Hiện Tại Sẽ Bị Mất) ? </value>
+  </data>
+</root>

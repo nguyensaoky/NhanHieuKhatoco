@@ -1,0 +1,27 @@
+<dotnetnuke version="3.0" type="Module">
+  <folders>
+    <folder>
+      <name>CenIT-News MLCat</name>
+      <friendlyname>CenIT-News MLCat</friendlyname>
+      <foldername>MLNews</foldername>
+      <modulename>CenIT-News MLCat</modulename>
+      <description></description>
+      <version>01.00.00</version>
+      <businesscontrollerclass>
+      </businesscontrollerclass>
+      <modules>
+        <module>
+          <friendlyname>CenIT-News MLCat</friendlyname>
+          <cachetime>0</cachetime>
+          <controls>
+            <control>
+              <title>ML Cat</title>
+              <src>DesktopModules/MLNews/MLCat.ascx</src>
+              <type>Edit</type>
+            </control>
+          </controls>
+        </module>
+      </modules>
+    </folder>
+  </folders>
+</dotnetnuke>

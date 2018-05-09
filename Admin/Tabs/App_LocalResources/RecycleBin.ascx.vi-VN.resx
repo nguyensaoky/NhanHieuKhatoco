@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="ResMimeType">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="Version">
+    <value>1.0.0.0</value>
+  </resheader>
+  <resheader name="Reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="Writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Tabs.Text">
+    <value>Trang</value>
+  </data>
+  <data name="cmdRestoreTab.Help">
+    <value>Phục Hồi Trang Được Chọn</value>
+  </data>
+  <data name="cmdDeleteTab.Help">
+    <value>Xoá Trang Được Chọn</value>
+  </data>
+  <data name="Modules.Text">
+    <value>Module</value>
+  </data>
+  <data name="cmdRestoreModule.Help">
+    <value>Phục Hồi Những Module Được Chọn Đến Trang Đã Định</value>
+  </data>
+  <data name="cmdDeleteModule.Help">
+    <value>Xoá Vĩnh Viễn Module Được Chọn</value>
+  </data>
+  <data name="cmdEmpty.Text">
+    <value>Làm Sạch Thùng Rác</value>
+  </data>
+  <data name="DeleteTab.Text">
+    <value>Bạn Có Chắc Là Bạn Muốn Xoá Vĩnh Viễn Trang Này?</value>
+  </data>
+  <data name="DeleteModule.Text">
+    <value>Bạn Có Chắc Là Bạn Muốn Xoá Vĩnh Viễn Module Này?</value>
+  </data>
+  <data name="DeleteAll.Text">
+    <value>Bạn Có Chắc Là Bạn Muốn Xoá Vĩnh Viễn Tất Cả Các Trang Và Module?</value>
+  </data>
+  <data name="ParentTab.ErrorMessage">
+    <value>&lt;b&gt;{0}&lt;/b&gt; Trang Không Thể Bị Xoá Nếu Các Trang Con Của Nó Chưa Bị Xoá.</value>
+  </data>
+  <data name="ChildTab.ErrorMessage">
+    <value>&lt;b&gt;{0}&lt;/b&gt; Trang không thể được phục hồi khi trang mẹ của nó chưa được phục hồi.</value>
+  </data>
+  <data name="Tab.Text">
+    <value>Phục Hồi Đến Trang</value>
+  </data>
+  <data name="TabHelp.Text">
+    <value>Module Sẽ Được Phục Hồi Cho Trang Đã Chọn</value>
+  </data>
+  <data name="ControlTitle_.Text">
+    <value>Thùng Rác</value>
+  </data>
+  <data name="cmdRestoreTab.Text">
+    <value>Phục Hồi Trang Được Chọn</value>
+  </data>
+  <data name="cmdDeleteTab.Text">
+    <value>Xoá Trang Được Chọn</value>
+  </data>
+  <data name="ModuleHelp.Text">
+    <value>&lt;h1&gt;Về Thùng Rác&lt;/h1&gt;&lt;p&gt;Công cụ Thùng Rác cung cấp một giao diện để phục hồi hoặc xoá vĩnh viễn các trang và các module.&lt;/p&gt;</value>
+  </data>
+</root>

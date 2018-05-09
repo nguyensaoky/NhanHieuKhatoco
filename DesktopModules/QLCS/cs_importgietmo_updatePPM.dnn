@@ -1,0 +1,27 @@
+<dotnetnuke version="3.0" type="Module">
+  <folders>
+    <folder>
+      <name>CS_ImportGietMo_UpdatePPM</name>
+      <friendlyname>CS_ImportGietMo_UpdatePPM</friendlyname>
+      <foldername>QLCS</foldername>
+      <modulename>CS_ImportGietMo_UpdatePPM</modulename>
+      <description>CS_ImportGietMo_UpdatePPM</description>
+      <version>01.00.00</version>
+      <businesscontrollerclass>
+      </businesscontrollerclass>
+      <modules>
+        <module>
+          <friendlyname>CS_ImportGietMo_UpdatePPM</friendlyname>
+          <cachetime>0</cachetime>
+          <controls>
+            <control>
+              <title>Khoa So</title>
+              <src>DesktopModules/QLCS/importgietmo_updatePPM.ascx</src>
+              <type>Edit</type>
+            </control>
+          </controls>
+        </module>
+      </modules>
+    </folder>
+  </folders>
+</dotnetnuke>

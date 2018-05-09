@@ -1,0 +1,27 @@
+<dotnetnuke version="3.0" type="Module">
+  <folders>
+    <folder>
+      <name>Redirect</name>
+      <friendlyname>Redirect</friendlyname>
+      <foldername>Redirect</foldername>
+      <modulename>Redirect</modulename>
+      <description>Redirect</description>
+      <version>01.00.00</version>
+      <businesscontrollerclass>
+      </businesscontrollerclass>
+      <modules>
+        <module>
+          <friendlyname>Redirect</friendlyname>
+          <cachetime>0</cachetime>
+          <controls>
+            <control>
+              <title></title>
+              <src>DesktopModules/Redirect/redirect.ascx</src>
+              <type>View</type>
+            </control>
+          </controls>
+        </module>
+      </modules>
+    </folder>
+  </folders>
+</dotnetnuke>

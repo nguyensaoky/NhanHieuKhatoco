@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="ResMimeType">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="Version">
+    <value>1.0.0.0</value>
+  </resheader>
+  <resheader name="Reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="Writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ControlTitle_.Text">
+    <value>Windows Authentication </value>
+  </data>
+  <data name="plAuthentication.Text">
+    <value>Windows Authentication? </value>
+  </data>
+  <data name="plAuthentication.Help">
+    <value>Nếu được chọn, Windows Authentication được mở trong portal này</value>
+  </data>
+  <data name="chkAuthentication.Text">
+    <value>
+    </value>
+  </data>
+  <data name="plSynchronizeRole.Text">
+    <value>Đồng Bộ Vai Trò?</value>
+  </data>
+  <data name="plSynchronizeRole.Help">
+    <value>Nếu chọn, vai trò thành viên sẽ được đồng bộ với nhóm vai trò Windows Active Directory mỗi lần người dùng đăng nhập</value>
+  </data>
+  <data name="chkSynchronizeRole.Text">
+    <value>
+    </value>
+  </data>
+  <data name="plSynchornizePassword.Text">
+    <value>Đồng Bộ Password?</value>
+  </data>
+  <data name="plSynchornizePassword.Help">
+    <value>Nếu chọn, password của thành viên sẽ được cập nhật với password của Windows (nếu 2 password không giống nhau) khi thành viên đăng nhập</value>
+  </data>
+  <data name="chkSynchronizePassword.Text">
+    <value>
+    </value>
+  </data>
+  <data name="plProvider.Text">
+    <value>Provider </value>
+  </data>
+  <data name="plProvider.Help">
+    <value>Chọn Authentication provider cho portal này</value>
+  </data>
+  <data name="plAuthenticationType.Text">
+    <value>Kiểu Authentication</value>
+  </data>
+  <data name="plAuthenticationType.Help">
+    <value>Chọn kiểu Authentication cho portal này (Khuyên Dùng Delegation)</value>
+  </data>
+  <data name="plRootDomain.Text">
+    <value>Domain Gốc:</value>
+  </data>
+  <data name="plRootDomain.Help">
+    <value>Domain gốc trong định dạng yourdomain.com hoặc DC=yourdomain,DC=com. Để trống giá trị này nếu bạn muốn lấy các đối tượng Active Directory từ gốc</value>
+  </data>
+  <data name="plUserName.Text">
+    <value>User Name: </value>
+  </data>
+  <data name="plUserName.Help">
+    <value>Tên Người Dùng, người được phép truy cập Active Directory</value>
+  </data>
+  <data name="plPassword.Text">
+    <value>Password: </value>
+  </data>
+  <data name="plPassword.Help">
+    <value>Password của tài khoản này</value>
+  </data>
+  <data name="plConfirm.Text">
+    <value>Xác Nhận Password:</value>
+  </data>
+  <data name="plConfirm.Help">
+    <value>Xác Nhận Password</value>
+  </data>
+  <data name="plEmailDomain.Text">
+    <value>Tên Miền Email:</value>
+  </data>
+  <data name="plEmailDomain.Help">
+    <value>Tên miền Email được sử dụng cho email của thành viên khi hệ thống mạng của bạn không có Windows Active Directory (Nên để trống)</value>
+  </data>
+  <data name="cmdUpdate.Text">
+    <value>Cập Nhật</value>
+  </data>
+  <data name="[Global Catalog Status].Text">
+    <value>Truy Cập Global Catalog:</value>
+  </data>
+  <data name="[Root Domain Status].Text">
+    <value>Kiểm Tra Domain Gốc:</value>
+  </data>
+  <data name="[LDAP Status].Text">
+    <value>Truy Cập LDAP:</value>
+  </data>
+  <data name="[Network Domains Status].Text">
+    <value>Tìm tất cả domain trong mạng:</value>
+  </data>
+  <data name="[LDAP Error Message].Text">
+    <value>Không thể truy cập LDAP để lấy thông tin về domain</value>
+  </data>
+  <data name="OK.Text">
+    <value>OK </value>
+  </data>
+  <data name="FAIL.Text">
+    <value>THẤT BẠI</value>
+  </data>
+  <data name="AuthProviderError.Text">
+    <value>Authentication provider mặc định trên file web.config chưa được cấu hình đúng cách. Thiết lập Authentication bị tắt.</value>
+  </data>
+  <data name="SameDomainError.Text">
+    <value>Tên miền của người dùng ({0}) giống với tên server ({1}). Thông thường điều này chỉ ra rằng server  không phải là thành viên của domain. Thiết lập Authentication bị đóng.</value>
+  </data>
+</root>

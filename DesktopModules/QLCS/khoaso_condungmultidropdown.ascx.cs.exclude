@@ -1,0 +1,127 @@
+﻿using System;
+using System.Data;
+using System.Configuration;
+using System.Collections;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+using DotNetNuke.Services.Localization;
+using System.Collections.Generic;
+using System.Data.SqlClient;
+
+namespace DotNetNuke.Modules.QLCS
+{
+    public partial class khoaso : DotNetNuke.Entities.Modules.PortalModuleBase
+    {
+        private void BindControls()
+        {
+            try
+            {
+                System.Globalization.CultureInfo ci = System.Globalization.CultureInfo.CreateSpecificCulture("vi-VN");
+                if (Config.NgayKhoaSo().HasValue) txtDate.Text = Config.NgayKhoaSo().Value.ToString("dd/MM/yyyy HH:mm:ss");
+                else txtDate.Text = "01/" + DateTime.Now.Month.ToString() + "/" + DateTime.Now.Year.ToString() + " 12:00:00";
+            }
+            catch (Exception ex)
+            {
+            }
+        }
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            //try
+            //{
+            //    if (!Page.IsPostBack)
+            //    {
+            //        BindControls();
+
+            //        DataTable dtLoaiDuLieu = new DataTable("LoaiDuLieu");
+            //        DataRow dr = null;
+            //        dtLoaiDuLieu.Columns.AddRange(new DataColumn[] { new DataColumn("ID"), new DataColumn("Description") });
+            //        dr = dtLoaiDuLieu.NewRow();
+            //        dr["ID"] = "CaSau_BienDong";
+            //        dr["Description"] = "Biến động cá";
+            //        dtLoaiDuLieu.Rows.Add(dr);
+            //        dr = dtLoaiDuLieu.NewRow();
+            //        dr["ID"] = "CaSauDe";
+            //        dr["Description"] = "Cá đẻ";
+            //        dtLoaiDuLieu.Rows.Add(dr);
+            //        dr = dtLoaiDuLieu.NewRow();
+            //        dr["ID"] = "CaSauAn";
+            //        dr["Description"] = "Cá ăn";
+            //        dtLoaiDuLieu.Rows.Add(dr);
+            //        dr = dtLoaiDuLieu.NewRow();
+            //        dr["ID"] = "GietMoCa";
+            //        dr["Description"] = "Giết mổ cá";
+            //        dtLoaiDuLieu.Rows.Add(dr);
+            //        dr = dtLoaiDuLieu.NewRow();
+            //        dr["ID"] = "ThuHoiDa";
+            //        dr["Description"] = "Thu hồi da";
+            //        dtLoaiDuLieu.Rows.Add(dr);
+            //        dr = dtLoaiDuLieu.NewRow();
+            //        dr["ID"] = "VatTu_BienDong";
+            //        dr["Description"] = "Biến động vật tư";
+            //        dtLoaiDuLieu.Rows.Add(dr);
+            //        ddlLoaiDuLieu.DataSource = dtLoaiDuLieu;
+            //        ddlLoaiDuLieu.DataValueField = "ID";
+            //        ddlLoaiDuLieu.DataTextField = "Description";
+            //        ddlLoaiDuLieu.DataBind();
+            //        ddlLoaiDuLieu.SelectedOptionsValueList = "CaSau_BienDong, CaSauDe, CaSauAn, GietMoCa, ThuHoiDa, VatTu_BienDong, ";
+            //    }
+            //    ddlLoaiDuLieu.CallingPage = this.Page;
+            //    ddlLoaiDuLieu.OnItemsSelected += new DotNetNuke.Modules.QLCS.MultiSelectDropDownDelegate(ddlLoaiDuLieu_OnItemsSelected);
+            //}
+            //catch (Exception ex)
+            //{
+            //    Response.Write(ex.Message);
+            //}
+        }
+
+        protected void btnKhoaSo_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                System.Globalization.CultureInfo ci = System.Globalization.CultureInfo.CreateSpecificCulture("vi-VN");
+                CaSauController cont = new CaSauController();
+                int result = cont.Config_SetNgayKhoaSo(DateTime.Parse(txtDate.Text.Trim(), ci));
+                if (result == -1)
+                {
+                    Page.ClientScript.RegisterStartupScript(typeof(string), "khoasofail", "alert('Khóa sổ không thành công');", true);
+                    return;
+                }
+                else
+                {
+                    Page.ClientScript.RegisterStartupScript(typeof(string), "khoasosuccess", "alert('Khóa sổ thành công!');", true);
+                }
+            }
+
+            catch (Exception ex)
+            {
+                Response.Write(ex.Message);
+            }
+        }
+
+        protected void btnMoKhoa_Click(object sender, EventArgs e)
+        {
+            CaSauController cont = new CaSauController();
+            //string l = ddlLoaiDuLieu.SelectedOptionsValueList;
+            //if(l != "")
+            //{
+            //    string strLoaiDuLieu = "@" + l.Replace(", ", "@@").Remove(l.Length - 1);
+            //    cont.UnLock(strLoaiDuLieu);
+            //}
+            string l = "";
+            foreach (ListItem i in lstLoaiDuLieu.Items)
+            {
+                if (i.Selected) l += "@" + i.Value + "@";
+            }
+            if (l != "") cont.UnLock(l);
+        }
+
+        //private void ddlLoaiDuLieu_OnItemsSelected(object sender, DotNetNuke.Modules.QLCS.MultiSelectDropDownItemSelectedEventArgs args)
+        //{
+        //}
+    }
+}

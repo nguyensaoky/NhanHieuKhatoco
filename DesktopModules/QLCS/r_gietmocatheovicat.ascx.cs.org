@@ -1,0 +1,453 @@
+﻿using System;
+using System.Data;
+using System.Configuration;
+using System.Collections;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+using DotNetNuke.Services.Localization;
+using System.Collections.Generic;
+using System.Data.SqlClient;
+
+namespace DotNetNuke.Modules.QLCS
+{
+    public partial class r_gietmocatheovicat : DotNetNuke.Entities.Modules.PortalModuleBase
+    {
+        System.Globalization.CultureInfo ci = System.Globalization.CultureInfo.CreateSpecificCulture("vi-VN");
+        int scale = 0;
+
+        private void BindControls()
+        {
+            System.Globalization.CultureInfo ci = System.Globalization.CultureInfo.CreateSpecificCulture("vi-VN");
+            txtFromDate.Text = "01/" + DateTime.Now.Month.ToString() + "/" + DateTime.Now.Year.ToString();
+            txtToDate.Text = DateTime.Now.ToString("dd/MM/yyyy");
+        }
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            ci = System.Globalization.CultureInfo.CreateSpecificCulture(UserInfo.Profile.PreferredLocale);
+            try
+            {
+                scale = int.Parse(ConfigurationManager.AppSettings["QLCS_VatTu_SPGM_Scale"]);
+                if (!Page.IsPostBack)
+                {
+                    BindControls();
+                }
+            }
+            catch (Exception ex)
+            {
+                Response.Write(ex.Message);
+            }
+        }
+
+        protected void btnExcel_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                System.Globalization.CultureInfo ci = System.Globalization.CultureInfo.CreateSpecificCulture("vi-VN");
+                string filename = "GietMoCaTheoViCat";
+                string tieude = "";
+                string strSQL = "QLCS_BCTK_GietMo_ChiTietCa_new";
+                string strSQLSub = "QLCS_BCTK_GietMo_ChiTietSanPham_new";
+                string strSQLSPGM = "QLCS_VatTu_GetDanhMuc_OrderByMoTa";
+                SqlParameter[] param = new SqlParameter[2];
+                SqlParameter p = new SqlParameter("@LoaiVatTu", "SPGM");
+                if (txtFromDate.Text == "")
+                {
+                    txtFromDate.Text = DateTime.Now.ToString("dd/MM/yyyy");
+                }
+                if (txtToDate.Text == "")
+                {
+                    txtToDate.Text = DateTime.Now.ToString("dd/MM/yyyy");
+                }
+                param[0] = new SqlParameter("@dFrom", txtFromDate.Text);
+                param[1] = new SqlParameter("@dTo", txtToDate.Text);
+                filename += txtFromDate.Text + "___" + txtToDate.Text + ".xls";
+                filename = filename.Replace("/", "_");
+                tieude += "<b>SẢN PHẨM THU HỒI TỪ GIẾT MỔ CÁ TỪ NGÀY " + txtFromDate.Text + " ĐẾN NGÀY " + txtToDate.Text + "</b>";
+                DataTable dt = DotNetNuke.NewsProvider.DataProvider.SelectSP(strSQL, param);
+                SqlParameter[] paramSub = new SqlParameter[3];
+                paramSub[0] = new SqlParameter("@dFrom", txtFromDate.Text);
+                paramSub[1] = new SqlParameter("@dTo", txtToDate.Text);
+                paramSub[2] = new SqlParameter("@ZeroCol", "");
+                paramSub[2].Direction = ParameterDirection.Output;
+                paramSub[2].Size = 4000;
+                DataTable dtSub = DotNetNuke.NewsProvider.DataProvider.SelectSP(strSQLSub, paramSub);
+                string ZeroCol = paramSub[2].Value.ToString();
+                DataTable dtSPGM = DotNetNuke.NewsProvider.DataProvider.SelectSP(strSQLSPGM, p);
+                Response.ClearContent();
+                Response.ClearHeaders();
+                Response.AppendHeader("Content-Disposition", "attachment; filename=" + filename);
+                Response.ContentType = "application/vnd.ms-excel";
+                string strSPGM = "";
+                string strSPGM_STT = "";
+                int idx = 14;
+                foreach (DataRow spgm in dtSPGM.Rows)
+                {
+                    if (!ZeroCol.Contains("@" + spgm["IDVatTu"].ToString() + "@"))
+                    {
+                        strSPGM += "<td rowspan=2>" + spgm["TenVatTu"].ToString() + "</td>";
+                        strSPGM_STT += "<td>" + idx.ToString() + "</td>";
+                        idx++;
+                    }
+                }
+                System.Text.StringBuilder sb = new System.Text.StringBuilder();
+                sb.Append("<html><head><meta http-equiv='Content-Type' content='text/html; charset=utf-8'/></head><body width='100%' style='text-align:center;font-family:Times New Roman;'><br/><center style='font-weight:bold;font-size:15pt;'>" + tieude + "</center><br/>");
+                sb.Append("<table border='1'>");
+                sb.Append(@"<tr style='font-weight:bold; vertical-align:middle;'>
+                        <td rowspan=2>STT</td><td rowspan=2>Vi cắt</td><td rowspan=2>Mã</td><td rowspan=2>Chuồng</td><td rowspan=2>Ngày nhập chuồng</td><td rowspan=2>Số biên bản</td><td rowspan=2>Ngày xuống chuồng</td><td rowspan=2>Ngày Mổ</td><td rowspan=2>Tuổi cá</td><td rowspan=2>Loại cá</td><td rowspan=2>Phân loại</td><td rowspan=2>Người mổ</td><td rowspan=2>Khối lượng hơi (kg)</td><td rowspan=2>Khối lượng móc hàm (kg)</td><td colspan=2>SP.DA</td><td rowspan=2>Loại da</td><td rowspan=2>Phương pháp mổ</td>" + strSPGM + @"<td rowspan=2>Tỷ lệ móc hàm (%)</td><td rowspan=2>Ghi chú</td></tr>
+                        <tr style='font-weight:bold; vertical-align:middle;'><td>Khối lượng (kg)</td><td>Kích thước da (cm)</td></tr>");
+                bool recalc = true;
+                decimal tongTLDa = 0;
+                decimal totalTLDa = 0;
+                decimal tongTLeMocHam = 0;
+                int tongSoLuong = 0;
+                int i = 0;
+                int iSub = 0;
+                int stt = 0;
+                DateTime currDate = DateTime.MinValue;
+                decimal currHoi = 0; decimal currMocHam = 0;
+                decimal totalHoi = 0; decimal totalMocHam = 0;
+                decimal[] arrCurrKhoiLuongSanPham = new decimal[idx - 14];
+                decimal[] arrTotalKhoiLuongSanPham = new decimal[idx - 14];
+                for (int n = 0; n < idx - 14; n++)
+                {
+                    arrTotalKhoiLuongSanPham[n] = 0;
+                }
+                if (dt.Rows.Count > 0)
+                {
+                    currDate = Convert.ToDateTime(dt.Rows[0]["NgayMo"]);
+                }
+                while (i <= dt.Rows.Count)
+                {
+                    DataRow r = null;
+                    DataRow rSub = null;
+                    DateTime date;
+                    if (i == dt.Rows.Count)
+                    {
+                        date = DateTime.MaxValue;
+                    }
+                    else
+                    {
+                        r = dt.Rows[i];
+                        date = Convert.ToDateTime(r["NgayMo"]);
+                        if (recalc)
+                        {
+                            currHoi = Convert.ToDecimal(r["TongTrongLuongHoi"]);
+                            currMocHam = Convert.ToDecimal(r["TongTrongLuongMocHam"]);
+                            tongTLeMocHam = currMocHam / currHoi * 100;
+                            int index = 0;
+                            while (iSub < dtSub.Rows.Count)
+                            {
+                                rSub = dtSub.Rows[iSub];
+                                if (Convert.ToDateTime(rSub["NgayMo"]) == currDate)
+                                {
+                                    arrCurrKhoiLuongSanPham[index] = Convert.ToDecimal(rSub["KhoiLuong"]);
+                                    arrTotalKhoiLuongSanPham[index] += Convert.ToDecimal(rSub["KhoiLuong"]);
+                                    index++;
+                                    iSub++;
+                                }
+                                else break;
+                            }
+
+                            recalc = false;
+                        }
+                    }
+
+                    if (date == currDate)
+                    {
+                        string TuoiCa = "";
+                        //string PhanLoai = "Thương phẩm";
+                        if (r["NgayNo"] != DBNull.Value)
+                        {
+                            int SoNgay = Config.Days360(Convert.ToDateTime(r["NgayMo"]), Convert.ToDateTime(r["NgayNo"]));
+                            double dTuoiCa = (double)SoNgay / 30;
+                            //if (dTuoiCa < 18 && !r["TenLoaiCa"].ToString().Contains("2,3,4")) PhanLoai = "Loại thải";
+                            //TuoiCa = Math.Round(dTuoiCa, 2).ToString();
+                            TuoiCa = Config.ToXVal2(dTuoiCa, 2);
+                        }
+                        else
+                        {
+                            TuoiCa = "";
+                        }
+
+                        //if (Convert.ToDecimal(r["TrongLuongHoi"]) < 15 && !r["TenLoaiCa"].ToString().Contains("2,3,4")) PhanLoai = "Loại thải";
+
+                        tongSoLuong++;
+                        stt++;
+                        tongTLDa += (decimal)r["Da_TrongLuong"];
+                        sb.Append("<tr><td>" + stt.ToString() + "</td><td style='text-align:left;'>" + r["MaSoGoc"].ToString() + "</td><td style='text-align:left;'>" + r["MaSo"].ToString() + "</td><td style='text-align:left;'>" + r["Chuong"].ToString() + @"</td><td style='mso-number-format:""dd\\/mm\\/yyyy"";'>" + Convert.ToDateTime(r["NgayNhapChuong"]).ToString("dd/MM/yyyy") + "</td><td style='text-align:left;'>" + r["BienBan"].ToString() + @"</td><td style='mso-number-format:""dd\\/mm\\/yyyy"";'>" + Convert.ToDateTime(r["NgayXuongChuong"]).ToString("dd/MM/yyyy") + @"</td><td style='mso-number-format:""dd\\/mm\\/yyyy"";'>" + currDate.ToString("dd/MM/yyyy") + @"</td><td style='text-align:right;mso-number-format:""\#\,\#\#0\.00""'>" + TuoiCa + "</td>");
+                        sb.Append("<td style='text-align:left;'>" + r["TenLoaiCa"].ToString() + @"</td><td style='text-align:left;'>" + r["PhanLoai"].ToString() + @"</td><td align='left'>" + r["TenNguoiMo"].ToString() + @"</td><td style='text-align:right;mso-number-format:""\#\,\#\#0\.0""'>" + Config.ToXVal2(r["TrongLuongHoi"], 1) + @"</td><td style='text-align:right;mso-number-format:""\#\,\#\#0\.0""'>" + Config.ToXVal2(r["TrongLuongMocHam"], 1) + "</td><td style='text-align:right;'>" + Config.ToXVal2(r["Da_TrongLuong"], 0) + "</td><td style='text-align:right;'>" + r["Da_Bung"].ToString() + "</td><td>" + r["Da_PhanLoai"].ToString() + "</td><td style='text-align:left;'>" + r["PhuongPhapMo"].ToString() + "</td>");
+                        if (currHoi == 0)
+                        {
+                            foreach (decimal d in arrCurrKhoiLuongSanPham)
+                            {
+                                sb.Append("<td></td>");
+                            }
+                        }
+                        else
+                        {
+                            foreach (decimal d in arrCurrKhoiLuongSanPham)
+                            {
+                                sb.Append(@"<td style='text-align:right;mso-number-format:""\#\,\#\#0\.00""'>" + Config.ToXVal2(d * Convert.ToDecimal(r["TrongLuongHoi"]) / currHoi, scale + 1) + "</td>");
+                            }
+                        }
+                        sb.Append(@"<td style='text-align:right;mso-number-format:""\#\,\#\#0\.00""'>" + Config.ToXVal2(((decimal)r["TrongLuongMocHam"]) / ((decimal)r["TrongLuongHoi"]) * 100, 2) + "</td><td></td></tr>");
+                    }
+                    else
+                    {
+                        sb.Append("<tr style='color: #FF0000;font-weight:bold; vertical-align:middle;'><td>T.C</td><td></td><td></td><td></td><td></td><td></td><td></td><td style='text-align:right;'>" + tongSoLuong.ToString() + @"</td><td></td><td></td><td></td><td></td><td style='text-align:right;mso-number-format:""\#\,\#\#0\.0""'>" + Config.ToXVal2(currHoi, 1) + @"</td><td style='text-align:right;mso-number-format:""\#\,\#\#0\.0""'>" + Config.ToXVal2(currMocHam, 1) + "</td><td style='text-align:right;'>" + Config.ToXVal2(tongTLDa, 0) + "</td><td></td><td></td><td></td>");
+                        foreach (decimal d in arrCurrKhoiLuongSanPham)
+                        {
+                            sb.Append(@"<td style='text-align:right;mso-number-format:""\#\,\#\#0\.00""'>" + Config.ToXVal2(d, scale + 1) + "</td>");
+                        }
+                        sb.Append(@"<td style='text-align:right;mso-number-format:""\#\,\#\#0\.00""'>" + Config.ToXVal2(tongTLeMocHam, 2) + "</td><td></td></tr>");
+                        sb.Append("<tr style='color: #FF0000;font-weight:bold; vertical-align:middle;'><td>SPGM/<br/>KLHơi (%)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>");
+                        if (currHoi != 0)
+                        {
+                            foreach (decimal d in arrCurrKhoiLuongSanPham)
+                            {
+                                sb.Append(@"<td style='text-align:right;mso-number-format:""\#\,\#\#0\.00""'>" + Config.ToXVal2(d / currHoi * 100, 2) + "</td>");
+                            }
+                        }
+                        else
+                        {
+                            foreach (decimal d in arrCurrKhoiLuongSanPham)
+                            {
+                                sb.Append("<td style='text-align:right;'>0</td>");
+                            }
+                        }
+                        sb.Append("<td></td><td></td></tr>");
+                        totalHoi += currHoi;
+                        totalMocHam += currMocHam;
+                        totalTLDa += tongTLDa;
+                        if (date == DateTime.MaxValue) break;
+                        tongSoLuong = 0;
+                        tongTLDa = 0;
+                        tongTLeMocHam = 0;
+                        i--;
+                        currDate = date;
+                        recalc = true;
+                    }
+                    i++;
+                }
+                sb.Append("<tr style='color: #FF0000;font-weight:bold; vertical-align:middle;'><td>Tổng cộng</td><td></td><td></td><td></td><td></td><td></td><td></td><td style='text-align:right;'>" + Config.ToXVal2(stt, 0) + "</td><td></td><td></td><td></td><td></td><td style='text-align:right;'>" + Config.ToXVal2(totalHoi, 1) + "</td><td style='text-align:right;'>" + Config.ToXVal2(totalMocHam, 1) + "</td><td style='text-align:right;'>" + Config.ToXVal2(totalTLDa, 0) + "</td><td></td><td></td><td></td>");
+                foreach (decimal d in arrTotalKhoiLuongSanPham)
+                {
+                    sb.Append(@"<td style='text-align:right;mso-number-format:""\#\,\#\#0\.00""'>" + Config.ToXVal2(d, scale) + "</td>");
+                }
+                sb.Append("<td></td><td></td></tr>");
+                sb.Append("</table>");
+                sb.Append(Config.Footer(UserInfo.Profile.City, UserInfo.FirstName + " " + UserInfo.LastName));
+                sb.Append("</body></html>");
+                Response.Write(sb.ToString());
+            }
+
+            catch (Exception ex)
+            {
+                Response.Write(ex.Message);
+            }
+        }
+
+        protected void btnView_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                System.Globalization.CultureInfo ci = System.Globalization.CultureInfo.CreateSpecificCulture("vi-VN");
+                string tieude = "";
+                string strSQL = "QLCS_BCTK_GietMo_ChiTietCa_new";
+                string strSQLSub = "QLCS_BCTK_GietMo_ChiTietSanPham_new";
+                string strSQLSPGM = "QLCS_VatTu_GetDanhMuc_OrderByMoTa";
+                SqlParameter[] param = new SqlParameter[2];
+                SqlParameter p = new SqlParameter("@LoaiVatTu", "SPGM");
+                if (txtFromDate.Text == "")
+                {
+                    txtFromDate.Text = DateTime.Now.ToString("dd/MM/yyyy");
+                }
+                if (txtToDate.Text == "")
+                {
+                    txtToDate.Text = DateTime.Now.ToString("dd/MM/yyyy");
+                }
+                param[0] = new SqlParameter("@dFrom", txtFromDate.Text);
+                param[1] = new SqlParameter("@dTo", txtToDate.Text);
+                tieude += "<b>SẢN PHẨM THU HỒI TỪ GIẾT MỔ CÁ TỪ NGÀY " + txtFromDate.Text + " ĐẾN NGÀY " + txtToDate.Text + "</b>";
+                DataTable dt = DotNetNuke.NewsProvider.DataProvider.SelectSP(strSQL, param);
+                SqlParameter[] paramSub = new SqlParameter[3];
+                paramSub[0] = new SqlParameter("@dFrom", txtFromDate.Text);
+                paramSub[1] = new SqlParameter("@dTo", txtToDate.Text);
+                paramSub[2] = new SqlParameter("@ZeroCol", "");
+                paramSub[2].Direction = ParameterDirection.Output;
+                paramSub[2].Size = 4000;
+                DataTable dtSub = DotNetNuke.NewsProvider.DataProvider.SelectSP(strSQLSub, paramSub);
+                string ZeroCol = paramSub[2].Value.ToString();
+                DataTable dtSPGM = DotNetNuke.NewsProvider.DataProvider.SelectSP(strSQLSPGM, p);
+                string strSPGM = "";
+                int idx = 14;
+                foreach (DataRow spgm in dtSPGM.Rows)
+                {
+                    if (!ZeroCol.Contains("@" + spgm["IDVatTu"].ToString() + "@"))
+                    {
+                        strSPGM += "<td rowspan=2 align='center'>" + spgm["TenVatTu"].ToString() + "</td>";
+                        idx++;
+                    }
+                }
+                System.Text.StringBuilder sb = new System.Text.StringBuilder();
+                sb.Append("<center style='font-weight:bold;font-size:15pt;'>" + tieude + "</center><br/>");
+                sb.Append("<table id='thongke' class='stripe row-border order-column cell-border' cellspacing='0' width='100%'><thead>");
+                sb.Append(@"<tr style='font-weight:bold; vertical-align:middle;'>
+                        <th rowspan=2>STT</th><th rowspan=2>Vi cắt</th><th rowspan=2>Mã</th><th rowspan=2>Chuồng</th><th rowspan=2>Ngày nhập chuồng</th><th rowspan=2>Số biên bản</th><th rowspan=2>Ngày xuống chuồng</th><th rowspan=2>Ngày Mổ</th><th rowspan=2>Tuổi cá</th><th rowspan=2>Loại cá</th><th rowspan=2>Phân loại</th><th rowspan=2>Người mổ</th><th rowspan=2>Khối lượng hơi (kg)</th><th rowspan=2>Khối lượng móc hàm (kg)</th><th colspan=2>SP.DA</th><th rowspan=2>Loại da</th><th rowspan=2>Phương pháp mổ</th>" + strSPGM + @"<th rowspan=2>Tỷ lệ móc hàm (%)</th><th rowspan=2>Ghi chú</th></tr>
+                        <tr style='font-weight:bold; vertical-align:middle;'><th>Khối lượng (kg)</th><th>Kích thước da (cm)</th></tr></thead><tbody>");
+                bool recalc = true;
+                decimal tongTLDa = 0;
+                decimal totalTLDa = 0;
+                decimal tongTLeMocHam = 0;
+                int tongSoLuong = 0;
+                int i = 0;
+                int iSub = 0;
+                int stt = 0;
+                DateTime currDate = DateTime.MinValue;
+                decimal currHoi = 0; decimal currMocHam = 0;
+                decimal totalHoi = 0; decimal totalMocHam = 0;
+                decimal[] arrCurrKhoiLuongSanPham = new decimal[idx - 14];
+                decimal[] arrTotalKhoiLuongSanPham = new decimal[idx - 14];
+                for (int n = 0; n < idx-14; n++)
+                {
+                    arrTotalKhoiLuongSanPham[n] = 0;
+                }
+                if (dt.Rows.Count > 0)
+                {
+                    currDate = Convert.ToDateTime(dt.Rows[0]["NgayMo"]);
+                }
+                while (i <= dt.Rows.Count)
+                {
+                    DataRow r = null;
+                    DataRow rSub = null;
+                    DateTime date;
+                    if (i == dt.Rows.Count)
+                    {
+                        date = DateTime.MaxValue;
+                    }
+                    else
+                    {
+                        r = dt.Rows[i];
+                        date = Convert.ToDateTime(r["NgayMo"]);
+                        if (recalc)
+                        {
+                            currHoi = Convert.ToDecimal(r["TongTrongLuongHoi"]);
+                            currMocHam = Convert.ToDecimal(r["TongTrongLuongMocHam"]);
+                            tongTLeMocHam = currMocHam / currHoi * 100;
+                            int index = 0;
+                            while (iSub < dtSub.Rows.Count)
+                            {
+                                rSub = dtSub.Rows[iSub];
+                                if (Convert.ToDateTime(rSub["NgayMo"]) == currDate)
+                                {
+                                    arrCurrKhoiLuongSanPham[index] = Convert.ToDecimal(rSub["KhoiLuong"]);
+                                    arrTotalKhoiLuongSanPham[index] += Convert.ToDecimal(rSub["KhoiLuong"]);
+                                    index++;
+                                    iSub++;
+                                }
+                                else break;
+                            }
+
+                            recalc = false;
+                        }
+                    }
+
+                    if (date == currDate)
+                    {
+                        string TuoiCa = "";
+                        //string PhanLoai = "Thương phẩm";
+                        if (r["NgayNo"] != DBNull.Value)
+                        {
+                            int SoNgay = Config.Days360(Convert.ToDateTime(r["NgayMo"]), Convert.ToDateTime(r["NgayNo"]));
+                            double dTuoiCa = (double)SoNgay / 30;
+                            //if (dTuoiCa < 18 && !r["TenLoaiCa"].ToString().Contains("2,3,4")) PhanLoai = "Loại thải";
+                            //TuoiCa = Math.Round(dTuoiCa, 2).ToString();
+                            TuoiCa = Config.ToXVal2(dTuoiCa, 2);
+                        }
+                        else
+                        {
+                            TuoiCa = "";
+                        }
+
+                        //if (Convert.ToDecimal(r["TrongLuongHoi"]) < 15 && !r["TenLoaiCa"].ToString().Contains("2,3,4")) PhanLoai = "Loại thải";
+
+                        tongSoLuong++;
+                        stt++;
+                        tongTLDa += (decimal)r["Da_TrongLuong"];
+                        sb.Append("<tr><td style='text-align:center;'>" + stt.ToString() + "</td><td>" + r["MaSoGoc"].ToString() + "</td><td>" + r["MaSo"].ToString() + "</td><td>" + r["Chuong"].ToString() + @"</td><td style='text-align:center;mso-number-format:""dd\\/mm\\/yyyy"";'>" + Convert.ToDateTime(r["NgayNhapChuong"]).ToString("dd/MM/yyyy") + "</td><td>" + r["BienBan"].ToString() + @"</td><td style='text-align:center;mso-number-format:""dd\\/mm\\/yyyy"";'>" + Convert.ToDateTime(r["NgayXuongChuong"]).ToString("dd/MM/yyyy") + @"</td><td style='text-align:center;mso-number-format:""dd\\/mm\\/yyyy"";'>" + currDate.ToString("dd/MM/yyyy") + "</td><td style='text-align:right;'>" + TuoiCa + "</td>");
+                        sb.Append("<td>" + r["TenLoaiCa"].ToString() + "</td><td>" + r["PhanLoai"].ToString() + "</td><td align='left'>" + r["TenNguoiMo"].ToString() + "</td><td style='text-align:right;'>" + Config.ToXVal2(r["TrongLuongHoi"], 1) + "</td><td style='text-align:right;'>" + Config.ToXVal2(r["TrongLuongMocHam"], 1) + "</td><td style='text-align:right;'>" + Config.ToXVal2(r["Da_TrongLuong"], 0) + "</td><td style='text-align:right;'>" + r["Da_Bung"].ToString() + "</td><td style='text-align:center;'>" + r["Da_PhanLoai"].ToString() + "</td><td>" + r["PhuongPhapMo"].ToString() + "</td>");
+                        if (currHoi == 0)
+                        {
+                            foreach (decimal d in arrCurrKhoiLuongSanPham)
+                            {
+                                sb.Append("<td></td>");
+                            }
+                        }
+                        else
+                        {
+                            foreach (decimal d in arrCurrKhoiLuongSanPham)
+                            {
+                                sb.Append("<td style='text-align:right;'>" + Config.ToXVal2(d * Convert.ToDecimal(r["TrongLuongHoi"]) / currHoi, scale + 1) + "</td>");
+                            }
+                        }
+                        sb.Append("<td style='text-align:right;'>" + Config.ToXVal2(((decimal)r["TrongLuongMocHam"]) / ((decimal)r["TrongLuongHoi"]) * 100, 2) + "</td><td></td></tr>");
+                    }
+                    else
+                    {
+                        sb.Append("<tr style='color: #FF0000;font-weight:bold; vertical-align:middle;'><td>T.C</td><td></td><td></td><td></td><td></td><td></td><td></td><td style='text-align:right;'>" + tongSoLuong.ToString() + "</td><td></td><td></td><td></td><td></td><td style='text-align:right;'>" + Config.ToXVal2(currHoi, 1) + "</td><td style='text-align:right;'>" + Config.ToXVal2(currMocHam, 1) + "</td><td style='text-align:right;'>" + Config.ToXVal2(tongTLDa, 0) + "</td><td></td><td></td><td></td>");
+                        foreach (decimal d in arrCurrKhoiLuongSanPham)
+                        {
+                            sb.Append("<td style='text-align:right;'>" + Config.ToXVal2(d, scale + 1) + "</td>");
+                        }
+                        sb.Append("<td style='text-align:right;'>" + Config.ToXVal2(tongTLeMocHam, 2) + "</td><td></td></tr>");
+                        sb.Append("<tr style='color: #FF0000;font-weight:bold; vertical-align:middle;'><td>SPGM/<br/>KLHơi (%)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>");
+                        if (currHoi != 0)
+                        {
+                            foreach (decimal d in arrCurrKhoiLuongSanPham)
+                            {
+                                sb.Append("<td style='text-align:right;'>" + Config.ToXVal2(d / currHoi * 100, 2) + "</td>");
+                            }
+                        }
+                        else
+                        {
+                            foreach (decimal d in arrCurrKhoiLuongSanPham)
+                            {
+                                sb.Append("<td style='text-align:right;'>0</td>");
+                            }
+                        }
+                        sb.Append("<td></td><td></td></tr>");
+                        totalHoi += currHoi;
+                        totalMocHam += currMocHam;
+                        totalTLDa += tongTLDa;
+                        if (date == DateTime.MaxValue) break;
+                        tongSoLuong = 0;
+                        tongTLDa = 0;
+                        tongTLeMocHam = 0;
+                        i--;
+                        currDate = date;
+                        recalc = true;
+                    }
+                    i++;
+                }
+                sb.Append("<tr style='color: #FF0000;font-weight:bold; vertical-align:middle;'><td>Tổng cộng</td><td></td><td></td><td></td><td></td><td></td><td></td><td style='text-align:right;'>" + Config.ToXVal2(stt, 0) + "</td><td></td><td></td><td></td><td></td><td style='text-align:right;'>" + Config.ToXVal2(totalHoi, 1) + "</td><td style='text-align:right;'>" + Config.ToXVal2(totalMocHam, 1) + "</td><td style='text-align:right;'>" + Config.ToXVal2(totalTLDa, 0) + "</td><td></td><td></td><td></td>");
+                foreach (decimal d in arrTotalKhoiLuongSanPham)
+                {
+                    sb.Append("<td style='text-align:right;'>" + Config.ToXVal2(d, scale) + "</td>");
+                }
+                sb.Append("<td></td><td></td></tr>");
+                sb.Append("</tbody></table>");
+                lt.Text = sb.ToString();
+            }
+
+            catch (Exception ex)
+            {
+                Response.Write(ex.Message);
+            }
+        }
+    }
+}

@@ -1,0 +1,27 @@
+<dotnetnuke version="3.0" type="Module">
+  <folders>
+    <folder>
+      <name>CS_NhatKyLoaiCa</name>
+      <friendlyname>CS_NhatKyLoaiCa</friendlyname>
+      <foldername>QLCS</foldername>
+      <modulename>CS_NhatKyLoaiCa</modulename>
+      <description>CS_NhatKyLoaiCa</description>
+      <version>01.00.00</version>
+      <businesscontrollerclass>
+      </businesscontrollerclass>
+      <modules>
+        <module>
+          <friendlyname>CS_NhatKyLoaiCa</friendlyname>
+          <cachetime>0</cachetime>
+          <controls>
+            <control>
+              <title>NhatKyLoaiCa</title>
+              <src>DesktopModules/QLCS/nhatkytheoloaica.ascx</src>
+              <type>Edit</type>
+            </control>
+          </controls>
+        </module>
+      </modules>
+    </folder>
+  </folders>
+</dotnetnuke>

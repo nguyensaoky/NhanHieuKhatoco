@@ -1,0 +1,33 @@
+<dotnetnuke version="3.0" type="Module">
+  <folders>
+    <folder>
+      <name>CS_QLLyDoChet</name>
+      <friendlyname>CS_QLLyDoChet</friendlyname>
+      <foldername>QLCS</foldername>
+      <modulename>CS_QLLyDoChet</modulename>
+      <description>CS_QLLyDoChet</description>
+      <version>01.00.00</version>
+      <businesscontrollerclass>
+      </businesscontrollerclass>
+      <modules>
+        <module>
+          <friendlyname>CS_QLLyDoChet</friendlyname>
+          <cachetime>0</cachetime>
+          <controls>
+            <control>
+              <title>LyDoChet Admin</title>
+              <src>DesktopModules/QLCS/lydochet_admin.ascx</src>
+              <type>Edit</type>
+            </control>
+            <control>
+              <key>lydothailoaitrung_edit</key>
+              <title>LyDoChet Edit</title>
+              <src>DesktopModules/QLCS/lydochet_edit.ascx</src>
+              <type>Edit</type>
+            </control>
+          </controls>
+        </module>
+      </modules>
+    </folder>
+  </folders>
+</dotnetnuke>

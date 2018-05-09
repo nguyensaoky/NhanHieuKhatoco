@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <!-- 
+    Vietnamese Translation 2005 by Nguyen Viet Trung,  viechinguyen@gmail.com
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="ResMimeType">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="Version">
+    <value>1.0.0.0</value>
+  </resheader>
+  <resheader name="Reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="Writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="plBannerName.Text">
+    <value>Tên Banner</value>
+  </data>
+  <data name="plBannerName.Help">
+    <value>Nhập một tên cho Banner. Tên sẽ được hiển thị như là một dòng chữ thay thế cho hình ảnh hiển thị</value>
+  </data>
+  <data name="BannerName.ErrorMessage">
+    <value>Bạn Phải Nhập Một Tên Banner</value>
+  </data>
+  <data name="plBannerType.Text">
+    <value>Kiểu Banner</value>
+  </data>
+  <data name="plBannerType.Help">
+    <value>Chọn kiểu banner để hiển thị</value>
+  </data>
+  <data name="plBannerGroup.Text">
+    <value>Nhóm Banner</value>
+  </data>
+  <data name="plBannerGroup.Help">
+    <value>Nhập một nhóm banner nếu bạn muốn liên hệ một bộ banner</value>
+  </data>
+  <data name="plImage.Text">
+    <value>Hình Ảnh</value>
+  </data>
+  <data name="plImage.Help">
+    <value>Đối với các banner hình ảnh bạn nên xác định hình ảnh đó (hoặc tải lên hoặc đưa ra liên kết đến một hình ảnh có sẵn thông qua URL). Đối với banner dạng chữ bạn nên xác định URL bạn muốn hiển thị trên đoạn chữ quảng cáo.</value>
+  </data>
+  <data name="plWidth.Text">
+    <value>Độ Rộng</value>
+  </data>
+  <data name="plWidth.Help">
+    <value>Nhập độ rộng hình ảnh của banner. Điều này là tùy chọn đối với banner hình ảnh nhưng lại là cần thiết đối với banner Flash.</value>
+  </data>
+  <data name="plHeight.Text">
+    <value>Chiều Cao</value>
+  </data>
+  <data name="plHeight.Help">
+    <value>Nhập chiều cao của hình ảnh banner. Điều này là tuỳ chọn cho các banner hình ảnh nhưng lại là quan trọng cho các banner flash.</value>
+  </data>
+  <data name="plDescription.Text">
+    <value>Chữ/Script</value>
+  </data>
+  <data name="plDescription.Help">
+    <value>Nhập một mô tả cho banner. Nó sẽ được sử dụng như là một dòng chữ thay thế cho hình ảnh của banner hoặc như là dòng chữ thực của Banner chữ</value>
+  </data>
+  <data name="plURL.Text">
+    <value>URL </value>
+  </data>
+  <data name="plURL.Help">
+    <value>Nhập URL bạn muốn sử dụng để chuyển đến nếu người dùng click vào banner. Nếu bạn không nhập một URL, URl của Vendor sẽ được sử dụng</value>
+  </data>
+  <data name="plImpressions.Text">
+    <value>Impression</value>
+  </data>
+  <data name="plImpressions.Help">
+    <value>Nhập số Impression để hiển thị. Để không giới hạn Impression nhập số không (0).</value>
+  </data>
+  <data name="Impressions.ErrorMessage">
+    <value>&lt;br&gt;Bạn Phải Nhập Một Số Impression Hợp Lệ</value>
+  </data>
+  <data name="plCPM.Text">
+    <value>CPM/Giá</value>
+  </data>
+  <data name="plCPM.Help">
+    <value>CPM là giá cho 1000 Impression. Giá cũng có thể là một giá sàn.</value>
+  </data>
+  <data name="CPM.ErrorMessage">
+    <value>Bạn Phải Nhập Một CPM Hoặc Chi Phí Hợp Lệ</value>
+  </data>
+  <data name="plStartDate.Text">
+    <value>Ngày Bắt Đầu</value>
+  </data>
+  <data name="plStartDate.Help">
+    <value>Sử dụng Ngày bắt đầu để điều khiển khi nào chiến dịch quảng cáo bắt đầu</value>
+  </data>
+  <data name="plEndDate.Text">
+    <value>Ngày Kết Thúc</value>
+  </data>
+  <data name="plEndDate.Help">
+    <value>Sử dụng ngày kết thúc để điều khiển khi nào chiến dịch quảng cáo kết thúc</value>
+  </data>
+  <data name="plCriteria.Text">
+    <value>Tiêu Chuẩn</value>
+  </data>
+  <data name="plCriteria.Help">
+    <value>Chỉ rõ chiến dịch quảng cáo nên kết thúc khi Impression đã được dùng hết Và/Hoặc ngày kết thúc đã qua</value>
+  </data>
+  <data name="cmdEmail.Text">
+    <value>Email cho Vendor về trạng thái</value>
+  </data>
+  <data name="ControlTitle_banner.Text">
+    <value>Thay Đổi Banner</value>
+  </data>
+  <data name="ModuleHelp.Text">
+    <value>&lt;h1&gt;Về Module Banner&lt;/h1&gt;
+
+&lt;p&gt;Module Banner hiển thị các banner quảng cáo xoay vòng cho Site và Host.  &lt;/p&gt;
+
+&lt;h1&gt;Đặt Tuỳ Chọn Banner&lt;/h1&gt;
+
+&lt;ol&gt;&lt;li&gt;Thêm một module &lt;b&gt;Banner&lt;/b&gt; , hoặc đến một module &lt;b&gt;Banner&lt;/b&gt; có sẵn.&lt;/li&gt;
+&lt;li&gt;Click &lt;b&gt;Đặt Tuỳ Chọn Banner&lt;/b&gt;. 
+&lt;li&gt;Ở Nguồn Banner&lt;/b&gt;, chọn &lt;b&gt;Site&lt;/b&gt; hoặc &lt;b&gt;Host&lt;/b&gt;. 
+&lt;li&gt;Ở Kiểu Banner&lt;/b&gt;, chọn kiểu banner.
+&lt;li&gt;Ở Đếm Số Banner&lt;/b&gt;, chọn số banner được hiển thị. 
+&lt;li&gt;Click &lt;b&gt;Cập Nhật&lt;/b&gt;.&lt;/ol&gt;</value>
+  </data>
+  <data name="EmailSuccess.Text">
+    <value>Email được gửi</value>
+  </data>
+  <data name="EmailFailure.Text">
+    <value>Email không được gửi: {0}</value>
+  </data>
+  <data name="cmdCopy.Text">
+    <value>Copy </value>
+  </data>
+</root>
