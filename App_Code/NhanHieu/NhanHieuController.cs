@@ -111,12 +111,12 @@ namespace DotNetNuke.Modules.NhanHieu
             catch (Exception ex) { throw ex; }
         }
 
-        public void NhanHieu_BienDong_Insert(Int32 NhanHieuID, Int32 Image, String MoTa, String MauSac, Int32 LoaiNhanHieu, String LinhVuc, String GhiChuThayDoi, Boolean IsReferenced, DateTime CreatedDate, Int32 CreatedUser, String CreatedUnit, DateTime ModifiedDate, Int32 ModifiedUser, String ModifiedUnit, Boolean IsCurrent, out Int32 ID)
+        public void NhanHieu_BienDong_Insert(Int32 NhanHieuID, Int32 Image, String MoTa, String MauSac, Int32 LoaiNhanHieu, String LinhVuc, String GhiChuThayDoi, DateTime CreatedDate, Int32 CreatedUser, String CreatedUnit, out Int32 ID)
         {
             try
             {
                 ID = -1;
-                SqlParameter[] param = new SqlParameter[16];
+                SqlParameter[] param = new SqlParameter[11];
                 param[0] = new SqlParameter("@NhanHieuID", NhanHieuID);
                 param[1] = new SqlParameter("@Image", Image);
                 param[2] = new SqlParameter("@MoTa", MoTa);
@@ -124,27 +124,22 @@ namespace DotNetNuke.Modules.NhanHieu
                 param[4] = new SqlParameter("@LoaiNhanHieu", LoaiNhanHieu);
                 param[5] = new SqlParameter("@LinhVuc", LinhVuc);
                 param[6] = new SqlParameter("@GhiChuThayDoi", GhiChuThayDoi);
-                param[7] = new SqlParameter("@IsReferenced", IsReferenced);
-                param[8] = new SqlParameter("@CreatedDate", CreatedDate);
-                param[9] = new SqlParameter("@CreatedUser", CreatedUser);
-                param[10] = new SqlParameter("@CreatedUnit", CreatedUnit);
-                param[11] = new SqlParameter("@ModifiedDate", ModifiedDate);
-                param[12] = new SqlParameter("@ModifiedUser", ModifiedUser);
-                param[13] = new SqlParameter("@ModifiedUnit", ModifiedUnit);
-                param[14] = new SqlParameter("@IsCurrent", IsCurrent);
-                param[15] = new SqlParameter("@ID", ID);
-                param[15].Direction = ParameterDirection.Output;
+                param[7] = new SqlParameter("@CreatedDate", CreatedDate);
+                param[8] = new SqlParameter("@CreatedUser", CreatedUser);
+                param[9] = new SqlParameter("@CreatedUnit", CreatedUnit);
+                param[10] = new SqlParameter("@ID", ID);
+                param[10].Direction = ParameterDirection.Output;
                 DataProvider.ExecuteSP("NhanHieu_NhanHieu_BienDong_Insert", param);
-                ID = Convert.ToInt32(param[15].Value);
+                ID = Convert.ToInt32(param[10].Value);
             }
             catch (Exception ex) { throw ex; }
         }
 
-        public void NhanHieu_BienDong_Update(Int32 ID, Int32 NhanHieuID, Int32 Image, String MoTa, String MauSac, Int32 LoaiNhanHieu, String LinhVuc, String GhiChuThayDoi, Boolean IsReferenced, DateTime ModifiedDate, Int32 ModifiedUser, String ModifiedUnit, Boolean IsCurrent)
+        public void NhanHieu_BienDong_Update(Int32 ID, Int32 NhanHieuID, Int32 Image, String MoTa, String MauSac, Int32 LoaiNhanHieu, String LinhVuc, String GhiChuThayDoi, DateTime ModifiedDate, Int32 ModifiedUser, String ModifiedUnit)
         {
             try
             {
-                SqlParameter[] param = new SqlParameter[13];
+                SqlParameter[] param = new SqlParameter[11];
                 param[0] = new SqlParameter("@ID", ID);
                 param[1] = new SqlParameter("@NhanHieuID", NhanHieuID);
                 param[2] = new SqlParameter("@Image", Image);
@@ -153,11 +148,9 @@ namespace DotNetNuke.Modules.NhanHieu
                 param[5] = new SqlParameter("@LoaiNhanHieu", LoaiNhanHieu);
                 param[6] = new SqlParameter("@LinhVuc", LinhVuc);
                 param[7] = new SqlParameter("@GhiChuThayDoi", GhiChuThayDoi);
-                param[8] = new SqlParameter("@IsReferenced", IsReferenced);
-                param[9] = new SqlParameter("@ModifiedDate", ModifiedDate);
-                param[10] = new SqlParameter("@ModifiedUser", ModifiedUser);
-                param[11] = new SqlParameter("@ModifiedUnit", ModifiedUnit);
-                param[12] = new SqlParameter("@IsCurrent", IsCurrent);
+                param[8] = new SqlParameter("@ModifiedDate", ModifiedDate);
+                param[9] = new SqlParameter("@ModifiedUser", ModifiedUser);
+                param[10] = new SqlParameter("@ModifiedUnit", ModifiedUnit);
                 DataProvider.ExecuteSP("NhanHieu_NhanHieu_BienDong_Update", param);
             }
             catch (Exception ex) { throw ex; }

@@ -371,5 +371,10 @@ namespace DotNetNuke.Framework
             MetaKeywords.Content = KeyWords;
             MetaDescription.Content = Description;
         }
+
+        public void RegisterTrigger(Control ct)
+        {
+            ScriptManager.RegisterPostBackControl(ct);
+        }
     }
 }

@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="nhanhieu_edit.ascx.cs" Inherits="DotNetNuke.Modules.NhanHieu.nhanhieu_edit" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="Copy of nhanhieu_edit.ascx.cs" Inherits="DotNetNuke.Modules.NhanHieu.nhanhieu_edit" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 <link href="<%= ModulePath + "/style.css" %>" rel="stylesheet" type="text/css" />
 <asp:UpdatePanel ID="udpThongTinChung" runat="server" UpdateMode="Conditional">
@@ -38,15 +38,13 @@
         </table>
     </ContentTemplate>
 </asp:UpdatePanel>
-<asp:UpdatePanel ID="udpNoiDung" runat="server" UpdateMode="Conditional">
-    <ContentTemplate>
+
         <b>NỘI DUNG NHÃN HIỆU</b>
         <table cellspacing="5">
 	        <tr id="trCurrentFile" runat="server">
                 <td style="width:200px;">Hình ảnh hiện tại</td>
                 <td colspan='3'>
-                    <asp:Label runat="server" ID="lblCurrentFileName"/><br />
-                    <asp:Image runat="server" ID="imgCurrentFile"/>
+                    <asp:Label runat="server" ID="lblCurrentFileName"/>
                 </td>
             </tr>
             <tr>
@@ -61,8 +59,6 @@
 	        <tr><td>Mô tả thay đổi</td><td colspan='3'><asp:TextBox ID='txtGhiChuThayDoi' runat='server'/></td></tr>
             <tr><td></td><td colspan='3'><asp:Button ID="btnSaveNoiDung" runat="server" Text="Lưu" OnClick="btnSaveNoiDung_Click"></asp:Button>&nbsp;</td></tr>
         </table>
-        </ContentTemplate>
-</asp:UpdatePanel>
 <asp:UpdatePanel ID="udpButton" runat="server" UpdateMode="Conditional">
     <ContentTemplate>
         <table cellspacing="5">

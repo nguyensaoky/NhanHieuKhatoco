@@ -25,16 +25,10 @@ namespace DotNetNuke.Modules.NhanHieu
         System.Globalization.CultureInfo ci = new System.Globalization.CultureInfo("vi-VN");
         NhanHieuController cont = new NhanHieuController();
         string website = "";
-        string FolderUpload = "TaiLieu/";
         protected void Page_Load(object sender, EventArgs e)
         {
             try
             {
-                Control c = DotNetNuke.Common.Globals.FindControlRecursiveDown(Page, "ScriptManager");
-                if (c != null)
-                {
-                    ((ScriptManager)c).RegisterPostBackControl(btnSaveNoiDung);
-                }
 				if (!Page.IsPostBack)
                 {
                     if (UserInfo.Profile.Website != null) website = UserInfo.Profile.Website;
@@ -198,7 +192,7 @@ namespace DotNetNuke.Modules.NhanHieu
             hdNhanHieuID.Value = s;
             if (s != "0") btnSaveNoiDung.Enabled = true;
             else btnSaveNoiDung.Enabled = false;
-            udpNoiDung.Update();
+            //udpNoiDung.Update();
         }
 
         private void LoadData()
@@ -213,8 +207,6 @@ namespace DotNetNuke.Modules.NhanHieu
                 {
                     trCurrentFile.Visible = true;
                     lblCurrentFileName.Text = cont.GetFileNameByFileID(Convert.ToInt32(r["Image"]), PortalId);
-                    imgCurrentFile.ImageUrl = PortalSettings.HomeDirectory + FolderUpload + lblCurrentFileName.Text;
-                    imgCurrentFile.Width = new Unit(50, UnitType.Percentage);
                     hdImage.Value = r["Image"].ToString();
                     lblChooseFile.Text = "Muốn đổi hình? Mời bạn chọn hình mới";
                 }
@@ -257,7 +249,7 @@ namespace DotNetNuke.Modules.NhanHieu
                 txtGhiChuThayDoi.Text = r["GhiChuThayDoi"].ToString();
 
                 hdIsReferenced.Value = r["IsReferenced"] == DBNull.Value? "0": Convert.ToInt16(r["IsReferenced"]).ToString();
-                hdBienDongID.Value = r["NhanHieuBienDongID"] == DBNull.Value ? "0" : Convert.ToInt16(r["NhanHieuBienDongID"]).ToString();
+                hdBienDongID.Value = r["BienDongID"] == DBNull.Value ? "0" : Convert.ToInt16(r["BienDongID"]).ToString();
                 hdStatusID.Value = r["StatusID"] == DBNull.Value ? "0" : Convert.ToInt16(r["StatusID"]).ToString();
                 hdStatusName.Value = r["StatusName"].ToString();
                 hdOwner.Value = r["Owner"].ToString();
@@ -265,14 +257,14 @@ namespace DotNetNuke.Modules.NhanHieu
             }
         }
 
-        public string SaveFile(string Folder, out string FullFileName)
+        public string SaveFile(string FolderUpload, out string FullFileName)
         {
             FullFileName = "";
             string returnFileName = "";
             string CurrentTime = DateTime.Now.ToString("_yyyy_MM_dd_HH_mm_ss");
             string ParentFolderName;
             ParentFolderName = PortalSettings.HomeDirectoryMapPath;
-            ParentFolderName += Folder;
+            ParentFolderName += FolderUpload;
             string strExtension = Path.GetExtension(txtFile.PostedFile.FileName).Replace(".", "");
             string fullFileFilter = ",png,gif,cad,ps,jpg,jpeg";
             if (!fullFileFilter.Contains("," + strExtension.ToLower()))
@@ -291,7 +283,7 @@ namespace DotNetNuke.Modules.NhanHieu
                 returnFileName = FullFileName.Substring(0, dotIndex);
                 FullFileName = returnFileName + CurrentTime + FullFileName.Substring(dotIndex);
                 FileController fileCont = new FileController();
-                FileInfo file = fileCont.GetFile(FullFileName, PortalId, Folder);
+                FileInfo file = fileCont.GetFile(FullFileName, PortalId, FolderUpload);
                 hdImage.Value = file.FileId.ToString();
             }
             return returnFileName;
@@ -357,8 +349,8 @@ namespace DotNetNuke.Modules.NhanHieu
                 string fullFileName = lblCurrentFileName.Text;
                 if (txtFile.PostedFile.FileName != "")
                 {
+                    string FolderUpload = "TaiLieu/";
                     tieude = SaveFile(FolderUpload, out fullFileName);
-                    imgCurrentFile.ImageUrl = PortalSettings.HomeDirectory + FolderUpload + fullFileName;
                 }
                 if (hdImage.Value == "0")
                 {
@@ -379,7 +371,7 @@ namespace DotNetNuke.Modules.NhanHieu
                 int BienDongID = 0;
                 if (hdIsReferenced.Value == "1")
                 {
-                    cont.NhanHieu_BienDong_Insert(int.Parse(hdNhanHieuID.Value), int.Parse(hdImage.Value), txtMoTa.Text, txtMauSac.Text, int.Parse(ddlLoaiNhanHieu.SelectedValue), lv, txtGhiChuThayDoi.Text, dt, UserId, website, out BienDongID);
+                    cont.NhanHieu_BienDong_Insert(int.Parse(hdNhanHieuID.Value), int.Parse(hdImage.Value), txtMoTa.Text, txtMauSac.Text, int.Parse(ddlLoaiNhanHieu.SelectedValue), lv, txtGhiChuThayDoi.Text, false, dt, UserId, website, dt, UserId, website, true, out BienDongID);
                     if (BienDongID == -1) BienDongID = 0;
                     hdBienDongID.Value = BienDongID.ToString();
                     hdIsReferenced.Value = "0";
@@ -389,14 +381,14 @@ namespace DotNetNuke.Modules.NhanHieu
                 {
                     if (hdBienDongID.Value != "0")
                     {
-                        cont.NhanHieu_BienDong_Update(int.Parse(hdBienDongID.Value), int.Parse(hdNhanHieuID.Value), int.Parse(hdImage.Value), txtMoTa.Text, txtMauSac.Text, int.Parse(ddlLoaiNhanHieu.SelectedValue), lv, txtGhiChuThayDoi.Text, dt, UserId, website);
+                        cont.NhanHieu_BienDong_Update(int.Parse(hdBienDongID.Value), int.Parse(hdNhanHieuID.Value), int.Parse(hdImage.Value), txtMoTa.Text, txtMauSac.Text, int.Parse(ddlLoaiNhanHieu.SelectedValue), lv, txtGhiChuThayDoi.Text, false, dt, UserId, website, true);
                         hdBienDongID.Value = BienDongID.ToString();
                         hdIsReferenced.Value = "0";
                         hdUnit.Value = website;
                     }
                     else
                     {
-                        cont.NhanHieu_BienDong_Insert(int.Parse(hdNhanHieuID.Value), int.Parse(hdImage.Value), txtMoTa.Text, txtMauSac.Text, int.Parse(ddlLoaiNhanHieu.SelectedValue), lv, txtGhiChuThayDoi.Text, dt, UserId, website, out BienDongID);
+                        cont.NhanHieu_BienDong_Insert(int.Parse(hdNhanHieuID.Value), int.Parse(hdImage.Value), txtMoTa.Text, txtMauSac.Text, int.Parse(ddlLoaiNhanHieu.SelectedValue), lv, txtGhiChuThayDoi.Text, false, dt, UserId, website, dt, UserId, website, true, out BienDongID);
                         if (BienDongID == -1) BienDongID = 0;
                         hdBienDongID.Value = BienDongID.ToString();
                         hdIsReferenced.Value = "0";
