@@ -61,7 +61,7 @@
 	        <tr><td>Mô tả thay đổi</td><td colspan='3'><asp:TextBox ID='txtGhiChuThayDoi' runat='server'/></td></tr>
             <tr><td></td><td colspan='3'><asp:Button ID="btnSaveNoiDung" runat="server" Text="Lưu" OnClick="btnSaveNoiDung_Click"></asp:Button>&nbsp;</td></tr>
         </table>
-        </ContentTemplate>
+    </ContentTemplate>
 </asp:UpdatePanel>
 <asp:UpdatePanel ID="udpButton" runat="server" UpdateMode="Conditional">
     <ContentTemplate>

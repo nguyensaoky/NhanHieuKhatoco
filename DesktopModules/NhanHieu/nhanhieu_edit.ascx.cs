@@ -404,6 +404,7 @@ namespace DotNetNuke.Modules.NhanHieu
                     }
                 }
                 SetButtonStatus();
+                udpNoiDung.Update();
             }
             catch (Exception ex)
             {
