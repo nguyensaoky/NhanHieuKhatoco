@@ -26,36 +26,31 @@ namespace DotNetNuke.Modules.NhanHieu
         NhanHieuController cont = new NhanHieuController();
         string website = "";
         string FolderUpload = "TaiLieu/";
+        int NhanHieuID = 0;
+        int BienDongID = 0;
+        int Status = 0;
         protected void Page_Load(object sender, EventArgs e)
         {
             try
             {
-                Control c = DotNetNuke.Common.Globals.FindControlRecursiveDown(Page, "ScriptManager");
-                if (c != null)
-                {
-                    ((ScriptManager)c).RegisterPostBackControl(btnSaveNoiDung);
-                }
 				if (!Page.IsPostBack)
                 {
                     if (UserInfo.Profile.Website != null) website = UserInfo.Profile.Website;
-                    LoadEditControl();
-                    if (Request.QueryString["ID"] != null)
-                    {
-                        SetNhanHieuID(Request.QueryString["ID"]);
-                        LoadData();
-                    }
-                    else
-                    {
-                        trCurrentFile.Visible = false;
-                        lblChooseFile.Text = "Chọn hình";
-                        SetNhanHieuID("0");
-                    }
-                    SetButtonStatus();
+                    if (Request.QueryString["NhanHieuID"] != null) NhanHieuID = int.Parse(Request.QueryString["NhanHieuID"]);
+                    if (Request.QueryString["BienDongID"] != null) NhanHieuID = int.Parse(Request.QueryString["BienDongID"]);
+                    if (Request.QueryString["Status"] != null) Status = int.Parse(Request.QueryString["Status"]);
+
+                   
                 }
             }
             catch (Exception ex)
             {
             }
+        }
+
+        private bool CheckValid(int NhanHieuID, int BienDongID, int Status, out bool DisplayDonVi)
+        { 
+        
         }
 
         private void LoadEditControl()
