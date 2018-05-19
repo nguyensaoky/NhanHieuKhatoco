@@ -181,5 +181,32 @@ namespace DotNetNuke.Modules.NhanHieu
             catch (Exception ex) { throw ex; }
             return result;
         }
+
+        public void NhanHieu_CheckValid(int NhanHieuID, int BienDongID, bool Admin, bool IsCreatedUnit, int NextStatus, out bool Valid, out bool ShowDonVi, out string DonVi)
+        {
+            try
+            {
+                Valid = false;
+                ShowDonVi = false;
+                DonVi = "";
+                SqlParameter[] param = new SqlParameter[8];
+                param[0] = new SqlParameter("@NhanHieuID", NhanHieuID);
+                param[1] = new SqlParameter("@BienDongID", BienDongID);
+                param[2] = new SqlParameter("@Admin", Admin);
+                param[3] = new SqlParameter("@IsCreatedUnit", IsCreatedUnit);
+                param[4] = new SqlParameter("@NextStatus", NextStatus);
+                param[5] = new SqlParameter("@Valid", Valid);
+                param[5].Direction = ParameterDirection.Output;
+                param[6] = new SqlParameter("@ShowDonVi", ShowDonVi);
+                param[6].Direction = ParameterDirection.Output;
+                param[7] = new SqlParameter("@DonVi", DonVi);
+                param[7].Direction = ParameterDirection.Output;
+                DataProvider.ExecuteSP("NhanHieu_CheckValid", param);
+                Valid = Convert.ToBoolean(param[5].Value);
+                ShowDonVi = Convert.ToBoolean(param[6].Value);
+                DonVi = param[7].Value.ToString();
+            }
+            catch (Exception ex) { throw ex; }
+        }
     }
 }
