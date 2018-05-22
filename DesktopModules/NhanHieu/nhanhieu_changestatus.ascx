@@ -9,4 +9,4 @@
 Nội dung tin nhắn <asp:TextBox ID='txtMessage' runat='server'/>
 File đính kèm <input id="txtFile" runat="server" name="txtFile" size="30" type="file" width="300"/>
 <br />
-<asp:Button ID="btnSaveNoiDung" runat="server" Text="Gửi" OnClick="btnSaveNoiDung_Click"></asp:Button>
+<asp:Button ID="btnThucHien" runat="server" Text="Thực hiện" OnClick="btnThucHien_Click"></asp:Button>

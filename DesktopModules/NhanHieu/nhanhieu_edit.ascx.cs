@@ -261,7 +261,7 @@ namespace DotNetNuke.Modules.NhanHieu
                 hdStatusID.Value = r["StatusID"] == DBNull.Value ? "0" : Convert.ToInt16(r["StatusID"]).ToString();
                 hdStatusName.Value = r["StatusName"].ToString();
                 hdOwner.Value = r["Owner"].ToString();
-                hdUnit.Value = r["CreatedUnit"].ToString();
+                hdUnit.Value = r["RealCreatedUnit"].ToString();
             }
         }
 
@@ -383,7 +383,6 @@ namespace DotNetNuke.Modules.NhanHieu
                     if (BienDongID == -1) BienDongID = 0;
                     hdBienDongID.Value = BienDongID.ToString();
                     hdIsReferenced.Value = "0";
-                    hdUnit.Value = website;
                 }
                 else
                 {
@@ -392,7 +391,6 @@ namespace DotNetNuke.Modules.NhanHieu
                         cont.NhanHieu_BienDong_Update(int.Parse(hdBienDongID.Value), int.Parse(hdNhanHieuID.Value), int.Parse(hdImage.Value), txtMoTa.Text, txtMauSac.Text, int.Parse(ddlLoaiNhanHieu.SelectedValue), lv, txtGhiChuThayDoi.Text, dt, UserId, website);
                         hdBienDongID.Value = BienDongID.ToString();
                         hdIsReferenced.Value = "0";
-                        hdUnit.Value = website;
                     }
                     else
                     {
@@ -400,7 +398,6 @@ namespace DotNetNuke.Modules.NhanHieu
                         if (BienDongID == -1) BienDongID = 0;
                         hdBienDongID.Value = BienDongID.ToString();
                         hdIsReferenced.Value = "0";
-                        hdUnit.Value = website;
                     }
                 }
                 SetButtonStatus();

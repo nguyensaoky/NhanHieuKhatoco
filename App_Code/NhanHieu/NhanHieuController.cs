@@ -182,7 +182,7 @@ namespace DotNetNuke.Modules.NhanHieu
             return result;
         }
 
-        public void NhanHieu_CheckValid(int NhanHieuID, int BienDongID, bool Admin, bool IsCreatedUnit, int NextStatus, out bool Valid, out bool ShowDonVi, out string DonVi)
+        public void NhanHieu_CheckValid(int NhanHieuID, int BienDongID, bool Admin, string Website, int NextStatus, out bool Valid, out bool ShowDonVi, out string DonVi)
         {
             try
             {
@@ -193,7 +193,7 @@ namespace DotNetNuke.Modules.NhanHieu
                 param[0] = new SqlParameter("@NhanHieuID", NhanHieuID);
                 param[1] = new SqlParameter("@BienDongID", BienDongID);
                 param[2] = new SqlParameter("@Admin", Admin);
-                param[3] = new SqlParameter("@IsCreatedUnit", IsCreatedUnit);
+                param[3] = new SqlParameter("@Website", Website);
                 param[4] = new SqlParameter("@NextStatus", NextStatus);
                 param[5] = new SqlParameter("@Valid", Valid);
                 param[5].Direction = ParameterDirection.Output;
