@@ -26,10 +26,13 @@ namespace DotNetNuke.Modules.NhanHieu
         NhanHieuController cont = new NhanHieuController();
         string website = "";
         string FolderUpload = "TaiLieu/";
+        int ChangeStatusPage = 0;
+        DotNetNuke.Entities.Tabs.TabController t = new DotNetNuke.Entities.Tabs.TabController();
         protected void Page_Load(object sender, EventArgs e)
         {
             try
             {
+                Page.ClientScript.RegisterClientScriptInclude("jquery", ResolveUrl("~/js/jquery.js"));
                 Control c = DotNetNuke.Common.Globals.FindControlRecursiveDown(Page, "ScriptManager");
                 if (c != null)
                 {
@@ -37,6 +40,7 @@ namespace DotNetNuke.Modules.NhanHieu
                 }
 				if (!Page.IsPostBack)
                 {
+                    ChangeStatusPage = t.GetTabByName(ConfigurationManager.AppSettings["NhanHieu_ChangeStatusPage"], PortalId).TabID;
                     if (UserInfo.Profile.Website != null) website = UserInfo.Profile.Website;
                     LoadEditControl();
                     if (Request.QueryString["ID"] != null)
@@ -97,6 +101,13 @@ namespace DotNetNuke.Modules.NhanHieu
             btnTCTChapNhan_TCT.Visible = b6;
             btnCucGopYTCT_TCT.Visible = b7;
             btnCucDuyet_TCT.Visible = b8;
+
+            if (btnDVGuiTCT_TCT.Visible) btnDVGuiTCT_TCT.Attributes["onclick"] = "openwindow('" + DotNetNuke.Common.Globals.NavigateURL(ChangeStatusPage, "", "NhanHieuID/" + hdNhanHieuID.Value, "BienDongID/" + hdBienDongID.Value, "Status/1") + "','',600,400);";
+            if (btnDVTrieuHoi_DV.Visible) btnDVTrieuHoi_DV.Attributes["onclick"] = "openwindow('" + DotNetNuke.Common.Globals.NavigateURL(ChangeStatusPage, "", "NhanHieuID/" + hdNhanHieuID.Value, "BienDongID/" + hdBienDongID.Value, "Status/2") + "','',600,400);";
+            if (btnTCTGuiDV_DV.Visible) btnTCTGuiDV_DV.Attributes["onclick"] = "openwindow('" + DotNetNuke.Common.Globals.NavigateURL(ChangeStatusPage, "", "NhanHieuID/" + hdNhanHieuID.Value, "BienDongID/" + hdBienDongID.Value, "Status/3") + "','',600,400);";
+            if (btnTCTChapNhan_TCT.Visible) btnTCTChapNhan_TCT.Attributes["onclick"] = "openwindow('" + DotNetNuke.Common.Globals.NavigateURL(ChangeStatusPage, "", "NhanHieuID/" + hdNhanHieuID.Value, "BienDongID/" + hdBienDongID.Value, "Status/4") + "','',600,400);";
+            if (btnCucGopYTCT_TCT.Visible) btnCucGopYTCT_TCT.Attributes["onclick"] = "openwindow('" + DotNetNuke.Common.Globals.NavigateURL(ChangeStatusPage, "", "NhanHieuID/" + hdNhanHieuID.Value, "BienDongID/" + hdBienDongID.Value, "Status/5") + "','',600,400);";
+            if (btnCucDuyet_TCT.Visible) btnCucDuyet_TCT.Attributes["onclick"] = "openwindow('" + DotNetNuke.Common.Globals.NavigateURL(ChangeStatusPage, "", "NhanHieuID/" + hdNhanHieuID.Value, "BienDongID/" + hdBienDongID.Value, "Status/6") + "','',600,400);";
         }
 
         private void SetButtonStatus()
@@ -256,6 +267,15 @@ namespace DotNetNuke.Modules.NhanHieu
                 }
                 txtGhiChuThayDoi.Text = r["GhiChuThayDoi"].ToString();
 
+                //Status
+                string message1 = "";
+                if (r["Message_File"] != DBNull.Value && r["Message_File"].ToString() != "0")
+                {
+                    message1 = PortalSettings.HomeDirectory + FolderUpload + cont.GetFileNameByFileID(Convert.ToInt32(r["Message_File"]), PortalId);
+                    message1 = "<a href='" + message1 + "'>Download</a>";
+                }
+                SetStatus(r["StatusName"].ToString(), r["Message"].ToString() + "<br/>" + message1);
+
                 hdIsReferenced.Value = r["IsReferenced"] == DBNull.Value? "0": Convert.ToInt16(r["IsReferenced"]).ToString();
                 hdBienDongID.Value = r["NhanHieuBienDongID"] == DBNull.Value ? "0" : Convert.ToInt16(r["NhanHieuBienDongID"]).ToString();
                 hdStatusID.Value = r["StatusID"] == DBNull.Value ? "0" : Convert.ToInt16(r["StatusID"]).ToString();
@@ -401,11 +421,18 @@ namespace DotNetNuke.Modules.NhanHieu
                     }
                 }
                 SetButtonStatus();
+                SetStatus("", "");
                 udpNoiDung.Update();
             }
             catch (Exception ex)
             {
             }
+        }
+
+        private void SetStatus(string status, string message)
+        {
+            lblStatus.Text = status;
+            lblMessage1.Text = message;
         }
 
         protected void btnDVGuiTCT_Click(object sender, EventArgs e)
@@ -463,6 +490,17 @@ namespace DotNetNuke.Modules.NhanHieu
         {
             try
             {
+            }
+            catch (Exception ex)
+            {
+            }
+        }
+
+        protected void btnReload_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SetButtonStatus();
             }
             catch (Exception ex)
             {

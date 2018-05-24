@@ -6,7 +6,14 @@
 <br />
 <asp:Label ID="lblDonVi" runat="server" Text="Đơn vị"></asp:Label>
 <asp:DropDownList ID="ddlDonVi" runat="server"></asp:DropDownList>
+<br />
 Nội dung tin nhắn <asp:TextBox ID='txtMessage' runat='server'/>
+<br />
 File đính kèm <input id="txtFile" runat="server" name="txtFile" size="30" type="file" width="300"/>
+<br />
+<asp:Label ID="lblNamHieuLuc" runat='server' Text="Số năm hiệu lực" />
+<asp:TextBox ID='txtNamHieuLuc' runat='server' Text="10"/>
+<asp:Label ID="lblFromDate" runat='server' Text="Từ ngày" />
+<asp:TextBox ID='txtFromDate' runat='server'/>
 <br />
 <asp:Button ID="btnThucHien" runat="server" Text="Thực hiện" OnClick="btnThucHien_Click"></asp:Button>

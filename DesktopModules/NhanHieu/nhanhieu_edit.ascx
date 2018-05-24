@@ -1,6 +1,23 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="nhanhieu_edit.ascx.cs" Inherits="DotNetNuke.Modules.NhanHieu.nhanhieu_edit" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 <link href="<%= ModulePath + "/style.css" %>" rel="stylesheet" type="text/css" />
+<script type="text/javascript" language="javascript">
+    function openwindow(url, name, width, height)
+    {
+        var leftVal = (screen.width - width) / 2;
+        var topVal = (screen.height - height) / 2;
+        window.open(url,'','height=' + height + ',width=' + width +',toolbar=no,status=no,linemenubar=no,scrollbars=yes,resizable=yes,modal=yes,left=' + leftVal + ',top=' + topVal);
+    }
+    
+    function finishEdit(status, statusname, message1)
+    {
+        jQuery('#<%= hdIsReferenced.ClientID %>').val('1');
+        jQuery('#<%= hdStatusID.ClientID %>').val(status);
+        jQuery('#<%= lblStatus.ClientID %>').val(statusname);
+        jQuery('#<%= lblMessage1.ClientID %>').val(message1);
+        jQuery('#<%= btnReload.ClientID %>').click();
+    }
+</script>
 <asp:UpdatePanel ID="udpThongTinChung" runat="server" UpdateMode="Conditional">
     <ContentTemplate>
         <b>THÔNG TIN CHUNG</b>
@@ -59,6 +76,7 @@
 	        <tr><td>Mô tả</td><td style="width:300px;"><asp:TextBox ID='txtMoTa' runat='server'/></td><td style="width:200px;">Màu sắc</td><td style="width:300px;"><asp:TextBox ID='txtMauSac' runat='server'/></td></tr>
 	        <tr><td>Loại nhãn hiệu</td><td><asp:DropDownList ID="ddlLoaiNhanHieu" runat="server"></asp:DropDownList></td><td style="width:200px;">Lĩnh vực</td><td><asp:ListBox ID='lstLinhVuc' runat="server" SelectionMode = "Multiple"></asp:ListBox></td></tr>
 	        <tr><td>Mô tả thay đổi</td><td colspan='3'><asp:TextBox ID='txtGhiChuThayDoi' runat='server'/></td></tr>
+	        <tr><td style="width:200px;"><b>Trạng thái</b></td><td style="width:300px;"><asp:Label ID='lblStatus' runat='server'/></td><td style="width:200px;"><b>Nội dung gửi</b></td><td style="width:300px;"><asp:Label ID='lblMessage1' runat='server'/></td></tr>
             <tr><td></td><td colspan='3'><asp:Button ID="btnSaveNoiDung" runat="server" Text="Lưu" OnClick="btnSaveNoiDung_Click"></asp:Button>&nbsp;</td></tr>
         </table>
     </ContentTemplate>
@@ -75,6 +93,7 @@
                     <asp:Button ID="btnTCTChapNhan_TCT" runat="server" Text="TCT chấp nhận" OnClick="btnTCTChapNhan_Click"></asp:Button>
                     <asp:Button ID="btnCucGopYTCT_TCT" runat="server" Text="Cục góp ý TCT" OnClick="btnCucGopYTCT_Click"></asp:Button>
                     <asp:Button ID="btnCucDuyet_TCT" runat="server" Text="Cục duyệt" OnClick="btnCucDuyet_Click"></asp:Button>
+                    <asp:Button ID="btnReload" runat="server" Text="" OnClick="btnReload_Click" Width="0" Height="0" BorderWidth="0" BackColor="Transparent"></asp:Button>
                 </td>
             </tr>
         </table>

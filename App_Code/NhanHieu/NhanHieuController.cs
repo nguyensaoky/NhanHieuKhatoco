@@ -208,5 +208,39 @@ namespace DotNetNuke.Modules.NhanHieu
             }
             catch (Exception ex) { throw ex; }
         }
+
+        public void ChangeStatus_Insert(int NhanHieuID, int BienDongID, int Status, string Message, int Message_File, string DonVi, DateTime DateFrom, int NamHieuLuc)
+        {
+            try
+            {
+                SqlParameter[] param = new SqlParameter[7];
+                param[0] = new SqlParameter("@NhanHieuID", NhanHieuID);
+                param[1] = new SqlParameter("@BienDongID", BienDongID);
+                param[2] = new SqlParameter("@Status", Status);
+                param[3] = new SqlParameter("@Message", Message);
+                param[4] = new SqlParameter("@Message_File", Message_File);
+                param[5] = new SqlParameter("@DonVi", DonVi);
+                param[6] = new SqlParameter("@DateFrom", DateFrom);
+                param[7] = new SqlParameter("@NamHieuLuc", NamHieuLuc);
+                DataProvider.ExecuteSP("NhanHieu_ChangeStatus_Insert", param);
+            }
+            catch (Exception ex) { throw ex; }
+        }
+
+        public string GetStatus(int ID)
+        {
+            try
+            {
+                SqlParameter[] param = new SqlParameter[1];
+                param[0] = new SqlParameter("@ID", ID);
+                DataTable tbl = DataProvider.SelectSP("NhanHieu_Status_SelectByID", param);
+                if (tbl.Rows.Count == 1)
+                    return tbl.Rows[0]["StatusName"].ToString();
+                else
+                    return "";
+            }
+            catch (Exception ex) { throw ex; }
+            return "";
+        }
     }
 }
