@@ -213,7 +213,7 @@ namespace DotNetNuke.Modules.NhanHieu
         {
             try
             {
-                SqlParameter[] param = new SqlParameter[7];
+                SqlParameter[] param = new SqlParameter[8];
                 param[0] = new SqlParameter("@NhanHieuID", NhanHieuID);
                 param[1] = new SqlParameter("@BienDongID", BienDongID);
                 param[2] = new SqlParameter("@Status", Status);

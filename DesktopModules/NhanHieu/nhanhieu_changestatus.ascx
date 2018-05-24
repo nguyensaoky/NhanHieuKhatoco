@@ -17,3 +17,7 @@ File đính kèm <input id="txtFile" runat="server" name="txtFile" size="30" typ
 <asp:TextBox ID='txtFromDate' runat='server'/>
 <br />
 <asp:Button ID="btnThucHien" runat="server" Text="Thực hiện" OnClick="btnThucHien_Click"></asp:Button>
+<asp:HiddenField runat="server" ID="hdNhanHieuID" Value="0"/>
+<asp:HiddenField runat="server" ID="hdBienDongID" Value="0"/>
+<asp:HiddenField runat="server" ID="hdStatus" Value="0"/>
+<asp:HiddenField runat="server" ID="hdStatusName" Value=""/>

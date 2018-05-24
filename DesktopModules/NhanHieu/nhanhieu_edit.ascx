@@ -9,12 +9,18 @@
         window.open(url,'','height=' + height + ',width=' + width +',toolbar=no,status=no,linemenubar=no,scrollbars=yes,resizable=yes,modal=yes,left=' + leftVal + ',top=' + topVal);
     }
     
-    function finishEdit(status, statusname, message1)
+    function finishEdit1(status, statusname, message1)
     {
-        jQuery('#<%= hdIsReferenced.ClientID %>').val('1');
-        jQuery('#<%= hdStatusID.ClientID %>').val(status);
-        jQuery('#<%= lblStatus.ClientID %>').val(statusname);
-        jQuery('#<%= lblMessage1.ClientID %>').val(message1);
+        //jQuery('#<%= hdIsReferenced.ClientID %>').val('1');
+        //alert(jQuery('#<%= hdIsReferenced.ClientID %>').val());
+        //jQuery('#<%= hdStatusID.ClientID %>').val(status);
+        //jQuery('#<%= hdStatus.ClientID %>').val(statusname);
+        //jQuery('#<%= hdMessage1.ClientID %>').val(message1);
+        jQuery('#<%= btnReload.ClientID %>').click();
+    }
+    
+    function finishEdit()
+    {
         jQuery('#<%= btnReload.ClientID %>').click();
     }
 </script>
@@ -76,7 +82,7 @@
 	        <tr><td>Mô tả</td><td style="width:300px;"><asp:TextBox ID='txtMoTa' runat='server'/></td><td style="width:200px;">Màu sắc</td><td style="width:300px;"><asp:TextBox ID='txtMauSac' runat='server'/></td></tr>
 	        <tr><td>Loại nhãn hiệu</td><td><asp:DropDownList ID="ddlLoaiNhanHieu" runat="server"></asp:DropDownList></td><td style="width:200px;">Lĩnh vực</td><td><asp:ListBox ID='lstLinhVuc' runat="server" SelectionMode = "Multiple"></asp:ListBox></td></tr>
 	        <tr><td>Mô tả thay đổi</td><td colspan='3'><asp:TextBox ID='txtGhiChuThayDoi' runat='server'/></td></tr>
-	        <tr><td style="width:200px;"><b>Trạng thái</b></td><td style="width:300px;"><asp:Label ID='lblStatus' runat='server'/></td><td style="width:200px;"><b>Nội dung gửi</b></td><td style="width:300px;"><asp:Label ID='lblMessage1' runat='server'/></td></tr>
+	        <tr><td style="width:200px;"><asp:Label ID='lblStatusText' runat='server' Text='Trạng thái'/></td><td style="width:300px;"><asp:Label ID='lblStatus' runat='server'/></td><td style="width:200px;"><asp:Label ID='lblMessage1Text' runat='server' Text="Nội dung gửi"/></td><td style="width:300px;"><asp:Literal ID='lblMessage1' runat='server'/></td></tr>
             <tr><td></td><td colspan='3'><asp:Button ID="btnSaveNoiDung" runat="server" Text="Lưu" OnClick="btnSaveNoiDung_Click"></asp:Button>&nbsp;</td></tr>
         </table>
     </ContentTemplate>
@@ -107,3 +113,5 @@
 <asp:HiddenField runat="server" ID="hdStatusName" Value=""/>
 <asp:HiddenField runat="server" ID="hdUnit" Value=""/>
 <asp:HiddenField runat="server" ID="hdOwner" Value=""/>
+<asp:HiddenField runat="server" ID="hdStatus" Value=""/>
+<asp:HiddenField runat="server" ID="hdMessage1" Value=""/>

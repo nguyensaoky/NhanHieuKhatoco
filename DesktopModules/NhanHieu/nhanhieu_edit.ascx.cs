@@ -272,9 +272,9 @@ namespace DotNetNuke.Modules.NhanHieu
                 if (r["Message_File"] != DBNull.Value && r["Message_File"].ToString() != "0")
                 {
                     message1 = PortalSettings.HomeDirectory + FolderUpload + cont.GetFileNameByFileID(Convert.ToInt32(r["Message_File"]), PortalId);
-                    message1 = "<a href='" + message1 + "'>Download</a>";
+                    message1 = "<a target='blank' href='" + message1 + "'>Download</a>";
                 }
-                SetStatus(r["StatusName"].ToString(), r["Message"].ToString() + "<br/>" + message1);
+                SetStatus(r["StatusName"].ToString(), r["Message"].ToString() + " " + message1);
 
                 hdIsReferenced.Value = r["IsReferenced"] == DBNull.Value? "0": Convert.ToInt16(r["IsReferenced"]).ToString();
                 hdBienDongID.Value = r["NhanHieuBienDongID"] == DBNull.Value ? "0" : Convert.ToInt16(r["NhanHieuBienDongID"]).ToString();
@@ -282,6 +282,7 @@ namespace DotNetNuke.Modules.NhanHieu
                 hdStatusName.Value = r["StatusName"].ToString();
                 hdOwner.Value = r["Owner"].ToString();
                 hdUnit.Value = r["RealCreatedUnit"].ToString();
+                udpNoiDung.Update();
             }
         }
 
@@ -431,8 +432,29 @@ namespace DotNetNuke.Modules.NhanHieu
 
         private void SetStatus(string status, string message)
         {
-            lblStatus.Text = status;
-            lblMessage1.Text = message;
+            if (status == "")
+            {
+                lblStatus.Visible = false;
+                lblStatusText.Visible = false;
+            }
+            else
+            {
+                lblStatus.Visible = true;
+                lblStatusText.Visible = true;
+                lblStatus.Text = status;
+            }
+            if (message.Trim() == "")
+            {
+                lblMessage1.Visible = false;
+                lblMessage1Text.Visible = false;
+            }
+            else
+            {
+                lblMessage1.Visible = true;
+                lblMessage1Text.Visible = true;
+                lblMessage1.Text = message;
+            }
+            
         }
 
         protected void btnDVGuiTCT_Click(object sender, EventArgs e)
@@ -500,6 +522,8 @@ namespace DotNetNuke.Modules.NhanHieu
         {
             try
             {
+                //SetStatus(hdStatus.Value, hdMessage1.Value.Trim());
+                LoadData();
                 SetButtonStatus();
             }
             catch (Exception ex)
