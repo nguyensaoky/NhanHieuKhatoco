@@ -105,13 +105,17 @@
         </table>
     </ContentTemplate>
 </asp:UpdatePanel>
-<asp:HiddenField runat="server" ID="hdNhanHieuID" Value="0"/>
-<asp:HiddenField runat="server" ID="hdBienDongID" Value="0"/>
-<asp:HiddenField runat="server" ID="hdIsReferenced" Value="0"/>
-<asp:HiddenField runat="server" ID="hdImage" Value="0"/>
-<asp:HiddenField runat="server" ID="hdStatusID" Value="0"/>
-<asp:HiddenField runat="server" ID="hdStatusName" Value=""/>
-<asp:HiddenField runat="server" ID="hdUnit" Value=""/>
-<asp:HiddenField runat="server" ID="hdOwner" Value=""/>
-<asp:HiddenField runat="server" ID="hdStatus" Value=""/>
-<asp:HiddenField runat="server" ID="hdMessage1" Value=""/>
+<asp:UpdatePanel ID="udpHidden" runat="server" UpdateMode="Conditional">
+    <ContentTemplate>
+        <asp:HiddenField runat="server" ID="hdNhanHieuID" Value="0"/>
+        <asp:HiddenField runat="server" ID="hdBienDongID" Value="0"/>
+        <asp:HiddenField runat="server" ID="hdIsReferenced" Value="0"/>
+        <asp:HiddenField runat="server" ID="hdImage" Value="0"/>
+        <asp:HiddenField runat="server" ID="hdStatusID" Value="0"/>
+        <asp:HiddenField runat="server" ID="hdStatusName" Value=""/>
+        <asp:HiddenField runat="server" ID="hdUnit" Value=""/>
+        <asp:HiddenField runat="server" ID="hdOwner" Value=""/>
+        <asp:HiddenField runat="server" ID="hdStatus" Value=""/>
+        <asp:HiddenField runat="server" ID="hdMessage1" Value=""/>
+    </ContentTemplate>
+</asp:UpdatePanel>
