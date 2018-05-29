@@ -2,30 +2,10 @@
 <%@ Register Assembly="System.Web.Extensions" Namespace="System.Web.UI" TagPrefix="asp" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 <link href="<%= ModulePath + "/style.css" %>" rel="stylesheet" type="text/css" />
-<script language="javascript" type="text/javascript">
-    function addorder()
-    {
-        self.location='<%=DotNetNuke.Common.Globals.NavigateURL(PortalSettings.ActiveTab.TabID, "nhanhieu_edit", "mid/" + this.ModuleId.ToString())%>';
-    }
-
-    function showconfirm(btn)
-    {
-        var r=confirm("Bạn có chắc chắn muốn xóa?");
-        if (r==true)
-        {
-            btnDelete = document.getElementById(btn);
-            btnDelete.click();
-        }
-        else
-        {
-            return false;
-        }
-    }
-</script>
 <table>
     <tr>
         <td>
-            Ngày gửi từ
+            Ngày công bố từ
             <asp:TextBox ID="txtNgayGuiFrom" runat="server" Width="80"/>
             <cc1:calendarextender id="calNgayGuiFrom" runat="server" format="dd/MM/yyyy"
                 popupbuttonid="txtNgayGuiFrom" targetcontrolid="txtNgayGuiFrom"></cc1:calendarextender>
