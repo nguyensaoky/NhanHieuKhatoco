@@ -2,7 +2,6 @@
 <%@ Register Assembly="System.Web.Extensions" Namespace="System.Web.UI" TagPrefix="asp" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 <link href="<%= ModulePath + "/style.css" %>" rel="stylesheet" type="text/css" />
-<<<<<<< HEAD
 <script language="javascript" type="text/javascript">
     function addnhanhieu()
     {

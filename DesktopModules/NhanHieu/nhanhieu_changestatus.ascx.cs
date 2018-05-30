@@ -26,12 +26,16 @@ namespace DotNetNuke.Modules.NhanHieu
         System.Globalization.CultureInfo ci = new System.Globalization.CultureInfo("vi-VN");
         DotNetNuke.Security.Roles.RoleController rc = new DotNetNuke.Security.Roles.RoleController();
         NhanHieuController cont = new NhanHieuController();
-        string website;
+        string website = "";
         string FolderUpload = "TaiLieu/";
-        bool admin;
+        int NhanHieuID = 0;
+        int BienDongID = 0;
+        int Status = 0;
+        bool admin = false;
         bool Valid = false;
         bool ShowDonVi = false;
         string DonVi = "";
+        string StatusName = "";
         private void LoadDonVis()
         {
             ddlDonVi.Items.Clear();
@@ -51,15 +55,15 @@ namespace DotNetNuke.Modules.NhanHieu
 				if (!Page.IsPostBack)
                 {
                     if (UserInfo.Profile.Website != null) website = UserInfo.Profile.Website;
-                    if (Request.QueryString["NhanHieuID"] != null) hdNhanHieuID.Value = Request.QueryString["NhanHieuID"];
-                    if (Request.QueryString["BienDongID"] != null) hdBienDongID.Value = Request.QueryString["BienDongID"];
-                    if (Request.QueryString["Status"] != null) hdStatus.Value = Request.QueryString["Status"];
-                    if(hdNhanHieuID.Value == "0" || hdBienDongID.Value == "0" || hdStatus.Value == "0")
+                    if (Request.QueryString["NhanHieuID"] != null) NhanHieuID = int.Parse(Request.QueryString["NhanHieuID"]);
+                    if (Request.QueryString["BienDongID"] != null) BienDongID = int.Parse(Request.QueryString["BienDongID"]);
+                    if (Request.QueryString["Status"] != null) Status = int.Parse(Request.QueryString["Status"]);
+                    if(NhanHieuID == 0 || BienDongID == 0 || Status == 0)
                     {
                         btnThucHien.Visible = false;
                         return;
                     }
-                    if (hdStatus.Value == "6") 
+                    if(Status == 6) 
                     {
                         lblNamHieuLuc.Visible = true;
                         txtNamHieuLuc.Visible = true;
@@ -74,10 +78,10 @@ namespace DotNetNuke.Modules.NhanHieu
                         lblFromDate.Visible = false;
                         txtFromDate.Visible = false;
                     }
-                    hdStatusName.Value = cont.GetStatus(int.Parse(hdStatus.Value));
-                    if (UserInfo.Profile.Website != null) website = UserInfo.Profile.Website; else website = "";
-                    if (UserInfo.IsSuperUser || UserInfo.IsInRole("Administrators") || cont.HasRole(UserInfo.Roles, "QuanLy")) admin = true; else admin = false;
-                    cont.NhanHieu_CheckValid(int.Parse(hdNhanHieuID.Value), int.Parse(hdBienDongID.Value), admin, website, int.Parse(hdStatus.Value), out Valid, out ShowDonVi, out DonVi);
+                    StatusName = cont.GetStatus(Status);
+                    if (UserInfo.Profile.Website != null) website = UserInfo.Profile.Website;
+                    if (UserInfo.IsSuperUser || UserInfo.IsInRole("Administrators") || cont.HasRole(UserInfo.Roles, "QuanLy")) admin = true;
+                    cont.NhanHieu_CheckValid(NhanHieuID, BienDongID, admin, website, Status, out Valid, out ShowDonVi, out DonVi);
                     if (Valid)
                     {
                         if (ShowDonVi)
@@ -150,7 +154,7 @@ namespace DotNetNuke.Modules.NhanHieu
             try
             {
                 int NamHieuLuc = -1;
-                if (txtNamHieuLuc.Visible && hdStatus.Value == "6") NamHieuLuc = int.Parse(txtNamHieuLuc.Text.Trim());
+                if (txtNamHieuLuc.Visible && Status == 6) NamHieuLuc = int.Parse(txtNamHieuLuc.Text.Trim());
                 int fileID = 0;
                 string donvi = "";
                 string FullFileName = "";
@@ -161,19 +165,17 @@ namespace DotNetNuke.Modules.NhanHieu
                 }
                 DateTime dt = DateTime.Now;
                 if(txtFromDate.Visible) dt = DateTime.Parse(txtFromDate.Text.Trim(), ci);
-                cont.ChangeStatus_Insert(int.Parse(hdNhanHieuID.Value), int.Parse(hdBienDongID.Value), int.Parse(hdStatus.Value), txtMessage.Text.Trim(), fileID, donvi, dt, NamHieuLuc);
-                Page.ClientScript.RegisterStartupScript(typeof(string), "updated", "<script language=javascript>alert('Đã thực hiện!');window.opener.finishEdit();self.close();</script>", false);
-                //if(fileID != 0)
-                //{
-                //    string download = PortalSettings.HomeDirectory + FolderUpload + FullFileName;
-                //    download = txtMessage.Text.Trim() + " " + "<a href=\"" + download + "\">Download</a>";
-                //    //Page.ClientScript.RegisterStartupScript(typeof(string), "updated", "<script language=javascript>alert('Đã thực hiện!');window.opener.finishEdit('" + hdStatus.Value + "','" + hdStatusName.Value + "','" + download + "');self.close();</script>", false);
-                    
-                //}
-                //else
-                //{
-                //    //Page.ClientScript.RegisterStartupScript(typeof(string), "updated", "<script language=javascript>alert('Đã thực hiện!');window.opener.finishEdit('" + hdStatus.Value + "','" + hdStatusName.Value + "','" + txtMessage.Text.Trim() + "');self.close();</script>", false);
-                //}
+                cont.ChangeStatus_Insert(NhanHieuID, BienDongID, Status, txtMessage.Text.Trim(), fileID, donvi, dt, NamHieuLuc);
+                if(fileID != 0)
+                {
+                    string download = PortalSettings.HomeDirectory + FolderUpload + FullFileName;
+                    download = txtMessage.Text.Trim() + "<br/>" + "<a href='" + download + "'>Download</a>";
+                    Page.ClientScript.RegisterStartupScript(typeof(string), "updated", "<script language=javascript>alert('Đã thực hiện!');window.opener.finishEdit('" + Status.ToString() + "','" + StatusName + "','" + download + "');self.close();</script>", false);
+                }
+                else
+                {
+                    Page.ClientScript.RegisterStartupScript(typeof(string), "updated", "<script language=javascript>alert('Đã thực hiện!');window.opener.finishEdit('" + Status.ToString() + "','" + StatusName + "','" + txtMessage.Text.Trim() + "');self.close();</script>", false);
+                }
             }
             catch (Exception ex)
             {
