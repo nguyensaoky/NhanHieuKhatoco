@@ -32,6 +32,8 @@ namespace DotNetNuke.Modules.NhanHieu
         {
             try
             {
+                ChangeStatusPage = t.GetTabByName(ConfigurationManager.AppSettings["NhanHieu_ChangeStatusPage"], PortalId).TabID;
+                if (UserInfo.Profile.Website != null) website = UserInfo.Profile.Website;
                 Page.ClientScript.RegisterClientScriptInclude("jquery", ResolveUrl("~/js/jquery.js"));
                 Control c = DotNetNuke.Common.Globals.FindControlRecursiveDown(Page, "ScriptManager");
                 if (c != null)
@@ -40,19 +42,19 @@ namespace DotNetNuke.Modules.NhanHieu
                 }
 				if (!Page.IsPostBack)
                 {
-                    ChangeStatusPage = t.GetTabByName(ConfigurationManager.AppSettings["NhanHieu_ChangeStatusPage"], PortalId).TabID;
-                    if (UserInfo.Profile.Website != null) website = UserInfo.Profile.Website;
                     LoadEditControl();
                     if (Request.QueryString["ID"] != null)
                     {
-                        SetNhanHieuID(Request.QueryString["ID"]);
+                        //SetNhanHieuID(Request.QueryString["ID"]);
+                        hdNhanHieuID.Value = Request.QueryString["ID"];
                         LoadData();
                     }
                     else
                     {
                         trCurrentFile.Visible = false;
                         lblChooseFile.Text = "Chọn hình";
-                        SetNhanHieuID("0");
+                        //SetNhanHieuID("0");
+                        hdNhanHieuID.Value = "0";
                     }
                     SetButtonStatus();
                 }
@@ -122,7 +124,14 @@ namespace DotNetNuke.Modules.NhanHieu
                     }
                     else
                     {
-                        SetButton(true, true, false, false, true, true, false, false);
+                        if (hdBienDongID.Value != "0")
+                        {
+                            SetButton(true, true, false, false, true, true, false, false);
+                        }
+                        else
+                        {
+                            SetButton(true, true, false, false, false, false, false, false);
+                        }
                     }
                 }
                 else
@@ -170,7 +179,15 @@ namespace DotNetNuke.Modules.NhanHieu
                     }
                     else
                     {
-                        SetButton(true, true, true, false, false, false, false, false);
+                        if (hdBienDongID.Value != "0")
+                        {
+                            SetButton(true, true, true, false, false, false, false, false);
+                        }
+                        else
+                        {
+                            SetButton(true, true, false, false, false, false, false, false);
+                        }
+                        
                     }
                 }
                 else
@@ -201,15 +218,17 @@ namespace DotNetNuke.Modules.NhanHieu
                     }     
                 }
             }
+            udpThongTinChung.Update();
+            udpNoiDung.Update();
             udpButton.Update();
         }
 
         void SetNhanHieuID(string s)
         {
             hdNhanHieuID.Value = s;
-            if (s != "0") btnSaveNoiDung.Enabled = true;
-            else btnSaveNoiDung.Enabled = false;
-            udpNoiDung.Update();
+            //if (s != "0") btnSaveNoiDung.Visible = true;
+            //else btnSaveNoiDung.Visible = false;
+            //udpNoiDung.Update();
         }
 
         private void LoadData()
@@ -220,7 +239,7 @@ namespace DotNetNuke.Modules.NhanHieu
             { 
                 DataRow r = tbl.Rows[0];
 
-                if (r["Image"] != DBNull.Value)
+                if (r["Image"] != DBNull.Value && r["Image"].ToString() != "0")
                 {
                     trCurrentFile.Visible = true;
                     lblCurrentFileName.Text = cont.GetFileNameByFileID(Convert.ToInt32(r["Image"]), PortalId);
@@ -272,9 +291,9 @@ namespace DotNetNuke.Modules.NhanHieu
                 if (r["Message_File"] != DBNull.Value && r["Message_File"].ToString() != "0")
                 {
                     message1 = PortalSettings.HomeDirectory + FolderUpload + cont.GetFileNameByFileID(Convert.ToInt32(r["Message_File"]), PortalId);
-                    message1 = "<a href='" + message1 + "'>Download</a>";
+                    message1 = "<a target='blank' href='" + message1 + "'>Download</a>";
                 }
-                SetStatus(r["StatusName"].ToString(), r["Message"].ToString() + "<br/>" + message1);
+                SetStatus(r["StatusName"].ToString(), r["Message"].ToString() + " " + message1);
 
                 hdIsReferenced.Value = r["IsReferenced"] == DBNull.Value? "0": Convert.ToInt16(r["IsReferenced"]).ToString();
                 hdBienDongID.Value = r["NhanHieuBienDongID"] == DBNull.Value ? "0" : Convert.ToInt16(r["NhanHieuBienDongID"]).ToString();
@@ -282,6 +301,9 @@ namespace DotNetNuke.Modules.NhanHieu
                 hdStatusName.Value = r["StatusName"].ToString();
                 hdOwner.Value = r["Owner"].ToString();
                 hdUnit.Value = r["RealCreatedUnit"].ToString();
+                udpThongTinChung.Update();
+                udpNoiDung.Update();
+                udpHidden.Update();
             }
         }
 
@@ -352,15 +374,18 @@ namespace DotNetNuke.Modules.NhanHieu
                         cont.NhanHieu_Insert(txtTenNhanHieu.Text, int.Parse(ddlNuocDangKy.SelectedValue), txtSoDon.Text, dtNopDon, dtUuTien, txtSoChungNhan.Text, dtChungNhan, dtCongBo, txtSoQuyetDinh.Text, dtQuyetDinh, dt, UserId, website, dt, UserId, website, txtNote.Text, int.Parse(ddlNhanHieuGoc.SelectedValue), website, out ID);
                     }
                     if (ID == -1) ID = 0;
-                    SetNhanHieuID(ID.ToString());
+                    //SetNhanHieuID(ID.ToString());
+                    hdNhanHieuID.Value = ID.ToString();
                     hdUnit.Value = website;
                 }
                 else
                 {
                     cont.NhanHieu_Update(int.Parse(hdNhanHieuID.Value), txtTenNhanHieu.Text, int.Parse(ddlNuocDangKy.SelectedValue), txtSoDon.Text, dtNopDon, dtUuTien, txtSoChungNhan.Text, dtChungNhan, dtCongBo, txtSoQuyetDinh.Text, dtQuyetDinh, dt, UserId, website, txtNote.Text, int.Parse(ddlNhanHieuGoc.SelectedValue));
-                    SetNhanHieuID(ID.ToString());
+                    //SetNhanHieuID(ID.ToString());
+                    hdNhanHieuID.Value = ID.ToString();
                 }
                 SetButtonStatus();
+                udpHidden.Update();
             }
             catch (Exception ex)
             {
@@ -378,13 +403,18 @@ namespace DotNetNuke.Modules.NhanHieu
                 if (txtFile.PostedFile.FileName != "")
                 {
                     tieude = SaveFile(FolderUpload, out fullFileName);
+                    
+                    trCurrentFile.Visible = true;
+                    lblCurrentFileName.Text = fullFileName;
                     imgCurrentFile.ImageUrl = PortalSettings.HomeDirectory + FolderUpload + fullFileName;
+                    imgCurrentFile.Width = new Unit(50, UnitType.Percentage);
+                    lblChooseFile.Text = "Muốn đổi hình? Mời bạn chọn hình mới";
                 }
-                if (hdImage.Value == "0")
-                {
-                    Page.ClientScript.RegisterStartupScript(typeof(string), "insertupdatefail", "<script language=javascript>alert('Bạn chưa chọn file hoặc file không hợp lệ!');</script>", false);
-                    return;
-                }
+                //if (hdImage.Value == "0")
+                //{
+                //    Page.ClientScript.RegisterStartupScript(typeof(string), "insertupdatefail", "<script language=javascript>alert('Bạn chưa chọn file hoặc file không hợp lệ!');</script>", false);
+                //    return;
+                //}
 
                 string lv = "";
                 for (int i = 0; i < lstLinhVuc.Items.Count; i++)
@@ -422,7 +452,7 @@ namespace DotNetNuke.Modules.NhanHieu
                 }
                 SetButtonStatus();
                 SetStatus("", "");
-                udpNoiDung.Update();
+                udpHidden.Update();
             }
             catch (Exception ex)
             {
@@ -431,8 +461,29 @@ namespace DotNetNuke.Modules.NhanHieu
 
         private void SetStatus(string status, string message)
         {
-            lblStatus.Text = status;
-            lblMessage1.Text = message;
+            if (status == "")
+            {
+                lblStatus.Visible = false;
+                lblStatusText.Visible = false;
+            }
+            else
+            {
+                lblStatus.Visible = true;
+                lblStatusText.Visible = true;
+                lblStatus.Text = status;
+            }
+            if (message.Trim() == "")
+            {
+                lblMessage1.Visible = false;
+                lblMessage1Text.Visible = false;
+            }
+            else
+            {
+                lblMessage1.Visible = true;
+                lblMessage1Text.Visible = true;
+                lblMessage1.Text = message;
+            }
+            udpNoiDung.Update();
         }
 
         protected void btnDVGuiTCT_Click(object sender, EventArgs e)
@@ -500,6 +551,8 @@ namespace DotNetNuke.Modules.NhanHieu
         {
             try
             {
+                //SetStatus(hdStatus.Value, hdMessage1.Value.Trim());
+                LoadData();
                 SetButtonStatus();
             }
             catch (Exception ex)
