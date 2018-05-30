@@ -16,6 +16,15 @@
             Ngày chứng nhận từ<asp:TextBox ID="txtNgayChungNhanFrom" runat="server" Width="80"/>
             <cc1:calendarextender id="calNgayChungNhanFrom" runat="server" format="dd/MM/yyyy"
                 popupbuttonid="txtNgayChungNhanFrom" targetcontrolid="txtNgayChungNhanFrom"></cc1:calendarextender>
+=======
+<table>
+    <tr>
+        <td>
+            Ngày công bố từ
+            <asp:TextBox ID="txtNgayGuiFrom" runat="server" Width="80"/>
+            <cc1:calendarextender id="calNgayGuiFrom" runat="server" format="dd/MM/yyyy"
+                popupbuttonid="txtNgayGuiFrom" targetcontrolid="txtNgayGuiFrom"></cc1:calendarextender>
+>>>>>>> 60f830380f14438990695216c6b4c6f073a69a66
             đến
             <asp:TextBox ID="txtNgayChungNhanTo" runat="server" Width="80"/>
             <cc1:calendarextender id="calNgayChungNhanTo" runat="server" format="dd/MM/yyyy"
